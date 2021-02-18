@@ -1,0 +1,6 @@
+framework module Pods_Island_Choice {
+  umbrella header "Pods-Island Choice-umbrella.h"
+
+  export *
+  module * { export * }
+}

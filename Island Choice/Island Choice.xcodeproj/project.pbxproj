@@ -3,10 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40BE9275557E90ABD7C9549C /* Pods_Island_Choice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EC53273B927B988EC14C8A /* Pods_Island_Choice.framework */; };
+		9F4079D525DE454E00FCA1B2 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C625DE454C00FCA1B2 /* AppCell.swift */; };
+		9F4079D625DE454E00FCA1B2 /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C725DE454D00FCA1B2 /* AppUserDefaults.swift */; };
+		9F4079D725DE454E00FCA1B2 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C825DE454D00FCA1B2 /* AppFonts.swift */; };
+		9F4079D825DE454E00FCA1B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C925DE454D00FCA1B2 /* Constants.swift */; };
+		9F4079D925DE454E00FCA1B2 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079CA25DE454D00FCA1B2 /* AppStoryboard.swift */; };
+		9F4079DB25DE454E00FCA1B2 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079CD25DE454E00FCA1B2 /* UINavigationController+Ext.swift */; };
+		9F4079DC25DE454E00FCA1B2 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079CE25DE454E00FCA1B2 /* String+Ext.swift */; };
+		9F4079DD25DE454E00FCA1B2 /* UIView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079CF25DE454E00FCA1B2 /* UIView+Inspectable.swift */; };
+		9F4079DE25DE454E00FCA1B2 /* Alert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079D025DE454E00FCA1B2 /* Alert+Extension.swift */; };
+		9F4079DF25DE454E00FCA1B2 /* UIKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079D125DE454E00FCA1B2 /* UIKit+Ext.swift */; };
+		9F4079E025DE454E00FCA1B2 /* UIController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079D225DE454E00FCA1B2 /* UIController+Ext.swift */; };
+		9F4079E125DE454E00FCA1B2 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079D325DE454E00FCA1B2 /* ColorModel.swift */; };
+		9F4079E225DE454E00FCA1B2 /* AppSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079D425DE454E00FCA1B2 /* AppSupport.swift */; };
+		9F4079E925DE45F000FCA1B2 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E625DE45EF00FCA1B2 /* URLManager.swift */; };
+		9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */; };
+		9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */; };
+		9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */; };
 		9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC854DF25DD523100AC0073 /* AppDelegate.swift */; };
 		9FC854E425DD523100AC0073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC854E325DD523100AC0073 /* ViewController.swift */; };
 		9FC854E725DD523100AC0073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854E525DD523100AC0073 /* Main.storyboard */; };
@@ -15,6 +33,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		987B70F0EAB6B8D5ADE3A58E /* Pods-Island Choice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Island Choice.release.xcconfig"; path = "Target Support Files/Pods-Island Choice/Pods-Island Choice.release.xcconfig"; sourceTree = "<group>"; };
+		9F4079C625DE454C00FCA1B2 /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
+		9F4079C725DE454D00FCA1B2 /* AppUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
+		9F4079C825DE454D00FCA1B2 /* AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		9F4079C925DE454D00FCA1B2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9F4079CA25DE454D00FCA1B2 /* AppStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		9F4079CD25DE454E00FCA1B2 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		9F4079CE25DE454E00FCA1B2 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		9F4079CF25DE454E00FCA1B2 /* UIView+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Inspectable.swift"; sourceTree = "<group>"; };
+		9F4079D025DE454E00FCA1B2 /* Alert+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert+Extension.swift"; sourceTree = "<group>"; };
+		9F4079D125DE454E00FCA1B2 /* UIKit+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Ext.swift"; sourceTree = "<group>"; };
+		9F4079D225DE454E00FCA1B2 /* UIController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIController+Ext.swift"; sourceTree = "<group>"; };
+		9F4079D325DE454E00FCA1B2 /* ColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		9F4079D425DE454E00FCA1B2 /* AppSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSupport.swift; sourceTree = "<group>"; };
+		9F4079E625DE45EF00FCA1B2 /* URLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
+		9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9FC854DC25DD523100AC0073 /* Island Choice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Island Choice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC854DF25DD523100AC0073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FC854E325DD523100AC0073 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +58,8 @@
 		9FC854E825DD523300AC0073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FC854EB25DD523300AC0073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FC854ED25DD523300AC0073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1991056B92BA73B112C58B5 /* Pods-Island Choice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Island Choice.debug.xcconfig"; path = "Target Support Files/Pods-Island Choice/Pods-Island Choice.debug.xcconfig"; sourceTree = "<group>"; };
+		C2EC53273B927B988EC14C8A /* Pods_Island_Choice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Island_Choice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +67,122 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BE9275557E90ABD7C9549C /* Pods_Island_Choice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		332D8FBB4C663D4A39F50DEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1991056B92BA73B112C58B5 /* Pods-Island Choice.debug.xcconfig */,
+				987B70F0EAB6B8D5ADE3A58E /* Pods-Island Choice.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9F40798C25DE366300FCA1B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9FC854E825DD523300AC0073 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9F40798D25DE367400FCA1B2 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				9FC854ED25DD523300AC0073 /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		9F40798E25DE367D00FCA1B2 /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Thirdparty;
+			sourceTree = "<group>";
+		};
+		9F40799025DE3A7000FCA1B2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */,
+				9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */,
+				9F4079E625DE45EF00FCA1B2 /* URLManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9F40799125DE3A9C00FCA1B2 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				9FC854E525DD523100AC0073 /* Main.storyboard */,
+				9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */,
+				9FC854EA25DD523300AC0073 /* LaunchScreen.storyboard */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		9F4079CC25DE454E00FCA1B2 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				9F4079CD25DE454E00FCA1B2 /* UINavigationController+Ext.swift */,
+				9F4079CE25DE454E00FCA1B2 /* String+Ext.swift */,
+				9F4079CF25DE454E00FCA1B2 /* UIView+Inspectable.swift */,
+				9F4079D025DE454E00FCA1B2 /* Alert+Extension.swift */,
+				9F4079D125DE454E00FCA1B2 /* UIKit+Ext.swift */,
+				9F4079D225DE454E00FCA1B2 /* UIController+Ext.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		9F735E6125DE33BF000EBD72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9F735E6225DE33CD000EBD72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F735E6325DE33D3000EBD72 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9FC854E325DD523100AC0073 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9F735E6625DE33E4000EBD72 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9F4079C625DE454C00FCA1B2 /* AppCell.swift */,
+				9F4079C825DE454D00FCA1B2 /* AppFonts.swift */,
+				9F4079CA25DE454D00FCA1B2 /* AppStoryboard.swift */,
+				9F4079D425DE454E00FCA1B2 /* AppSupport.swift */,
+				9F4079C725DE454D00FCA1B2 /* AppUserDefaults.swift */,
+				9F4079D325DE454E00FCA1B2 /* ColorModel.swift */,
+				9F4079C925DE454D00FCA1B2 /* Constants.swift */,
+				9F4079CC25DE454E00FCA1B2 /* Extention */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		9FC854D325DD523100AC0073 = {
 			isa = PBXGroup;
 			children = (
 				9FC854DE25DD523100AC0073 /* Island Choice */,
 				9FC854DD25DD523100AC0073 /* Products */,
+				332D8FBB4C663D4A39F50DEE /* Pods */,
+				E2B1BA95B00CE78595C33A26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +198,25 @@
 			isa = PBXGroup;
 			children = (
 				9FC854DF25DD523100AC0073 /* AppDelegate.swift */,
-				9FC854E325DD523100AC0073 /* ViewController.swift */,
-				9FC854E525DD523100AC0073 /* Main.storyboard */,
-				9FC854E825DD523300AC0073 /* Assets.xcassets */,
-				9FC854EA25DD523300AC0073 /* LaunchScreen.storyboard */,
-				9FC854ED25DD523300AC0073 /* Info.plist */,
+				9F40799025DE3A7000FCA1B2 /* Networking */,
+				9F735E6625DE33E4000EBD72 /* Helper */,
+				9F40799125DE3A9C00FCA1B2 /* Interface */,
+				9F735E6325DE33D3000EBD72 /* Controller */,
+				9F735E6225DE33CD000EBD72 /* View */,
+				9F40798C25DE366300FCA1B2 /* Resources */,
+				9F735E6125DE33BF000EBD72 /* Model */,
+				9F40798D25DE367400FCA1B2 /* Supporting */,
+				9F40798E25DE367D00FCA1B2 /* Thirdparty */,
 			);
 			path = "Island Choice";
+			sourceTree = "<group>";
+		};
+		E2B1BA95B00CE78595C33A26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2EC53273B927B988EC14C8A /* Pods_Island_Choice.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FC854F025DD523300AC0073 /* Build configuration list for PBXNativeTarget "Island Choice" */;
 			buildPhases = (
+				FE17B33E6691C32763078014 /* [CP] Check Pods Manifest.lock */,
 				9FC854D825DD523100AC0073 /* Sources */,
 				9FC854D925DD523100AC0073 /* Frameworks */,
 				9FC854DA25DD523100AC0073 /* Resources */,
+				7C77AF4941EBDBFA091E1E2A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -121,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */,
 				9FC854EC25DD523300AC0073 /* LaunchScreen.storyboard in Resources */,
 				9FC854E925DD523300AC0073 /* Assets.xcassets in Resources */,
 				9FC854E725DD523100AC0073 /* Main.storyboard in Resources */,
@@ -129,13 +287,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7C77AF4941EBDBFA091E1E2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Island Choice/Pods-Island Choice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Island Choice/Pods-Island Choice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Island Choice/Pods-Island Choice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE17B33E6691C32763078014 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Island Choice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9FC854D825DD523100AC0073 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */,
+				9F4079D925DE454E00FCA1B2 /* AppStoryboard.swift in Sources */,
+				9F4079DE25DE454E00FCA1B2 /* Alert+Extension.swift in Sources */,
+				9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */,
+				9F4079E225DE454E00FCA1B2 /* AppSupport.swift in Sources */,
+				9F4079DB25DE454E00FCA1B2 /* UINavigationController+Ext.swift in Sources */,
+				9F4079DC25DE454E00FCA1B2 /* String+Ext.swift in Sources */,
+				9F4079DD25DE454E00FCA1B2 /* UIView+Inspectable.swift in Sources */,
+				9F4079D525DE454E00FCA1B2 /* AppCell.swift in Sources */,
+				9F4079D725DE454E00FCA1B2 /* AppFonts.swift in Sources */,
+				9F4079E125DE454E00FCA1B2 /* ColorModel.swift in Sources */,
+				9F4079E925DE45F000FCA1B2 /* URLManager.swift in Sources */,
+				9F4079D625DE454E00FCA1B2 /* AppUserDefaults.swift in Sources */,
+				9F4079DF25DE454E00FCA1B2 /* UIKit+Ext.swift in Sources */,
 				9FC854E425DD523100AC0073 /* ViewController.swift in Sources */,
 				9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */,
+				9F4079E025DE454E00FCA1B2 /* UIController+Ext.swift in Sources */,
+				9F4079D825DE454E00FCA1B2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,11 +495,12 @@
 		};
 		9FC854F125DD523300AC0073 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1991056B92BA73B112C58B5 /* Pods-Island Choice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Island Choice/Info.plist";
+				INFOPLIST_FILE = "Island Choice/Supporting/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,11 +515,12 @@
 		};
 		9FC854F225DD523300AC0073 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 987B70F0EAB6B8D5ADE3A58E /* Pods-Island Choice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Island Choice/Info.plist";
+				INFOPLIST_FILE = "Island Choice/Supporting/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

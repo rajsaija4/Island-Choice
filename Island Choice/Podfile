@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Island Choice' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Island Choice
+  
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'Toast-Swift'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Kingfisher'
+  pod 'NVActivityIndicatorView/Extended'
+  
+  # For Crash Report Firebase
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
+  
+  # For Sidemenu
+  pod 'FAPanels'
+  
+  # For Pageview Controller
+  pod 'Parchment'
+
+end
