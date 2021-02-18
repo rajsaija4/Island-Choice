@@ -25,11 +25,13 @@
 		9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */; };
 		9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */; };
 		9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */; };
+		9F80767125DEA3EF006E6311 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */; };
 		9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC854DF25DD523100AC0073 /* AppDelegate.swift */; };
 		9FC854E425DD523100AC0073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC854E325DD523100AC0073 /* ViewController.swift */; };
 		9FC854E725DD523100AC0073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854E525DD523100AC0073 /* Main.storyboard */; };
 		9FC854E925DD523300AC0073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854E825DD523300AC0073 /* Assets.xcassets */; };
 		9FC854EC25DD523300AC0073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854EA25DD523300AC0073 /* LaunchScreen.storyboard */; };
+		9FD6016225DE7A910081D546 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6016125DE7A910081D546 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,7 @@
 		9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
 		9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		9FC854DC25DD523100AC0073 /* Island Choice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Island Choice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC854DF25DD523100AC0073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FC854E325DD523100AC0073 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		9FC854E825DD523300AC0073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FC854EB25DD523300AC0073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FC854ED25DD523300AC0073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FD6016125DE7A910081D546 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C1991056B92BA73B112C58B5 /* Pods-Island Choice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Island Choice.debug.xcconfig"; path = "Target Support Files/Pods-Island Choice/Pods-Island Choice.debug.xcconfig"; sourceTree = "<group>"; };
 		C2EC53273B927B988EC14C8A /* Pods_Island_Choice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Island_Choice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				9FC854E325DD523100AC0073 /* ViewController.swift */,
+				9FD6016425DE7A990081D546 /* Login */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -209,6 +214,15 @@
 				9F40798E25DE367D00FCA1B2 /* Thirdparty */,
 			);
 			path = "Island Choice";
+			sourceTree = "<group>";
+		};
+		9FD6016425DE7A990081D546 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9FD6016125DE7A910081D546 /* LoginVC.swift */,
+				9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		E2B1BA95B00CE78595C33A26 /* Frameworks */ = {
@@ -337,6 +351,7 @@
 				9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */,
 				9F4079D925DE454E00FCA1B2 /* AppStoryboard.swift in Sources */,
 				9F4079DE25DE454E00FCA1B2 /* Alert+Extension.swift in Sources */,
+				9FD6016225DE7A910081D546 /* LoginVC.swift in Sources */,
 				9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */,
 				9F4079E225DE454E00FCA1B2 /* AppSupport.swift in Sources */,
 				9F4079DB25DE454E00FCA1B2 /* UINavigationController+Ext.swift in Sources */,
@@ -347,6 +362,7 @@
 				9F4079E125DE454E00FCA1B2 /* ColorModel.swift in Sources */,
 				9F4079E925DE45F000FCA1B2 /* URLManager.swift in Sources */,
 				9F4079D625DE454E00FCA1B2 /* AppUserDefaults.swift in Sources */,
+				9F80767125DEA3EF006E6311 /* ForgotPasswordVC.swift in Sources */,
 				9F4079DF25DE454E00FCA1B2 /* UIKit+Ext.swift in Sources */,
 				9FC854E425DD523100AC0073 /* ViewController.swift in Sources */,
 				9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */,
