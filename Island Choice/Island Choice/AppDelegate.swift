@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
-        setupLogin()
+//        setupLogin()
+        setupMainTabBarController()
         return true
     }
 
@@ -31,6 +32,41 @@ extension AppDelegate {
         nvc.isNavigationBarHidden = true
         window?.rootViewController = nvc
         window?.makeKeyAndVisible()
+    }
+    
+    func setupMainTabBarController() {
+        
+        let tabBarVC = MainTabBarController.instantiate(fromAppStoryboard: .Main)
+        
+        let dashboardVC = DashboardVC.instantiate(fromAppStoryboard: .Dashboard)
+        dashboardVC.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(named: "img_dashboard"), selectedImage: UIImage(named: "img_dashboard"))
+        let dashboardNVC = UINavigationController(rootViewController: dashboardVC)
+        
+        let billingVC = BillingVC.instantiate(fromAppStoryboard: .Billing)
+        billingVC.tabBarItem = UITabBarItem(title: "Billing", image: UIImage(named: "img_billing"), selectedImage: UIImage(named: "img_billing"))
+        let billingNVC = UINavigationController(rootViewController: billingVC)
+        
+        let deliveriesVC = DeliveriesVC.instantiate(fromAppStoryboard: .Deliveries)
+        deliveriesVC.tabBarItem = UITabBarItem(title: "Delivery", image: UIImage(named: "img_delivery"), selectedImage: UIImage(named: "img_delivery"))
+        let deliveriesNVC = UINavigationController(rootViewController: deliveriesVC)
+        
+        let accountVC = AccountVC.instantiate(fromAppStoryboard: .Account)
+        accountVC.tabBarItem = UITabBarItem(title: "My Account", image: UIImage(named: "img_account"), selectedImage: UIImage(named: "img_account"))
+        let accountNVC = UINavigationController(rootViewController: accountVC)
+        
+        
+        
+        tabBarVC.viewControllers = [dashboardNVC, billingNVC, deliveriesNVC, accountNVC]
+        tabBarVC.selectedIndex = 0
+        tabBarVC.tabBar.tintColor = COLOR.App
+        tabBarVC.tabBar.unselectedItemTintColor = .darkGray
+        
+        let tabBarNVC = UINavigationController(rootViewController: tabBarVC)
+        tabBarNVC.isNavigationBarHidden = true
+        
+        window?.rootViewController = tabBarNVC
+        window?.makeKeyAndVisible()
+        
     }
     
 }

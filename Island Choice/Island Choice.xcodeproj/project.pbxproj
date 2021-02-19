@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		40BE9275557E90ABD7C9549C /* Pods_Island_Choice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EC53273B927B988EC14C8A /* Pods_Island_Choice.framework */; };
+		9F293AA525DF8997008EC1DD /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F293AA425DF8997008EC1DD /* Dashboard.storyboard */; };
+		9F293AA825DF93D3008EC1DD /* Billing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F293AA725DF93D3008EC1DD /* Billing.storyboard */; };
+		9F293AAB25DF93E7008EC1DD /* Deliveries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F293AAA25DF93E7008EC1DD /* Deliveries.storyboard */; };
+		9F293AAE25DF94B3008EC1DD /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F293AAD25DF94B3008EC1DD /* Account.storyboard */; };
+		9F293AB125DF95F4008EC1DD /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293AB025DF95F4008EC1DD /* DashboardVC.swift */; };
+		9F293AB425DF9609008EC1DD /* BillingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293AB325DF9609008EC1DD /* BillingVC.swift */; };
+		9F293AB725DF9625008EC1DD /* DeliveriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293AB625DF9625008EC1DD /* DeliveriesVC.swift */; };
+		9F293ABA25DF9637008EC1DD /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293AB925DF9637008EC1DD /* AccountVC.swift */; };
+		9F293AC325DF9744008EC1DD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293AC225DF9744008EC1DD /* MainTabBarController.swift */; };
+		9F293B5025DFF302008EC1DD /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293B4F25DFF302008EC1DD /* InvoiceVC.swift */; };
+		9F293B5325DFF31B008EC1DD /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293B5225DFF31B008EC1DD /* HistoryVC.swift */; };
+		9F293B5625DFF396008EC1DD /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */; };
 		9F4079D525DE454E00FCA1B2 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C625DE454C00FCA1B2 /* AppCell.swift */; };
 		9F4079D625DE454E00FCA1B2 /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C725DE454D00FCA1B2 /* AppUserDefaults.swift */; };
 		9F4079D725DE454E00FCA1B2 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C825DE454D00FCA1B2 /* AppFonts.swift */; };
@@ -36,6 +48,18 @@
 
 /* Begin PBXFileReference section */
 		987B70F0EAB6B8D5ADE3A58E /* Pods-Island Choice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Island Choice.release.xcconfig"; path = "Target Support Files/Pods-Island Choice/Pods-Island Choice.release.xcconfig"; sourceTree = "<group>"; };
+		9F293AA425DF8997008EC1DD /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		9F293AA725DF93D3008EC1DD /* Billing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Billing.storyboard; sourceTree = "<group>"; };
+		9F293AAA25DF93E7008EC1DD /* Deliveries.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Deliveries.storyboard; sourceTree = "<group>"; };
+		9F293AAD25DF94B3008EC1DD /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		9F293AB025DF95F4008EC1DD /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		9F293AB325DF9609008EC1DD /* BillingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingVC.swift; sourceTree = "<group>"; };
+		9F293AB625DF9625008EC1DD /* DeliveriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesVC.swift; sourceTree = "<group>"; };
+		9F293AB925DF9637008EC1DD /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		9F293AC225DF9744008EC1DD /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		9F293B4F25DFF302008EC1DD /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
+		9F293B5225DFF31B008EC1DD /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
 		9F4079C625DE454C00FCA1B2 /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		9F4079C725DE454D00FCA1B2 /* AppUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
 		9F4079C825DE454D00FCA1B2 /* AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
@@ -87,6 +111,41 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9F293ABC25DF964F008EC1DD /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				9F293AB025DF95F4008EC1DD /* DashboardVC.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		9F293ABE25DF9686008EC1DD /* Billing */ = {
+			isa = PBXGroup;
+			children = (
+				9F293AB325DF9609008EC1DD /* BillingVC.swift */,
+				9F293B4F25DFF302008EC1DD /* InvoiceVC.swift */,
+				9F293B5225DFF31B008EC1DD /* HistoryVC.swift */,
+				9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */,
+			);
+			path = Billing;
+			sourceTree = "<group>";
+		};
+		9F293ABF25DF968E008EC1DD /* Deliveries */ = {
+			isa = PBXGroup;
+			children = (
+				9F293AB625DF9625008EC1DD /* DeliveriesVC.swift */,
+			);
+			path = Deliveries;
+			sourceTree = "<group>";
+		};
+		9F293AC025DF9697008EC1DD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				9F293AB925DF9637008EC1DD /* AccountVC.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		9F40798C25DE366300FCA1B2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +185,10 @@
 				9FC854E525DD523100AC0073 /* Main.storyboard */,
 				9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */,
 				9FC854EA25DD523300AC0073 /* LaunchScreen.storyboard */,
+				9F293AA425DF8997008EC1DD /* Dashboard.storyboard */,
+				9F293AA725DF93D3008EC1DD /* Billing.storyboard */,
+				9F293AAA25DF93E7008EC1DD /* Deliveries.storyboard */,
+				9F293AAD25DF94B3008EC1DD /* Account.storyboard */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -161,7 +224,12 @@
 			isa = PBXGroup;
 			children = (
 				9FC854E325DD523100AC0073 /* ViewController.swift */,
+				9F293AC225DF9744008EC1DD /* MainTabBarController.swift */,
 				9FD6016425DE7A990081D546 /* Login */,
+				9F293ABC25DF964F008EC1DD /* Dashboard */,
+				9F293ABE25DF9686008EC1DD /* Billing */,
+				9F293ABF25DF968E008EC1DD /* Deliveries */,
+				9F293AC025DF9697008EC1DD /* Account */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,8 +361,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */,
+				9F293AA525DF8997008EC1DD /* Dashboard.storyboard in Resources */,
 				9FC854EC25DD523300AC0073 /* LaunchScreen.storyboard in Resources */,
 				9FC854E925DD523300AC0073 /* Assets.xcassets in Resources */,
+				9F293AAB25DF93E7008EC1DD /* Deliveries.storyboard in Resources */,
+				9F293AA825DF93D3008EC1DD /* Billing.storyboard in Resources */,
+				9F293AAE25DF94B3008EC1DD /* Account.storyboard in Resources */,
 				9FC854E725DD523100AC0073 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,14 +420,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F293B5025DFF302008EC1DD /* InvoiceVC.swift in Sources */,
 				9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */,
 				9F4079D925DE454E00FCA1B2 /* AppStoryboard.swift in Sources */,
+				9F293AC325DF9744008EC1DD /* MainTabBarController.swift in Sources */,
+				9F293B5625DFF396008EC1DD /* PaymentMethodVC.swift in Sources */,
 				9F4079DE25DE454E00FCA1B2 /* Alert+Extension.swift in Sources */,
 				9FD6016225DE7A910081D546 /* LoginVC.swift in Sources */,
 				9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */,
 				9F4079E225DE454E00FCA1B2 /* AppSupport.swift in Sources */,
 				9F4079DB25DE454E00FCA1B2 /* UINavigationController+Ext.swift in Sources */,
 				9F4079DC25DE454E00FCA1B2 /* String+Ext.swift in Sources */,
+				9F293ABA25DF9637008EC1DD /* AccountVC.swift in Sources */,
+				9F293AB425DF9609008EC1DD /* BillingVC.swift in Sources */,
 				9F4079DD25DE454E00FCA1B2 /* UIView+Inspectable.swift in Sources */,
 				9F4079D525DE454E00FCA1B2 /* AppCell.swift in Sources */,
 				9F4079D725DE454E00FCA1B2 /* AppFonts.swift in Sources */,
@@ -364,10 +441,13 @@
 				9F4079D625DE454E00FCA1B2 /* AppUserDefaults.swift in Sources */,
 				9F80767125DEA3EF006E6311 /* ForgotPasswordVC.swift in Sources */,
 				9F4079DF25DE454E00FCA1B2 /* UIKit+Ext.swift in Sources */,
+				9F293AB125DF95F4008EC1DD /* DashboardVC.swift in Sources */,
 				9FC854E425DD523100AC0073 /* ViewController.swift in Sources */,
 				9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */,
 				9F4079E025DE454E00FCA1B2 /* UIController+Ext.swift in Sources */,
 				9F4079D825DE454E00FCA1B2 /* Constants.swift in Sources */,
+				9F293B5325DFF31B008EC1DD /* HistoryVC.swift in Sources */,
+				9F293AB725DF9625008EC1DD /* DeliveriesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

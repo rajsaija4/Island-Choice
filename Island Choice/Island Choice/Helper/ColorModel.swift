@@ -10,7 +10,7 @@ import UIKit
 
 struct COLOR {
     
-    static let App = UIColor(hexString: "#170652")
+    static let App = UIColor(hexString: "#0480C0")
     static let AppDark = UIColor(hexString: "#1D0234")
     static let AppLight = UIColor(hexString: "#F4EFF8")
     static let LightRed = UIColor(hexString: "#FEDDDD")
