@@ -48,6 +48,7 @@ extension LoginVC {
     
     
     @IBAction func onSignInBtnTap(_ sender: UIButton) {
+        APPDEL?.setupMainTabBarController()
     }
     
     @IBAction func onForgotPasswordBtnTap(_ sender: UIButton) {

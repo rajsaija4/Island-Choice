@@ -37,6 +37,17 @@
 		9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */; };
 		9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */; };
 		9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */; };
+		9F70A85525E3E0BE00E1EEAF /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70A85325E3E0BE00E1EEAF /* HistoryCell.swift */; };
+		9F70A85625E3E0BE00E1EEAF /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F70A85425E3E0BE00E1EEAF /* HistoryCell.xib */; };
+		9F70A85C25E3E1C400E1EEAF /* StatementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70A85A25E3E1C400E1EEAF /* StatementCell.swift */; };
+		9F70A85D25E3E1C400E1EEAF /* StatementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F70A85B25E3E1C400E1EEAF /* StatementCell.xib */; };
+		9F715BCA25E3B0F200A95C91 /* InvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F715BC825E3B0F200A95C91 /* InvoiceCell.swift */; };
+		9F715BCB25E3B0F200A95C91 /* InvoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F715BC925E3B0F200A95C91 /* InvoiceCell.xib */; };
+		9F7424C225E4C941003C01F6 /* PaymentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7424C025E4C941003C01F6 /* PaymentCardCell.swift */; };
+		9F7424C325E4C941003C01F6 /* PaymentCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F7424C125E4C941003C01F6 /* PaymentCardCell.xib */; };
+		9F74253825E517B1003C01F6 /* CreditCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74253725E517B1003C01F6 /* CreditCardVC.swift */; };
+		9F74253C25E53E15003C01F6 /* BillingInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74253B25E53E15003C01F6 /* BillingInformationVC.swift */; };
+		9F74253F25E53E30003C01F6 /* DeliveryInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74253E25E53E30003C01F6 /* DeliveryInformationVC.swift */; };
 		9F80767125DEA3EF006E6311 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */; };
 		9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC854DF25DD523100AC0073 /* AppDelegate.swift */; };
 		9FC854E425DD523100AC0073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC854E325DD523100AC0073 /* ViewController.swift */; };
@@ -77,6 +88,17 @@
 		9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
 		9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9F70A85325E3E0BE00E1EEAF /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		9F70A85425E3E0BE00E1EEAF /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
+		9F70A85A25E3E1C400E1EEAF /* StatementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCell.swift; sourceTree = "<group>"; };
+		9F70A85B25E3E1C400E1EEAF /* StatementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementCell.xib; sourceTree = "<group>"; };
+		9F715BC825E3B0F200A95C91 /* InvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCell.swift; sourceTree = "<group>"; };
+		9F715BC925E3B0F200A95C91 /* InvoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvoiceCell.xib; sourceTree = "<group>"; };
+		9F7424C025E4C941003C01F6 /* PaymentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardCell.swift; sourceTree = "<group>"; };
+		9F7424C125E4C941003C01F6 /* PaymentCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCardCell.xib; sourceTree = "<group>"; };
+		9F74253725E517B1003C01F6 /* CreditCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardVC.swift; sourceTree = "<group>"; };
+		9F74253B25E53E15003C01F6 /* BillingInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingInformationVC.swift; sourceTree = "<group>"; };
+		9F74253E25E53E30003C01F6 /* DeliveryInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInformationVC.swift; sourceTree = "<group>"; };
 		9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		9FC854DC25DD523100AC0073 /* Island Choice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Island Choice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC854DF25DD523100AC0073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +148,7 @@
 				9F293B4F25DFF302008EC1DD /* InvoiceVC.swift */,
 				9F293B5225DFF31B008EC1DD /* HistoryVC.swift */,
 				9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */,
+				9F74253725E517B1003C01F6 /* CreditCardVC.swift */,
 			);
 			path = Billing;
 			sourceTree = "<group>";
@@ -142,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				9F293AB925DF9637008EC1DD /* AccountVC.swift */,
+				9F74253B25E53E15003C01F6 /* BillingInformationVC.swift */,
+				9F74253E25E53E30003C01F6 /* DeliveryInformationVC.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -182,9 +207,9 @@
 		9F40799125DE3A9C00FCA1B2 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				9FC854EA25DD523300AC0073 /* LaunchScreen.storyboard */,
 				9FC854E525DD523100AC0073 /* Main.storyboard */,
 				9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */,
-				9FC854EA25DD523300AC0073 /* LaunchScreen.storyboard */,
 				9F293AA425DF8997008EC1DD /* Dashboard.storyboard */,
 				9F293AA725DF93D3008EC1DD /* Billing.storyboard */,
 				9F293AAA25DF93E7008EC1DD /* Deliveries.storyboard */,
@@ -206,6 +231,33 @@
 			path = Extention;
 			sourceTree = "<group>";
 		};
+		9F70A85825E3E18500E1EEAF /* HistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F70A85325E3E0BE00E1EEAF /* HistoryCell.swift */,
+				9F70A85425E3E0BE00E1EEAF /* HistoryCell.xib */,
+			);
+			path = HistoryCell;
+			sourceTree = "<group>";
+		};
+		9F70A85F25E3E1C900E1EEAF /* StatementCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F70A85A25E3E1C400E1EEAF /* StatementCell.swift */,
+				9F70A85B25E3E1C400E1EEAF /* StatementCell.xib */,
+			);
+			path = StatementCell;
+			sourceTree = "<group>";
+		};
+		9F715BCD25E3B0F900A95C91 /* InvoiceCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F715BC825E3B0F200A95C91 /* InvoiceCell.swift */,
+				9F715BC925E3B0F200A95C91 /* InvoiceCell.xib */,
+			);
+			path = InvoiceCell;
+			sourceTree = "<group>";
+		};
 		9F735E6125DE33BF000EBD72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +268,10 @@
 		9F735E6225DE33CD000EBD72 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F715BCD25E3B0F900A95C91 /* InvoiceCell */,
+				9F70A85825E3E18500E1EEAF /* HistoryCell */,
+				9F70A85F25E3E1C900E1EEAF /* StatementCell */,
+				9F7424C525E4C945003C01F6 /* PaymentCardCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +303,15 @@
 				9F4079CC25DE454E00FCA1B2 /* Extention */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		9F7424C525E4C945003C01F6 /* PaymentCardCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F7424C025E4C941003C01F6 /* PaymentCardCell.swift */,
+				9F7424C125E4C941003C01F6 /* PaymentCardCell.xib */,
+			);
+			path = PaymentCardCell;
 			sourceTree = "<group>";
 		};
 		9FC854D325DD523100AC0073 = {
@@ -360,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F70A85625E3E0BE00E1EEAF /* HistoryCell.xib in Resources */,
 				9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */,
 				9F293AA525DF8997008EC1DD /* Dashboard.storyboard in Resources */,
 				9FC854EC25DD523300AC0073 /* LaunchScreen.storyboard in Resources */,
@@ -367,7 +433,10 @@
 				9F293AAB25DF93E7008EC1DD /* Deliveries.storyboard in Resources */,
 				9F293AA825DF93D3008EC1DD /* Billing.storyboard in Resources */,
 				9F293AAE25DF94B3008EC1DD /* Account.storyboard in Resources */,
+				9F7424C325E4C941003C01F6 /* PaymentCardCell.xib in Resources */,
+				9F70A85D25E3E1C400E1EEAF /* StatementCell.xib in Resources */,
 				9FC854E725DD523100AC0073 /* Main.storyboard in Resources */,
+				9F715BCB25E3B0F200A95C91 /* InvoiceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,16 +492,19 @@
 				9F293B5025DFF302008EC1DD /* InvoiceVC.swift in Sources */,
 				9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */,
 				9F4079D925DE454E00FCA1B2 /* AppStoryboard.swift in Sources */,
+				9F74253F25E53E30003C01F6 /* DeliveryInformationVC.swift in Sources */,
 				9F293AC325DF9744008EC1DD /* MainTabBarController.swift in Sources */,
 				9F293B5625DFF396008EC1DD /* PaymentMethodVC.swift in Sources */,
 				9F4079DE25DE454E00FCA1B2 /* Alert+Extension.swift in Sources */,
 				9FD6016225DE7A910081D546 /* LoginVC.swift in Sources */,
 				9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */,
+				9F7424C225E4C941003C01F6 /* PaymentCardCell.swift in Sources */,
 				9F4079E225DE454E00FCA1B2 /* AppSupport.swift in Sources */,
 				9F4079DB25DE454E00FCA1B2 /* UINavigationController+Ext.swift in Sources */,
 				9F4079DC25DE454E00FCA1B2 /* String+Ext.swift in Sources */,
 				9F293ABA25DF9637008EC1DD /* AccountVC.swift in Sources */,
 				9F293AB425DF9609008EC1DD /* BillingVC.swift in Sources */,
+				9F74253825E517B1003C01F6 /* CreditCardVC.swift in Sources */,
 				9F4079DD25DE454E00FCA1B2 /* UIView+Inspectable.swift in Sources */,
 				9F4079D525DE454E00FCA1B2 /* AppCell.swift in Sources */,
 				9F4079D725DE454E00FCA1B2 /* AppFonts.swift in Sources */,
@@ -440,12 +512,16 @@
 				9F4079E925DE45F000FCA1B2 /* URLManager.swift in Sources */,
 				9F4079D625DE454E00FCA1B2 /* AppUserDefaults.swift in Sources */,
 				9F80767125DEA3EF006E6311 /* ForgotPasswordVC.swift in Sources */,
+				9F715BCA25E3B0F200A95C91 /* InvoiceCell.swift in Sources */,
 				9F4079DF25DE454E00FCA1B2 /* UIKit+Ext.swift in Sources */,
 				9F293AB125DF95F4008EC1DD /* DashboardVC.swift in Sources */,
 				9FC854E425DD523100AC0073 /* ViewController.swift in Sources */,
+				9F70A85C25E3E1C400E1EEAF /* StatementCell.swift in Sources */,
+				9F70A85525E3E0BE00E1EEAF /* HistoryCell.swift in Sources */,
 				9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */,
 				9F4079E025DE454E00FCA1B2 /* UIController+Ext.swift in Sources */,
 				9F4079D825DE454E00FCA1B2 /* Constants.swift in Sources */,
+				9F74253C25E53E15003C01F6 /* BillingInformationVC.swift in Sources */,
 				9F293B5325DFF31B008EC1DD /* HistoryVC.swift in Sources */,
 				9F293AB725DF9625008EC1DD /* DeliveriesVC.swift in Sources */,
 			);
@@ -596,13 +672,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CYAAKTHRS4;
 				INFOPLIST_FILE = "Island Choice/Supporting/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Island-Choice";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gurutechnolabs.abhatest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -616,13 +693,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CYAAKTHRS4;
 				INFOPLIST_FILE = "Island Choice/Supporting/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Island-Choice";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gurutechnolabs.abhatest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

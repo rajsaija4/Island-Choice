@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvoiceCell" id="KGk-i7-Jjw" customClass="InvoiceCell" customModule="Island_Choice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gJE-8z-BEJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iy4-5o-Tei">
+                                <rect key="frame" x="0.0" y="0.0" width="32" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgt-P5-IxF">
+                                        <rect key="frame" x="4" y="10" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Xgt-P5-IxF" secondAttribute="height" id="D5U-W8-PyM"/>
+                                            <constraint firstAttribute="width" constant="24" id="YRF-ip-w8h"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.015686274510000001" green="0.50097638369999997" blue="0.75332540270000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="img_uncheck"/>
+                                        <state key="selected" image="img_check"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Xgt-P5-IxF" firstAttribute="centerX" secondItem="iy4-5o-Tei" secondAttribute="centerX" id="EVJ-Tp-At3"/>
+                                    <constraint firstAttribute="width" constant="32" id="ZpH-fO-8qr"/>
+                                    <constraint firstItem="Xgt-P5-IxF" firstAttribute="centerY" secondItem="iy4-5o-Tei" secondAttribute="centerY" id="j5H-Mb-E7w"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljZ-po-04T">
+                                <rect key="frame" x="34" y="0.0" width="32" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKb-j3-7FU">
+                                        <rect key="frame" x="2" y="8" width="28" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wKb-j3-7FU" secondAttribute="height" multiplier="1:1" id="ELB-zE-02U"/>
+                                            <constraint firstAttribute="width" constant="28" id="FxM-Mh-ROE"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.015686274510000001" green="0.50097638369999997" blue="0.75332540270000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="img_download"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Set-8X-Api"/>
+                                    <constraint firstItem="wKb-j3-7FU" firstAttribute="centerX" secondItem="ljZ-po-04T" secondAttribute="centerX" id="TCU-RM-czU"/>
+                                    <constraint firstItem="wKb-j3-7FU" firstAttribute="centerY" secondItem="ljZ-po-04T" secondAttribute="centerY" id="e67-yK-Gn9"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22/02/2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tI-dL-XMP">
+                                <rect key="frame" x="68" y="0.0" width="80" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="86j-oY-Wzv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="108929" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCS-Lb-LVd">
+                                <rect key="frame" x="150" y="0.0" width="90" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="FRG-WA-hst"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$54528.25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xft-us-ndl">
+                                <rect key="frame" x="242" y="0.0" width="78" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gJE-8z-BEJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7eS-RN-pSc"/>
+                    <constraint firstAttribute="bottom" secondItem="gJE-8z-BEJ" secondAttribute="bottom" id="aQN-H5-5Ja"/>
+                    <constraint firstAttribute="trailing" secondItem="gJE-8z-BEJ" secondAttribute="trailing" id="lep-gC-gwP"/>
+                    <constraint firstItem="gJE-8z-BEJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="y2T-uJ-2qg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="btnCheck" destination="Xgt-P5-IxF" id="y54-9B-Zt1"/>
+                <outlet property="btnDownload" destination="wKb-j3-7FU" id="Tok-io-2Pn"/>
+                <outlet property="lblAmount" destination="xft-us-ndl" id="Wwt-Eo-EpG"/>
+                <outlet property="lblDate" destination="4tI-dL-XMP" id="KND-37-83q"/>
+                <outlet property="lblInvoiceNo" destination="XCS-Lb-LVd" id="G1r-L5-8eY"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="130.58035714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img_check" width="128" height="128"/>
+        <image name="img_download" width="128" height="128"/>
+        <image name="img_uncheck" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

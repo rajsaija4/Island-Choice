@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        setupLogin()
         setupMainTabBarController()
+        setupAppDelegate()
         return true
     }
 
@@ -25,6 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 extension AppDelegate {
+    
+    fileprivate func setupAppDelegate() {
+        
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barTintColor = COLOR.App
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+    }
     
     func setupLogin() {
         let vc = LoginVC.instantiate(fromAppStoryboard: .Login)
