@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeliveryOrderCell" rowHeight="138" id="KGk-i7-Jjw" customClass="DeliveryOrderCell" customModule="Island_Choice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="485" height="138"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="485" height="138"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="82E-27-lri">
+                        <rect key="frame" x="10" y="10" width="465" height="118"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WJG-xo-eRg">
+                                <rect key="frame" x="0.0" y="0.0" width="465" height="39.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Number: 2102111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGh-5c-kLC">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21/01/20201" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmk-q5-5pe">
+                                        <rect key="frame" x="321" y="0.0" width="144" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delievery note: 5000-coco cola 12 -Pack*3 100 - 5 water(5gallon) *6 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUM-Xv-bKU">
+                                <rect key="frame" x="0.0" y="39.5" width="465" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:$37.40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHy-tH-uGw">
+                                <rect key="frame" x="0.0" y="78.5" width="465" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="WJG-xo-eRg" firstAttribute="leading" secondItem="82E-27-lri" secondAttribute="leading" id="HuD-Oo-NDw"/>
+                            <constraint firstAttribute="trailing" secondItem="WJG-xo-eRg" secondAttribute="trailing" id="kS9-S9-3AA"/>
+                            <constraint firstItem="WJG-xo-eRg" firstAttribute="top" secondItem="82E-27-lri" secondAttribute="top" id="vpu-rB-zUJ"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="82E-27-lri" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="7DG-9S-zUN"/>
+                    <constraint firstItem="82E-27-lri" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GBr-Ol-Ntg"/>
+                    <constraint firstAttribute="trailing" secondItem="82E-27-lri" secondAttribute="trailing" constant="10" id="LCU-Fh-LQN"/>
+                    <constraint firstAttribute="bottom" secondItem="82E-27-lri" secondAttribute="bottom" constant="10" id="sn1-Xj-dVM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblDate" destination="gmk-q5-5pe" id="q1C-A0-UbI"/>
+                <outlet property="lblDeliveryNote" destination="KUM-Xv-bKU" id="IMo-SN-Gul"/>
+                <outlet property="lblTicketNumber" destination="VGh-5c-kLC" id="21b-cS-G88"/>
+                <outlet property="lblTotal" destination="kHy-tH-uGw" id="8gi-P6-McD"/>
+            </connections>
+            <point key="canvasLocation" x="202.17391304347828" y="90.401785714285708"/>
+        </tableViewCell>
+    </objects>
+</document>

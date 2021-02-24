@@ -49,6 +49,9 @@
 		9F74253C25E53E15003C01F6 /* BillingInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74253B25E53E15003C01F6 /* BillingInformationVC.swift */; };
 		9F74253F25E53E30003C01F6 /* DeliveryInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74253E25E53E30003C01F6 /* DeliveryInformationVC.swift */; };
 		9F80767125DEA3EF006E6311 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */; };
+		9F9B774F25E67EB80016423F /* DeliveryOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B774E25E67EB80016423F /* DeliveryOrderVC.swift */; };
+		9F9B775325E67F400016423F /* DeliveryOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B775125E67F400016423F /* DeliveryOrderCell.swift */; };
+		9F9B775425E67F400016423F /* DeliveryOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F9B775225E67F400016423F /* DeliveryOrderCell.xib */; };
 		9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC854DF25DD523100AC0073 /* AppDelegate.swift */; };
 		9FC854E425DD523100AC0073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC854E325DD523100AC0073 /* ViewController.swift */; };
 		9FC854E725DD523100AC0073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854E525DD523100AC0073 /* Main.storyboard */; };
@@ -56,6 +59,8 @@
 		9FC854EC25DD523300AC0073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854EA25DD523300AC0073 /* LaunchScreen.storyboard */; };
 		9FC9500325E6352000D50323 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9500225E6352000D50323 /* ChangePasswordVC.swift */; };
 		9FD6016225DE7A910081D546 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6016125DE7A910081D546 /* LoginVC.swift */; };
+		9FDC1B0625E6903400C57FCE /* ProductCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1B0425E6903400C57FCE /* ProductCollCell.swift */; };
+		9FDC1B0725E6903400C57FCE /* ProductCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1B0525E6903400C57FCE /* ProductCollCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +106,9 @@
 		9F74253B25E53E15003C01F6 /* BillingInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingInformationVC.swift; sourceTree = "<group>"; };
 		9F74253E25E53E30003C01F6 /* DeliveryInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInformationVC.swift; sourceTree = "<group>"; };
 		9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		9F9B774E25E67EB80016423F /* DeliveryOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryOrderVC.swift; sourceTree = "<group>"; };
+		9F9B775125E67F400016423F /* DeliveryOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryOrderCell.swift; sourceTree = "<group>"; };
+		9F9B775225E67F400016423F /* DeliveryOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryOrderCell.xib; sourceTree = "<group>"; };
 		9FC854DC25DD523100AC0073 /* Island Choice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Island Choice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC854DF25DD523100AC0073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FC854E325DD523100AC0073 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +118,8 @@
 		9FC854ED25DD523300AC0073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC9500225E6352000D50323 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		9FD6016125DE7A910081D546 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		9FDC1B0425E6903400C57FCE /* ProductCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollCell.swift; sourceTree = "<group>"; };
+		9FDC1B0525E6903400C57FCE /* ProductCollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollCell.xib; sourceTree = "<group>"; };
 		C1991056B92BA73B112C58B5 /* Pods-Island Choice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Island Choice.debug.xcconfig"; path = "Target Support Files/Pods-Island Choice/Pods-Island Choice.debug.xcconfig"; sourceTree = "<group>"; };
 		C2EC53273B927B988EC14C8A /* Pods_Island_Choice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Island_Choice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -159,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				9F293AB625DF9625008EC1DD /* DeliveriesVC.swift */,
+				9F9B774E25E67EB80016423F /* DeliveryOrderVC.swift */,
 			);
 			path = Deliveries;
 			sourceTree = "<group>";
@@ -271,10 +282,8 @@
 		9F735E6225DE33CD000EBD72 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9F715BCD25E3B0F900A95C91 /* InvoiceCell */,
-				9F70A85825E3E18500E1EEAF /* HistoryCell */,
-				9F70A85F25E3E1C900E1EEAF /* StatementCell */,
-				9F7424C525E4C945003C01F6 /* PaymentCardCell */,
+				9FDC1B0225E68FE300C57FCE /* TableViewCell */,
+				9FDC1B0A25E6904C00C57FCE /* CollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,6 +326,15 @@
 			path = PaymentCardCell;
 			sourceTree = "<group>";
 		};
+		9F9B775625E67F4C0016423F /* DeliveryOrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F9B775125E67F400016423F /* DeliveryOrderCell.swift */,
+				9F9B775225E67F400016423F /* DeliveryOrderCell.xib */,
+			);
+			path = DeliveryOrderCell;
+			sourceTree = "<group>";
+		};
 		9FC854D325DD523100AC0073 = {
 			isa = PBXGroup;
 			children = (
@@ -343,8 +361,8 @@
 				9F735E6625DE33E4000EBD72 /* Helper */,
 				9F40799125DE3A9C00FCA1B2 /* Interface */,
 				9F735E6325DE33D3000EBD72 /* Controller */,
-				9F735E6225DE33CD000EBD72 /* View */,
 				9F40798C25DE366300FCA1B2 /* Resources */,
+				9F735E6225DE33CD000EBD72 /* View */,
 				9F735E6125DE33BF000EBD72 /* Model */,
 				9F40798D25DE367400FCA1B2 /* Supporting */,
 				9F40798E25DE367D00FCA1B2 /* Thirdparty */,
@@ -359,6 +377,35 @@
 				9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		9FDC1B0225E68FE300C57FCE /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F715BCD25E3B0F900A95C91 /* InvoiceCell */,
+				9F70A85825E3E18500E1EEAF /* HistoryCell */,
+				9F70A85F25E3E1C900E1EEAF /* StatementCell */,
+				9F7424C525E4C945003C01F6 /* PaymentCardCell */,
+				9F9B775625E67F4C0016423F /* DeliveryOrderCell */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		9FDC1B0925E6904200C57FCE /* ProductCollCell */ = {
+			isa = PBXGroup;
+			children = (
+				9FDC1B0425E6903400C57FCE /* ProductCollCell.swift */,
+				9FDC1B0525E6903400C57FCE /* ProductCollCell.xib */,
+			);
+			path = ProductCollCell;
+			sourceTree = "<group>";
+		};
+		9FDC1B0A25E6904C00C57FCE /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9FDC1B0925E6904200C57FCE /* ProductCollCell */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		E2B1BA95B00CE78595C33A26 /* Frameworks */ = {
@@ -437,6 +484,8 @@
 				9F293AA825DF93D3008EC1DD /* Billing.storyboard in Resources */,
 				9F293AAE25DF94B3008EC1DD /* Account.storyboard in Resources */,
 				9F7424C325E4C941003C01F6 /* PaymentCardCell.xib in Resources */,
+				9FDC1B0725E6903400C57FCE /* ProductCollCell.xib in Resources */,
+				9F9B775425E67F400016423F /* DeliveryOrderCell.xib in Resources */,
 				9F70A85D25E3E1C400E1EEAF /* StatementCell.xib in Resources */,
 				9FC854E725DD523100AC0073 /* Main.storyboard in Resources */,
 				9F715BCB25E3B0F200A95C91 /* InvoiceCell.xib in Resources */,
@@ -508,13 +557,16 @@
 				9F293ABA25DF9637008EC1DD /* AccountVC.swift in Sources */,
 				9F293AB425DF9609008EC1DD /* BillingVC.swift in Sources */,
 				9F74253825E517B1003C01F6 /* CreditCardVC.swift in Sources */,
+				9F9B774F25E67EB80016423F /* DeliveryOrderVC.swift in Sources */,
 				9F4079DD25DE454E00FCA1B2 /* UIView+Inspectable.swift in Sources */,
 				9F4079D525DE454E00FCA1B2 /* AppCell.swift in Sources */,
 				9F4079D725DE454E00FCA1B2 /* AppFonts.swift in Sources */,
+				9F9B775325E67F400016423F /* DeliveryOrderCell.swift in Sources */,
 				9F4079E125DE454E00FCA1B2 /* ColorModel.swift in Sources */,
 				9F4079E925DE45F000FCA1B2 /* URLManager.swift in Sources */,
 				9F4079D625DE454E00FCA1B2 /* AppUserDefaults.swift in Sources */,
 				9F80767125DEA3EF006E6311 /* ForgotPasswordVC.swift in Sources */,
+				9FDC1B0625E6903400C57FCE /* ProductCollCell.swift in Sources */,
 				9F715BCA25E3B0F200A95C91 /* InvoiceCell.swift in Sources */,
 				9F4079DF25DE454E00FCA1B2 /* UIKit+Ext.swift in Sources */,
 				9F293AB125DF95F4008EC1DD /* DashboardVC.swift in Sources */,

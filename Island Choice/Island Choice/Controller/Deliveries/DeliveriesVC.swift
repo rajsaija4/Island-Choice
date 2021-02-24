@@ -11,11 +11,20 @@ class DeliveriesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Deliveries"
 
-        // Do any additional setup after loading the view.
+        setupNavigationBarBackBtn()
     }
     
+    
+    @IBAction func onDelieveryOrderBtnTap(_ sender: UIButton) {
+        
+        let vc = DeliveryOrderVC.instantiate(fromAppStoryboard: .Deliveries)
+        navigationController?.pushViewController(vc, animated: true)
 
+    }
+    
     /*
     // MARK: - Navigation
 
