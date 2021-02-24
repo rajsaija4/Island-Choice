@@ -11,6 +11,8 @@ class PaymentMethodVC: UIViewController {
 
     //MARK: - VARIABLE
     
+    fileprivate var isDelete = false
+    
     //MARK: - OUTLET
     @IBOutlet weak var tblPayments: UITableView!{
         didSet{
@@ -24,19 +26,8 @@ class PaymentMethodVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupNavigationBarBackBtn()
        
-    }
-    
-    @IBAction func onRemoveBtnTap(_ sender: UIButton) {
-    }
-    
-    @IBAction func onAddCardBtnTap(_ sender: UIButton) {
-        
-        let vc = CreditCardVC.instantiate(fromAppStoryboard: .Billing)
-//        let nvc = UINavigationController(rootViewController: vc)
-        navigationController?.pushViewController(vc, animated: true)
-        
     }
     
 }
@@ -56,6 +47,21 @@ extension PaymentMethodVC {
     @objc fileprivate func onDeleteBtnTap(_ sender: UIButton) {
         
     }
+    
+    
+    @IBAction func onRemoveBtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        isDelete = sender.isSelected
+        tblPayments.reloadData()
+    }
+    
+    @IBAction func onAddCardBtnTap(_ sender: UIButton) {
+        
+        let vc = CreditCardVC.instantiate(fromAppStoryboard: .Billing)
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+
 }
 
 
@@ -71,7 +77,11 @@ extension PaymentMethodVC: UITableViewDataSource {
         cell.btnDelete.tag = indexPath.row
         cell.btnPrimary.tag = indexPath.row
         cell.btnAutoPay.tag = indexPath.row
+        cell.btnDelete.isHidden = !isDelete
         
+        cell.btnAutoPay.addTarget(self, action: #selector(onAutoPayBtnTap(_:)), for: .touchUpInside)
+        cell.btnPrimary.addTarget(self, action: #selector(onPrimaryBtnTap(_:)), for: .touchUpInside)
+        cell.btnDelete.addTarget(self, action: #selector(onDeleteBtnTap(_:)), for: .touchUpInside)
         return cell
     }
 }

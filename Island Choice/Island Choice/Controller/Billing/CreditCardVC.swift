@@ -29,6 +29,7 @@ class CreditCardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Add Card"
        
     }
     
@@ -36,7 +37,4 @@ class CreditCardVC: UIViewController {
         
     }
     
-    @IBAction func onCancelBtnTap(_ sender: UIButton) {
-        
-    }
 }

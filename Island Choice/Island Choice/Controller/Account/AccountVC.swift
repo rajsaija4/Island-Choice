@@ -21,7 +21,7 @@ class AccountVC: UIViewController {
     //MARK: - VARIABLE
     
     fileprivate var arrSectionTitle = ["Information", "Need Help", "About"]
-    fileprivate var arrTitle = [["Billing Information", "Delivery Information"], ["FAQs", "Talk to us Form same as contact us form"], ["App Name & Version", "Terms of Use", "Privacy Policy", "Rate An App"]]
+    fileprivate var arrTitle = [["Billing Information", "Delivery Information", "Change Password"], ["FAQs", "Talk to us Form same as contact us form"], ["Terms of Use", "Privacy Policy", "Rate An App", "Version 1.0"]]
     
     //MARK: - MAIN METHOD
     
@@ -29,6 +29,8 @@ class AccountVC: UIViewController {
         super.viewDidLoad()
 
         title = "My Account"
+        
+        setupNavigationBarBackBtn()
     }
 
 
@@ -49,6 +51,12 @@ extension AccountVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = arrTitle[indexPath.section][indexPath.row]
+        
+        if indexPath.section == 2 && indexPath.row == 3 {
+            cell.textLabel?.textAlignment = .center
+            cell.accessoryType = .none
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        }
         return cell
     }
     
@@ -82,9 +90,15 @@ extension AccountVC: UITableViewDelegate {
                 switch indexPath.row {
                     case 0:
                         let vc = BillingInformationVC.instantiate(fromAppStoryboard: .Account)
+                        vc.hidesBottomBarWhenPushed = true
                         self.navigationController?.pushViewController(vc, animated: true)
                     case 1:
                         let vc = DeliveryInformationVC.instantiate(fromAppStoryboard: .Account)
+                        vc.hidesBottomBarWhenPushed = true
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    case 2:
+                        let vc = ChangePasswordVC.instantiate(fromAppStoryboard: .Account)
+                        vc.hidesBottomBarWhenPushed = true
                         self.navigationController?.pushViewController(vc, animated: true)
                     default:
                         break

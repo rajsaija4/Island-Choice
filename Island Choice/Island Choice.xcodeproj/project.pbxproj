@@ -54,6 +54,7 @@
 		9FC854E725DD523100AC0073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854E525DD523100AC0073 /* Main.storyboard */; };
 		9FC854E925DD523300AC0073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854E825DD523300AC0073 /* Assets.xcassets */; };
 		9FC854EC25DD523300AC0073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854EA25DD523300AC0073 /* LaunchScreen.storyboard */; };
+		9FC9500325E6352000D50323 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9500225E6352000D50323 /* ChangePasswordVC.swift */; };
 		9FD6016225DE7A910081D546 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6016125DE7A910081D546 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		9FC854E825DD523300AC0073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FC854EB25DD523300AC0073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FC854ED25DD523300AC0073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC9500225E6352000D50323 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		9FD6016125DE7A910081D546 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C1991056B92BA73B112C58B5 /* Pods-Island Choice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Island Choice.debug.xcconfig"; path = "Target Support Files/Pods-Island Choice/Pods-Island Choice.debug.xcconfig"; sourceTree = "<group>"; };
 		C2EC53273B927B988EC14C8A /* Pods_Island_Choice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Island_Choice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 				9F293AB925DF9637008EC1DD /* AccountVC.swift */,
 				9F74253B25E53E15003C01F6 /* BillingInformationVC.swift */,
 				9F74253E25E53E30003C01F6 /* DeliveryInformationVC.swift */,
+				9FC9500225E6352000D50323 /* ChangePasswordVC.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				9F74253C25E53E15003C01F6 /* BillingInformationVC.swift in Sources */,
 				9F293B5325DFF31B008EC1DD /* HistoryVC.swift in Sources */,
 				9F293AB725DF9625008EC1DD /* DeliveriesVC.swift in Sources */,
+				9FC9500325E6352000D50323 /* ChangePasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
