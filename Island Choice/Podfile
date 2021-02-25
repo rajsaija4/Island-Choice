@@ -13,6 +13,8 @@ target 'Island Choice' do
   pod 'IQKeyboardManagerSwift'
   pod 'Kingfisher'
   pod 'NVActivityIndicatorView/Extended'
+  pod 'FSCalendar'
+
   
   # For Crash Report Firebase
   pod 'Firebase/Crashlytics'

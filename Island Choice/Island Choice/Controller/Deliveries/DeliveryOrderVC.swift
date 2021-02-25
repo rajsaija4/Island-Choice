@@ -43,9 +43,11 @@ class DeliveryOrderVC: UIViewController {
 
 }
 
+// MARK: - TableView View DataSource
 
 
-extension DeliveryOrderVC: UITableViewDataSource{
+
+extension DeliveryOrderVC: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -62,6 +64,7 @@ extension DeliveryOrderVC: UITableViewDataSource{
 }
 
 
+// MARK: - TableView View Delegate
 
 extension DeliveryOrderVC: UITableViewDelegate {
     

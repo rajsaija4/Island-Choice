@@ -19,6 +19,7 @@ enum AppStoryboard : String {
     case Billing
     case Deliveries
     case Account
+    case Cart
  
     
     var instance : UIStoryboard {
