@@ -22,6 +22,7 @@ class DeliveryNewOrderVC: UIViewController {
         super.viewDidLoad()
         
         title = "New Product"
+        setupCartBtn()
         
         
 

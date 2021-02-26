@@ -8,11 +8,11 @@
 import UIKit
 import FSCalendar
 
-class DeliveryCalanderVC: UIViewController {
+class DeliveryCalendarVC: UIViewController {
     
     // MARK: - Outlets
 
-    @IBOutlet weak var calenderView: FSCalendar!
+    @IBOutlet weak var calendarView: FSCalendar!
     
     lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -23,6 +23,9 @@ class DeliveryCalanderVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Delivery Calendar"
+        setupCartBtn()
         // Do any additional setup after loading the view.
     }
 
@@ -30,7 +33,7 @@ class DeliveryCalanderVC: UIViewController {
 }
 
 
-extension DeliveryCalanderVC: FSCalendarDataSource {
+extension DeliveryCalendarVC: FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
         
@@ -43,7 +46,7 @@ extension DeliveryCalanderVC: FSCalendarDataSource {
 }
 
 
-extension DeliveryCalanderVC: FSCalendarDelegate {
+extension DeliveryCalendarVC: FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         return date.toDate >= Date().toDate
@@ -53,7 +56,7 @@ extension DeliveryCalanderVC: FSCalendarDelegate {
 
 
 
-extension DeliveryCalanderVC: FSCalendarDelegateAppearance {
+extension DeliveryCalendarVC: FSCalendarDelegateAppearance {
     
     
 }

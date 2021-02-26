@@ -25,6 +25,7 @@ class DeliveryOrderVC: UIViewController {
         super.viewDidLoad()
         
         title = "Deliveries Orders"
+        setupCartBtn()
 
         // Do any additional setup after loading the view.
     }

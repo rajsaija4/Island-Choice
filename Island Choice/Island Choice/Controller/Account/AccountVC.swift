@@ -31,6 +31,7 @@ class AccountVC: UIViewController {
         title = "My Account"
         
         setupNavigationBarBackBtn()
+        setupCartBtn()
     }
 
 

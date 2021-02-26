@@ -26,7 +26,12 @@ class CartVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onPressCheckoutbtnTap(_ sender: Any) {
+        
+        let vc = CheckOutVC.instantiate(fromAppStoryboard: .Cart)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

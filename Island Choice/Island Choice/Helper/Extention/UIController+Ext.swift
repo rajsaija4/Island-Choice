@@ -28,12 +28,13 @@ extension UIViewController {
     }
     
     func setupCartBtn() {
-        let btn = UIBarButtonItem(image: UIImage(named: "img_account"), style: .plain, target: self, action: #selector(onCartBtnTap(_:)))
+        let btn = UIBarButtonItem(image: UIImage(named: "img_cart"), style: .plain, target: self, action: #selector(onCartBtnTap(_:)))
         navigationItem.rightBarButtonItem = btn
     }
     
     @objc fileprivate func onCartBtnTap(_ sender: UIButton) {
         let vc = CartVC.instantiate(fromAppStoryboard: .Cart)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
 }

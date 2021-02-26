@@ -19,11 +19,14 @@ class DeliveriesVC: UIViewController {
     @IBOutlet weak var txtAccountNumber: UITextField!
     @IBOutlet weak var txtAddress: UITextView!
     @IBOutlet weak var txtAccountName: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Deliveries"
 
+        btnNewOrder.layer.cornerRadius = 8
         setupNavigationBarBackBtn()
         setupCartBtn()
     }
@@ -78,7 +81,7 @@ extension DeliveriesVC {
     
     @IBAction func onDeliveryCalanderbtnTap(_ sender: UIButton) {
         
-        let vc = DeliveryCalanderVC.instantiate(fromAppStoryboard: .Deliveries)
+        let vc = DeliveryCalendarVC.instantiate(fromAppStoryboard: .Deliveries)
         navigationController?.pushViewController(vc, animated: true)
         
     }

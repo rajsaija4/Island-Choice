@@ -15,7 +15,9 @@ class BillingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        setupCartBtn()
         setupSubViewControllers()
     }
     

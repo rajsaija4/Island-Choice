@@ -26,6 +26,7 @@ class PreviousOrderVC: UIViewController {
         super.viewDidLoad()
         
         title = "Previous Order"
+        setupCartBtn()
 
         // Do any additional setup after loading the view.
     }
