@@ -21,6 +21,8 @@ class DeliveriesVC: UIViewController {
     @IBOutlet weak var txtAccountName: UITextField!
     
     
+    // MARK: - Main Method
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

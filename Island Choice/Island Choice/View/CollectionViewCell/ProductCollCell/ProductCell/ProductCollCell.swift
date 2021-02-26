@@ -27,3 +27,12 @@ class ProductCollCell: UICollectionViewCell {
     }
 
 }
+
+extension ProductCollCell {
+    
+    func setUpFavoriteCell() {
+        
+        btnAddToCart.isHidden = true
+    }
+    
+}

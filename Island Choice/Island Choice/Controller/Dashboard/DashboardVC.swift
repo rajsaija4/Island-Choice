@@ -36,12 +36,22 @@ class DashboardVC: UIViewController {
         super.viewDidLoad()
         
         title = "Dashboard"
-        
+        setupNavigationBarBackBtn()
         setupUI()
        
     }
     
     
+    @IBAction func onPressFavouriteProductbtnPress(_ sender: UIButton) {
+        
+        
+        let vc = RemoveFavoriteVC.instantiate(fromAppStoryboard: .Dashboard)
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+        
+        
+        
+    }
     
 
 }

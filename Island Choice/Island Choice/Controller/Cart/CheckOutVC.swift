@@ -27,6 +27,9 @@ class CheckOutVC: UIViewController {
         }
     }
     
+    
+    // MARK: - Main Method
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

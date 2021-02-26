@@ -1,41 +1,33 @@
 //
-//  PreviousOrderVC.swift
+//  AddFavoriteProductVC.swift
 //  Island Choice
 //
-//  Created by GT-Raj on 25/02/21.
+//  Created by GT-Raj on 26/02/21.
 //
 
 import UIKit
 
-class PreviousOrderVC: UIViewController {
+class AddFavoriteProductVC: UIViewController {
     
-    @IBOutlet weak var btnPlaceOrder: UIButton!
     // MARK: - Outlets
-    @IBOutlet weak var txtPreviousOrderDate: UITextField!
-    @IBOutlet weak var btnCalander: UIButton!
-    @IBOutlet weak var txtNextDelieveryDate: UITextField!
-    @IBOutlet weak var txtDelieveryOrder: UITextField!
-    
-    @IBOutlet weak var collPreviousOrder: UICollectionView!{
+
+    @IBOutlet weak var btnUpdateFavorite: UIButton!
+    @IBOutlet weak var collAddFavoriteProduct: UICollectionView!{
         didSet {
-            collPreviousOrder.registerCell(PreviousOrderCollCell.self)
+            collAddFavoriteProduct.registerCell(ProductCollCell.self)
         }
     }
-    
-    
-    // MARK: - Main Method
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Previous Order"
-        setupCartBtn()
+        title = "Add Favorite Product"
+        
 
         // Do any additional setup after loading the view.
     }
     
-
-    
+   
     
     /*
     // MARK: - Navigation
@@ -50,16 +42,32 @@ class PreviousOrderVC: UIViewController {
 }
 
 
-// MARK: - CollectionView Datasource
 
-extension PreviousOrderVC: UICollectionViewDataSource {
+// MARK: - Action
+extension AddFavoriteProductVC {
+    
+    @IBAction func onPressUpdateFavbtnTap(_ sender: UIButton) {
+        
+    }
+}
+
+
+
+
+
+// MARK: - ColletionView DataSource
+
+
+
+extension AddFavoriteProductVC: UICollectionViewDataSource {
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:PreviousOrderCollCell = collectionView.dequequReusableCell(for: indexPath)
+        let cell:ProductCollCell = collectionView.dequequReusableCell(for: indexPath)
+        cell.setUpFavoriteCell()
         return cell
     }
     
@@ -67,26 +75,13 @@ extension PreviousOrderVC: UICollectionViewDataSource {
 }
 
 
-//MARK: - Action
+// MARK: - ColletionView DelegateFlowlayout
 
-extension PreviousOrderVC {
-    
-    @IBAction func btnPlaceOrder(_ sender: UIButton) {
-    }
-    
-    @IBAction func btnCalander(_ sender: UIButton) {
-    }
-}
-
-
-
-// MARK: - CollectionView DelegateFlowlayout
-
-extension PreviousOrderVC: UICollectionViewDelegateFlowLayout {
+extension AddFavoriteProductVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.width - 30) / 2
-        let height = collectionView.frame.size.height
+        let height = width * 2
         return CGSize(width: width, height: height)
     }
     
@@ -98,9 +93,9 @@ extension PreviousOrderVC: UICollectionViewDelegateFlowLayout {
 
 
 
-// MARK: - CollectionView Delegate
+// MARK: - ColletionView Delegate
 
-extension PreviousOrderVC: UICollectionViewDelegate {
+extension AddFavoriteProductVC: UICollectionViewDelegate {
     
    
 }

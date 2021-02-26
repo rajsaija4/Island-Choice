@@ -18,6 +18,10 @@ class DeliveryNewOrderVC: UIViewController {
         }
     }
     
+    
+    
+    // MARK: - Main Method
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
