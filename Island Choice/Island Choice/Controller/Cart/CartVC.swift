@@ -25,6 +25,7 @@ class CartVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Cart"
         
         // Do any additional setup after loading the view.
     }

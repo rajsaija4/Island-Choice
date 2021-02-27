@@ -32,7 +32,7 @@ class CheckOutVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Checkout"
         // Do any additional setup after loading the view.
     }
     

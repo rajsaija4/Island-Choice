@@ -33,7 +33,13 @@ class DeliveryNewOrderVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onPressFillterbtnTap(_ sender: UIButton) {
+        
+        let vc = FillterVC.instantiate(fromAppStoryboard: .Deliveries)
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     /*
     // MARK: - Navigation
 

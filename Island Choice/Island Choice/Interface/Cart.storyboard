@@ -716,6 +716,12 @@
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                     <real key="value" value="8"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.83464759590000004" green="0.83474820849999998" blue="0.83461320400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textView>
                                                     </subviews>
@@ -762,31 +768,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Key-DC-PZT">
                                 <rect key="frame" x="20" y="906" width="374" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ib7-iw-7X8">
-                                        <rect key="frame" x="0.0" y="0.0" width="177" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="9tX-8V-ZvK"/>
-                                        </constraints>
-                                        <state key="normal" title="Bsck to Cart">
-                                            <color key="titleColor" systemColor="systemGreenColor"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" systemColor="systemGreenColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="onPressBacktoCartbtnTap:" destination="ICv-Hu-0fB" eventType="touchUpInside" id="PYn-nf-Lk3"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19c-sf-bk9">
-                                        <rect key="frame" x="197" y="0.0" width="177" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="u6M-dY-Fys"/>
@@ -821,7 +804,6 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="btnApplyCoupen" destination="cec-aV-LHy" id="myc-bd-C15"/>
-                        <outlet property="btnBackToCart" destination="Ib7-iw-7X8" id="Mmr-bR-yfQ"/>
                         <outlet property="btnDeliveryCalander" destination="quf-Cq-nBY" id="c5h-jC-fst"/>
                         <outlet property="btnPlaceOrder" destination="19c-sf-bk9" id="Nbq-Zk-apW"/>
                         <outlet property="tblCheckOut" destination="Lbd-xj-2Gh" id="C4x-9G-2k7"/>

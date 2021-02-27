@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FillterProductViewCell" rowHeight="155" id="KGk-i7-Jjw" customClass="FillterProductViewCell" customModule="Island_Choice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="619" height="155"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="619" height="155"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfC-Bz-NkA">
+                        <rect key="frame" x="10" y="10" width="599" height="135"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lOh-7E-FJz">
+                                <rect key="frame" x="0.0" y="0.0" width="599" height="135"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF6-x9-TnT">
+                                        <rect key="frame" x="10" y="57.5" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FF6-x9-TnT" secondAttribute="height" id="dQU-9b-fAp"/>
+                                            <constraint firstAttribute="height" constant="20" id="rqy-gU-x2p"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.015993628650000001" green="0.50097638369999997" blue="0.75332540270000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="img_uncheck"/>
+                                        <state key="selected" image="img_check"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSO-f0-OVg">
+                                        <rect key="frame" x="50" y="57.5" width="549" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FF6-x9-TnT" firstAttribute="centerY" secondItem="lOh-7E-FJz" secondAttribute="centerY" id="Gqa-F7-uLL"/>
+                                    <constraint firstItem="FF6-x9-TnT" firstAttribute="leading" secondItem="lOh-7E-FJz" secondAttribute="leading" constant="10" id="Kx5-42-uL7"/>
+                                    <constraint firstItem="FF6-x9-TnT" firstAttribute="leading" secondItem="lOh-7E-FJz" secondAttribute="leading" constant="10" id="mAx-8U-WD7"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lOh-7E-FJz" secondAttribute="trailing" id="JSY-A9-u84"/>
+                            <constraint firstAttribute="bottom" secondItem="lOh-7E-FJz" secondAttribute="bottom" id="ayW-N4-30V"/>
+                            <constraint firstItem="lOh-7E-FJz" firstAttribute="top" secondItem="ZfC-Bz-NkA" secondAttribute="top" id="fPQ-8A-NLl"/>
+                            <constraint firstItem="lOh-7E-FJz" firstAttribute="leading" secondItem="ZfC-Bz-NkA" secondAttribute="leading" id="pc3-TK-XhU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZfC-Bz-NkA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cgo-th-XqM"/>
+                    <constraint firstAttribute="bottom" secondItem="ZfC-Bz-NkA" secondAttribute="bottom" constant="10" id="h83-gV-WrG"/>
+                    <constraint firstItem="ZfC-Bz-NkA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jzN-Hr-06O"/>
+                    <constraint firstAttribute="trailing" secondItem="ZfC-Bz-NkA" secondAttribute="trailing" constant="10" id="kXE-DT-AvA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnChekProductCatageory" destination="FF6-x9-TnT" id="4C7-Vo-RrQ"/>
+                <outlet property="lblFilterProductCatageory" destination="LSO-f0-OVg" id="CeV-fj-XQ3"/>
+            </connections>
+            <point key="canvasLocation" x="357.24637681159425" y="146.98660714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img_check" width="128" height="128"/>
+        <image name="img_uncheck" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

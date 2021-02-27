@@ -58,6 +58,9 @@
 		9F9B774F25E67EB80016423F /* DeliveryOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B774E25E67EB80016423F /* DeliveryOrderVC.swift */; };
 		9F9B775325E67F400016423F /* DeliveryOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B775125E67F400016423F /* DeliveryOrderCell.swift */; };
 		9F9B775425E67F400016423F /* DeliveryOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F9B775225E67F400016423F /* DeliveryOrderCell.xib */; };
+		9F9BDB2325EA393300676A83 /* FillterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9BDB2225EA393300676A83 /* FillterVC.swift */; };
+		9F9BDB3025EA455B00676A83 /* FillterProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9BDB2E25EA455B00676A83 /* FillterProductViewCell.swift */; };
+		9F9BDB3125EA455B00676A83 /* FillterProductViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F9BDB2F25EA455B00676A83 /* FillterProductViewCell.xib */; };
 		9FAC6D7525E7776000A17C3E /* PreviousOrderCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC6D7325E7776000A17C3E /* PreviousOrderCollCell.swift */; };
 		9FAC6D7625E7776000A17C3E /* PreviousOrderCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAC6D7425E7776000A17C3E /* PreviousOrderCollCell.xib */; };
 		9FAC6D7B25E778E200A17C3E /* PreviousOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC6D7A25E778E200A17C3E /* PreviousOrderVC.swift */; };
@@ -130,6 +133,9 @@
 		9F9B774E25E67EB80016423F /* DeliveryOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryOrderVC.swift; sourceTree = "<group>"; };
 		9F9B775125E67F400016423F /* DeliveryOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryOrderCell.swift; sourceTree = "<group>"; };
 		9F9B775225E67F400016423F /* DeliveryOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryOrderCell.xib; sourceTree = "<group>"; };
+		9F9BDB2225EA393300676A83 /* FillterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillterVC.swift; sourceTree = "<group>"; };
+		9F9BDB2E25EA455B00676A83 /* FillterProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillterProductViewCell.swift; sourceTree = "<group>"; };
+		9F9BDB2F25EA455B00676A83 /* FillterProductViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillterProductViewCell.xib; sourceTree = "<group>"; };
 		9FAC6D7325E7776000A17C3E /* PreviousOrderCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrderCollCell.swift; sourceTree = "<group>"; };
 		9FAC6D7425E7776000A17C3E /* PreviousOrderCollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousOrderCollCell.xib; sourceTree = "<group>"; };
 		9FAC6D7A25E778E200A17C3E /* PreviousOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrderVC.swift; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 				9FB66E0B25E763DF00DB459D /* DeliveryNewOrderVC.swift */,
 				9FAC6D7A25E778E200A17C3E /* PreviousOrderVC.swift */,
 				9FAC6D8A25E7845F00A17C3E /* DeliveryCalendarVC.swift */,
+				9F9BDB2225EA393300676A83 /* FillterVC.swift */,
 			);
 			path = Deliveries;
 			sourceTree = "<group>";
@@ -407,6 +414,15 @@
 			path = DeliveryOrderCell;
 			sourceTree = "<group>";
 		};
+		9F9BDB3325EA456600676A83 /* FillterProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F9BDB2E25EA455B00676A83 /* FillterProductViewCell.swift */,
+				9F9BDB2F25EA455B00676A83 /* FillterProductViewCell.xib */,
+			);
+			path = FillterProductCell;
+			sourceTree = "<group>";
+		};
 		9FC854D325DD523100AC0073 = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +477,7 @@
 				9F9B775625E67F4C0016423F /* DeliveryOrderCell */,
 				9FE8C88425E7C5F90014CB43 /* CartCell */,
 				9F097F0825E9071E00CD0FA7 /* CheckOutCell */,
+				9F9BDB3325EA456600676A83 /* FillterProductCell */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -569,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FE8C87D25E7C4780014CB43 /* Cart.storyboard in Resources */,
+				9F9BDB3125EA455B00676A83 /* FillterProductViewCell.xib in Resources */,
 				9F70A85625E3E0BE00E1EEAF /* HistoryCell.xib in Resources */,
 				9F097F0325E8FD7E00CD0FA7 /* checkoutTblCell.xib in Resources */,
 				9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */,
@@ -641,6 +659,7 @@
 			files = (
 				9F293B5025DFF302008EC1DD /* InvoiceVC.swift in Sources */,
 				9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */,
+				9F9BDB3025EA455B00676A83 /* FillterProductViewCell.swift in Sources */,
 				9F4079D925DE454E00FCA1B2 /* AppStoryboard.swift in Sources */,
 				9F74253F25E53E30003C01F6 /* DeliveryInformationVC.swift in Sources */,
 				9F293AC325DF9744008EC1DD /* MainTabBarController.swift in Sources */,
@@ -666,6 +685,7 @@
 				9F9B775325E67F400016423F /* DeliveryOrderCell.swift in Sources */,
 				9F4079E125DE454E00FCA1B2 /* ColorModel.swift in Sources */,
 				9FE8C88825E7CAB10014CB43 /* CartVC.swift in Sources */,
+				9F9BDB2325EA393300676A83 /* FillterVC.swift in Sources */,
 				9FAC6D8B25E7845F00A17C3E /* DeliveryCalendarVC.swift in Sources */,
 				9FB66E0C25E763DF00DB459D /* DeliveryNewOrderVC.swift in Sources */,
 				9FD5398A25E8F65800BF9EF0 /* CheckOutVC.swift in Sources */,

@@ -453,9 +453,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sHo-9g-eHw"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Update Favorite">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onPressUpdateFavbtnTap:" destination="TBC-ob-45z" eventType="touchUpInside" id="ZGx-o1-BOZ"/>
                                 </connections>
@@ -500,9 +506,15 @@
                                     <constraint firstAttribute="height" constant="40" id="P2Z-SW-YtV"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="hpb-GY-lzV"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Add Product">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onPressAddProductbtnTap:" destination="Gcf-XT-bed" eventType="touchUpInside" id="I79-wv-V6E"/>
                                 </connections>
