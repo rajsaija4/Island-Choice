@@ -9,6 +9,9 @@ import UIKit
 
 class RemoveFavProductCell: UICollectionViewCell {
 
+    @IBOutlet weak var imgProduct: UIImageView!
+    @IBOutlet weak var txtField: UITextField!
+    @IBOutlet weak var btnRemove: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

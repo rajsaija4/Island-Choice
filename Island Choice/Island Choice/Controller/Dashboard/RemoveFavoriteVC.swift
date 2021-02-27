@@ -19,6 +19,7 @@ class RemoveFavoriteVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Manage Favorite Product"
         setupNavigationBarBackBtn()
         // Do any additional setup after loading the view.
     }

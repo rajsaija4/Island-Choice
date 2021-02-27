@@ -290,6 +290,15 @@
 			path = Extention;
 			sourceTree = "<group>";
 		};
+		9F50993925EA25B700CDCF96 /* RemoveProductCollCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F097F1E25E926DC00CD0FA7 /* RemoveFavProductCell.swift */,
+				9F097F1F25E926DC00CD0FA7 /* RemoveFavProductCell.xib */,
+			);
+			path = RemoveProductCollCell;
+			sourceTree = "<group>";
+		};
 		9F6C277A25E7BF5C00957339 /* ProductCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +470,7 @@
 			children = (
 				9F6C277A25E7BF5C00957339 /* ProductCell */,
 				9F6C277B25E7BF7200957339 /* PreviousOrderCell */,
+				9F50993925EA25B700CDCF96 /* RemoveProductCollCell */,
 			);
 			path = ProductCollCell;
 			sourceTree = "<group>";
@@ -469,8 +479,6 @@
 			isa = PBXGroup;
 			children = (
 				9FDC1B0925E6904200C57FCE /* ProductCollCell */,
-				9F097F1E25E926DC00CD0FA7 /* RemoveFavProductCell.swift */,
-				9F097F1F25E926DC00CD0FA7 /* RemoveFavProductCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
