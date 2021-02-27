@@ -24,7 +24,8 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        NetworkManager.Login.login()
+        setupNavigationBarBackBtn()
         
     }
     
@@ -62,6 +63,9 @@ extension LoginVC {
     }
     
     @IBAction func onActiveAccountBtnTap(_ sender: UIButton) {
+        
+        let vc = ActivateAccountVC.instantiate(fromAppStoryboard: .Login)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onCreateAccountBtnTap(_ sender: UIButton) {

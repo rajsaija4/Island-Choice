@@ -19,6 +19,7 @@ class BillingVC: UIViewController {
         
         setupCartBtn()
         setupSubViewControllers()
+        setupNavigationBarBackBtn()
     }
     
 }

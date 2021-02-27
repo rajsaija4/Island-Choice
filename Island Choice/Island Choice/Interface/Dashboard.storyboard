@@ -99,7 +99,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-wU-k3e">
                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="34"/>
                                                                 <color key="backgroundColor" red="0.53593057389999998" green="0.90852761270000004" blue="0.14660581950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="New Deliveriy">
+                                                                <state key="normal" title="NEW DELIVERIES ">
                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -130,7 +130,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gm-S9-weE">
                                                                 <rect key="frame" x="0.0" y="108" width="150" height="34"/>
                                                                 <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Reorder Delivery">
+                                                                <state key="normal" title="Reorder Previous">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -454,7 +454,7 @@
                                     <constraint firstAttribute="height" constant="40" id="sHo-9g-eHw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Update Favorite">
+                                <state key="normal" title="UPDATE FAVORITE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -507,7 +507,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="hpb-GY-lzV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Add Product">
+                                <state key="normal" title="ADD PRODUCT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

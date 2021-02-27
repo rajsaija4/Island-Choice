@@ -35,7 +35,7 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Dashboard"
+        title = "My Dashboard"
         setupNavigationBarBackBtn()
         setupUI()
        
@@ -67,9 +67,13 @@ extension DashboardVC {
         
         setupCartBtn()
         
-        btnPendingDeliveries.setTitle("Pending \n Deliveries", for: .normal)
+        btnPendingDeliveries.setTitle("PENDING  \n DELIVERIES", for: .normal)
         btnPendingDeliveries.titleLabel?.lineBreakMode = .byWordWrapping
         btnPendingDeliveries.titleLabel?.textAlignment = .center
+        
+        btnReorderDelivery.setTitle("REORDER \n PREVIOUS", for: .normal)
+        btnReorderDelivery.titleLabel?.lineBreakMode = .byWordWrapping
+        btnReorderDelivery.titleLabel?.textAlignment = .center
     }
 }
 

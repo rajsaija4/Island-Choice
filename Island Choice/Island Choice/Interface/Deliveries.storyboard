@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-B4-0V5">
-                                <rect key="frame" x="16" y="20" width="343" height="388"/>
+                                <rect key="frame" x="16" y="20" width="343" height="406"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="92l-Ys-kyo">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="66"/>
@@ -97,10 +97,10 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaW-D8-ubi">
-                                        <rect key="frame" x="0.0" y="248" width="343" height="40"/>
+                                        <rect key="frame" x="0.0" y="248" width="343" height="46"/>
                                         <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="K9F-Yc-Ziq"/>
+                                            <constraint firstAttribute="height" constant="46" id="K9F-Yc-Ziq"/>
                                         </constraints>
                                         <state key="normal" title="New Order">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,13 +115,13 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oBJ-cA-RaN">
-                                        <rect key="frame" x="0.0" y="298" width="343" height="40"/>
+                                        <rect key="frame" x="0.0" y="304" width="343" height="46"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abi-YD-kOW">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="46"/>
                                                 <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="2xp-Km-mLQ"/>
+                                                    <constraint firstAttribute="height" constant="46" id="2xp-Km-mLQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Regular Order">
@@ -134,10 +134,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OU-B5-IMy">
-                                                <rect key="frame" x="176.5" y="0.0" width="166.5" height="40"/>
+                                                <rect key="frame" x="176.5" y="0.0" width="166.5" height="46"/>
                                                 <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="3HU-Bl-imh"/>
+                                                    <constraint firstAttribute="height" constant="46" id="3HU-Bl-imh"/>
                                                 </constraints>
                                                 <state key="normal" title="Delievery Order">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,13 +154,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vPH-Gn-5yK">
-                                        <rect key="frame" x="0.0" y="348" width="343" height="40"/>
+                                        <rect key="frame" x="0.0" y="360" width="343" height="46"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xe-Ox-PXg">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="46"/>
                                                 <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="nEH-gy-kF4"/>
+                                                    <constraint firstAttribute="height" constant="46" id="nEH-gy-kF4"/>
                                                 </constraints>
                                                 <state key="normal" title="Previous Order">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,10 +175,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="can-FI-s7d">
-                                                <rect key="frame" x="176.5" y="0.0" width="166.5" height="40"/>
+                                                <rect key="frame" x="176.5" y="0.0" width="166.5" height="46"/>
                                                 <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Jfq-xQ-S9U"/>
+                                                    <constraint firstAttribute="height" constant="46" id="Jfq-xQ-S9U"/>
                                                 </constraints>
                                                 <state key="normal" title="Delievery Calander">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -289,10 +289,10 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mk-sQ-Rtz">
-                                <rect key="frame" x="315" y="607" width="50" height="50"/>
+                                <rect key="frame" x="340" y="632" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6mk-sQ-Rtz" secondAttribute="height" id="8Q5-MM-RhB"/>
-                                    <constraint firstAttribute="width" constant="50" id="hXJ-tM-App"/>
+                                    <constraint firstAttribute="width" constant="25" id="hXJ-tM-App"/>
                                 </constraints>
                                 <state key="normal">
                                     <imageReference key="image" image="lineweight" catalog="system" symbolScale="large"/>
@@ -412,10 +412,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-kX-8Sl">
-                                                        <rect key="frame" x="137.5" y="5" width="20" height="20"/>
+                                                        <rect key="frame" x="132.5" y="2.5" width="25" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="OPB-kX-8Sl" secondAttribute="height" id="4Ys-iC-gyU"/>
-                                                            <constraint firstAttribute="width" constant="20" id="Rri-Xm-duY"/>
+                                                            <constraint firstAttribute="width" constant="25" id="Rri-Xm-duY"/>
                                                         </constraints>
                                                         <state key="normal" image="calendar" catalog="system"/>
                                                         <connections>
@@ -470,10 +470,10 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ig-Gm-JoI">
-                                <rect key="frame" x="239" y="500" width="120" height="40"/>
+                                <rect key="frame" x="239" y="500" width="120" height="46"/>
                                 <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="6s5-OI-7xO"/>
+                                    <constraint firstAttribute="height" constant="46" id="6s5-OI-7xO"/>
                                     <constraint firstAttribute="width" constant="120" id="Zp5-oo-qsH"/>
                                 </constraints>
                                 <state key="normal" title="Reorder Order">
@@ -638,7 +638,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Ok-8b-wTK">
-                                <rect key="frame" x="20" y="127" width="335" height="540"/>
+                                <rect key="frame" x="0.0" y="127" width="375" height="540"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8vJ-TF-vQE" id="sD5-2D-kc7"/>
@@ -652,14 +652,14 @@
                             <constraint firstItem="9hU-AQ-DPg" firstAttribute="top" secondItem="A2z-Wh-WdC" secondAttribute="bottom" constant="20" id="1lC-XW-kjF"/>
                             <constraint firstItem="7Ok-8b-wTK" firstAttribute="top" secondItem="Opq-bO-oY4" secondAttribute="bottom" constant="20" id="3g7-AP-zTv"/>
                             <constraint firstItem="A2z-Wh-WdC" firstAttribute="leading" secondItem="UGV-YL-MGD" secondAttribute="leading" constant="20" id="4Ne-H4-mX2"/>
-                            <constraint firstItem="7Ok-8b-wTK" firstAttribute="leading" secondItem="UGV-YL-MGD" secondAttribute="leading" constant="20" id="QIj-62-iVY"/>
+                            <constraint firstItem="7Ok-8b-wTK" firstAttribute="leading" secondItem="UGV-YL-MGD" secondAttribute="leading" id="QIj-62-iVY"/>
                             <constraint firstItem="UGV-YL-MGD" firstAttribute="bottom" secondItem="7Ok-8b-wTK" secondAttribute="bottom" id="TJy-iX-9uN"/>
                             <constraint firstItem="UGV-YL-MGD" firstAttribute="trailing" secondItem="9hU-AQ-DPg" secondAttribute="trailing" id="e8I-lM-6sj"/>
                             <constraint firstItem="UGV-YL-MGD" firstAttribute="trailing" secondItem="A2z-Wh-WdC" secondAttribute="trailing" constant="20" id="ehs-os-e1Z"/>
                             <constraint firstItem="UGV-YL-MGD" firstAttribute="trailing" secondItem="Opq-bO-oY4" secondAttribute="trailing" constant="20" id="fkU-FB-SfH"/>
                             <constraint firstItem="Opq-bO-oY4" firstAttribute="leading" secondItem="UGV-YL-MGD" secondAttribute="leading" constant="20" id="hX7-tq-a6d"/>
                             <constraint firstItem="9hU-AQ-DPg" firstAttribute="leading" secondItem="UGV-YL-MGD" secondAttribute="leading" constant="20" id="l5K-Vi-4AE"/>
-                            <constraint firstItem="UGV-YL-MGD" firstAttribute="trailing" secondItem="7Ok-8b-wTK" secondAttribute="trailing" constant="20" id="rVW-bp-G2t"/>
+                            <constraint firstItem="UGV-YL-MGD" firstAttribute="trailing" secondItem="7Ok-8b-wTK" secondAttribute="trailing" id="rVW-bp-G2t"/>
                             <constraint firstItem="A2z-Wh-WdC" firstAttribute="top" secondItem="UGV-YL-MGD" secondAttribute="top" constant="20" id="u0l-W9-meS"/>
                             <constraint firstItem="Opq-bO-oY4" firstAttribute="top" secondItem="9hU-AQ-DPg" secondAttribute="bottom" id="uVI-ap-Yo8"/>
                         </constraints>

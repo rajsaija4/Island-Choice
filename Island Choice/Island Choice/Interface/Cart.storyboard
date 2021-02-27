@@ -192,7 +192,7 @@
                                                             <rect key="frame" x="0.0" y="305" width="394" height="235"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5d-ZU-dlq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="91"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="61"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Gdu-Lc-akU"/>
                                                                     </constraints>
@@ -208,10 +208,10 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8L-6K-0hZ">
-                                                                    <rect key="frame" x="0.0" y="99" width="394" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="69" width="394" height="50"/>
                                                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="GT1-gu-6G1"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="GT1-gu-6G1"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Checkout ▶︎">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -229,9 +229,9 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8x-Cu-t3M">
-                                                                    <rect key="frame" x="0.0" y="147" width="394" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="127" width="394" height="50"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="R8s-it-emY"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="R8s-it-emY"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                                     <state key="normal" title=" ◀︎ Continue Shopping">
@@ -250,9 +250,9 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sn4-bB-Ofd">
-                                                                    <rect key="frame" x="0.0" y="195" width="394" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="185" width="394" height="50"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="wSJ-LA-mOp"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="wSJ-LA-mOp"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Clear Cart">
                                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -337,7 +337,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lbd-xj-2Gh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="832"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="l4f-I3-aC9">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -766,15 +766,15 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Key-DC-PZT">
-                                <rect key="frame" x="20" y="906" width="374" height="40"/>
+                                <rect key="frame" x="20" y="896" width="374" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19c-sf-bk9">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="u6M-dY-Fys"/>
+                                            <constraint firstAttribute="height" constant="50" id="u6M-dY-Fys"/>
                                         </constraints>
-                                        <state key="normal" title="Place Order">
+                                        <state key="normal" title="PLACE ORDER">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>

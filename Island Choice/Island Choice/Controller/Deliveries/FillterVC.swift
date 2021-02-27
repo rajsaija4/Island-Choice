@@ -18,6 +18,7 @@ class FillterVC: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Filter Product"
 
         // Do any additional setup after loading the view.
     }
@@ -65,6 +66,8 @@ extension FillterVC: UITableViewDataSource {
     
     
     @objc fileprivate func onCheckBtnTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
         
         
         

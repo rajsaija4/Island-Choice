@@ -31,12 +31,15 @@ extension NetworkManager {
         
         static func login() {
             let param = [
-                "customerId" : 102906,
-                "addPrimary":true,
+                "login" : [
+                    "Password":"Testhsiangfamily",
+                    "Username":"Testhsiangfamily"
+                 ],
+                "employeeLogin":false,
                 "token":token
             ] as [String : Any]
             
-            let url = "http://islchoi.mango247.cloud:3306/ARSDataAPI/GetCustomerAccounts"
+            let url = "http://islchoi.mango247.cloud:3306/ARSDataAPI/AuthenticateUser"
             
             let encodedURL = url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
             

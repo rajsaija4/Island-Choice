@@ -43,6 +43,7 @@
 		9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */; };
 		9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */; };
 		9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */; };
+		9F50994925EA59E900CDCF96 /* ActivateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */; };
 		9F70A85525E3E0BE00E1EEAF /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70A85325E3E0BE00E1EEAF /* HistoryCell.swift */; };
 		9F70A85625E3E0BE00E1EEAF /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F70A85425E3E0BE00E1EEAF /* HistoryCell.xib */; };
 		9F70A85C25E3E1C400E1EEAF /* StatementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70A85A25E3E1C400E1EEAF /* StatementCell.swift */; };
@@ -118,6 +119,7 @@
 		9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
 		9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateAccountVC.swift; sourceTree = "<group>"; };
 		9F70A85325E3E0BE00E1EEAF /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		9F70A85425E3E0BE00E1EEAF /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		9F70A85A25E3E1C400E1EEAF /* StatementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCell.swift; sourceTree = "<group>"; };
@@ -306,6 +308,13 @@
 			path = RemoveProductCollCell;
 			sourceTree = "<group>";
 		};
+		9F50995125EA653A00CDCF96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9F6C277A25E7BF5C00957339 /* ProductCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,13 +358,6 @@
 				9F715BC925E3B0F200A95C91 /* InvoiceCell.xib */,
 			);
 			path = InvoiceCell;
-			sourceTree = "<group>";
-		};
-		9F735E6125DE33BF000EBD72 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		9F735E6225DE33CD000EBD72 /* View */ = {
@@ -450,8 +452,8 @@
 				9F40799125DE3A9C00FCA1B2 /* Interface */,
 				9F735E6325DE33D3000EBD72 /* Controller */,
 				9F40798C25DE366300FCA1B2 /* Resources */,
+				9F50995125EA653A00CDCF96 /* Model */,
 				9F735E6225DE33CD000EBD72 /* View */,
-				9F735E6125DE33BF000EBD72 /* Model */,
 				9F40798D25DE367400FCA1B2 /* Supporting */,
 				9F40798E25DE367D00FCA1B2 /* Thirdparty */,
 			);
@@ -463,6 +465,7 @@
 			children = (
 				9FD6016125DE7A910081D546 /* LoginVC.swift */,
 				9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */,
+				9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F293B5025DFF302008EC1DD /* InvoiceVC.swift in Sources */,
+				9F50994925EA59E900CDCF96 /* ActivateAccountVC.swift in Sources */,
 				9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */,
 				9F9BDB3025EA455B00676A83 /* FillterProductViewCell.swift in Sources */,
 				9F4079D925DE454E00FCA1B2 /* AppStoryboard.swift in Sources */,
