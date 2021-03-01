@@ -34,6 +34,12 @@ class BillingInformationVC: UIViewController {
         title = "Billing Information"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getCustomerAccount()
+    }
+    
+    
     @IBAction func onEditBtnTap(_ sender: UIButton) {
         btnEdit.isSelected = !sender.isSelected
         btnCancel.isHidden = !sender.isSelected
@@ -65,3 +71,26 @@ extension BillingInformationVC {
     
     
 }
+
+extension BillingInformationVC {
+  
+        
+        fileprivate func getCustomerAccount() {
+            
+           // let customerId = AppUserDefaults.value(forKey: .CustomerId)
+            let param = [
+                "addPrimary":true
+                
+            ] as [String : Any]
+            
+            showHUD()
+            NetworkManager.MyAccount.getCustomerAccount(param: param, { (json) in
+                print(json)
+                self.hideHUD()
+            }, { (error) in
+                self.hideHUD()
+                print(error)
+            })
+        }
+}
+

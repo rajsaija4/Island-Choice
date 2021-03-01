@@ -21,7 +21,7 @@ class AccountVC: UIViewController {
     //MARK: - VARIABLE
     
     fileprivate var arrSectionTitle = ["Information", "Need Help", "About"]
-    fileprivate var arrTitle = [["Billing Information", "Delivery Information", "Change Password"], ["FAQs", "Talk to us Form same as contact us form"], ["Terms of Use", "Privacy Policy", "Rate An App", "Version 1.0"]]
+    fileprivate var arrTitle = [["Billing Information", "Delivery Information", "Change Password"], ["FAQs", "Talk to us Form same as contact us form"], ["Terms of Use", "Privacy Policy", "Rate An App", "Logout", "Version 1.0"]]
     
     //MARK: - MAIN METHOD
     
@@ -53,7 +53,14 @@ extension AccountVC: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = arrTitle[indexPath.section][indexPath.row]
         
-        if indexPath.section == 2 && indexPath.row == 3 {
+        if indexPath.section == 2 && indexPath.row == 3{
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.textColor = .red
+            cell.accessoryType = .none
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        }
+        
+        if indexPath.section == 2 && indexPath.row == 4{
             cell.textLabel?.textAlignment = .center
             cell.accessoryType = .none
             cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
@@ -104,6 +111,15 @@ extension AccountVC: UITableViewDelegate {
                     default:
                         break
                 }
+        case 2:
+            switch indexPath.row {
+            case 3:
+                AppUserDefaults.removeValue(forKey: .CustomerId)
+                APPDEL?.setupLogin()
+            default:
+                break
+            }
+            
             default:
                 break
         }

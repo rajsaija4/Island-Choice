@@ -43,9 +43,15 @@ class HistoryVC: UIViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getcustomerInvoiceAndPaymentHistory()
+    }
   
     
 }
+
 
 //MARK: - SETUPUI METHOD
 
@@ -138,4 +144,34 @@ extension HistoryVC: UITableViewDelegate {
         return 44.0
     }
 }
-
+extension HistoryVC {
+    
+    fileprivate func getcustomerInvoiceAndPaymentHistory() {
+        
+       // let customerId = AppUserDefaults.value(forKey: .CustomerId)
+        let searchText = txtSearch.text
+        
+        let param = [
+            "paginationSettings":[
+                    "Offset":0, //Pagination: Where to start records. Default 0.
+                    "OrderBy":"Date", //Field to order by Default "WebDisplayOrder".
+                    "Take":20, //Pagination: Limit # of returned records. Default 20.
+                    "Descending":true, //Order of sort. Default false = ascending.
+                "SearchText":searchText ?? ""  //Text to search for in descriptions. Empty = all.
+                ],
+                "customerId":"102906",
+                "numberOfMonths":12,
+                "deliveryId":"" // if n
+            
+        ] as [String : Any]
+        
+        showHUD()
+        NetworkManager.Billing.getCustomerCreditCards(param: param, { (json) in
+            print(json)
+            self.hideHUD()
+        }, { (error) in
+            self.hideHUD()
+            print(error)
+        })
+    }
+}

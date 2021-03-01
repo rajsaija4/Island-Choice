@@ -31,3 +31,7 @@ class ActivateAccountVC: UIViewController {
     */
 
 }
+
+extension ActivateAccountVC {
+    
+}

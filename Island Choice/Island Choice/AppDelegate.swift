@@ -16,9 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
-        setupLogin()
-//        setupMainTabBarController()
         setupAppDelegate()
+        
+        if AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue.count > 0 {
+            setupMainTabBarController()
+            print(NetworkManager.token)
+        } else {
+            setupLogin()
+        }
+        
         return true
     }
 

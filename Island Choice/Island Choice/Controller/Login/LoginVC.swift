@@ -38,23 +38,37 @@ class LoginVC: UIViewController {
 extension LoginVC {
     
     fileprivate func userLogin() {
+        guard let userName = txtUserName.text else {
+            showToast("Please \(txtUserName.placeholder ?? "") ")
+            return
+        }
+
+        guard let password = txtPassword.text else {
+            showToast("Please \(txtPassword.placeholder ?? "") ")
+            return
+        }
+
         let param = [
             "login":[
-                "Password":"Testhsiangfamily",
-                "Username":"Testhsiangfamily"
+                "Password":userName,
+                "Username":password
             ],
             "employeeLogin":false
         ] as [String : Any]
-        
-        
+
         showHUD()
-        NetworkManager.Login.login(param: param, { (customerId) in
+
+        NetworkManager.Login.login(param: param) { (customerId) in
             AppUserDefaults.save(value: customerId, forKey: .CustomerId)
+            print("Login Success")
             self.hideHUD()
-        }, { (error) in
+            APPDEL?.setupMainTabBarController()
+        } _: { (error) in
             self.hideHUD()
-            print(error)
-        })
+            self.showToast(error)
+        }
+
+        
         
     }
     
@@ -79,6 +93,44 @@ extension LoginVC {
 
 
 
+//extension LoginVC {
+//
+//    fileprivate func activateAccount() {
+//
+//        let param = [
+//
+//            "isWebSignUp":true
+//
+//        ] as [String:Any]
+//
+//        showHUD()
+//        NetworkManager.Login.checkAccount(param: param) { (JSON) in
+//            print(JSON)
+//            let statuscode = Int(JSON)
+//            if statuscode == -1 {
+//
+//                let vc = ActivateAccountVC.instantiate(fromAppStoryboard: .Login)
+//                self.navigationController?.pushViewController(vc, animated: true)
+//
+//            }
+//
+//            else  {
+//                let statuscode = Int(JSON)
+//                if statuscode == 0 {
+//                    self.showToast("Your Account already Activated")
+//            }
+//            }
+//            self.hideHUD()
+//
+//        } _: { (error) in
+//            self.hideHUD()
+//            print(error)
+//
+//        }
+//
+//    }
+//
+//}
     //MARK: - ACTION METHOD
 
 extension LoginVC {
@@ -94,7 +146,10 @@ extension LoginVC {
     
     
     @IBAction func onSignInBtnTap(_ sender: UIButton) {
-        APPDEL?.setupMainTabBarController()
+
+        userLogin()
+        
+       
     }
     
     @IBAction func onForgotPasswordBtnTap(_ sender: UIButton) {
@@ -109,6 +164,8 @@ extension LoginVC {
     
     @IBAction func onActiveAccountBtnTap(_ sender: UIButton) {
         
+//        activateAccount()
+        
         let vc = ActivateAccountVC.instantiate(fromAppStoryboard: .Login)
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -118,3 +175,5 @@ extension LoginVC {
     
     
 }
+
+

@@ -14,6 +14,7 @@
 		9F097F1325E9249400CD0FA7 /* RemoveFavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F097F1225E9249400CD0FA7 /* RemoveFavoriteVC.swift */; };
 		9F097F2025E926DC00CD0FA7 /* RemoveFavProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F097F1E25E926DC00CD0FA7 /* RemoveFavProductCell.swift */; };
 		9F097F2125E926DC00CD0FA7 /* RemoveFavProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F097F1F25E926DC00CD0FA7 /* RemoveFavProductCell.xib */; };
+		9F1AA17A25ED23EB0041134A /* BIllingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1AA17925ED23EB0041134A /* BIllingInformation.swift */; };
 		9F293AA525DF8997008EC1DD /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F293AA425DF8997008EC1DD /* Dashboard.storyboard */; };
 		9F293AA825DF93D3008EC1DD /* Billing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F293AA725DF93D3008EC1DD /* Billing.storyboard */; };
 		9F293AAB25DF93E7008EC1DD /* Deliveries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F293AAA25DF93E7008EC1DD /* Deliveries.storyboard */; };
@@ -90,6 +91,7 @@
 		9F097F1225E9249400CD0FA7 /* RemoveFavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteVC.swift; sourceTree = "<group>"; };
 		9F097F1E25E926DC00CD0FA7 /* RemoveFavProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavProductCell.swift; sourceTree = "<group>"; };
 		9F097F1F25E926DC00CD0FA7 /* RemoveFavProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemoveFavProductCell.xib; sourceTree = "<group>"; };
+		9F1AA17925ED23EB0041134A /* BIllingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIllingInformation.swift; sourceTree = "<group>"; };
 		9F293AA425DF8997008EC1DD /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		9F293AA725DF93D3008EC1DD /* Billing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Billing.storyboard; sourceTree = "<group>"; };
 		9F293AAA25DF93E7008EC1DD /* Deliveries.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Deliveries.storyboard; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 		9F50995125EA653A00CDCF96 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F1AA17925ED23EB0041134A /* BIllingInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				9F70A85C25E3E1C400E1EEAF /* StatementCell.swift in Sources */,
 				9F70A85525E3E0BE00E1EEAF /* HistoryCell.swift in Sources */,
 				9FE8C88125E7C5EF0014CB43 /* CartTblCell.swift in Sources */,
+				9F1AA17A25ED23EB0041134A /* BIllingInformation.swift in Sources */,
 				9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */,
 				9F4079E025DE454E00FCA1B2 /* UIController+Ext.swift in Sources */,
 				9F4079D825DE454E00FCA1B2 /* Constants.swift in Sources */,

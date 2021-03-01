@@ -33,8 +33,113 @@ class CreditCardVC: UIViewController {
        
     }
     
+   
+    
+}
+
+
+// MARK: - Action Methods
+
+extension CreditCardVC {
+    
     @IBAction func onAddCardBtnTap(_ sender: UIButton) {
+        addCreditCart()
         
     }
+}
+
+extension CreditCardVC {
     
+    fileprivate func addCreditCart() {
+        
+       
+            
+        guard let firstName = txtFirstName.text,firstName.count > 0 else {
+            showToast("Please \(txtFirstName.placeholder ?? "") ")
+            return
+        }
+        
+        guard let lastName = txtLastName.text,lastName.count > 0 else {
+            showToast("Please \(txtLastName.placeholder ?? "") ")
+            return
+        }
+        
+        guard let cardNumber = txtCardNumber.text,cardNumber.count > 0 else {
+            showToast("Please \(txtCardNumber.placeholder ?? "") ")
+            return
+        }
+        
+        guard let cardExpiration = txtExpirationDate.text,cardExpiration.count > 0 else {
+            showToast("Please \(txtLastName.placeholder ?? "") ")
+            return
+        }
+        
+        guard let cardCvv = txtVerificationCode.text,cardCvv.count > 0 else {
+            showToast("Please \(txtVerificationCode.placeholder ?? "") ")
+            return
+        }
+        
+        guard let address = txtAddress.text,address.count > 0 else {
+            showToast("Please \(txtAddress.placeholder ?? "") ")
+            return
+        }
+        
+        guard let city = txtCity.text,city.count > 0 else {
+            showToast("Please \(txtCity.placeholder ?? "") ")
+            return
+        }
+        
+        guard let state = txtState.text,state.count > 0 else {
+            showToast("Please \(txtState.placeholder ?? "") ")
+            return
+        }
+        
+        guard let postal = txtZipCode.text,postal.count > 0 else {
+            showToast("Please \(txtZipCode.placeholder ?? "") ")
+            return
+        }
+        guard let country = txtCountry.text,country.count > 0 else {
+            showToast("Please \(txtCountry.placeholder ?? "") ")
+            return
+        }
+        
+        guard let email = txtEmail.text,email.count > 0 else {
+            showToast("Please \(txtEmail.placeholder ?? "") ")
+            return
+        }
+        
+        
+        
+        
+        
+        
+
+        let parameters = [
+
+                "firstName":firstName,
+                "lastName":lastName,
+                "cardNumber":cardNumber,
+                "cardExpiration":cardExpiration, //02 month 24 date
+                "cardCVV":cardCvv,
+                "address":address,
+                "city":city,
+                "state":state,
+                "postalCode":postal,
+                "country":country,
+                "email":email,
+                "testMode":true
+         
+        ] as [String:Any]
+        showHUD()
+        NetworkManager.Billing.addCreditCardVault(param: parameters) { (JSON) in
+            print(JSON)
+            self.hideHUD()
+        } _: { (error) in
+            self.hideHUD()
+            print(error)
+            
+        }
+
+
+    }
 }

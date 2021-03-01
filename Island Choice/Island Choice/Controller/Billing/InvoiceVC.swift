@@ -52,14 +52,21 @@ extension InvoiceVC {
     
     fileprivate func getInvoiceList() {
         
+       // let customerId = AppUserDefaults.value(forKey: .CustomerId)
+        let searchText = txtSearchInvoice.text
+        
         let param = [
             "paginationSettings":[
                 "offset":0,
                 "orderBy":"date",
                 "take":20,
                 "descending":true,
-                "SearchText":"s" //empty means all
-            ]
+                "SearchText":searchText ?? "" //empty means all
+            ],
+           // "customerId":customerId,
+            "numberOfMonths":"", //Optional
+            "deliveryId":""
+            
         ] as [String : Any]
         
         showHUD()

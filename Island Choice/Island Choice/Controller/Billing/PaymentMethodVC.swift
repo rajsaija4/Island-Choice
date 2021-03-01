@@ -30,6 +30,11 @@ class PaymentMethodVC: UIViewController {
        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getCustomerCreditCards()
+    }
+    
 }
 
 
@@ -92,5 +97,26 @@ extension PaymentMethodVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180.0
+    }
+}
+
+extension PaymentMethodVC {
+    
+    fileprivate func getCustomerCreditCards() {
+        
+       // let customerId = AppUserDefaults.value(forKey: .CustomerId)
+       
+        
+        let param:[String : Any] = [:]
+        
+        showHUD()
+        NetworkManager.Billing.getCustomerCreditCards(param: param, { (json) in
+            print(json)
+            print("CREDITCARD")
+            self.hideHUD()
+        }, { (error) in
+            self.hideHUD()
+            print(error)
+        })
     }
 }
