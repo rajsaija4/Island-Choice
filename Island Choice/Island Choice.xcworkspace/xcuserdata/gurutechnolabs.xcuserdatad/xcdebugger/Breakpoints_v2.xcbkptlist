@@ -7,33 +7,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D4539A8A-8096-4C78-A8C0-D010405C68F0"
+            uuid = "8CF020B5-30B1-42E4-814F-0BBF94C598D9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Island Choice/Networking/NetworkManager.swift"
+            filePath = "Island Choice/Controller/Billing/InvoiceVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "login()"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "getInvoiceList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6E230B03-D940-4D9B-B95F-427CE01C0E1C"
+            uuid = "EE846C97-AAB7-461C-98FB-735CAA20B181"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Island Choice/Networking/NetworkManager.swift"
+            filePath = "Island Choice/Controller/Billing/InvoiceVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "login()"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "getInvoiceList()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EE846C97-AAB7-461C-98FB-735CAA20B181 - 72b8f07d5571b183"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Island_Choice.InvoiceVC.(getInvoiceList in _83AA3A22477FF5AB0B00C195736C6B66)() -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Controller/Billing/InvoiceVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "640">
+               </Location>
+               <Location
+                  uuid = "EE846C97-AAB7-461C-98FB-735CAA20B181 - 9a89b6b98080f1b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in Island_Choice.InvoiceVC.(getInvoiceList in _83AA3A22477FF5AB0B00C195736C6B66)() -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Controller/Billing/InvoiceVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

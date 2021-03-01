@@ -99,7 +99,7 @@ class NetworkCaller: NSObject {
 extension JSON {
     
     var isSuccess: Bool {
-        return self["status"]["msg"].intValue == 1
+        return self["Code"].intValue == 0
     }
     
     var errorMessage: String {

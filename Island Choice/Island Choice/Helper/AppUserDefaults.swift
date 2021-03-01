@@ -13,6 +13,7 @@ enum AppUserDefaults {
     enum Key : String {
         
         case UserProfile
+        case CustomerId
        
     }
 }

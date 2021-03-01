@@ -29,28 +29,116 @@ extension NetworkManager {
     
     struct Login {
         
-        static func login() {
-            let param = [
-                "login" : [
-                    "Password":"Testhsiangfamily",
-                    "Username":"Testhsiangfamily"
-                 ],
-                "employeeLogin":false,
-                "token":token
-            ] as [String : Any]
+        static func login(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
             
-            let url = "http://islchoi.mango247.cloud:3306/ARSDataAPI/AuthenticateUser"
+            var params = param
+            params.merge(["token":token]) { (new, old) -> Any in
+                return new
+            }
             
-            let encodedURL = url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            guard let encodedURL = URLManager.Auth.login.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
             
-            AF.request(encodedURL!, method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
                 
                 switch response.result {
                     case .success(let value):
                         let resJson = JSON(value)
+                        
+                        guard resJson.isSuccess else {
+                            fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                            return
+                        }
+                        
                         print(resJson)
+                        if let customerId = resJson["Data"].string?.replacingOccurrences(of: "\"", with: "") {
+                            success(customerId)
+                        }
+                        break
+                    case .failure(let error):
+                        print(error)
+                        break
+                }
+            }
+        }
+    }
+}
+
+
+
+extension NetworkManager {
+    
+    struct Profile {
+        
+        static func getCustomerAccount(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token, "customerId" : AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Auth.getCustomerAccount.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                    case .success(let value):
+                        let resJson = JSON(value)
+                        
+                        guard resJson.isSuccess else {
+                            fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                            return
+                        }
+                        
                         if let json = JSON(parseJSON: resJson["Data"].stringValue).arrayValue.first {
-                            print(json["CustomerId"].stringValue)
+                            success(json)
+                        }
+                        break
+                    case .failure(let error):
+                        print(error)
+                        break
+                }
+            }
+        }
+    }
+}
+
+
+
+extension NetworkManager {
+    
+    struct Billing {
+        
+        static func getCustomerOpenInvoices(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token, "customerId" : AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Billing.getCustomerOpenInvoices.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                    case .success(let value):
+                        let resJson = JSON(value)
+                        
+                        guard resJson.isSuccess else {
+                            fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                            return
+                        }
+                        
+                        if let json = JSON(parseJSON: resJson["Data"].stringValue).arrayValue.first {
+                            success(json)
                         }
                         break
                     case .failure(let error):

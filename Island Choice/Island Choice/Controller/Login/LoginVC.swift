@@ -24,12 +24,57 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManager.Login.login()
         setupNavigationBarBackBtn()
+//        userLogin()
+        getCustomerAccount()
         
     }
     
     
+}
+
+//MARK: - API CALLING
+
+extension LoginVC {
+    
+    fileprivate func userLogin() {
+        let param = [
+            "login":[
+                "Password":"Testhsiangfamily",
+                "Username":"Testhsiangfamily"
+            ],
+            "employeeLogin":false
+        ] as [String : Any]
+        
+        
+        showHUD()
+        NetworkManager.Login.login(param: param, { (customerId) in
+            AppUserDefaults.save(value: customerId, forKey: .CustomerId)
+            self.hideHUD()
+        }, { (error) in
+            self.hideHUD()
+            print(error)
+        })
+        
+    }
+    
+    
+    fileprivate func getCustomerAccount() {
+        let param = [
+            "addPrimary":true
+        ] as [String : Any]
+        
+        
+        showHUD()
+        NetworkManager.Profile.getCustomerAccount(param: param, { (json) in
+            print(json)
+            self.hideHUD()
+        }, { (error) in
+            self.hideHUD()
+            print(error)
+        })
+        
+    }
 }
 
 

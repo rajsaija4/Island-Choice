@@ -34,10 +34,43 @@ class InvoiceVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getInvoiceList()
     }
  
     
+}
+
+
+//MARK: - CALL API
+extension InvoiceVC {
+    
+    fileprivate func getInvoiceList() {
+        
+        let param = [
+            "paginationSettings":[
+                "offset":0,
+                "orderBy":"date",
+                "take":20,
+                "descending":true,
+                "SearchText":"s" //empty means all
+            ]
+        ] as [String : Any]
+        
+        showHUD()
+        NetworkManager.Billing.getCustomerOpenInvoices(param: param, { (json) in
+            print(json)
+            self.hideHUD()
+        }, { (error) in
+            self.hideHUD()
+            print(error)
+        })
+    }
 }
 
 
