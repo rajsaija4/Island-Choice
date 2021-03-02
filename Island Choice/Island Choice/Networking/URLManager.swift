@@ -29,4 +29,9 @@ struct URLManager {
         
     }
     
+    struct MyAccount {
+        
+        static let updateCustomerDetails = basePath + "UpdateCustomer"
+    }
+    
 }

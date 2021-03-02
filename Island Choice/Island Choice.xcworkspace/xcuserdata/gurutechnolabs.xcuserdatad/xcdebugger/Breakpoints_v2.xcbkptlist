@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3F7133F2-8857-466B-BEC9-C1729EE86627"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Island Choice/Networking/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "getCustomerOpenInvoices(param:_:_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DC8F6B03-D6AF-4B85-AB43-63C5960A2150"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -184,14 +168,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DCF6FB2E-5972-4030-B055-9C101D6FF408"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Island Choice/Controller/Billing/HistoryVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "getcustomerInvoiceAndPaymentHistory()"
             landmarkType = "7">
          </BreakpointContent>
@@ -209,6 +193,230 @@
             startingLineNumber = "116"
             endingLineNumber = "116"
             landmarkName = "getCustomerCreditCards()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18E85635-B588-4897-955F-A28F9F8C1328"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Account/BillingInformationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "onEditBtnTap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B300535-C11F-449E-A800-5EF97E17A57E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Account/BillingInformationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "BillingInformationVC"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D8CF689-997E-442F-9987-C22977E9DA4C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Login/LoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "userLogin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87C484CE-F9B5-456B-A76A-378201466AD5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "getCustomerInvoiceAndPaymentHistory(param:_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "87C484CE-F9B5-456B-A76A-378201466AD5 - 951761bde243dcad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Island_Choice.NetworkManager.Billing.getCustomerInvoiceAndPaymentHistory(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (SwiftyJSON.JSON) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
+                  offsetFromSymbolStart = "1219">
+               </Location>
+               <Location
+                  uuid = "87C484CE-F9B5-456B-A76A-378201466AD5 - af1684796c4520e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static Island_Choice.NetworkManager.Billing.getCustomerInvoiceAndPaymentHistory(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (SwiftyJSON.JSON) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "234"
+                  endingLineNumber = "234"
+                  offsetFromSymbolStart = "286">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CEF2B16-CAAB-418A-A06C-51DDB1ECB7C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "getCustomerInvoiceAndPaymentHistory(param:_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2CEF2B16-CAAB-418A-A06C-51DDB1ECB7C2 - af1684796c452005"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static Island_Choice.NetworkManager.Billing.getCustomerInvoiceAndPaymentHistory(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (SwiftyJSON.JSON) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "351">
+               </Location>
+               <Location
+                  uuid = "2CEF2B16-CAAB-418A-A06C-51DDB1ECB7C2 - af1684796c452005"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static Island_Choice.NetworkManager.Billing.getCustomerInvoiceAndPaymentHistory(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (SwiftyJSON.JSON) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "389">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "621B4307-BDBA-4B6D-BE80-AF6CFD6BA501"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Billing/HistoryVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "getcustomerInvoiceAndPaymentHistory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92FA050D-2F6E-44D7-9915-026DE9C1F4C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Billing/HistoryVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "getcustomerInvoiceAndPaymentHistory()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "92FA050D-2F6E-44D7-9915-026DE9C1F4C3 - 4b7686161ecb704e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Island_Choice.HistoryVC.(getcustomerInvoiceAndPaymentHistory in _EE72197F692FF6B5C7761A8127BFB17D)() -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Controller/Billing/HistoryVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "1399">
+               </Location>
+               <Location
+                  uuid = "92FA050D-2F6E-44D7-9915-026DE9C1F4C3 - c9bacd18eb9bff17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in Island_Choice.HistoryVC.(getcustomerInvoiceAndPaymentHistory in _EE72197F692FF6B5C7761A8127BFB17D)() -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Controller/Billing/HistoryVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7EBF9D5E-00F5-4911-9124-6BC78E6EF6CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Billing/HistoryVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "getcustomerInvoiceAndPaymentHistory()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

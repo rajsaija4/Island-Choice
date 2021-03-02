@@ -21,7 +21,7 @@ class AccountVC: UIViewController {
     //MARK: - VARIABLE
     
     fileprivate var arrSectionTitle = ["Information", "Need Help", "About"]
-    fileprivate var arrTitle = [["Billing Information", "Delivery Information", "Change Password"], ["FAQs", "Talk to us Form same as contact us form"], ["Terms of Use", "Privacy Policy", "Rate An App", "Logout", "Version 1.0"]]
+    fileprivate var arrTitle = [["Billing Information", "Delivery Information", "Change Password"], ["FAQs", "Talk to Us"], ["Terms of Use", "Privacy Policy", "Rate An App", "Logout", "Version 1.0"]]
     
     //MARK: - MAIN METHOD
     

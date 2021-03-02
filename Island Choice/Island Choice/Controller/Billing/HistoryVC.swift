@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class HistoryVC: UIViewController {
 
     //MARK: - VARIABLE
     
+    var historyCustomer: [OpenInvoice] = []
     var onShowStatement: ((Bool)-> Void)?
-    fileprivate var arrData: [Int] = [0,1,2,3,4,5]
     
+    
+    fileprivate var arrData: [Int] = [0,1,2,3,4,5]
     fileprivate var isShowStatement = false {
         didSet{
             setupUI()
@@ -41,6 +44,7 @@ class HistoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+     
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,7 +116,8 @@ extension HistoryVC {
 extension HistoryVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrData.count
+        
+        historyCustomer.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -125,7 +130,8 @@ extension HistoryVC: UITableViewDataSource {
         }
         
         let cell: HistoryCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.btnDownload.tag = indexPath.row
+        let history = historyCustomer[indexPath.row]
+        cell.HistoryCell(setup: history)
         cell.btnDownload.addTarget(self, action: #selector(onDownloadBtnTap(_:)), for: .touchUpInside)
         return cell
 
@@ -157,17 +163,22 @@ extension HistoryVC {
                     "OrderBy":"Date", //Field to order by Default "WebDisplayOrder".
                     "Take":20, //Pagination: Limit # of returned records. Default 20.
                     "Descending":true, //Order of sort. Default false = ascending.
-                "SearchText":searchText ?? ""  //Text to search for in descriptions. Empty = all.
+                "SearchText": searchText ?? ""   //Text to search for in descriptions. Empty = all.
                 ],
-                "customerId":"102906",
                 "numberOfMonths":12,
                 "deliveryId":"" // if n
             
         ] as [String : Any]
         
         showHUD()
-        NetworkManager.Billing.getCustomerCreditCards(param: param, { (json) in
+        NetworkManager.Billing.getCustomerInvoiceAndPaymentHistory(param: param, { (json) in
             print(json)
+            self.historyCustomer.removeAll()
+            self.historyCustomer.append(OpenInvoice(json: json))
+            print(self.historyCustomer.count)
+            DispatchQueue.main.async {
+                self.tblHistory.reloadData()
+            }
             self.hideHUD()
         }, { (error) in
             self.hideHUD()

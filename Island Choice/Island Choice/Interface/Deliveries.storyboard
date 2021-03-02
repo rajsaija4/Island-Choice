@@ -102,7 +102,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="K9F-Yc-Ziq"/>
                                         </constraints>
-                                        <state key="normal" title="New Order">
+                                        <state key="normal" title="New Orders">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -124,7 +124,7 @@
                                                     <constraint firstAttribute="height" constant="46" id="2xp-Km-mLQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="Regular Order">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -139,7 +139,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="3HU-Bl-imh"/>
                                                 </constraints>
-                                                <state key="normal" title="Delievery Order">
+                                                <state key="normal" title="Grocery Orders">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -162,7 +162,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="nEH-gy-kF4"/>
                                                 </constraints>
-                                                <state key="normal" title="Previous Order">
+                                                <state key="normal" title="Orders Completed">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -180,7 +180,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="Jfq-xQ-S9U"/>
                                                 </constraints>
-                                                <state key="normal" title="Delievery Calander">
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>

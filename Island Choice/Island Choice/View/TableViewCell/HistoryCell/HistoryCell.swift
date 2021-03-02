@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class HistoryCell: UITableViewCell {
     
@@ -23,6 +24,14 @@ class HistoryCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    func HistoryCell(setup:OpenInvoice) {
+        
+        lblInvoiceNo.text = setup.invoiceNumber
+        lblAmount.text = String(setup.amount)
+        lblDate.text = setup.date
     }
     
 }

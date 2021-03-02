@@ -25,7 +25,7 @@ class DeliveriesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
         title = "Deliveries"
 
         btnNewOrder.layer.cornerRadius = 8
@@ -100,3 +100,18 @@ extension DeliveriesVC {
 }
 
 
+extension DeliveriesVC {
+    
+    fileprivate func setupUI() {
+        
+        setupCartBtn()
+        
+        btnDelieveryCalander.setTitle("View Delivery  \n Calendar", for: .normal)
+        btnDelieveryCalander.titleLabel?.lineBreakMode = .byWordWrapping
+        btnDelieveryCalander.titleLabel?.textAlignment = .center
+        
+        btnRegularOrder.setTitle("Regularly scheduled \n Water Orders", for: .normal)
+        btnRegularOrder.titleLabel?.lineBreakMode = .byWordWrapping
+        btnRegularOrder.titleLabel?.textAlignment = .center
+    }
+}

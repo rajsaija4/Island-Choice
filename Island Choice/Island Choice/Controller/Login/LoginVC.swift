@@ -61,6 +61,7 @@ extension LoginVC {
         NetworkManager.Login.login(param: param) { (customerId) in
             AppUserDefaults.save(value: customerId, forKey: .CustomerId)
             print("Login Success")
+            print(customerId)
             self.hideHUD()
             APPDEL?.setupMainTabBarController()
         } _: { (error) in

@@ -11,22 +11,26 @@ import SwiftyJSON
 class BillingInformation: NSObject {
     
     var CustomerName = ""
-    let PhoneNumber = ""
-    let EmailAddress = ""
-    let Address = ""
-    let CustomerId = ""
-    let Username = ""
-    let MajorAccountCode = ""
-    let Statement = ""
+    var PhoneNumber = ""
+    var EmailAddress = ""
+    var Address = ""
+    var CustomerId = ""
+    var Username = ""
+    var MajorAccountCode = ""
+    var Statement = ""
     
-    init(json:JSON){
+    init(json:JSON) {
         super.init()
         
         CustomerName = json["CustomerName"].stringValue
-        
-        
-        
-        
+        PhoneNumber = json["PhoneNumber"].stringValue
+        EmailAddress = json["EmailAddress"].stringValue
+        Address = json["Address"].stringValue
+        CustomerId = json["CustomerId"].stringValue
+        Username = json["Username"].stringValue
+        MajorAccountCode = json["MajorAccountCode"].stringValue
+        Statement = json["Statement"].stringValue
+   
     }
     
     
