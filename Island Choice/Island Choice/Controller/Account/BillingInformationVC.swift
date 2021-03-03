@@ -14,9 +14,9 @@ class BillingInformationVC: UIViewController {
     
   
     
-    var customerBillingInformation:BillingInformation = BillingInformation.init(json: JSON.null)
+    fileprivate var customerBillingInformation:BillingInformation = BillingInformation.init(json: JSON.null)
     
-    var accountInformation: AccountInformation = AccountInformation.init(json: JSON.null)
+    fileprivate var accountInformation: AccountInformation = AccountInformation.init(json: JSON.null)
     
     //MARK: - OUTLET
     @IBOutlet weak var txtUser: UITextField!
@@ -48,29 +48,11 @@ class BillingInformationVC: UIViewController {
     
     
     @IBAction func onEditBtnTap(_ sender: UIButton) {
-//        if btnEdit.isSelected {
-//            guard let userName = txtUser.text else {
-//                showToast("Please \(txtUser.placeholder ?? "") ")
-//                return
-//            }
-//
-//            guard let email = txtEmail.text else {
-//                showToast("Please \(txtEmail.placeholder ?? "") ")
-//                return
-//            }
-//
-//            guard let phonenumber = txtContact.text else {
-//                showToast("Please \(txtContact.placeholder ?? "") ")
-//                return
-//            }
-//
-//            accountInformation.username = userName
-//            accountInformation.phoneNumber = phonenumber
-//            accountInformation.emailAddress = email
-//
-//            print(accountInformation.username)
-//
-//        }
+        if btnEdit.isSelected {
+    
+        updateBillingInformation()
+
+        }
         btnEdit.isSelected = !sender.isSelected
         btnCancel.isHidden = !sender.isSelected
         setupUI()
@@ -118,7 +100,7 @@ extension BillingInformationVC {
                 print(json)
                
                 self.accountInformation = AccountInformation(json: json)
-                print(self.accountInformation)
+                self.accountInformation.save()
                 
                 self.customerBillingInformation = BillingInformation(json: json)
             
@@ -144,75 +126,90 @@ extension BillingInformationVC {
 
 extension BillingInformationVC {
     
-//    fileprivate func updateBillingInformation() {
+    fileprivate func updateBillingInformation() {
+        
+        guard let userName = txtUser.text else {
+            showToast("Please \(txtUser.placeholder ?? "") ")
+            return
+        }
+
+        guard let email = txtEmail.text else {
+            showToast("Please \(txtEmail.placeholder ?? "") ")
+            return
+        }
+
+        guard let phonenumber = txtContact.text else {
+            showToast("Please \(txtContact.placeholder ?? "") ")
+            return
+        }
        
-//        let param = [
-//            "customerData":[
-//                "CustomerId":accountInformation.customerId,
-//                "ExternalCustomerId":accountInformation.externalCustomerId,
-//                "Primary":accountInformation.primary,
-//                "Master":accountInformation.master,
-//                "TotalDue":accountInformation.totalDue,
-//                "BalanceForward":accountInformation.balanceForward,
-//                "StartDate":accountInformation.startDate,
-//                "CustomerName":accountInformation.customerName,
-//                "Address":accountInformation.address,
-//                "Address2":accountInformation.address2,
-//                "City":accountInformation.city,
-//                "State":accountInformation.state,
-//                "PostalCode":accountInformation.postalCode,
-//                "PhoneNumber":accountInformation.phoneNumber,
-//                "PhoneNumberExtension":accountInformation.phoneNumberExtension,
-//                "ContactPhoneNumber":accountInformation.contactPhoneNumber,
-//                "FAXNumber":accountInformation.fAXNumber,
-//                "CellPhoneNumber":accountInformation.cellPhoneNumber,
-//                "EmailAddress":accountInformation.emailAddress,
-//                "Type":accountInformation.ctype,
-//                "CreditTerm":accountInformation.creditTerm,
-//                "SalesRep":accountInformation.salesRep,
-//                "PreferredPayment":accountInformation.preferredPayment,
-//                "PreferredBank":accountInformation.preferredBank,
-//                "StartReasonGroup":accountInformation.startReasonGroup,
-//                "StartReason":accountInformation.startReason,
-//                "AccountStatus":accountInformation.accountStatus,
-//                "CreditClass":accountInformation.creditClass,
-//                "Branch":accountInformation.branch,
-//                "Statement":accountInformation.statement,
-//                "IsPaperless":accountInformation.isPaperless,
-//                "FinanceCharge":accountInformation.financeCharge,
-//                "CreditLimit":accountInformation.creditLimit,
-//                "EDI":accountInformation.eDI,
-//                "ContactName":accountInformation.contactName,
-//                "Username":accountInformation.username,
-//                "PriceLevel":accountInformation.priceLevel,
-//                "MajorAccountCode":accountInformation.majorAccountCode,
-//                "MajorAccountDescription":accountInformation.majorAccountDescription,
-//                "BlockManagingDefaultProducts":accountInformation.blockManagingDefaultProducts,
-//                "CustomerReference":accountInformation.customerReference,
-//                "LastPaymentAmount":accountInformation.lastPaymentAmount,
-//                "LastPaymentDate":accountInformation.lastPaymentDate,
-//                "LegalName":accountInformation.legalName,
-//                "MasterAccountNumber":accountInformation.masterAccountNumber,
-//                "MasterAccountType":accountInformation.masterAccountType,
-//                "PurchaseOrderNumber":accountInformation.purchaseOrderNumber,
-//                "StoreNumber":accountInformation.storeNumber,
-//                "PrePayCreditClass":accountInformation.prePayCreditClass,
-//               ],
-//               "webSettings":0
-//
-//        ] as [String : Any]
-//
-//        showHUD()
-//        NetworkManager.Profile.updateCustomerDetails(param: param) { (JSON) in
-//            self.hideHUD()
-//            print(JSON)
-//
-//        } _: { (error) in
-//            self.hideHUD()
-//            print(error)
-//        }
-//
-//    }
+        let param = [
+            "customerData":[
+                "CustomerId":accountInformation.customerId,
+                "ExternalCustomerId":accountInformation.externalCustomerId,
+                "Primary":accountInformation.primary,
+                "Master":accountInformation.master,
+                "TotalDue":accountInformation.totalDue,
+                "BalanceForward":accountInformation.balanceForward,
+                "StartDate":accountInformation.startDate,
+                "CustomerName":userName,
+                "Address":accountInformation.address,
+                "Address2":accountInformation.address2,
+                "City":accountInformation.city,
+                "State":accountInformation.state,
+                "PostalCode":accountInformation.postalCode,
+                "PhoneNumber":phonenumber,
+                "PhoneNumberExtension":accountInformation.phoneNumberExtension,
+                "ContactPhoneNumber":accountInformation.contactPhoneNumber,
+                "FAXNumber":accountInformation.fAXNumber,
+                "CellPhoneNumber":accountInformation.cellPhoneNumber,
+                "EmailAddress":email,
+                "Type":accountInformation.ctype,
+                "CreditTerm":accountInformation.creditTerm,
+                "SalesRep":accountInformation.salesRep,
+                "PreferredPayment":accountInformation.preferredPayment,
+                "PreferredBank":accountInformation.preferredBank,
+                "StartReasonGroup":accountInformation.startReasonGroup,
+                "StartReason":accountInformation.startReason,
+                "AccountStatus":accountInformation.accountStatus,
+                "CreditClass":accountInformation.creditClass,
+                "Branch":accountInformation.branch,
+                "Statement":accountInformation.statement,
+                "IsPaperless":accountInformation.isPaperless,
+                "FinanceCharge":accountInformation.financeCharge,
+                "CreditLimit":accountInformation.creditLimit,
+                "EDI":accountInformation.eDI,
+                "ContactName":accountInformation.contactName,
+                "Username":userName,
+                "PriceLevel":accountInformation.priceLevel,
+                "MajorAccountCode":accountInformation.majorAccountCode,
+                "MajorAccountDescription":accountInformation.majorAccountDescription,
+                "BlockManagingDefaultProducts":accountInformation.blockManagingDefaultProducts,
+                "CustomerReference":accountInformation.customerReference,
+                "LastPaymentAmount":accountInformation.lastPaymentAmount,
+                "LastPaymentDate":accountInformation.lastPaymentDate,
+                "LegalName":accountInformation.legalName,
+                "MasterAccountNumber":accountInformation.masterAccountNumber,
+                "MasterAccountType":accountInformation.masterAccountType,
+                "PurchaseOrderNumber":accountInformation.purchaseOrderNumber,
+                "StoreNumber":accountInformation.storeNumber,
+                "PrePayCreditClass":accountInformation.prePayCreditClass,
+               ],
+               "webSettings":0
+
+        ] as [String : Any]
+
+        showHUD()
+        NetworkManager.Profile.updateCustomerDetails(param: param) { (JSON) in
+            self.hideHUD()
+            print(JSON)
+
+        } _: { (error) in
+            self.hideHUD()
+            print(error)
+        }
+
+    }
 }
     
 

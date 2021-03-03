@@ -549,10 +549,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eol-YH-CKG" customClass="UIControl">
-                                                <rect key="frame" x="32" y="0.0" width="103" height="40"/>
+                                                <rect key="frame" x="32" y="0.0" width="133" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pbL-tW-ICg">
-                                                        <rect key="frame" x="25.5" y="8" width="52.5" height="24"/>
+                                                        <rect key="frame" x="40.5" y="8" width="52.5" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0M-Fn-KVE">
                                                                 <rect key="frame" x="0.0" y="4" width="32.5" height="16"/>
@@ -591,7 +591,7 @@
                                                 </connections>
                                             </view>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6U-MB-uyj" customClass="UIControl">
-                                                <rect key="frame" x="135" y="0.0" width="90" height="40"/>
+                                                <rect key="frame" x="165" y="0.0" width="90" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FWk-8W-OoR">
                                                         <rect key="frame" x="8" y="8" width="74" height="24"/>
@@ -635,19 +635,19 @@
                                                 </connections>
                                             </view>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZP-ci-ddD" customClass="UIControl">
-                                                <rect key="frame" x="225" y="0.0" width="150" height="40"/>
+                                                <rect key="frame" x="255" y="0.0" width="120" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GDv-pe-szH">
-                                                        <rect key="frame" x="8" y="8" width="134" height="24"/>
+                                                        <rect key="frame" x="8" y="8" width="104" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlO-av-cDK">
-                                                                <rect key="frame" x="0.0" y="4" width="114" height="16"/>
+                                                                <rect key="frame" x="0.0" y="4" width="84" height="16"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgU-88-OMr">
-                                                                <rect key="frame" x="114" y="2" width="20" height="20"/>
+                                                                <rect key="frame" x="84" y="2" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="YgU-88-OMr" secondAttribute="height" id="Dx4-ef-mmL"/>
                                                                     <constraint firstAttribute="width" constant="20" id="EQJ-qV-qLL"/>
@@ -664,7 +664,7 @@
                                                     <constraint firstItem="GDv-pe-szH" firstAttribute="top" secondItem="oZP-ci-ddD" secondAttribute="top" constant="8" id="NTj-HK-M86"/>
                                                     <constraint firstAttribute="trailing" secondItem="GDv-pe-szH" secondAttribute="trailing" constant="8" id="VgA-sj-FgP"/>
                                                     <constraint firstAttribute="bottom" secondItem="GDv-pe-szH" secondAttribute="bottom" constant="8" id="bKt-h5-RsJ"/>
-                                                    <constraint firstAttribute="width" constant="150" id="uTQ-ek-pBq"/>
+                                                    <constraint firstAttribute="width" constant="120" id="uTQ-ek-pBq"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">

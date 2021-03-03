@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "img_billing.png",
+      "filename" : "billing.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "img_billing@2x.png",
+      "filename" : "billing@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "img_billing@3x.png",
+      "filename" : "billing@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

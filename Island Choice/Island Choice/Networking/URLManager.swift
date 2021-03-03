@@ -32,6 +32,7 @@ struct URLManager {
     struct MyAccount {
         
         static let updateCustomerDetails = basePath + "UpdateCustomer"
+        static let updateCustomerPassword = basePath + "UpdateCustomerPassword"
     }
     
 }

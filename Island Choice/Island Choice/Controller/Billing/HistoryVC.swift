@@ -8,13 +8,20 @@
 import UIKit
 import SwiftyJSON
 
+enum HistoryOrder: String {
+    case date = "Date"
+    case invoice = "InvoiceNumber"
+    case amount = "Amount"
+}
+
 class HistoryVC: UIViewController {
 
     //MARK: - VARIABLE
     
-    var historyCustomer: [OpenInvoice] = []
+    var historyCustomer: [Records] = []
     var onShowStatement: ((Bool)-> Void)?
-    
+    var historyOrder = HistoryOrder.date
+    fileprivate var isDescending = true
     
     fileprivate var arrData: [Int] = [0,1,2,3,4,5]
     fileprivate var isShowStatement = false {
@@ -63,6 +70,8 @@ extension HistoryVC {
     
     fileprivate func setupUI() {
         
+        arrSortBtn[0].isSelected = true
+        
         if isShowStatement {
             viewAmountControl.isHidden = true
             viewInvoiceControl.isHidden = true
@@ -87,6 +96,20 @@ extension HistoryVC {
         for (i, btn) in arrSortBtn.enumerated() {
             if sender.tag == i {
                 btn.isSelected = !btn.isSelected
+                self.isDescending = btn.isSelected
+                if i == 0 {
+                    self.historyOrder = .date
+                }
+                
+                if i == 1 {
+                    self.historyOrder = .invoice
+                }
+                
+                if i == 2 {
+                    
+                    self.historyOrder = .amount
+                }
+                self.getcustomerInvoiceAndPaymentHistory()
             } else {
                 btn.isSelected = false
             }
@@ -131,7 +154,7 @@ extension HistoryVC: UITableViewDataSource {
         
         let cell: HistoryCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let history = historyCustomer[indexPath.row]
-        cell.HistoryCell(setup: history)
+        cell.HistoryCell(record: history)
         cell.btnDownload.addTarget(self, action: #selector(onDownloadBtnTap(_:)), for: .touchUpInside)
         return cell
 
@@ -160,9 +183,9 @@ extension HistoryVC {
         let param = [
             "paginationSettings":[
                     "Offset":0, //Pagination: Where to start records. Default 0.
-                    "OrderBy":"Date", //Field to order by Default "WebDisplayOrder".
+                "OrderBy":self.historyOrder.rawValue, //Field to order by Default "WebDisplayOrder".
                     "Take":20, //Pagination: Limit # of returned records. Default 20.
-                    "Descending":true, //Order of sort. Default false = ascending.
+                "Descending":self.isDescending, //Order of sort. Default false = ascending.
                 "SearchText": searchText ?? ""   //Text to search for in descriptions. Empty = all.
                 ],
                 "numberOfMonths":12,
@@ -173,8 +196,9 @@ extension HistoryVC {
         showHUD()
         NetworkManager.Billing.getCustomerInvoiceAndPaymentHistory(param: param, { (json) in
             print(json)
+           let data = HistoryInvoice(json: json)
             self.historyCustomer.removeAll()
-            self.historyCustomer.append(OpenInvoice(json: json))
+            self.historyCustomer.append(contentsOf: data.records)
             print(self.historyCustomer.count)
             DispatchQueue.main.async {
                 self.tblHistory.reloadData()

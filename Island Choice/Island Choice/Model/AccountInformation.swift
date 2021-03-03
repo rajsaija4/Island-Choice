@@ -223,15 +223,6 @@ class AccountInformation: NSObject, NSCoding {
         lastPaymentAmount = aDecoder.decodeInteger(forKey: "lastPaymentAmount")
         fAXNumber = aDecoder.decodeObject(forKey: "fAXNumber") as! String
         legalName = aDecoder.decodeObject(forKey: "legalName") as! String
-        
-        
-        
-        
-        
-        
-
-        
-        
 
         
     }

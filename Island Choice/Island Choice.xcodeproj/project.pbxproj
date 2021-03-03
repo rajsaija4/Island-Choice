@@ -46,7 +46,7 @@
 		9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */; };
 		9F50994925EA59E900CDCF96 /* ActivateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */; };
 		9F55F28125EE106500C1A73D /* AccountInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F28025EE106500C1A73D /* AccountInformation.swift */; };
-		9F55F30225EE5C3D00C1A73D /* OpenInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F30125EE5C3D00C1A73D /* OpenInvoice.swift */; };
+		9F55F30225EE5C3D00C1A73D /* HistoryInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F30125EE5C3D00C1A73D /* HistoryInvoice.swift */; };
 		9F70A85525E3E0BE00E1EEAF /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70A85325E3E0BE00E1EEAF /* HistoryCell.swift */; };
 		9F70A85625E3E0BE00E1EEAF /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F70A85425E3E0BE00E1EEAF /* HistoryCell.xib */; };
 		9F70A85C25E3E1C400E1EEAF /* StatementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70A85A25E3E1C400E1EEAF /* StatementCell.swift */; };
@@ -125,7 +125,7 @@
 		9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateAccountVC.swift; sourceTree = "<group>"; };
 		9F55F28025EE106500C1A73D /* AccountInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformation.swift; sourceTree = "<group>"; };
-		9F55F30125EE5C3D00C1A73D /* OpenInvoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenInvoice.swift; sourceTree = "<group>"; };
+		9F55F30125EE5C3D00C1A73D /* HistoryInvoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInvoice.swift; sourceTree = "<group>"; };
 		9F70A85325E3E0BE00E1EEAF /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		9F70A85425E3E0BE00E1EEAF /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		9F70A85A25E3E1C400E1EEAF /* StatementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCell.swift; sourceTree = "<group>"; };
@@ -319,7 +319,7 @@
 			children = (
 				9F1AA17925ED23EB0041134A /* BIllingInformation.swift */,
 				9F55F28025EE106500C1A73D /* AccountInformation.swift */,
-				9F55F30125EE5C3D00C1A73D /* OpenInvoice.swift */,
+				9F55F30125EE5C3D00C1A73D /* HistoryInvoice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,8 +473,8 @@
 			isa = PBXGroup;
 			children = (
 				9FD6016125DE7A910081D546 /* LoginVC.swift */,
-				9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */,
 				9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */,
+				9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -699,7 +699,7 @@
 				9F9B775325E67F400016423F /* DeliveryOrderCell.swift in Sources */,
 				9F4079E125DE454E00FCA1B2 /* ColorModel.swift in Sources */,
 				9FE8C88825E7CAB10014CB43 /* CartVC.swift in Sources */,
-				9F55F30225EE5C3D00C1A73D /* OpenInvoice.swift in Sources */,
+				9F55F30225EE5C3D00C1A73D /* HistoryInvoice.swift in Sources */,
 				9F9BDB2325EA393300676A83 /* FillterVC.swift in Sources */,
 				9FAC6D8B25E7845F00A17C3E /* DeliveryCalendarVC.swift in Sources */,
 				9FB66E0C25E763DF00DB459D /* DeliveryNewOrderVC.swift in Sources */,

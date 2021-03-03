@@ -27,11 +27,14 @@ class HistoryCell: UITableViewCell {
     }
     
     
-    func HistoryCell(setup:OpenInvoice) {
+    func HistoryCell(record:Records) {
         
-        lblInvoiceNo.text = setup.invoiceNumber
-        lblAmount.text = String(setup.amount)
-        lblDate.text = setup.date
+        lblInvoiceNo.text = record.invoiceNumber
+        lblAmount.text = "$\(record.amount)"
+       if let strDate = record.date.split(separator: "T").first {
+        lblDate.text = String(strDate)
+        }
+        
     }
     
 }
