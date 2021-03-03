@@ -418,7 +418,7 @@
                                                             <constraint firstAttribute="width" secondItem="OPB-kX-8Sl" secondAttribute="height" id="4Ys-iC-gyU"/>
                                                             <constraint firstAttribute="width" constant="25" id="Rri-Xm-duY"/>
                                                         </constraints>
-                                                        <state key="normal" image="calendar" catalog="system"/>
+                                                        <state key="normal" image="calendar"/>
                                                         <connections>
                                                             <action selector="btnCalander:" destination="37M-WQ-zJy" eventType="touchUpInside" id="xqf-6k-MpV"/>
                                                         </connections>
@@ -675,7 +675,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar" width="25" height="25"/>
         <image name="img_check" width="128" height="128"/>
         <image name="img_uncheck" width="128" height="128"/>
         <image name="lineweight" catalog="system" width="128" height="110"/>

@@ -139,7 +139,7 @@ extension NetworkManager {
                     }
                     break
                 case .failure(let error):
-                    print(error)
+                    print(error.localizedDescription)
                     break
                 }
             }
@@ -350,6 +350,39 @@ extension NetworkManager {
                 }
             }
         }
+        
+        static func getInvoice(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token, "customerId" : AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Billing.getInvoice.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                    break
+                case .failure(let error):
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
+        
         
         
     }

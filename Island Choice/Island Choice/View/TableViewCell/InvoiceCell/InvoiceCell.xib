@@ -110,7 +110,7 @@
     </objects>
     <resources>
         <image name="img_check" width="128" height="128"/>
-        <image name="img_download" width="128" height="128"/>
+        <image name="img_download" width="33" height="33"/>
         <image name="img_uncheck" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

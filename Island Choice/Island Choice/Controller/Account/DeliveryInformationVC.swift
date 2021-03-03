@@ -104,7 +104,7 @@ extension DeliveryInformationVC {
                 self.hideHUD()
             }, { (error) in
                 self.hideHUD()
-                print(error)
+                self.showToast(error)
             })
         }
 }
@@ -190,7 +190,7 @@ extension DeliveryInformationVC {
 
         } _: { (error) in
             self.hideHUD()
-            print(error)
+            self.showToast(error)
         }
 
     }

@@ -48,11 +48,13 @@ class HistoryVC: UIViewController {
             }
             tblHistory.configRefreshFooter(container: self) {
                 self.startPageIndex += 1
-                self.endPageIndex += 20
+                self.endPageIndex = 20
                 self.getcustomerInvoiceAndPaymentHistory()
+             
             }
         }
     }
+    @IBOutlet weak var lbl_Page: UILabel!
     @IBOutlet weak var viewAmountControl: UIControl!
     @IBOutlet weak var viewInvoiceControl: UIControl!
     
@@ -71,6 +73,7 @@ class HistoryVC: UIViewController {
         super.viewWillAppear(animated)
         
         getcustomerInvoiceAndPaymentHistory()
+       
     }
   
     
@@ -147,6 +150,7 @@ extension HistoryVC {
     
     
     @objc fileprivate func onDownloadBtnTap(_ sender: UIButton) {
+        getInvoiceDownload(record: historyCustomer[sender.tag])
         
     }
 }
@@ -172,6 +176,7 @@ extension HistoryVC: UITableViewDataSource {
         let cell: HistoryCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let history = historyCustomer[indexPath.row]
         cell.HistoryCell(record: history)
+        cell.btnDownload.tag = indexPath.row
         cell.btnDownload.addTarget(self, action: #selector(onDownloadBtnTap(_:)), for: .touchUpInside)
         return cell
 
@@ -197,12 +202,13 @@ extension HistoryVC {
         
        // let customerId = AppUserDefaults.value(forKey: .CustomerId)
         let searchText = txtSearch.text
+        lbl_Page.text = "\(startPageIndex) of \(endPageIndex)"
         
         let param = [
             "paginationSettings":[
                 "Offset":self.startPageIndex, //Pagination: Where to start records. Default 0.
                 "OrderBy":self.historyOrder.rawValue, //Field to order by Default "WebDisplayOrder".
-                "Take":20, //Pagination: Limit # of returned records. Default 20.
+                "Take":self.endPageIndex, //Pagination: Limit # of returned records. Default 20.
                 "Descending":self.isDescending, //Order of sort. Default false = ascending.
                 "SearchText": searchText ?? ""   //Text to search for in descriptions. Empty = all.
                 ],
@@ -213,11 +219,14 @@ extension HistoryVC {
         
         showHUD()
         NetworkManager.Billing.getCustomerInvoiceAndPaymentHistory(param: param, { (json) in
-            print(json)
-           let data = HistoryInvoice(json: json)
-            self.historyCustomer.removeAll()
-            self.historyCustomer.append(contentsOf: data.records)
-            print(self.historyCustomer.count)
+            let data = HistoryInvoice(json: json)
+            if self.startPageIndex == 0 {
+                 self.historyCustomer.removeAll()
+                 self.historyCustomer.append(contentsOf: data.records)
+            } else {
+                 self.historyCustomer.append(contentsOf: data.records)
+            }
+            
             if data.records.count > 0 {
                 self.reloadData(state: .normal)
             }
@@ -225,7 +234,7 @@ extension HistoryVC {
         }, { (error) in
             self.reloadData(state: .noMoreData)
             self.hideHUD()
-            print(error)
+            self.showToast(error)
         })
     }
     
@@ -235,4 +244,76 @@ extension HistoryVC {
         self.tblHistory.reloadData()
         
     }
+    
+}
+
+extension HistoryVC {
+    
+    
+    fileprivate func getInvoiceDownload(record: Records) {
+        
+       // let customerId = AppUserDefaults.value(forKey: .CustomerId)
+       // let searchText = txtSearch.text
+        
+        let param = [
+            "invoiceKey": record.invoiceKey,
+            "invoiceDate": record.date// if n
+        ] as [String : Any]
+        
+        showHUD()
+        NetworkManager.Billing.getInvoice(param: param, { (jsonString) in
+            
+            self.saveInvoice(invoiceName: "invoice_\(record.invoiceNumber)", invoiceData: jsonString)
+            
+            self.hideHUD()
+        }, { (error) in
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
+    
+    fileprivate func getFilePath() -> URL? {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let directoryURl = documentsURL.appendingPathComponent("Invoice", isDirectory: true)
+        
+        if FileManager.default.fileExists(atPath: directoryURl.path) {
+            return directoryURl
+        } else {
+            do {
+                try FileManager.default.createDirectory(at: directoryURl, withIntermediateDirectories: true, attributes: nil)
+                return directoryURl
+            } catch {
+                print(error.localizedDescription)
+                return nil
+            }
+        }
+    }
+    
+    fileprivate func saveInvoice(invoiceName: String, invoiceData: String) {
+        
+        
+        
+        guard let directoryURl = getFilePath() else {
+            showToast("Invoice save error")
+            return }
+        
+        let fileURL = directoryURl.appendingPathComponent("\(invoiceName).pdf")
+        
+        guard let data = Data(base64Encoded: invoiceData, options: .ignoreUnknownCharacters) else {
+            showToast("Invoice downloaded Error")
+            self.hideHUD()
+            return
+        }
+        
+        do {
+            try data.write(to: fileURL, options: .atomic)
+            showToast("Invoice downloaded successfully")
+            self.hideHUD()
+        } catch {
+            self.hideHUD()
+            showToast(error.localizedDescription)
+        }
+    }
+    
+    
 }

@@ -244,10 +244,10 @@ MODESTO, CA, 95355</string>
                                                     <constraint firstAttribute="width" constant="100" id="4Dr-uf-ITW"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <state key="normal" title="EDIT">
+                                                <state key="normal" title="Edit">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <state key="selected" title="SAVE"/>
+                                                <state key="selected" title="Save"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="4"/>
@@ -485,10 +485,10 @@ MODESTO, CA, 95355</string>
                                                     <constraint firstAttribute="width" constant="100" id="qjP-bE-s2c"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <state key="normal" title="EDIT">
+                                                <state key="normal" title="Edit">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <state key="selected" title="SAVE"/>
+                                                <state key="selected" title="Save"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="4"/>
@@ -502,7 +502,7 @@ MODESTO, CA, 95355</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <state key="normal" title="CANCEL">
+                                                <state key="normal" title="Cancel">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>

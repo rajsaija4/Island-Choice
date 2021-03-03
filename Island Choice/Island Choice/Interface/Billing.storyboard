@@ -770,6 +770,7 @@
                     </view>
                     <connections>
                         <outlet property="btnShowStatement" destination="SV1-nn-80L" id="wk3-Bb-8H0"/>
+                        <outlet property="lbl_Page" destination="4ac-LR-OmD" id="Iwh-qZ-XWR"/>
                         <outlet property="tblHistory" destination="7cH-gl-ndr" id="ZNy-Pb-176"/>
                         <outlet property="txtSearch" destination="7m4-hr-eKc" id="uE6-os-ZDe"/>
                         <outlet property="viewAmountControl" destination="oZP-ci-ddD" id="JFf-Gs-xEw"/>

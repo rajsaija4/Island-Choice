@@ -116,7 +116,7 @@ extension PaymentMethodVC {
             self.hideHUD()
         }, { (error) in
             self.hideHUD()
-            print(error)
+            self.showToast(error)
         })
     }
 }

@@ -117,7 +117,7 @@ extension BillingInformationVC {
                 self.hideHUD()
             }, { (error) in
                 self.hideHUD()
-                print(error)
+                self.showToast(error)
             })
         }
 }
@@ -206,7 +206,7 @@ extension BillingInformationVC {
 
         } _: { (error) in
             self.hideHUD()
-            print(error)
+            self.showToast(error)
         }
 
     }

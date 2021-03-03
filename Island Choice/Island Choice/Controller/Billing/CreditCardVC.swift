@@ -136,7 +136,7 @@ extension CreditCardVC {
             self.hideHUD()
         } _: { (error) in
             self.hideHUD()
-            print(error)
+            self.showToast(error)
             
         }
 

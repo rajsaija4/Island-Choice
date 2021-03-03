@@ -10,8 +10,10 @@ import UIKit
 class ForgotPasswordVC: UIViewController {
     
     //MARK: - OUTLET
-    @IBOutlet weak var txtEmail: UITextField!
+  
+    @IBOutlet weak var txtAccountNumber: UITextField!
     
+    @IBOutlet weak var txtZipcode: UITextField!
     //MARK: - VARIABLE
     
     //MARK: - MAIN METHOD

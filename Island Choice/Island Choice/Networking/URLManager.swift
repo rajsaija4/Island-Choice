@@ -26,6 +26,7 @@ struct URLManager {
         static let getCustomerBankAccount = basePath + "GetCustomerBankAccount"
         static let addCreditCardVault = basePath + "CreditCardVaultAdd"
         static let getIsAvailable = basePath + "IsAvailable"
+        static let getInvoice = basePath + "GetInvoicePDF"
         
     }
     

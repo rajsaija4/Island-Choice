@@ -28,8 +28,9 @@
                                     <constraint firstAttribute="width" secondItem="11h-v0-gkp" secondAttribute="height" id="YQl-BU-TFq"/>
                                 </constraints>
                                 <state key="normal">
-                                    <imageReference key="image" image="heart.fill" catalog="system" symbolScale="large"/>
+                                    <imageReference key="image" image="img_unfavourite" symbolScale="large"/>
                                 </state>
+                                <state key="selected" image="img_favourite"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAv-Mi-DJH">
                                 <rect key="frame" x="30" y="0.0" width="20" height="20"/>
@@ -38,7 +39,7 @@
                                     <constraint firstAttribute="width" constant="20" id="5er-vP-SQd"/>
                                 </constraints>
                                 <state key="normal">
-                                    <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
+                                    <imageReference key="image" image="img_info" symbolScale="large"/>
                                 </state>
                             </button>
                         </subviews>
@@ -91,7 +92,7 @@
                                     <constraint firstAttribute="width" constant="25" id="Dzl-8k-SmL"/>
                                     <constraint firstAttribute="width" secondItem="CC4-8A-yjX" secondAttribute="height" id="k3b-rV-AtA"/>
                                 </constraints>
-                                <state key="normal" image="cart.fill" catalog="system"/>
+                                <state key="normal" image="img_cart-1"/>
                             </button>
                         </subviews>
                         <constraints>
@@ -141,9 +142,10 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="img_Product" width="382" height="418"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="img_cart-1" width="33" height="33"/>
+        <image name="img_favourite" width="33" height="33"/>
+        <image name="img_info" width="33" height="33"/>
+        <image name="img_unfavourite" width="33" height="33"/>
     </resources>
 </document>
