@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyJSON
+import PullToRefreshKit
 
 enum HistoryOrder: String {
     case date = "Date"
@@ -22,6 +23,8 @@ class HistoryVC: UIViewController {
     var onShowStatement: ((Bool)-> Void)?
     var historyOrder = HistoryOrder.date
     fileprivate var isDescending = true
+    fileprivate var startPageIndex = 0
+    fileprivate var endPageIndex = 20
     
     fileprivate var arrData: [Int] = [0,1,2,3,4,5]
     fileprivate var isShowStatement = false {
@@ -38,6 +41,16 @@ class HistoryVC: UIViewController {
             tblHistory.register(HistoryCell.self)
             tblHistory.register(StatementCell.self)
             tblHistory.tableFooterView = UIView(frame: .zero)
+            tblHistory.configRefreshHeader(container: self) {
+                self.startPageIndex = 0
+                self.endPageIndex = 20
+                self.getcustomerInvoiceAndPaymentHistory()
+            }
+            tblHistory.configRefreshFooter(container: self) {
+                self.startPageIndex += 1
+                self.endPageIndex += 20
+                self.getcustomerInvoiceAndPaymentHistory()
+            }
         }
     }
     @IBOutlet weak var viewAmountControl: UIControl!
@@ -118,6 +131,10 @@ extension HistoryVC {
     
     @IBAction func onSearchBtnTap(_ sender: UIButton) {
         
+        getcustomerInvoiceAndPaymentHistory()
+        self.startPageIndex = 0
+        self.endPageIndex = 20
+        
     }
     
     @IBAction func onShowStatementBtnTap(_ sender: UIButton) {
@@ -167,6 +184,7 @@ extension HistoryVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -182,9 +200,9 @@ extension HistoryVC {
         
         let param = [
             "paginationSettings":[
-                    "Offset":0, //Pagination: Where to start records. Default 0.
+                "Offset":self.startPageIndex, //Pagination: Where to start records. Default 0.
                 "OrderBy":self.historyOrder.rawValue, //Field to order by Default "WebDisplayOrder".
-                    "Take":20, //Pagination: Limit # of returned records. Default 20.
+                "Take":20, //Pagination: Limit # of returned records. Default 20.
                 "Descending":self.isDescending, //Order of sort. Default false = ascending.
                 "SearchText": searchText ?? ""   //Text to search for in descriptions. Empty = all.
                 ],
@@ -200,13 +218,21 @@ extension HistoryVC {
             self.historyCustomer.removeAll()
             self.historyCustomer.append(contentsOf: data.records)
             print(self.historyCustomer.count)
-            DispatchQueue.main.async {
-                self.tblHistory.reloadData()
+            if data.records.count > 0 {
+                self.reloadData(state: .normal)
             }
             self.hideHUD()
         }, { (error) in
+            self.reloadData(state: .noMoreData)
             self.hideHUD()
             print(error)
         })
+    }
+    
+    fileprivate func reloadData(state: FooterRefresherState) {
+        self.tblHistory.switchRefreshHeader(to: .normal(.success, 0.0))
+        self.tblHistory.switchRefreshFooter(to: state)
+        self.tblHistory.reloadData()
+        
     }
 }

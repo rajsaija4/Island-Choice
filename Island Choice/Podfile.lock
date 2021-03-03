@@ -80,6 +80,7 @@ PODS:
     - NVActivityIndicatorView/Base
   - Parchment (3.0.1)
   - PromisesObjC (1.2.12)
+  - PullToRefreshKit (0.8.8)
   - SwiftyJSON (5.0.0)
   - Toast-Swift (5.0.1)
 
@@ -93,6 +94,7 @@ DEPENDENCIES:
   - Kingfisher
   - NVActivityIndicatorView/Extended
   - Parchment
+  - PullToRefreshKit
   - SwiftyJSON
   - Toast-Swift
 
@@ -116,6 +118,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - Parchment
     - PromisesObjC
+    - PullToRefreshKit
     - SwiftyJSON
     - Toast-Swift
 
@@ -138,9 +141,10 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  PullToRefreshKit: 7cc53e720e69f135cffa1a57784dfb534f0222ab
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 1eef887df2381b010c71a009b8790240c55faf46
+PODFILE CHECKSUM: c04834de36a83b999cdd57b8265d74c5e7cb7c92
 
 COCOAPODS: 1.10.0

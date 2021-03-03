@@ -31,6 +31,7 @@ class HistoryCell: UITableViewCell {
         
         lblInvoiceNo.text = record.invoiceNumber
         lblAmount.text = "$\(record.amount)"
+        btnDownload.isHidden = !record.viewPdf
        if let strDate = record.date.split(separator: "T").first {
         lblDate.text = String(strDate)
         }
