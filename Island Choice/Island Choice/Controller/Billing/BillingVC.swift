@@ -39,10 +39,13 @@ extension BillingVC {
 //        historyVC.onShowStatement = { isShowStatement in
 //            historyVC.title = isShowStatement ? "STATEMENTS" : "HISTORY"
 //        }
+        let statementsVC = StatementsVC.instantiate(fromAppStoryboard: .Billing)
+        statementsVC.title = "STATEMENTS"
+        
         let paymentMethodVC = PaymentMethodVC.instantiate(fromAppStoryboard: .Billing)
         paymentMethodVC.title = "PAYMENT METHODS"
         
-        pagingViewController = PagingViewController(viewControllers: [invoiceVC, historyVC, paymentMethodVC])
+        pagingViewController = PagingViewController(viewControllers: [invoiceVC, historyVC,statementsVC, paymentMethodVC])
         pagingViewController.menuItemSize = .selfSizing(estimatedWidth: 50, height: 50)
         
         addChild(pagingViewController)

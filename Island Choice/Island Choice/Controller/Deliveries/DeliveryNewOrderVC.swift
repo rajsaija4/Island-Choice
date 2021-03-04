@@ -25,7 +25,7 @@ class DeliveryNewOrderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "New Product"
+        title = "Add Order"
         setupCartBtn()
         
         

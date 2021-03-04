@@ -145,12 +145,37 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyU-ei-413">
+                        <rect key="frame" x="8" y="8" width="430" height="184"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbH-2s-QUs">
+                                <rect key="frame" x="157.5" y="70.5" width="115.5" height="43"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="EXPIRE">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="36"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hbH-2s-QUs" firstAttribute="centerX" secondItem="DyU-ei-413" secondAttribute="centerX" id="U6L-jV-aUc"/>
+                            <constraint firstItem="hbH-2s-QUs" firstAttribute="centerY" secondItem="DyU-ei-413" secondAttribute="centerY" id="b4a-1c-ywK"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="DyU-ei-413" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7xr-9P-OLw"/>
+                    <constraint firstAttribute="trailing" secondItem="DyU-ei-413" secondAttribute="trailing" constant="8" id="CTN-4Y-A4S"/>
                     <constraint firstAttribute="bottom" secondItem="S4R-vV-F7p" secondAttribute="bottom" constant="8" id="DuQ-75-ij7"/>
                     <constraint firstItem="S4R-vV-F7p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="OoS-Uo-DOR"/>
+                    <constraint firstItem="DyU-ei-413" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="OvH-N2-StK"/>
                     <constraint firstAttribute="trailing" secondItem="S4R-vV-F7p" secondAttribute="trailing" constant="8" id="Tmg-O7-et9"/>
+                    <constraint firstAttribute="bottom" secondItem="DyU-ei-413" secondAttribute="bottom" constant="8" id="kss-pk-41U"/>
                     <constraint firstItem="S4R-vV-F7p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qhP-9p-RNh"/>
                 </constraints>
             </tableViewCellContentView>
@@ -163,6 +188,7 @@
                 <outlet property="lblCardName" destination="5pH-ka-alb" id="Wfj-kz-GcL"/>
                 <outlet property="lblCardType" destination="cro-Rx-dCf" id="sYT-I9-tF3"/>
                 <outlet property="lblExpDate" destination="Z3X-bd-XoQ" id="WcC-EZ-W2j"/>
+                <outlet property="lblExpire" destination="hbH-2s-QUs" id="UDD-nH-FST"/>
                 <outlet property="viewBG" destination="S4R-vV-F7p" id="l3u-HT-VbC"/>
             </connections>
             <point key="canvasLocation" x="231.8840579710145" y="182.14285714285714"/>

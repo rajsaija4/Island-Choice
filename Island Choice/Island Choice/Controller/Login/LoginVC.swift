@@ -27,10 +27,25 @@ class LoginVC: UIViewController {
         setupNavigationBarBackBtn()
 //        userLogin()
         getCustomerAccount()
+        setupUI()
         
     }
     
     
+}
+
+extension LoginVC {
+    fileprivate func setupUI(){
+        if AppUserDefaults.value(forKey: .kRemember, fallBackValue: false).boolValue{
+            
+            txtUserName.text = AppUserDefaults.value(forKey: .kUserId, fallBackValue: "").stringValue
+            txtPassword.text = AppUserDefaults.value(forKey: .kPassword, fallBackValue: "").stringValue
+            btnRememberMe.isSelected = true
+        }
+        else {
+            btnRememberMe.isSelected = true
+        }
+    }
 }
 
 //MARK: - API CALLING
@@ -61,6 +76,11 @@ extension LoginVC {
         NetworkManager.Login.login(param: param) { (customerId) in
             AppUserDefaults.save(value: customerId, forKey: .CustomerId)
             print("Login Success")
+            if AppUserDefaults.value(forKey: .kRemember, fallBackValue: false).boolValue{
+                
+                AppUserDefaults.save(value: userName, forKey: .kUserId)
+                AppUserDefaults.save(value: password, forKey: .kPassword)
+            }
             print(customerId)
             self.hideHUD()
             APPDEL?.setupMainTabBarController()
@@ -142,7 +162,10 @@ extension LoginVC {
     }
     
     @IBAction func onRememberMeBtnTap(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+    
+    sender.isSelected = !sender.isSelected
+        AppUserDefaults.save(value: sender.isSelected, forKey: .kRemember)
+        
     }
     
     

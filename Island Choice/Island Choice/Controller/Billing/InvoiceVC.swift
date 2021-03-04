@@ -8,10 +8,21 @@
 import UIKit
 import PullToRefreshKit
 
+enum InvoiceOrder: String {
+    case date = "Date"
+    case invoice = "InvoiceNumber"
+    case amount = "Amount"
+}
+
 class InvoiceVC: UIViewController {
     
     //MARK: - VARIABLE
-    
+    var invoiceCustomer: [Records] = []
+    var invoiceOrder = InvoiceOrder.date
+    fileprivate var isDescending = true
+    fileprivate var startPageIndex = 0
+    fileprivate var endPageIndex = 20
+
     fileprivate var arrSelectedInvoice: [Int] = []{
         didSet{
             btnPayInvoice.isEnabled = arrSelectedInvoice.count > 0
@@ -27,6 +38,17 @@ class InvoiceVC: UIViewController {
         didSet{
             tblInvoiceList.register(InvoiceCell.self)
             tblInvoiceList.tableFooterView = UIView(frame: .zero)
+            tblInvoiceList.configRefreshHeader(container: self) {
+                self.startPageIndex = 0
+                self.endPageIndex = 20
+                self.getInvoiceList()
+            }
+            tblInvoiceList.configRefreshFooter(container: self) {
+                self.startPageIndex += 1
+                self.endPageIndex = 20
+                self.getInvoiceList()
+             
+            }
         }
     }
     @IBOutlet weak var btnPayInvoice: UIButton!
@@ -58,10 +80,10 @@ extension InvoiceVC {
         
         let param = [
             "paginationSettings":[
-                "offset":0,
-                "orderBy":"date",
-                "take":20,
-                "descending":true,
+                "offset":self.startPageIndex,
+                "orderBy":self.invoiceOrder.rawValue,
+                "take":self.endPageIndex,
+                "descending":self.isDescending,
                 "SearchText":searchText ?? "" //empty means all
             ],
            // "customerId":customerId,
@@ -75,9 +97,17 @@ extension InvoiceVC {
             print(json)
             self.hideHUD()
         }, { (error) in
+            self.reloadData(state: .noMoreData)
             self.hideHUD()
             self.showToast(error)
         })
+    }
+    
+    fileprivate func reloadData(state: FooterRefresherState) {
+        self.tblInvoiceList.switchRefreshHeader(to: .normal(.success, 0.0))
+        self.tblInvoiceList.switchRefreshFooter(to: state)
+        self.tblInvoiceList.reloadData()
+        
     }
 }
 
@@ -87,13 +117,29 @@ extension InvoiceVC {
 extension InvoiceVC {
     
     @IBAction func onSearchInvoiceBtnTap(_ sender: UIButton) {
-        
+        getInvoiceList()
+        self.startPageIndex = 0
+        self.endPageIndex = 20
     }
     
     @IBAction func onSortControlsTap(_ sender: UIControl) {
         for (i, btn) in arrSortBtn.enumerated() {
             if sender.tag == i {
                 btn.isSelected = !btn.isSelected
+                self.isDescending = btn.isSelected
+                if i == 0 {
+                    self.invoiceOrder = .date
+                }
+                
+                if i == 1 {
+                    self.invoiceOrder = .invoice
+                }
+                
+                if i == 2 {
+                    
+                    self.invoiceOrder = .amount
+                }
+                self.getInvoiceList()
             } else {
                 btn.isSelected = false
             }
@@ -102,6 +148,8 @@ extension InvoiceVC {
     
     
     @IBAction func onDownloadAllBtnTap(_ sender: UIButton) {
+       
+
     }
     
     @IBAction func onSelectAllBtnTap(_ sender: UIButton) {
@@ -183,5 +231,75 @@ extension InvoiceVC: UITableViewDelegate {
     
    
 
+}
+extension InvoiceVC {
+    
+    
+    fileprivate func getInvoiceDownload(record: Records) {
+        
+       // let customerId = AppUserDefaults.value(forKey: .CustomerId)
+       // let searchText = txtSearch.text
+        
+        let param = [
+            "invoiceKey": record.invoiceKey,
+            "invoiceDate": record.date// if n
+        ] as [String : Any]
+        
+        showHUD()
+        NetworkManager.Billing.getInvoice(param: param, { (jsonString) in
+            
+            self.saveInvoice(invoiceName: "invoice_\(record.invoiceNumber)", invoiceData: jsonString)
+            
+            self.hideHUD()
+        }, { (error) in
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
+    
+    fileprivate func getFilePath() -> URL? {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let directoryURl = documentsURL.appendingPathComponent("Invoice", isDirectory: true)
+        
+        if FileManager.default.fileExists(atPath: directoryURl.path) {
+            return directoryURl
+        } else {
+            do {
+                try FileManager.default.createDirectory(at: directoryURl, withIntermediateDirectories: true, attributes: nil)
+                return directoryURl
+            } catch {
+                print(error.localizedDescription)
+                return nil
+            }
+        }
+    }
+    
+    fileprivate func saveInvoice(invoiceName: String, invoiceData: String) {
+        
+        
+        
+        guard let directoryURl = getFilePath() else {
+            showToast("Invoice save error")
+            return }
+        
+        let fileURL = directoryURl.appendingPathComponent("\(invoiceName).pdf")
+        
+        guard let data = Data(base64Encoded: invoiceData, options: .ignoreUnknownCharacters) else {
+            showToast("Invoice downloaded Error")
+            self.hideHUD()
+            return
+        }
+        
+        do {
+            try data.write(to: fileURL, options: .atomic)
+            showToast("Invoice downloaded successfully")
+            self.hideHUD()
+        } catch {
+            self.hideHUD()
+            showToast(error.localizedDescription)
+        }
+    }
+    
+    
 }
 

@@ -9,6 +9,7 @@ import UIKit
 
 class PaymentCardCell: UITableViewCell {
 
+    @IBOutlet weak var lblExpire: UILabel!
     @IBOutlet weak var lblCardName: UILabel!
     @IBOutlet weak var lblExpDate: UILabel!
     @IBOutlet weak var lblCardType: UILabel!
@@ -20,6 +21,8 @@ class PaymentCardCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        lblExpire.transform = CGAffineTransform(rotationAngle: -120)
+        
         // Initialization code
  
     }

@@ -14,6 +14,9 @@ enum AppUserDefaults {
         
         case UserProfile
         case CustomerId
+        case kUserId
+        case kPassword
+        case kRemember
        
     }
 }

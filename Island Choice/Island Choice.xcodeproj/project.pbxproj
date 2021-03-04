@@ -44,6 +44,8 @@
 		9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */; };
 		9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */; };
 		9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */; };
+		9F418CD725F0A34300F444F8 /* DeliveryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F418CD625F0A34300F444F8 /* DeliveryInfo.swift */; };
+		9F418CDA25F0C3F800F444F8 /* StatementsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F418CD925F0C3F800F444F8 /* StatementsVC.swift */; };
 		9F50994925EA59E900CDCF96 /* ActivateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */; };
 		9F55F28125EE106500C1A73D /* AccountInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F28025EE106500C1A73D /* AccountInformation.swift */; };
 		9F55F30225EE5C3D00C1A73D /* HistoryInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F30125EE5C3D00C1A73D /* HistoryInvoice.swift */; };
@@ -123,6 +125,8 @@
 		9F4079E725DE45F000FCA1B2 /* NetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
 		9F4079E825DE45F000FCA1B2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9F418CD625F0A34300F444F8 /* DeliveryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfo.swift; sourceTree = "<group>"; };
+		9F418CD925F0C3F800F444F8 /* StatementsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsVC.swift; sourceTree = "<group>"; };
 		9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateAccountVC.swift; sourceTree = "<group>"; };
 		9F55F28025EE106500C1A73D /* AccountInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformation.swift; sourceTree = "<group>"; };
 		9F55F30125EE5C3D00C1A73D /* HistoryInvoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInvoice.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				9F293B5225DFF31B008EC1DD /* HistoryVC.swift */,
 				9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */,
 				9F74253725E517B1003C01F6 /* CreditCardVC.swift */,
+				9F418CD925F0C3F800F444F8 /* StatementsVC.swift */,
 			);
 			path = Billing;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				9F1AA17925ED23EB0041134A /* BIllingInformation.swift */,
 				9F55F28025EE106500C1A73D /* AccountInformation.swift */,
 				9F55F30125EE5C3D00C1A73D /* HistoryInvoice.swift */,
+				9F418CD625F0A34300F444F8 /* DeliveryInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -692,6 +698,7 @@
 				9F293AB425DF9609008EC1DD /* BillingVC.swift in Sources */,
 				9F74253825E517B1003C01F6 /* CreditCardVC.swift in Sources */,
 				9F9B774F25E67EB80016423F /* DeliveryOrderVC.swift in Sources */,
+				9F418CDA25F0C3F800F444F8 /* StatementsVC.swift in Sources */,
 				9F4079DD25DE454E00FCA1B2 /* UIView+Inspectable.swift in Sources */,
 				9F097F1325E9249400CD0FA7 /* RemoveFavoriteVC.swift in Sources */,
 				9F4079D525DE454E00FCA1B2 /* AppCell.swift in Sources */,
@@ -714,6 +721,7 @@
 				9F4079DF25DE454E00FCA1B2 /* UIKit+Ext.swift in Sources */,
 				9F293AB125DF95F4008EC1DD /* DashboardVC.swift in Sources */,
 				9F70A85C25E3E1C400E1EEAF /* StatementCell.swift in Sources */,
+				9F418CD725F0A34300F444F8 /* DeliveryInfo.swift in Sources */,
 				9F70A85525E3E0BE00E1EEAF /* HistoryCell.swift in Sources */,
 				9FE8C88125E7C5EF0014CB43 /* CartTblCell.swift in Sources */,
 				9F1AA17A25ED23EB0041134A /* BIllingInformation.swift in Sources */,

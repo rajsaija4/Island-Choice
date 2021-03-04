@@ -83,9 +83,20 @@ extension DashboardVC {
 extension DashboardVC {
     
     @IBAction func onNewDeliverybtnTap(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "New Delivery", message: "Would you like to add your favourite products to the new delivery?", actionName: "Yes") { (_) in
+            let vc = DeliveryNewOrderVC.instantiate(fromAppStoryboard: .Deliveries)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     @IBAction func onPendingDeliverybtnTap(_ sender: UIButton) {
+        
+        let vc = DeliveryOrderVC.instantiate(fromAppStoryboard: .Deliveries)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onReorderDeliverybtnTap(_ sender: UIButton) {

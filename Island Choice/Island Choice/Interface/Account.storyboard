@@ -93,7 +93,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gcl-qN-DQK">
                                                 <rect key="frame" x="0.0" y="40" width="343" height="30"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_call" translatesAutoresizingMaskIntoConstraints="NO" id="SHK-rn-R2J">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_phone" translatesAutoresizingMaskIntoConstraints="NO" id="SHK-rn-R2J">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -111,7 +111,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bDH-vn-gSI">
                                                 <rect key="frame" x="0.0" y="80" width="343" height="30"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_email" translatesAutoresizingMaskIntoConstraints="NO" id="yey-te-DVC">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="yey-te-DVC">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -131,7 +131,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_location" translatesAutoresizingMaskIntoConstraints="NO" id="2ti-Pq-9Vs">
                                                         <rect key="frame" x="0.0" y="5.5" width="30" height="30"/>
-                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="2ti-Pq-9Vs" secondAttribute="height" id="QB6-r0-lSs"/>
                                                             <constraint firstAttribute="width" constant="30" id="Tak-Zq-l9W"/>
@@ -368,7 +368,7 @@ MODESTO, CA, 95355</string>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nCE-8z-YIE">
                                                 <rect key="frame" x="0.0" y="40" width="343" height="30"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_call" translatesAutoresizingMaskIntoConstraints="NO" id="B4a-Ly-ndH">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_phone" translatesAutoresizingMaskIntoConstraints="NO" id="B4a-Ly-ndH">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -386,7 +386,7 @@ MODESTO, CA, 95355</string>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Of-Nj-lcR">
                                                 <rect key="frame" x="0.0" y="80" width="343" height="30"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_email" translatesAutoresizingMaskIntoConstraints="NO" id="tTZ-zP-6bi">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="tTZ-zP-6bi">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -406,7 +406,7 @@ MODESTO, CA, 95355</string>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_location" translatesAutoresizingMaskIntoConstraints="NO" id="gg8-xw-nrN">
                                                         <rect key="frame" x="0.0" y="5.5" width="30" height="30"/>
-                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="atA-Ra-zND"/>
                                                             <constraint firstAttribute="width" secondItem="gg8-xw-nrN" secondAttribute="height" id="kKu-gK-Ptp"/>
@@ -635,8 +635,8 @@ MODESTO, CA, 95355</string>
                                                                     <constraint firstAttribute="width" constant="25" id="ydt-sd-9V1"/>
                                                                 </constraints>
                                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="img_show_pass"/>
-                                                                <state key="selected" image="img_hide_pass"/>
+                                                                <state key="normal" image="img_passwordhide"/>
+                                                                <state key="selected" image="img_visible"/>
                                                                 <connections>
                                                                     <action selector="onHideShowPasswordBtnTap:" destination="NO0-qC-Xnd" eventType="touchUpInside" id="Cya-Ld-K0W"/>
                                                                 </connections>
@@ -690,8 +690,8 @@ MODESTO, CA, 95355</string>
                                                                     <constraint firstAttribute="width" constant="25" id="ilO-rP-Tai"/>
                                                                 </constraints>
                                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="img_show_pass"/>
-                                                                <state key="selected" image="img_hide_pass"/>
+                                                                <state key="normal" image="img_passwordhide"/>
+                                                                <state key="selected" image="img_visible"/>
                                                                 <connections>
                                                                     <action selector="onHideShowPasswordBtnTap:" destination="NO0-qC-Xnd" eventType="touchUpInside" id="U0I-US-t29"/>
                                                                 </connections>
@@ -733,7 +733,7 @@ MODESTO, CA, 95355</string>
                                                     <constraint firstAttribute="height" constant="50" id="maR-R4-MHN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <state key="normal" title="UPDATE">
+                                                <state key="normal" title="Update">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -770,12 +770,12 @@ MODESTO, CA, 95355</string>
         </scene>
     </scenes>
     <resources>
+        <image name="email" width="33" height="33"/>
         <image name="img_account" width="25" height="25"/>
-        <image name="img_call" width="128" height="128"/>
-        <image name="img_email" width="128" height="128"/>
-        <image name="img_hide_pass" width="128" height="128"/>
-        <image name="img_location" width="128" height="128"/>
-        <image name="img_show_pass" width="128" height="128"/>
+        <image name="img_location" width="33" height="33"/>
+        <image name="img_passwordhide" width="33" height="33"/>
+        <image name="img_phone" width="33" height="33"/>
+        <image name="img_visible" width="33" height="33"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

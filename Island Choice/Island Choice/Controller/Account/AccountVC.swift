@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class AccountVC: UIViewController {
+class AccountVC: UIViewController, MFMailComposeViewControllerDelegate {
 
     //MARK: - OUTLET
     @IBOutlet weak var tblAccount: UITableView!{
@@ -27,7 +28,6 @@ class AccountVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         title = "My Account"
         
         setupNavigationBarBackBtn()
@@ -111,6 +111,15 @@ extension AccountVC: UITableViewDelegate {
                     default:
                         break
                 }
+                
+        case 1:
+            switch  indexPath.row {
+            case 1:
+                sendEmail()
+            default:
+                break
+            }
+                
         case 2:
             switch indexPath.row {
             case 3:
@@ -132,5 +141,25 @@ extension AccountVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0
+    }
+}
+
+extension AccountVC {
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["contact@islandchoiceguam.com"])
+            mail.setMessageBody("", isHTML: true)
+
+            present(mail, animated: true)
+        } else {
+            self.showToast("Device not configured to send emails, trying with share ...")
+        }
+    }
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }

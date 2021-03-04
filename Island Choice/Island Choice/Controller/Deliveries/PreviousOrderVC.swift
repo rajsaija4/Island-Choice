@@ -28,7 +28,7 @@ class PreviousOrderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Previous Order"
+        title = "Order to be Delivered"
         setupCartBtn()
 
         // Do any additional setup after loading the view.

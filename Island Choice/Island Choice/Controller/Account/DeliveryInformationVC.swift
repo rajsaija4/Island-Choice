@@ -35,6 +35,7 @@ class DeliveryInformationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getCustomerAccount()
+        getNextDeliveryDate()
         title = "Delivery Information"
     }
     
@@ -107,6 +108,8 @@ extension DeliveryInformationVC {
                 self.showToast(error)
             })
         }
+    
+    
 }
 extension DeliveryInformationVC {
     
@@ -198,3 +201,22 @@ extension DeliveryInformationVC {
     
 
 
+extension DeliveryInformationVC {
+    
+    fileprivate func getNextDeliveryDate() {
+        let param:[String : Any] = [:]
+        showHUD()
+        NetworkManager.Profile.updateNextDeliveryDate(param: param, { (json) in
+            print(json)
+            let data = DeliveryInfo(json: json)
+            if let strDate = data.calendarDate.split(separator: "T").first {
+                self.lblNextDelivery.text = String(strDate)
+             }
+            self.lblDriverRoute.text = data.deliveryRoute
+            self.hideHUD()
+        }, { (error) in
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
+}

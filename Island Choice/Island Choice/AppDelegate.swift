@@ -55,7 +55,7 @@ extension AppDelegate {
         let tabBarVC = MainTabBarController.instantiate(fromAppStoryboard: .Main)
         
         let dashboardVC = DashboardVC.instantiate(fromAppStoryboard: .Dashboard)
-        dashboardVC.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(named: "img_dashboard"), selectedImage: UIImage(named: "img_dashboard"))
+        dashboardVC.tabBarItem = UITabBarItem(title: "My Dashboard", image: UIImage(named: "img_dashboard"), selectedImage: UIImage(named: "img_dashboard"))
         let dashboardNVC = UINavigationController(rootViewController: dashboardVC)
         
         let billingVC = BillingVC.instantiate(fromAppStoryboard: .Billing)
@@ -63,7 +63,7 @@ extension AppDelegate {
         let billingNVC = UINavigationController(rootViewController: billingVC)
         
         let deliveriesVC = DeliveriesVC.instantiate(fromAppStoryboard: .Deliveries)
-        deliveriesVC.tabBarItem = UITabBarItem(title: "Delivery", image: UIImage(named: "img_delivery"), selectedImage: UIImage(named: "img_delivery"))
+        deliveriesVC.tabBarItem = UITabBarItem(title: "Deliveries", image: UIImage(named: "img_delivery"), selectedImage: UIImage(named: "img_delivery"))
         let deliveriesNVC = UINavigationController(rootViewController: deliveriesVC)
         
         let accountVC = AccountVC.instantiate(fromAppStoryboard: .Account)

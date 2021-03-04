@@ -102,8 +102,8 @@
                                                                             <constraint firstAttribute="width" secondItem="Scb-ro-6UE" secondAttribute="height" id="rFl-ie-RTM"/>
                                                                         </constraints>
                                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <state key="normal" image="img_show_pass"/>
-                                                                        <state key="selected" image="img_hide_pass"/>
+                                                                        <state key="normal" image="img_passwordhide"/>
+                                                                        <state key="selected" image="img_visible"/>
                                                                         <connections>
                                                                             <action selector="onHideShowPasswordBtnTap:" destination="EHn-IR-QMP" eventType="touchUpInside" id="QSg-4i-8yA"/>
                                                                         </connections>
@@ -145,7 +145,7 @@
                                                                             <constraint firstAttribute="width" secondItem="iaA-FA-qkF" secondAttribute="height" id="nw9-qo-eTT"/>
                                                                             <constraint firstAttribute="width" constant="30" id="svx-de-cE3"/>
                                                                         </constraints>
-                                                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="tintColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <state key="normal" image="img_uncheck"/>
                                                                         <state key="selected" image="img_check"/>
                                                                         <connections>
@@ -322,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQh-MJ-7H5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="117"/>
+            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="Kmb-dS-fzV">
@@ -711,8 +711,8 @@
                                                             <constraint firstAttribute="width" secondItem="efm-De-me8" secondAttribute="height" id="QaO-ZB-9Zn"/>
                                                         </constraints>
                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="img_show_pass"/>
-                                                        <state key="selected" image="img_hide_pass"/>
+                                                        <state key="normal" image="img_passwordhide"/>
+                                                        <state key="selected" image="img_visible"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -746,8 +746,8 @@
                                                             <constraint firstAttribute="height" constant="25" id="olQ-jA-Pda"/>
                                                         </constraints>
                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="img_show_pass"/>
-                                                        <state key="selected" image="img_hide_pass"/>
+                                                        <state key="normal" image="img_passwordhide"/>
+                                                        <state key="selected" image="img_visible"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -807,10 +807,10 @@
     </scenes>
     <resources>
         <image name="img_check" width="128" height="128"/>
-        <image name="img_hide_pass" width="128" height="128"/>
         <image name="img_logo" width="1024" height="655"/>
-        <image name="img_show_pass" width="128" height="128"/>
+        <image name="img_passwordhide" width="33" height="33"/>
         <image name="img_uncheck" width="128" height="128"/>
+        <image name="img_visible" width="33" height="33"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
