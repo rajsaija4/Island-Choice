@@ -39,6 +39,10 @@ class StatementsVC: UIViewController {
         }
         
     }
+    
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,7 +78,7 @@ class StatementsVC: UIViewController {
 
 
 
-
+// MARK: - TableView Datasource
 
 extension StatementsVC: UITableViewDataSource {
     
@@ -88,22 +92,11 @@ extension StatementsVC: UITableViewDataSource {
         cell.btnDownload.addTarget(self, action: #selector(onDownloadBtnTap(_:)), for: .touchUpInside)
         return cell
     }
-    
-    
-   
-    
-    
 }
 
 
-extension StatementsVC {
+// MARK: - TableView Delegate
 
-@objc fileprivate func onDownloadBtnTap(_ sender: UIButton) {
-   
-    
-}
-
-}
 extension StatementsVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -116,6 +109,22 @@ extension StatementsVC: UITableViewDelegate {
     }
     
 }
+
+
+
+
+
+extension StatementsVC {
+
+@objc fileprivate func onDownloadBtnTap(_ sender: UIButton) {
+   
+    
+}
+
+}
+
+
+// MARK: - Download invoice and save at specific path
 
 
 extension StatementsVC {

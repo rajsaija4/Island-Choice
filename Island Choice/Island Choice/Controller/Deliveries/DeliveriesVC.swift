@@ -25,6 +25,7 @@ class DeliveriesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCustomerAccount()
         setupUI()
         title = "Deliveries"
 
@@ -115,3 +116,34 @@ extension DeliveriesVC {
         btnRegularOrder.titleLabel?.textAlignment = .center
     }
 }
+
+
+// MARK: - Api Calling
+
+extension DeliveriesVC {
+  
+        
+        fileprivate func getCustomerAccount() {
+            
+           // let customerId = AppUserDefaults.value(forKey: .CustomerId)
+            let param = [
+                "addPrimary":true
+                
+            ] as [String : Any]
+            
+            showHUD()
+            NetworkManager.Profile.getCustomerAccount(param: param, { (json) in
+                print(json)
+                let accountInformation = BillingInformation(json: json)
+                self.txtAccountName.text = accountInformation.CustomerName
+                self.txtAccountNumber.text = accountInformation.CustomerId
+                self.txtAddress.text = accountInformation.Address
+            
+                self.hideHUD()
+            }, { (error) in
+                self.hideHUD()
+                self.showToast(error)
+            })
+        }
+}
+

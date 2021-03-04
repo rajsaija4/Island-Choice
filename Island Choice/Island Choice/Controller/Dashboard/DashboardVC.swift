@@ -216,10 +216,6 @@ extension DashboardVC {
             let calendar = Calendar.current
             let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
             print(components)
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "yyyy-MM-dd"
-//            let dDate = dateFormatter.date(from: strDate)
-//            print(dDate)
           
 
             self.hideHUD()

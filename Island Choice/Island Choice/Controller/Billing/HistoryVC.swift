@@ -29,7 +29,7 @@ class HistoryVC: UIViewController {
     fileprivate var arrData: [Int] = [0,1,2,3,4,5]
     fileprivate var isShowStatement = false {
         didSet{
-            setupUI()
+           // setupUI()
         }
     }
     
@@ -39,7 +39,7 @@ class HistoryVC: UIViewController {
     @IBOutlet weak var tblHistory: UITableView!{
         didSet{
             tblHistory.register(HistoryCell.self)
-            tblHistory.register(StatementCell.self)
+          //  tblHistory.register(StatementCell.self)
             tblHistory.tableFooterView = UIView(frame: .zero)
             tblHistory.configRefreshHeader(container: self) {
                 self.startPageIndex = 0
@@ -57,8 +57,6 @@ class HistoryVC: UIViewController {
     @IBOutlet weak var lbl_Page: UILabel!
     @IBOutlet weak var viewAmountControl: UIControl!
     @IBOutlet weak var viewInvoiceControl: UIControl!
-    
-    
     @IBOutlet weak var btnShowStatement: UIButton!
     
     //MARK: - MAIN METHOD
@@ -140,13 +138,13 @@ extension HistoryVC {
         
     }
     
-    @IBAction func onShowStatementBtnTap(_ sender: UIButton) {
-        
-        sender.isSelected = !sender.isSelected
-        
-        isShowStatement = sender.isSelected
-        
-    }
+//    @IBAction func onShowStatementBtnTap(_ sender: UIButton) {
+//
+//        sender.isSelected = !sender.isSelected
+//
+//        isShowStatement = sender.isSelected
+//
+//    }
     
     
     @objc fileprivate func onDownloadBtnTap(_ sender: UIButton) {
@@ -156,6 +154,7 @@ extension HistoryVC {
 }
 
 
+// MARK: -  TableView Datasource
 
 extension HistoryVC: UITableViewDataSource {
     
@@ -166,13 +165,13 @@ extension HistoryVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if isShowStatement {
-            let cell: StatementCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.btnDownload.tag = indexPath.row
-            cell.btnDownload.addTarget(self, action: #selector(onDownloadBtnTap(_:)), for: .touchUpInside)
-            return cell
-        }
-        
+//        if isShowStatement {
+//            let cell: StatementCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+//            cell.btnDownload.tag = indexPath.row
+//            cell.btnDownload.addTarget(self, action: #selector(onDownloadBtnTap(_:)), for: .touchUpInside)
+//            return cell
+//        }
+//
         let cell: HistoryCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let history = historyCustomer[indexPath.row]
         cell.HistoryCell(record: history)
@@ -184,6 +183,7 @@ extension HistoryVC: UITableViewDataSource {
 }
 
 
+// MARK: - TableView Delegate
 
 extension HistoryVC: UITableViewDelegate {
     
@@ -196,6 +196,11 @@ extension HistoryVC: UITableViewDelegate {
         return 44.0
     }
 }
+
+
+
+// MARK: -  APi Calling
+
 extension HistoryVC {
     
     fileprivate func getcustomerInvoiceAndPaymentHistory() {
@@ -246,6 +251,9 @@ extension HistoryVC {
     }
     
 }
+
+
+// MARK: - Download Invoice and Save in Folder 
 
 extension HistoryVC {
     

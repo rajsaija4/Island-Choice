@@ -52,6 +52,7 @@ class InvoiceVC: UIViewController {
         }
     }
     @IBOutlet weak var btnPayInvoice: UIButton!
+   
     
     //MARK: - MAIN METHOD
 
@@ -189,6 +190,7 @@ extension InvoiceVC {
 }
 
 
+// MARK: - TableView Datasource
 
 extension InvoiceVC: UITableViewDataSource {
     
@@ -209,6 +211,8 @@ extension InvoiceVC: UITableViewDataSource {
     }
 }
 
+
+// MARK: - TableView Delegate
 
 
 extension InvoiceVC: UITableViewDelegate {
@@ -232,6 +236,10 @@ extension InvoiceVC: UITableViewDelegate {
    
 
 }
+
+
+// MARK:  - Downlaod And Call Invoice
+
 extension InvoiceVC {
     
     

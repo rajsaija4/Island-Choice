@@ -11,6 +11,7 @@ class AddFavoriteProductVC: UIViewController {
     
     // MARK: - Outlets
 
+    @IBOutlet weak var txtSearchProduct: UITextField!
     @IBOutlet weak var btnUpdateFavorite: UIButton!
     @IBOutlet weak var collAddFavoriteProduct: UICollectionView!{
         didSet {
@@ -28,6 +29,8 @@ class AddFavoriteProductVC: UIViewController {
     }
     
    
+    @IBAction func onPressSearchFavourite(_ sender: Any) {
+    }
     
     /*
     // MARK: - Navigation

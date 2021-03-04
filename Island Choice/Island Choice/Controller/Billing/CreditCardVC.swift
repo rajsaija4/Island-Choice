@@ -48,6 +48,9 @@ extension CreditCardVC {
     }
 }
 
+
+// MARK: - Api Calling
+
 extension CreditCardVC {
     
     fileprivate func addCreditCart() {
@@ -107,13 +110,7 @@ extension CreditCardVC {
             showToast("Please \(txtEmail.placeholder ?? "") ")
             return
         }
-        
-        
-        
-        
-        
-        
-
+     
         let parameters = [
 
                 "firstName":firstName,
