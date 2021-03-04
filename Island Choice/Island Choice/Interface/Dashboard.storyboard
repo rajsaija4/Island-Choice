@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9T9-0Z-bY6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1318"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1418"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9l-T4-Q7N">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
@@ -41,127 +41,8 @@
                                                     <constraint firstItem="o6r-rf-LBc" firstAttribute="centerY" secondItem="u9l-T4-Q7N" secondAttribute="centerY" id="dRL-22-TyP"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6O-qm-eS0">
-                                                <rect key="frame" x="0.0" y="40" width="414" height="228"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdg-0U-Vdx">
-                                                        <rect key="frame" x="30" y="77" width="120" height="120"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JANUARY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVX-wb-BMP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
-                                                                <color key="backgroundColor" red="0.48345088959999999" green="0.97422236200000001" blue="0.98545283080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="40" id="4pb-cM-UMR"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <color key="highlightedColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="27  Monday" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dME-xd-X7J">
-                                                                <rect key="frame" x="8" y="40" width="104" height="72"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" red="0.48345088959999999" green="0.97422236200000001" blue="0.98545283080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="AVX-wb-BMP" secondAttribute="trailing" id="AbO-T7-a0s"/>
-                                                            <constraint firstAttribute="height" constant="120" id="DdZ-UM-F4k"/>
-                                                            <constraint firstItem="dME-xd-X7J" firstAttribute="top" secondItem="AVX-wb-BMP" secondAttribute="bottom" id="NUU-wj-axq"/>
-                                                            <constraint firstItem="dME-xd-X7J" firstAttribute="leading" secondItem="mdg-0U-Vdx" secondAttribute="leading" constant="8" id="Nux-D5-Ju7"/>
-                                                            <constraint firstAttribute="trailing" secondItem="dME-xd-X7J" secondAttribute="trailing" constant="8" id="ORQ-3f-r6m"/>
-                                                            <constraint firstAttribute="width" constant="120" id="RPw-c2-FYa"/>
-                                                            <constraint firstAttribute="bottom" secondItem="dME-xd-X7J" secondAttribute="bottom" constant="8" id="UFQ-HD-Dsn"/>
-                                                            <constraint firstItem="AVX-wb-BMP" firstAttribute="top" secondItem="mdg-0U-Vdx" secondAttribute="top" id="aPA-1K-rKw"/>
-                                                            <constraint firstItem="AVX-wb-BMP" firstAttribute="leading" secondItem="mdg-0U-Vdx" secondAttribute="leading" id="yPc-eP-ksA"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Have Pending Deliveries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujR-2F-Eec">
-                                                        <rect key="frame" x="30" y="16" width="354" height="30"/>
-                                                        <color key="backgroundColor" red="0.53593057389999998" green="0.90852761270000004" blue="0.14660581950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="SWz-KH-qHV"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="58h-9d-rPN">
-                                                        <rect key="frame" x="234" y="66" width="150" height="142"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-wU-k3e">
-                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="34"/>
-                                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                                <state key="normal" title="NEW DELIVERY ">
-                                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="8"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="onNewDeliverybtnTap:" destination="mAn-Iw-hef" eventType="touchUpInside" id="K6O-2d-buv"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lH-Fj-FT1">
-                                                                <rect key="frame" x="0.0" y="54" width="150" height="34"/>
-                                                                <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                                                <state key="normal" title="Pending Deliveries">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="8"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="onPendingDeliverybtnTap:" destination="mAn-Iw-hef" eventType="touchUpInside" id="hMq-dq-54y"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gm-S9-weE">
-                                                                <rect key="frame" x="0.0" y="108" width="150" height="34"/>
-                                                                <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Reorder Previous">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="8"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="onReorderDeliverybtnTap:" destination="mAn-Iw-hef" eventType="touchUpInside" id="tQh-xV-OlO"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="0Mt-nP-bMr"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="58h-9d-rPN" firstAttribute="top" secondItem="ujR-2F-Eec" secondAttribute="bottom" constant="20" id="3QN-Qx-9VX"/>
-                                                    <constraint firstItem="mdg-0U-Vdx" firstAttribute="leading" secondItem="I6O-qm-eS0" secondAttribute="leading" constant="30" id="57l-tF-iUe"/>
-                                                    <constraint firstItem="ujR-2F-Eec" firstAttribute="leading" secondItem="I6O-qm-eS0" secondAttribute="leading" constant="30" id="9pf-up-xDn"/>
-                                                    <constraint firstItem="mdg-0U-Vdx" firstAttribute="centerY" secondItem="58h-9d-rPN" secondAttribute="centerY" id="AAi-6G-wco"/>
-                                                    <constraint firstAttribute="trailing" secondItem="58h-9d-rPN" secondAttribute="trailing" constant="30" id="NGN-sv-Asp"/>
-                                                    <constraint firstAttribute="bottom" secondItem="58h-9d-rPN" secondAttribute="bottom" constant="20" id="YmJ-bE-Zhm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ujR-2F-Eec" secondAttribute="trailing" constant="30" id="fIx-ZL-U7o"/>
-                                                    <constraint firstItem="ujR-2F-Eec" firstAttribute="top" secondItem="I6O-qm-eS0" secondAttribute="top" constant="16" id="xFw-aP-7v2"/>
-                                                </constraints>
-                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MsT-Jb-rIV">
-                                                <rect key="frame" x="0.0" y="268" width="414" height="1050"/>
+                                                <rect key="frame" x="0.0" y="368" width="414" height="1050"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csF-Rm-Hkg">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
@@ -349,6 +230,177 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6O-qm-eS0">
+                                                <rect key="frame" x="0.0" y="40" width="414" height="328"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdg-0U-Vdx">
+                                                        <rect key="frame" x="142" y="77" width="130" height="150"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JANUARY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVX-wb-BMP">
+                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
+                                                                <color key="backgroundColor" red="0.48345088959999999" green="0.97422236200000001" blue="0.98545283080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="j60-uR-dbZ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <color key="highlightedColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z40-gl-9mT">
+                                                                <rect key="frame" x="13" y="42" width="104" height="100"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0rP-u0-VJX">
+                                                                        <rect key="frame" x="4" y="24.5" width="96" height="51"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLI-jp-qNV">
+                                                                                <rect key="frame" x="40.5" y="0.0" width="15" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SATUARDAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIP-KX-8yP">
+                                                                                <rect key="frame" x="0.0" y="30.5" width="96" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="0rP-u0-VJX" firstAttribute="centerY" secondItem="z40-gl-9mT" secondAttribute="centerY" id="9XI-If-eFh"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="0rP-u0-VJX" secondAttribute="trailing" constant="4" id="kil-QK-xso"/>
+                                                                    <constraint firstItem="0rP-u0-VJX" firstAttribute="leading" secondItem="z40-gl-9mT" secondAttribute="leading" constant="4" id="zJl-sV-fdZ"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.48345088959999999" green="0.97422236200000001" blue="0.98545283080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="150" id="7V3-RX-2bo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="AVX-wb-BMP" secondAttribute="trailing" id="ENN-is-CgN"/>
+                                                            <constraint firstAttribute="trailing" secondItem="z40-gl-9mT" secondAttribute="trailing" constant="13" id="XNS-Fg-IB7"/>
+                                                            <constraint firstAttribute="bottom" secondItem="z40-gl-9mT" secondAttribute="bottom" constant="8" id="fhY-W2-qfh"/>
+                                                            <constraint firstItem="z40-gl-9mT" firstAttribute="leading" secondItem="mdg-0U-Vdx" secondAttribute="leading" constant="13" id="i06-Jr-6HC"/>
+                                                            <constraint firstItem="AVX-wb-BMP" firstAttribute="top" secondItem="mdg-0U-Vdx" secondAttribute="top" id="mQX-br-pd5"/>
+                                                            <constraint firstAttribute="width" constant="130" id="rNi-1X-v4D"/>
+                                                            <constraint firstItem="AVX-wb-BMP" firstAttribute="leading" secondItem="mdg-0U-Vdx" secondAttribute="leading" id="sgB-FS-3oU"/>
+                                                            <constraint firstItem="z40-gl-9mT" firstAttribute="top" secondItem="AVX-wb-BMP" secondAttribute="bottom" constant="2" id="w0o-79-iAH"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Next Delivery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujR-2F-Eec">
+                                                        <rect key="frame" x="30" y="16" width="354" height="30"/>
+                                                        <color key="backgroundColor" red="0.53593057389999998" green="0.90852761270000004" blue="0.14660581950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="SWz-KH-qHV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="58h-9d-rPN">
+                                                        <rect key="frame" x="234" y="66" width="150" height="242"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-wU-k3e">
+                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="67.5"/>
+                                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                <state key="normal" title="NEW DELIVERY ">
+                                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="8"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onNewDeliverybtnTap:" destination="mAn-Iw-hef" eventType="touchUpInside" id="K6O-2d-buv"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lH-Fj-FT1">
+                                                                <rect key="frame" x="0.0" y="87.5" width="150" height="67"/>
+                                                                <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                                <state key="normal" title="Pending Deliveries">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="8"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onPendingDeliverybtnTap:" destination="mAn-Iw-hef" eventType="touchUpInside" id="hMq-dq-54y"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gm-S9-weE">
+                                                                <rect key="frame" x="0.0" y="174.5" width="150" height="67.5"/>
+                                                                <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <state key="normal" title="Reorder Previous">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="8"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onReorderDeliverybtnTap:" destination="mAn-Iw-hef" eventType="touchUpInside" id="tQh-xV-OlO"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="0Mt-nP-bMr"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hWT-JQ-4OX">
+                                                        <rect key="frame" x="20" y="258" width="349" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="zVJ-Eh-cdP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hO-ur-3pA">
+                                                        <rect key="frame" x="369" y="270.5" width="25" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="Axg-a9-6R9"/>
+                                                            <constraint firstAttribute="width" constant="25" id="q9R-f0-uWa"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button" image="img_search"/>
+                                                        <connections>
+                                                            <action selector="onPressSearchbtnTap:" destination="mAn-Iw-hef" eventType="touchUpInside" id="E0A-Hi-c83"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="58h-9d-rPN" firstAttribute="top" secondItem="ujR-2F-Eec" secondAttribute="bottom" constant="20" id="3QN-Qx-9VX"/>
+                                                    <constraint firstItem="ujR-2F-Eec" firstAttribute="leading" secondItem="I6O-qm-eS0" secondAttribute="leading" constant="30" id="9pf-up-xDn"/>
+                                                    <constraint firstItem="3hO-ur-3pA" firstAttribute="leading" secondItem="hWT-JQ-4OX" secondAttribute="trailing" id="BA6-FC-Xbt"/>
+                                                    <constraint firstItem="mdg-0U-Vdx" firstAttribute="top" secondItem="ujR-2F-Eec" secondAttribute="bottom" constant="31" id="FqN-T1-duf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="58h-9d-rPN" secondAttribute="trailing" constant="30" id="NGN-sv-Asp"/>
+                                                    <constraint firstItem="mdg-0U-Vdx" firstAttribute="centerX" secondItem="I6O-qm-eS0" secondAttribute="centerX" id="Uph-6x-ohs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="58h-9d-rPN" secondAttribute="bottom" constant="20" id="YmJ-bE-Zhm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ujR-2F-Eec" secondAttribute="trailing" constant="30" id="fIx-ZL-U7o"/>
+                                                    <constraint firstAttribute="height" constant="328" id="fRo-NV-EY4"/>
+                                                    <constraint firstItem="hWT-JQ-4OX" firstAttribute="leading" secondItem="I6O-qm-eS0" secondAttribute="leading" constant="20" id="hb6-hH-YsK"/>
+                                                    <constraint firstItem="3hO-ur-3pA" firstAttribute="centerY" secondItem="hWT-JQ-4OX" secondAttribute="centerY" id="j9P-ga-aSg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3hO-ur-3pA" secondAttribute="trailing" constant="20" id="sOQ-Sr-B6R"/>
+                                                    <constraint firstItem="hWT-JQ-4OX" firstAttribute="top" secondItem="mdg-0U-Vdx" secondAttribute="bottom" constant="31" id="vs2-6N-OOY"/>
+                                                    <constraint firstItem="ujR-2F-Eec" firstAttribute="top" secondItem="I6O-qm-eS0" secondAttribute="top" constant="16" id="xFw-aP-7v2"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -388,11 +440,15 @@
                         <outlet property="btnNewDelivery" destination="X3g-wU-k3e" id="QpK-Ic-U5A"/>
                         <outlet property="btnPendingDeliveries" destination="8lH-Fj-FT1" id="Qyz-8f-Fvq"/>
                         <outlet property="btnReorderDelivery" destination="3gm-S9-weE" id="b1h-K3-RQ6"/>
+                        <outlet property="btnSearch" destination="3hO-ur-3pA" id="7wq-aU-1Ih"/>
                         <outlet property="collAllProduct" destination="ugt-vC-NQX" id="xeO-0v-yJN"/>
                         <outlet property="collFavoriteProduct" destination="gho-qW-9K8" id="H57-So-e2x"/>
                         <outlet property="collFeaturedProduct" destination="m20-Oz-yeD" id="3yt-WO-r0q"/>
-                        <outlet property="lblDayMonth" destination="dME-xd-X7J" id="0mk-Su-42W"/>
+                        <outlet property="lblDate" destination="JIP-KX-8yP" id="1Ih-4i-cNb"/>
+                        <outlet property="lblDay" destination="fLI-jp-qNV" id="wgL-4X-F1A"/>
                         <outlet property="lblMonth" destination="AVX-wb-BMP" id="FAp-wV-Kcy"/>
+                        <outlet property="stackViewBtn" destination="58h-9d-rPN" id="VGs-gS-PDW"/>
+                        <outlet property="txtSearch" destination="hWT-JQ-4OX" id="245-b4-jdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnU-NG-kiJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -568,6 +624,7 @@
     </scenes>
     <resources>
         <image name="img_Edit" width="25" height="25"/>
+        <image name="img_search" width="33" height="33"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

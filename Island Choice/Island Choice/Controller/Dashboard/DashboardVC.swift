@@ -11,8 +11,13 @@ class DashboardVC: UIViewController {
     
     // MARK: - Outlets
 
+    @IBOutlet weak var btnSearch: UIButton!
+    @IBOutlet weak var txtSearch: UITextField!
+    @IBOutlet weak var stackViewBtn: UIStackView!
     @IBOutlet weak var lblMonth: UILabel!
-    @IBOutlet weak var lblDayMonth: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var lblDay: UILabel!
+    
     @IBOutlet weak var btnPendingDeliveries: UIButton!
     @IBOutlet weak var btnNewDelivery: UIButton!
    
@@ -34,12 +39,23 @@ class DashboardVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        btnNewDelivery.isHidden = true
+        btnReorderDelivery.isHidden = true
+        btnPendingDeliveries.isHidden = true
+        stackViewBtn.isHidden = true
         title = "My Dashboard"
         setupNavigationBarBackBtn()
+        getNextDeliveryDate()
         setupUI()
        
     }
+    
+    
+    
+    @IBAction func onPressSearchbtnTap(_ sender: Any) {
+    }
+    
+    
     
     
     @IBAction func onPressFavouriteProductbtnPress(_ sender: UIButton) {
@@ -156,4 +172,63 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout {
 
 extension DashboardVC: UICollectionViewDelegate {
     
+}
+
+
+
+
+extension DashboardVC {
+    
+    fileprivate func getNextDeliveryDate() {
+        let param:[String : Any] = [:]
+        showHUD()
+        NetworkManager.Profile.updateNextDeliveryDate(param: param, { (json) in
+            print(json)
+            let data = DeliveryInfo(json: json)
+            print(data.calendarDate)
+            
+            guard let strDate = data.calendarDate.components(separatedBy: "T").first else { return }
+            
+            let isoDate = data.calendarDate
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            guard let date = dateFormatter.date(from:isoDate) else { return }
+            dateFormatter.dateFormat = "EEEE"
+            let day = dateFormatter.string(from: date)
+         
+            
+            dateFormatter.dateFormat = "MMMM"
+            let month = dateFormatter.string(from: date)
+            
+            dateFormatter.dateFormat = "dd"
+            let dateStr = dateFormatter.string(from: date)
+            
+            self.lblMonth.text = month
+            self.lblDay.text = dateStr
+            self.lblDate.text = day.uppercased()
+           
+            
+            dateFormatter.dateFormat = "yyyy-MMMM-EEEE"
+            let newStrDate = dateFormatter.string(from: date)
+            print(newStrDate)
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
+            print(components)
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd"
+//            let dDate = dateFormatter.date(from: strDate)
+//            print(dDate)
+          
+
+            self.hideHUD()
+        }, { (error) in
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
+    
+    
+   
 }

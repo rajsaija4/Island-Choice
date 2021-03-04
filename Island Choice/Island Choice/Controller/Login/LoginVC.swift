@@ -43,7 +43,7 @@ extension LoginVC {
             btnRememberMe.isSelected = true
         }
         else {
-            btnRememberMe.isSelected = true
+            btnRememberMe.isSelected = false
         }
     }
 }
