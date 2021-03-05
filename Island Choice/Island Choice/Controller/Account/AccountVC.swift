@@ -122,6 +122,13 @@ extension AccountVC: UITableViewDelegate {
                 
         case 2:
             switch indexPath.row {
+            case 2:
+                guard let url = URL(string: "https://itunes.apple.com/us/app/myapp/id\(APPID)?ls=1&mt=8") else {
+                    return
+                }
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
             case 3:
                 AppUserDefaults.removeValue(forKey: .CustomerId)
                 APPDEL?.setupLogin()

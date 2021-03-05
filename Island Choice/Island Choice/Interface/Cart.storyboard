@@ -192,7 +192,7 @@
                                                             <rect key="frame" x="0.0" y="305" width="394" height="235"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5d-ZU-dlq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="61"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="119"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Gdu-Lc-akU"/>
                                                                     </constraints>
@@ -208,7 +208,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8L-6K-0hZ">
-                                                                    <rect key="frame" x="0.0" y="69" width="394" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="127" width="394" height="50"/>
                                                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="GT1-gu-6G1"/>
@@ -227,27 +227,6 @@
                                                                     <connections>
                                                                         <action selector="onPressCheckoutbtnTap:" destination="TXV-Ep-Kts" eventType="touchUpInside" id="kvr-hN-JlJ"/>
                                                                     </connections>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8x-Cu-t3M">
-                                                                    <rect key="frame" x="0.0" y="127" width="394" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="50" id="R8s-it-emY"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                                    <state key="normal" title=" ◀︎ Continue Shopping">
-                                                                        <color key="titleColor" systemColor="systemGreenColor"/>
-                                                                    </state>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" systemColor="systemGreenColor"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="8"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sn4-bB-Ofd">
                                                                     <rect key="frame" x="0.0" y="185" width="394" height="50"/>
@@ -558,7 +537,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="iNa-ru-dIi"/>
                                                             </constraints>
                                                             <state key="normal">
-                                                                <imageReference key="image" image="calendar" catalog="system" symbolScale="large"/>
+                                                                <imageReference key="image" image="calendar" symbolScale="large"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -820,7 +799,7 @@
     </scenes>
     <resources>
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar" width="25" height="25"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

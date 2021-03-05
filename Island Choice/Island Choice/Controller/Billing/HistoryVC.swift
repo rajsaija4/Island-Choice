@@ -235,6 +235,9 @@ extension HistoryVC {
             if data.records.count > 0 {
                 self.reloadData(state: .normal)
             }
+            else {
+                self.reloadData(state: .noMoreData)
+            }
             self.hideHUD()
         }, { (error) in
             self.reloadData(state: .noMoreData)

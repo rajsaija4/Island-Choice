@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F1EE6A04-1D6A-44BB-84AF-CC452443D611"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Island Choice/Networking/NetworkManager.swift"
@@ -64,7 +64,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "297"
                   endingLineNumber = "297"
-                  offsetFromSymbolStart = "1044">
+                  offsetFromSymbolStart = "1219">
                </Location>
                <Location
                   uuid = "F1EE6A04-1D6A-44BB-84AF-CC452443D611 - 865dd825fde09375"
@@ -79,7 +79,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "299"
                   endingLineNumber = "299"
-                  offsetFromSymbolStart = "304">
+                  offsetFromSymbolStart = "286">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -112,7 +112,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
                   endingLineNumber = "300"
-                  offsetFromSymbolStart = "344">
+                  offsetFromSymbolStart = "351">
                </Location>
                <Location
                   uuid = "8F0DBF01-6ED3-4A5E-A03C-BC9269174FB7 - 865dd825fde092aa"
@@ -127,7 +127,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
                   endingLineNumber = "300"
-                  offsetFromSymbolStart = "372">
+                  offsetFromSymbolStart = "389">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "Island Choice/Controller/Account/BillingInformationVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "updateBillingInformation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "Island Choice/Controller/Account/BillingInformationVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "updateBillingInformation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "Island Choice/Controller/Billing/HistoryVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "saveInvoice(invoiceName:invoiceData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -279,38 +279,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8B811D64-F975-41B0-907B-FBD4F45CD30B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Island Choice/Controller/Account/AccountVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "110B1BC6-B9AA-410D-9ADA-83D84A499067"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Island Choice/Controller/Account/AccountVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "929719AF-EEDC-4181-991A-F3E9442344AF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -318,8 +286,8 @@
             filePath = "Island Choice/Controller/Account/AccountVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "mailComposeController(_:didFinishWith:error:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +302,8 @@
             filePath = "Island Choice/Controller/Account/AccountVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "mailComposeController(_:didFinishWith:error:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -369,22 +337,6 @@
             startingLineNumber = "62"
             endingLineNumber = "62"
             landmarkName = "onPressDatebtnTap(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2E6A567E-B57B-4C82-BA90-7ECAD1C3B685"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Island Choice/Controller/Billing/HistoryVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "getcustomerInvoiceAndPaymentHistory()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

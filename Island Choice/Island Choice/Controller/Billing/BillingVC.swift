@@ -47,6 +47,11 @@ extension BillingVC {
         
         pagingViewController = PagingViewController(viewControllers: [invoiceVC, historyVC,statementsVC, paymentMethodVC])
         pagingViewController.menuItemSize = .selfSizing(estimatedWidth: 50, height: 50)
+        pagingViewController.backgroundColor = .cyan
+        pagingViewController.selectedBackgroundColor = .cyan
+        pagingViewController.indicatorColor = .white
+        pagingViewController.textColor = .darkGray
+        pagingViewController.selectedTextColor = .black
         
         addChild(pagingViewController)
         contentView.addSubview(pagingViewController.view)

@@ -59,18 +59,23 @@ extension ChangePasswordVC {
   
         
         fileprivate func getCustomerAccount() {
-            guard let curruntPassword = txtCurrentPassword.text else {
+            guard let curruntPassword = txtCurrentPassword.text, curruntPassword.count > 0  else {
                 showToast("Please \(txtCurrentPassword.placeholder ?? "") ")
                 return
             }
 
-            guard let newPassword = txtNewPassword.text else {
+            guard let newPassword = txtNewPassword.text, newPassword.count > 0 else {
                 showToast("Please \(txtNewPassword.placeholder ?? "") ")
                 return
             }
 
-            guard let retypePassword = txtVerifyPassword.text else {
+            guard let retypePassword = txtVerifyPassword.text, retypePassword.count > 0 else {
                 showToast("Please \(txtVerifyPassword.placeholder ?? "") ")
+                return
+            }
+            
+            guard retypePassword == newPassword else {
+                showToast("New Password and Retype Password must be same")
                 return
             }
            // let customerId = AppUserDefaults.value(forKey: .CustomerId)

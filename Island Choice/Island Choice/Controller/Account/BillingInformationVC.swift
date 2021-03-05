@@ -132,17 +132,23 @@ extension BillingInformationVC {
     
     fileprivate func updateBillingInformation() {
         
-        guard let userName = txtUser.text else {
+        guard let userName = txtUser.text, userName.count > 0 else {
             showToast("Please \(txtUser.placeholder ?? "") ")
             return
         }
 
-        guard let email = txtEmail.text else {
+        guard let email = txtEmail.text, email.count > 0  else {
             showToast("Please \(txtEmail.placeholder ?? "") ")
             return
         }
+        
+        guard email.isValidEmail else {
+            showToast("Enter Valid Email")
+            return
+        }
 
-        guard let phonenumber = txtContact.text else {
+
+        guard let phonenumber = txtContact.text, phonenumber.count > 0 else {
             showToast("Please \(txtContact.placeholder ?? "") ")
             return
         }

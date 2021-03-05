@@ -110,6 +110,11 @@ extension CreditCardVC {
             showToast("Please \(txtEmail.placeholder ?? "") ")
             return
         }
+        
+        guard email.isValidEmail else {
+            showToast("Enter Valid Email")
+            return
+        }
      
         let parameters = [
 

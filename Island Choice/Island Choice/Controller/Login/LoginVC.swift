@@ -53,12 +53,12 @@ extension LoginVC {
 extension LoginVC {
     
     fileprivate func userLogin() {
-        guard let userName = txtUserName.text else {
+        guard let userName = txtUserName.text, userName.count > 0 else {
             showToast("Please \(txtUserName.placeholder ?? "") ")
             return
         }
 
-        guard let password = txtPassword.text else {
+        guard let password = txtPassword.text, password.count > 0 else {
             showToast("Please \(txtPassword.placeholder ?? "") ")
             return
         }

@@ -71,9 +71,18 @@ extension AddFavoriteProductVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:ProductCollCell = collectionView.dequequReusableCell(for: indexPath)
         cell.setUpFavoriteCell()
+        cell.btnFavourite.tag = indexPath.row
+        cell.btnFavourite.addTarget(self, action: #selector(onPressFavouritebtnTap(_:)), for: .touchUpInside)
         return cell
     }
     
+    
+    @objc func onPressFavouritebtnTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+    
+    
+}
     
 }
 
