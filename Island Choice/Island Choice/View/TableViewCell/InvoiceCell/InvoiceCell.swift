@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class InvoiceCell: UITableViewCell {
     
@@ -27,4 +28,14 @@ class InvoiceCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func InvoiceCell(record:RecordsInvoice) {
+        
+        lblInvoiceNo.text = record.invoiceNumber
+        lblAmount.text = "$\(record.amount)"
+        btnDownload.isHidden = !record.pdfAvailabel
+       if let strDate = record.date.split(separator: "T").first {
+        lblDate.text = String(strDate)
+        }
+        
+    }
 }

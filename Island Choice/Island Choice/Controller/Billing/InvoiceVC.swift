@@ -7,6 +7,7 @@
 
 import UIKit
 import PullToRefreshKit
+import SwiftyJSON
 
 enum InvoiceOrder: String {
     case date = "Date"
@@ -17,8 +18,10 @@ enum InvoiceOrder: String {
 class InvoiceVC: UIViewController {
     
     //MARK: - VARIABLE
-    var invoiceCustomer: [Records] = []
+    var invoiceCustomer: [RecordsInvoice] = []
+    var arrTotalAmount:[Int] = []
     var invoiceOrder = InvoiceOrder.date
+  
     fileprivate var isDescending = true
     fileprivate var startPageIndex = 0
     fileprivate var endPageIndex = 20
@@ -60,7 +63,7 @@ class InvoiceVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblSelectedButton.text = "0 of 6"
+       // lblSelectedButton.text = "0 of 6"
         
     }
     
@@ -81,6 +84,7 @@ extension InvoiceVC {
         
        // let customerId = AppUserDefaults.value(forKey: .CustomerId)
         let searchText = txtSearchInvoice.text
+        lblSelectedButton.text = "\(startPageIndex) of \(endPageIndex)"
         
         let param = [
             "paginationSettings":[
@@ -99,6 +103,23 @@ extension InvoiceVC {
         showHUD()
         NetworkManager.Billing.getCustomerOpenInvoices(param: param, { (json) in
             print(json)
+            
+            let data = InvoiceModel(json: json)
+          //  let amount = data.records
+            if self.startPageIndex == 0 {
+                self.arrTotalAmount.removeAll()
+                self.invoiceCustomer.removeAll()
+             
+                self.invoiceCustomer.append(contentsOf: data.records)
+            } else {
+                self.invoiceCustomer.append(contentsOf: data.records)
+            }
+            if data.records.count > 0 {
+                self.reloadData(state: .normal)
+            }
+            else {
+                self.reloadData(state: .noMoreData)
+            }
             self.hideHUD()
         }, { (error) in
             self.reloadData(state: .noMoreData)
@@ -165,13 +186,13 @@ extension InvoiceVC {
             for i in 0..<arrData.count {
                 arrSelectedInvoice.append(i)
             }
-            lblSelectedButton.text = "6 0f 6"
+           // lblSelectedButton.text = "6 0f 6"
         } else {
             arrSelectedInvoice.removeAll()
-            lblSelectedButton.text = "0 0f 6"
+           // lblSelectedButton.text = "0 0f 6"
         }
 
-        tblInvoiceList.reloadData()
+       // tblInvoiceList.reloadData()
         
     }
     
@@ -192,6 +213,8 @@ extension InvoiceVC {
     
     @objc fileprivate func onDownloadBtnTap(_ sender: UIButton) {
         
+        getInvoiceDownload(record: invoiceCustomer[sender.tag])
+        
     }
     
 }
@@ -202,15 +225,18 @@ extension InvoiceVC {
 extension InvoiceVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrData.count
+        return invoiceCustomer.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: InvoiceCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        let invoice = invoiceCustomer[indexPath.row]
+        cell.InvoiceCell(record: invoice)
         cell.btnCheck.tag = indexPath.row
         cell.btnDownload.tag = indexPath.row
         cell.btnCheck.addTarget(self, action: #selector(onCheckBtnTap(_:)), for: .touchUpInside)
         cell.btnDownload.addTarget(self, action: #selector(onDownloadBtnTap(_:)), for: .touchUpInside)
+        cell.btnCheck.isHidden = true
         
         cell.btnCheck.isSelected = arrSelectedInvoice.contains(indexPath.row)
         
@@ -250,7 +276,7 @@ extension InvoiceVC: UITableViewDelegate {
 extension InvoiceVC {
     
     
-    fileprivate func getInvoiceDownload(record: Records) {
+    fileprivate func getInvoiceDownload(record: RecordsInvoice) {
         
        // let customerId = AppUserDefaults.value(forKey: .CustomerId)
        // let searchText = txtSearch.text
