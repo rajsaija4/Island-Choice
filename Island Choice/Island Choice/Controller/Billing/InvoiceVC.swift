@@ -27,12 +27,14 @@ class InvoiceVC: UIViewController {
         didSet{
             btnPayInvoice.isEnabled = arrSelectedInvoice.count > 0
         }
+        
     }
 
     fileprivate var arrData: [Int] = [0,1,2,3,4,5]
     
     //MARK: - OUTLET
     @IBOutlet weak var txtSearchInvoice: UITextField!
+    @IBOutlet weak var lblSelectedButton: UILabel!
     @IBOutlet var arrSortBtn: [UIButton]!
     @IBOutlet weak var tblInvoiceList: UITableView!{
         didSet{
@@ -58,6 +60,7 @@ class InvoiceVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblSelectedButton.text = "0 of 6"
         
     }
     
@@ -162,11 +165,14 @@ extension InvoiceVC {
             for i in 0..<arrData.count {
                 arrSelectedInvoice.append(i)
             }
+            lblSelectedButton.text = "6 0f 6"
         } else {
             arrSelectedInvoice.removeAll()
+            lblSelectedButton.text = "0 0f 6"
         }
 
         tblInvoiceList.reloadData()
+        
     }
     
     @IBAction func onPayInvoiceBtnTap(_ sender: UIButton) {
@@ -181,6 +187,7 @@ extension InvoiceVC {
         }
         
         tblInvoiceList.reloadData()
+        lblSelectedButton.text = "\(arrSelectedInvoice.count) of 6"
     }
     
     @objc fileprivate func onDownloadBtnTap(_ sender: UIButton) {

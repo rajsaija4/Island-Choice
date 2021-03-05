@@ -193,7 +193,7 @@ extension DashboardVC {
 
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss+10:00"
             guard let date = dateFormatter.date(from:isoDate) else { return }
             dateFormatter.dateFormat = "EEEE"
             let day = dateFormatter.string(from: date)

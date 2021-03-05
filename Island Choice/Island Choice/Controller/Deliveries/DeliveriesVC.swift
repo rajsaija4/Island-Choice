@@ -51,22 +51,6 @@ extension DeliveriesVC {
     }
     
     @IBAction func onNewOrderbtnTap(_ sender: UIButton) {
-        
-//        let alert = UIAlertController(title: "New Delivery", message: "Would you like to add your favourite products to the new delivery?")
-//        alert.addAction(UIAlertAction(title: "NO", style: .cancel, handler: .none))
-//        alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { (_) in
-//            let vc = DeliveryNewOrderVC.instantiate(fromAppStoryboard: .Deliveries)
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }))
-//        self.present(alert, animated: true, completion: nil)
-        
-//        let alert = UIAlertController(title: "New Delivery", message: "Would you like to add your favourite products to the new delivery?", actionNames: ["NO", "YES"]) { (action) in
-//            if action.title == "YES" {
-//                let vc = DeliveryNewOrderVC.instantiate(fromAppStoryboard: .Deliveries)
-//                self.navigationController?.pushViewController(vc, animated: true)
-//            }
-//        }
-//        self.present(alert, animated: true, completion: nil)
   
         let alert = UIAlertController(title: "New Delivery", message: "Would you like to add your favourite products to the new delivery?", actionName: "Yes") { (_) in
             let vc = DeliveryNewOrderVC.instantiate(fromAppStoryboard: .Deliveries)
