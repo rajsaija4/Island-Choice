@@ -23,6 +23,8 @@ class ProductCollCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .white
+        self.cornerRadius = 4
         // Initialization code
     }
 

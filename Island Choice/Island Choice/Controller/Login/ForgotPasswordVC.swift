@@ -25,6 +25,9 @@ class ForgotPasswordVC: UIViewController {
     }
     
     @IBAction func onSendBtnTap(_ sender: UIButton) {
+        
+        
+        getForgotPassword()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -35,4 +38,42 @@ class ForgotPasswordVC: UIViewController {
     @IBAction func onBackgroundBtnTap(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+
+
+extension ForgotPasswordVC {
+    
+fileprivate func getForgotPassword() {
+    
+    
+    guard let accountNumber = txtAccountNumber.text,accountNumber.count > 0 else {
+        showToast("Please \(txtAccountNumber.placeholder ?? "") ")
+        return
+    }
+    
+    guard let zipcode = txtZipcode.text,zipcode.count > 0 else {
+        showToast("Please \(txtZipcode.placeholder ?? "") ")
+        return
+    }
+    
+  
+ 
+    let parameters = [
+
+        "customerId":accountNumber,
+           "postalCode":zipcode
+     
+    ] as [String:Any]
+    showHUD()
+    NetworkManager.Login.getForgotPassword(param: parameters) { (JSON) in
+        print(JSON)
+        self.hideHUD()
+    } _: { (error) in
+        self.hideHUD()
+        self.showToast(error)
+        
+    }
+
+}
 }

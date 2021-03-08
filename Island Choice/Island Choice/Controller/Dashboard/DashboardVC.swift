@@ -156,7 +156,7 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.width - 30) / 2
-        let height = collectionView.frame.size.height
+        let height = collectionView.frame.size.height - 20
         return CGSize(width: width, height: height)
     }
     

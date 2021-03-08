@@ -10,7 +10,7 @@ import UIKit
 
 let APPDEL                             =   (UIApplication.shared.delegate as? AppDelegate)
 let APPNAME                            =   "Island Choice"
-let APPID                              =   "1538258481"
+let APPID                              =   "123456"
 
 let ROOTVC                              =   APPDEL?.window?.rootViewController
 let MAIN_WINDOW                         =   UIApplication.shared.keyWindow

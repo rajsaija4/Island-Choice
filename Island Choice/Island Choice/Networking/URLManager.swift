@@ -15,6 +15,7 @@ struct URLManager {
         static let login = basePath + "AuthenticateUser"
         static let checkAccount = basePath + "CheckAccount"
         static let getCustomerAccount = basePath + "GetCustomerAccounts"
+        static let getForgotPassword = basePath + "app-forgot-password"
     }
     
     struct Billing {

@@ -14,6 +14,8 @@ class RemoveFavProductCell: UICollectionViewCell {
     @IBOutlet weak var btnRemove: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .white
+        self.cornerRadius = 4
         // Initialization code
     }
 

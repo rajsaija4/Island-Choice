@@ -26,16 +26,16 @@ class StatementsVC: UIViewController {
         didSet {
             tblStatement.register(StatementCell.self)
             tblStatement.tableFooterView = UIView(frame: .zero)
-            tblStatement.configRefreshHeader(container: self) {
-                self.startPageIndex = 0
-                self.endPageIndex = 20
-               
-            }
-            tblStatement.configRefreshFooter(container: self) {
-                self.startPageIndex += 1
-                self.endPageIndex = 20
-             
-            }
+//            tblStatement.configRefreshHeader(container: self) {
+//                self.startPageIndex = 0
+//                self.endPageIndex = 20
+//               
+//            }
+//            tblStatement.configRefreshFooter(container: self) {
+//                self.startPageIndex += 1
+//                self.endPageIndex = 20
+//             
+//            }
         }
         
     }
@@ -83,7 +83,7 @@ class StatementsVC: UIViewController {
 extension StatementsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

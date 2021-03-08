@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		40BE9275557E90ABD7C9549C /* Pods_Island_Choice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EC53273B927B988EC14C8A /* Pods_Island_Choice.framework */; };
+		9F08BC6525F62DD600B6935E /* PayInvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F08BC6425F62DD600B6935E /* PayInvoiceVC.swift */; };
+		9F08BC6925F632A000B6935E /* PayInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F08BC6725F632A000B6935E /* PayInvoice.swift */; };
+		9F08BC6A25F632A000B6935E /* PayInvoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F08BC6825F632A000B6935E /* PayInvoice.xib */; };
 		9F097F0225E8FD7E00CD0FA7 /* checkoutTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F097F0025E8FD7E00CD0FA7 /* checkoutTblCell.swift */; };
 		9F097F0325E8FD7E00CD0FA7 /* checkoutTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F097F0125E8FD7E00CD0FA7 /* checkoutTblCell.xib */; };
 		9F097F1025E91D6200CD0FA7 /* AddFavoriteProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F097F0F25E91D6200CD0FA7 /* AddFavoriteProductVC.swift */; };
@@ -90,6 +93,9 @@
 
 /* Begin PBXFileReference section */
 		987B70F0EAB6B8D5ADE3A58E /* Pods-Island Choice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Island Choice.release.xcconfig"; path = "Target Support Files/Pods-Island Choice/Pods-Island Choice.release.xcconfig"; sourceTree = "<group>"; };
+		9F08BC6425F62DD600B6935E /* PayInvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayInvoiceVC.swift; sourceTree = "<group>"; };
+		9F08BC6725F632A000B6935E /* PayInvoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayInvoice.swift; sourceTree = "<group>"; };
+		9F08BC6825F632A000B6935E /* PayInvoice.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayInvoice.xib; sourceTree = "<group>"; };
 		9F097F0025E8FD7E00CD0FA7 /* checkoutTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkoutTblCell.swift; sourceTree = "<group>"; };
 		9F097F0125E8FD7E00CD0FA7 /* checkoutTblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = checkoutTblCell.xib; sourceTree = "<group>"; };
 		9F097F0F25E91D6200CD0FA7 /* AddFavoriteProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteProductVC.swift; sourceTree = "<group>"; };
@@ -195,6 +201,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9F08BC6C25F644BF00B6935E /* PayInvoice */ = {
+			isa = PBXGroup;
+			children = (
+				9F08BC6725F632A000B6935E /* PayInvoice.swift */,
+				9F08BC6825F632A000B6935E /* PayInvoice.xib */,
+			);
+			path = PayInvoice;
+			sourceTree = "<group>";
+		};
 		9F097F0825E9071E00CD0FA7 /* CheckOutCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +238,7 @@
 				9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */,
 				9F74253725E517B1003C01F6 /* CreditCardVC.swift */,
 				9F418CD925F0C3F800F444F8 /* StatementsVC.swift */,
+				9F08BC6425F62DD600B6935E /* PayInvoiceVC.swift */,
 			);
 			path = Billing;
 			sourceTree = "<group>";
@@ -499,6 +515,7 @@
 				9FE8C88425E7C5F90014CB43 /* CartCell */,
 				9F097F0825E9071E00CD0FA7 /* CheckOutCell */,
 				9F9BDB3325EA456600676A83 /* FillterProductCell */,
+				9F08BC6C25F644BF00B6935E /* PayInvoice */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -622,6 +639,7 @@
 				9F7424C325E4C941003C01F6 /* PaymentCardCell.xib in Resources */,
 				9FDC1B0725E6903400C57FCE /* ProductCollCell.xib in Resources */,
 				9F9B775425E67F400016423F /* DeliveryOrderCell.xib in Resources */,
+				9F08BC6A25F632A000B6935E /* PayInvoice.xib in Resources */,
 				9F70A85D25E3E1C400E1EEAF /* StatementCell.xib in Resources */,
 				9FE8C88225E7C5EF0014CB43 /* CartTblCell.xib in Resources */,
 				9FC854E725DD523100AC0073 /* Main.storyboard in Resources */,
@@ -687,6 +705,7 @@
 				9F293AC325DF9744008EC1DD /* MainTabBarController.swift in Sources */,
 				9F293B5625DFF396008EC1DD /* PaymentMethodVC.swift in Sources */,
 				9F4079DE25DE454E00FCA1B2 /* Alert+Extension.swift in Sources */,
+				9F08BC6525F62DD600B6935E /* PayInvoiceVC.swift in Sources */,
 				9FD6016225DE7A910081D546 /* LoginVC.swift in Sources */,
 				9F097F2025E926DC00CD0FA7 /* RemoveFavProductCell.swift in Sources */,
 				9F097F1025E91D6200CD0FA7 /* AddFavoriteProductVC.swift in Sources */,
@@ -731,6 +750,7 @@
 				9F1AA17A25ED23EB0041134A /* BIllingInformation.swift in Sources */,
 				9FC854E025DD523100AC0073 /* AppDelegate.swift in Sources */,
 				9F4079E025DE454E00FCA1B2 /* UIController+Ext.swift in Sources */,
+				9F08BC6925F632A000B6935E /* PayInvoice.swift in Sources */,
 				9F4079D825DE454E00FCA1B2 /* Constants.swift in Sources */,
 				9F74253C25E53E15003C01F6 /* BillingInformationVC.swift in Sources */,
 				9F293B5325DFF31B008EC1DD /* HistoryVC.swift in Sources */,

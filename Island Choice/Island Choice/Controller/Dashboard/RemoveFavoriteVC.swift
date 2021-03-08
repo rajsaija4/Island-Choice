@@ -75,7 +75,7 @@ extension RemoveFavoriteVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.width - 30) / 2
-        let height = width * 2
+        let height = width * 1.5
         return CGSize(width: width, height: height)
     }
     

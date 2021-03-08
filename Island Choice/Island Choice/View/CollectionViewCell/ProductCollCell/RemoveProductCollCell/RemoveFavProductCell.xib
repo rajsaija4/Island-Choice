@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jaw-Qi-1Cl">
-                        <rect key="frame" x="0.0" y="97" width="196" height="88"/>
+                        <rect key="frame" x="8" y="89" width="180" height="88"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="▼" borderStyle="roundedRect" placeholder="2" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9q6-wf-LUw">
-                                <rect key="frame" x="0.0" y="0.0" width="196" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WBi-DB-A8I"/>
                                 </constraints>
@@ -35,7 +35,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiB-91-V8r">
-                                <rect key="frame" x="0.0" y="48" width="196" height="40"/>
+                                <rect key="frame" x="0.0" y="48" width="180" height="40"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="nzV-Sa-LUN"/>
@@ -58,10 +58,10 @@
                         </userDefinedRuntimeAttributes>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-dO-nXN">
-                        <rect key="frame" x="0.0" y="0.0" width="196" height="97"/>
+                        <rect key="frame" x="0.0" y="0.0" width="196" height="89"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_Product" translatesAutoresizingMaskIntoConstraints="NO" id="Idf-qF-dTd">
-                                <rect key="frame" x="0.0" y="0.0" width="196" height="97"/>
+                                <rect key="frame" x="0.0" y="0.0" width="196" height="89"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -76,11 +76,11 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="jaw-Qi-1Cl" secondAttribute="trailing" id="BQA-mZ-urK"/>
+                <constraint firstAttribute="trailing" secondItem="jaw-Qi-1Cl" secondAttribute="trailing" constant="8" id="BQA-mZ-urK"/>
                 <constraint firstItem="jaw-Qi-1Cl" firstAttribute="top" secondItem="hlo-dO-nXN" secondAttribute="bottom" id="FQm-lZ-AK2"/>
-                <constraint firstItem="jaw-Qi-1Cl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ISK-lf-bvK"/>
+                <constraint firstItem="jaw-Qi-1Cl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ISK-lf-bvK"/>
                 <constraint firstItem="hlo-dO-nXN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Kf9-Pf-xb3"/>
-                <constraint firstAttribute="bottom" secondItem="jaw-Qi-1Cl" secondAttribute="bottom" id="V6G-Nu-XuN"/>
+                <constraint firstAttribute="bottom" secondItem="jaw-Qi-1Cl" secondAttribute="bottom" constant="8" id="V6G-Nu-XuN"/>
                 <constraint firstAttribute="trailing" secondItem="hlo-dO-nXN" secondAttribute="trailing" id="bkW-WF-LCy"/>
                 <constraint firstItem="hlo-dO-nXN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cd3-XM-kGB"/>
             </constraints>

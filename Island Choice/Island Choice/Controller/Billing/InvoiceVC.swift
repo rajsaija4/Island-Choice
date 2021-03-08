@@ -240,6 +240,17 @@ extension InvoiceVC {
     }
     
     @IBAction func onPayInvoiceBtnTap(_ sender: UIButton) {
+        
+        var arrInvoice:[RecordsInvoice] = []
+        for i in 0..<arrSelectedInvoice.count {
+            arrInvoice.append(arrInvoiceCustomer[i])
+            
+        }
+        
+        let vc = PayInvoiceVC.instantiate(fromAppStoryboard: .Billing)
+        vc.arrInvoicePay = arrInvoice
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc fileprivate func onCheckBtnTap(_ sender: UIButton) {

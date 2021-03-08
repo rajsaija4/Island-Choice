@@ -32,7 +32,7 @@ class PaymentMethodVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getCustomerCreditCards()
+//        getCustomerCreditCards()
     }
     
 }
@@ -74,7 +74,7 @@ extension PaymentMethodVC {
 extension PaymentMethodVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

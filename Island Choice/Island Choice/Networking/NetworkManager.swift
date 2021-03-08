@@ -101,6 +101,40 @@ extension NetworkManager {
             }
         }
         
+        static func getForgotPassword(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Auth.getForgotPassword.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    if let json = JSON(parseJSON: resJson["Data"].stringValue).arrayValue.first {
+                        success(json)
+                    }
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    break
+                }
+            }
+        }
+
         
     }
 }

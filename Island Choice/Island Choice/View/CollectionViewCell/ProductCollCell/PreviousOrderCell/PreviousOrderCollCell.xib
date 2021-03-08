@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4YX-22-hHo">
-                        <rect key="frame" x="0.0" y="217" width="288" height="40"/>
+                        <rect key="frame" x="8" y="217" width="272" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="SAy-lK-Lrn"/>
                         </constraints>
@@ -49,10 +49,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="4YX-22-hHo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CnV-Lj-Fjs"/>
+                <constraint firstItem="4YX-22-hHo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="CnV-Lj-Fjs"/>
                 <constraint firstItem="krk-JY-QhK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="If6-NI-LvY"/>
                 <constraint firstItem="krk-JY-QhK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZXc-SL-TSz"/>
-                <constraint firstAttribute="trailing" secondItem="4YX-22-hHo" secondAttribute="trailing" id="cbT-KJ-ZnM"/>
+                <constraint firstAttribute="trailing" secondItem="4YX-22-hHo" secondAttribute="trailing" constant="8" id="cbT-KJ-ZnM"/>
                 <constraint firstAttribute="bottom" secondItem="4YX-22-hHo" secondAttribute="bottom" constant="10" id="cgE-61-XbQ"/>
                 <constraint firstAttribute="trailing" secondItem="krk-JY-QhK" secondAttribute="trailing" id="lKY-kl-bSC"/>
                 <constraint firstItem="4YX-22-hHo" firstAttribute="top" secondItem="krk-JY-QhK" secondAttribute="bottom" id="zVu-wA-vVT"/>
