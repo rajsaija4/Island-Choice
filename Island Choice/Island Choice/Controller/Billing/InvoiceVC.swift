@@ -15,12 +15,15 @@ enum InvoiceOrder: String {
     case amount = "Amount"
 }
 
-class InvoiceVC: UIViewController {
+class InvoiceVC: UIViewController, UITextFieldDelegate{
     
     //MARK: - VARIABLE
-    var invoiceCustomer: [RecordsInvoice] = []
-    var arrTotalAmount:[Int] = []
+    var arrInvoiceCustomer: [RecordsInvoice] = []
+    var arrTotalAmount:[Double] = []
     var invoiceOrder = InvoiceOrder.date
+    var arrTotalPayableAmount:[Double] = []
+   
+    
   
     fileprivate var isDescending = true
     fileprivate var startPageIndex = 0
@@ -33,9 +36,11 @@ class InvoiceVC: UIViewController {
         
     }
 
-    fileprivate var arrData: [Int] = [0,1,2,3,4,5]
+
     
     //MARK: - OUTLET
+    @IBOutlet weak var btnSelectAll: UIButton!
+    @IBOutlet weak var lblTotalAmount: UILabel!
     @IBOutlet weak var txtSearchInvoice: UITextField!
     @IBOutlet weak var lblSelectedButton: UILabel!
     @IBOutlet var arrSortBtn: [UIButton]!
@@ -73,6 +78,10 @@ class InvoiceVC: UIViewController {
         getInvoiceList()
     }
  
+    @IBAction func txtSearchAction(_ sender: UITextField) {
+        
+        getInvoiceList()
+    }
     
 }
 
@@ -105,27 +114,47 @@ extension InvoiceVC {
             print(json)
             
             let data = InvoiceModel(json: json)
-          //  let amount = data.records
+            let amount:[RecordsInvoice] = data.records
+          
+           
             if self.startPageIndex == 0 {
-                self.arrTotalAmount.removeAll()
-                self.invoiceCustomer.removeAll()
+                self.arrTotalPayableAmount.removeAll()
+                //self.arrTotalAmount.removeAll()
+                //self.arrInvoiceCustomer.removeAll()
              
-                self.invoiceCustomer.append(contentsOf: data.records)
+                self.arrInvoiceCustomer.append(contentsOf: data.records)
+                for data in amount {
+                    self.arrTotalPayableAmount.append(data.amount)
+                }
+               
             } else {
-                self.invoiceCustomer.append(contentsOf: data.records)
+                self.arrInvoiceCustomer.append(contentsOf: data.records)
+                for data in amount {
+                    self.arrTotalPayableAmount.append(data.amount)
+                }
+    
             }
+         
             if data.records.count > 0 {
                 self.reloadData(state: .normal)
             }
             else {
                 self.reloadData(state: .noMoreData)
             }
+            let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
+            
+            self.lblTotalAmount.text = "$0.00 / \(payableTotalAmount)"
+           
+            
             self.hideHUD()
         }, { (error) in
             self.reloadData(state: .noMoreData)
             self.hideHUD()
             self.showToast(error)
         })
+        
+     
+        
     }
     
     fileprivate func reloadData(state: FooterRefresherState) {
@@ -178,21 +207,35 @@ extension InvoiceVC {
     }
     
     @IBAction func onSelectAllBtnTap(_ sender: UIButton) {
-        
+       
         sender.isSelected = !sender.isSelected
         
         if sender.isSelected {
+            arrTotalAmount.removeAll()
             arrSelectedInvoice.removeAll()
-            for i in 0..<arrData.count {
-                arrSelectedInvoice.append(i)
+            for (index, item) in arrInvoiceCustomer.enumerated() {
+                arrSelectedInvoice.append(index)
+                arrTotalAmount.append(item.amount)
+                let total = self.arrTotalAmount.reduce(0, +)
+                let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
+                self.lblTotalAmount.text = "$\(total) / \(payableTotalAmount)"
+            
+                
             }
-           // lblSelectedButton.text = "6 0f 6"
+           
+       
+          
         } else {
+                
+            arrTotalAmount.removeAll()
             arrSelectedInvoice.removeAll()
-           // lblSelectedButton.text = "0 0f 6"
+            let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
+            self.lblTotalAmount.text = "$0 / \(payableTotalAmount)"
+            
+            tblInvoiceList.reloadData()
         }
 
-       // tblInvoiceList.reloadData()
+        tblInvoiceList.reloadData()
         
     }
     
@@ -213,7 +256,7 @@ extension InvoiceVC {
     
     @objc fileprivate func onDownloadBtnTap(_ sender: UIButton) {
         
-        getInvoiceDownload(record: invoiceCustomer[sender.tag])
+        getInvoiceDownload(record: arrInvoiceCustomer[sender.tag])
         
     }
     
@@ -225,12 +268,19 @@ extension InvoiceVC {
 extension InvoiceVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return invoiceCustomer.count
+        return arrInvoiceCustomer.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: InvoiceCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        let invoice = invoiceCustomer[indexPath.row]
+        
+        if arrSelectedInvoice.contains(indexPath.row) {
+            cell.backgroundColor = .lightGray
+        } else {
+            cell.backgroundColor = .white
+        }
+        
+        let invoice = arrInvoiceCustomer[indexPath.row]
         cell.InvoiceCell(record: invoice)
         cell.btnCheck.tag = indexPath.row
         cell.btnDownload.tag = indexPath.row
@@ -255,18 +305,23 @@ extension InvoiceVC: UITableViewDelegate {
         if arrSelectedInvoice.contains(indexPath.row) {
             guard let index: Int = arrSelectedInvoice.firstIndex(where: ({ $0 == indexPath.row })) else { return }
             arrSelectedInvoice.remove(at: index)
+            arrTotalAmount.remove(at: index)
+            
         } else {
             arrSelectedInvoice.append(indexPath.row)
+            arrTotalAmount.append(arrInvoiceCustomer[indexPath.row].amount)
+            
         }
         
+        let total = self.arrTotalAmount.reduce(0, +)
+        let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
+        self.lblTotalAmount.text = "$\(total) / \(payableTotalAmount)"
         tblInvoiceList.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
-    
-   
 
 }
 

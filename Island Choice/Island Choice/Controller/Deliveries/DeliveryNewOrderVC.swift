@@ -98,7 +98,7 @@ extension DeliveryNewOrderVC: UICollectionViewDelegateFlowLayout {
 
 // MARK: - ColletionView Delegate
 
-extension DeliveryOrderVC: UICollectionViewDelegate {
+extension DeliveryNewOrderVC: UICollectionViewDelegate {
     
    
 }

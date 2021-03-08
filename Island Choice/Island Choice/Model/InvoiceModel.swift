@@ -33,13 +33,13 @@ class RecordsInvoice: NSObject {
     var deliveryName = ""
     var deliveryId = ""
     var invoiceNumber = ""
-    var amount = 0
+    var amount = 0.0
     var invoiceKey = ""
     var paginationId = ""
     var paymentId = ""
     var customerId = ""
     var date = ""
-    var openAmount = 0
+    var openAmount = 0.0
     
     init(json:JSON){
         super.init()
@@ -48,13 +48,13 @@ class RecordsInvoice: NSObject {
         deliveryName = json["DeliveryName"].stringValue
         deliveryId = json["DeliveryId"].stringValue
         invoiceNumber = json["InvoiceNumber"].stringValue
-        amount = json["Amount"].intValue
+        amount = json["Amount"].doubleValue
         invoiceKey = json["InvoiceKey"].stringValue
         paginationId = json["PaginationId"].stringValue
         paymentId = json["PaymentId"].stringValue
         customerId = json["CustomerId"].stringValue
         date = json["Date"].stringValue
-        openAmount = json["OpenAmount"].intValue
+        openAmount = json["OpenAmount"].doubleValue
         
         
         

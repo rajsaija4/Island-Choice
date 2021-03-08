@@ -54,6 +54,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="321" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="txtSearchAction:" destination="5YF-eh-bYS" eventType="editingChanged" id="Ukk-7F-01j"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YA-rM-umq">
                                         <rect key="frame" x="329" y="2" width="30" height="30"/>
@@ -76,8 +79,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbh-Dy-7Qw">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-4K-Afp">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="40"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-4K-Afp">
+                                                <rect key="frame" x="-32" y="0.0" width="32" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="AHh-Fv-Zd2"/>
@@ -92,7 +95,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRn-VI-UKZ">
-                                                <rect key="frame" x="32" y="0.0" width="32" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="0YI-sl-P9C"/>
@@ -107,19 +110,19 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rhB-68-72S" customClass="UIControl">
-                                                <rect key="frame" x="64" y="0.0" width="80" height="40"/>
+                                                <rect key="frame" x="32" y="0.0" width="100" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dcj-kc-MKc">
-                                                        <rect key="frame" x="8" y="8" width="64" height="24"/>
+                                                        <rect key="frame" x="8" y="8" width="84" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0M-Nz-9Gt">
-                                                                <rect key="frame" x="0.0" y="4" width="44" height="16"/>
+                                                                <rect key="frame" x="0.0" y="4" width="64" height="16"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-zM-SrM">
-                                                                <rect key="frame" x="44" y="2" width="20" height="20"/>
+                                                                <rect key="frame" x="64" y="2" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="fKD-zM-SrM" secondAttribute="height" id="agh-zF-bxj"/>
                                                                     <constraint firstAttribute="width" constant="20" id="eL6-BM-vTW"/>
@@ -132,7 +135,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="0fV-YF-62M"/>
+                                                    <constraint firstAttribute="width" constant="100" id="0fV-YF-62M"/>
                                                     <constraint firstAttribute="bottom" secondItem="dcj-kc-MKc" secondAttribute="bottom" constant="8" id="FNg-9s-SIb"/>
                                                     <constraint firstItem="dcj-kc-MKc" firstAttribute="top" secondItem="rhB-68-72S" secondAttribute="top" constant="8" id="LoJ-vd-LNc"/>
                                                     <constraint firstItem="dcj-kc-MKc" firstAttribute="leading" secondItem="rhB-68-72S" secondAttribute="leading" constant="8" id="WVP-JW-CQ4"/>
@@ -151,7 +154,7 @@
                                                 </connections>
                                             </view>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n4-FY-C2w" customClass="UIControl">
-                                                <rect key="frame" x="144" y="0.0" width="90" height="40"/>
+                                                <rect key="frame" x="132" y="0.0" width="90" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xKD-cQ-hyf">
                                                         <rect key="frame" x="8" y="8" width="74" height="24"/>
@@ -195,19 +198,19 @@
                                                 </connections>
                                             </view>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvf-z3-FTA" customClass="UIControl">
-                                                <rect key="frame" x="234" y="0.0" width="141" height="40"/>
+                                                <rect key="frame" x="222" y="0.0" width="153" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="awf-sb-Zkb">
-                                                        <rect key="frame" x="8" y="8" width="125" height="24"/>
+                                                        <rect key="frame" x="8" y="8" width="137" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPEN AMOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVz-rN-qEV">
-                                                                <rect key="frame" x="0.0" y="4" width="105" height="16"/>
+                                                                <rect key="frame" x="0.0" y="4" width="117" height="16"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFx-8Z-aaS">
-                                                                <rect key="frame" x="105" y="2" width="20" height="20"/>
+                                                                <rect key="frame" x="117" y="2" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="VqL-0f-cML"/>
                                                                     <constraint firstAttribute="width" secondItem="ZFx-8Z-aaS" secondAttribute="height" id="k8K-ST-Odh"/>
@@ -349,7 +352,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MJ-FU-Rfa">
                                 <rect key="frame" x="0.0" y="577" width="375" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00 / $56296.20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BK-g6-PlE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BK-g6-PlE">
                                         <rect key="frame" x="16" y="0.0" width="359" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -389,7 +392,9 @@
                     </view>
                     <connections>
                         <outlet property="btnPayInvoice" destination="ybk-St-oLM" id="ULQ-Hr-b99"/>
+                        <outlet property="btnSelectAll" destination="TFA-Rt-Hvl" id="lkn-Io-xUR"/>
                         <outlet property="lblSelectedButton" destination="zc6-sH-7aa" id="k7W-YF-fSi"/>
+                        <outlet property="lblTotalAmount" destination="5BK-g6-PlE" id="F5k-6J-RyU"/>
                         <outlet property="tblInvoiceList" destination="Hok-1Z-6AE" id="kba-B0-tk1"/>
                         <outlet property="txtSearchInvoice" destination="mf9-Gu-AHa" id="COX-01-5jl"/>
                         <outletCollection property="arrSortBtn" destination="fKD-zM-SrM" collectionClass="NSMutableArray" id="KJR-Qi-0Mk"/>
@@ -512,6 +517,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="321" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="txtSearchText:" destination="pG2-o6-Hnq" eventType="editingChanged" id="rFZ-59-arD"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-qc-iJs">
                                         <rect key="frame" x="329" y="2" width="30" height="30"/>
@@ -773,7 +781,7 @@
                         <outlet property="btnShowStatement" destination="SV1-nn-80L" id="wk3-Bb-8H0"/>
                         <outlet property="lbl_Page" destination="4ac-LR-OmD" id="Iwh-qZ-XWR"/>
                         <outlet property="tblHistory" destination="7cH-gl-ndr" id="ZNy-Pb-176"/>
-                        <outlet property="txtSearch" destination="7m4-hr-eKc" id="uE6-os-ZDe"/>
+                        <outlet property="txtSearch" destination="7m4-hr-eKc" id="DPa-Zo-RQW"/>
                         <outlet property="viewAmountControl" destination="oZP-ci-ddD" id="JFf-Gs-xEw"/>
                         <outlet property="viewInvoiceControl" destination="n6U-MB-uyj" id="gOG-zn-jNK"/>
                         <outletCollection property="arrSortBtn" destination="hcY-gp-pBQ" collectionClass="NSMutableArray" id="1bS-3W-dPd"/>

@@ -11,6 +11,7 @@ import SwiftyJSON
 class InvoiceCell: UITableViewCell {
     
     
+    @IBOutlet weak var viewCheckBox: UIView!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblInvoiceNo: UILabel!
     @IBOutlet weak var lblAmount: UILabel!
@@ -19,6 +20,7 @@ class InvoiceCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        viewCheckBox.isHidden = true
         // Initialization code
     }
 

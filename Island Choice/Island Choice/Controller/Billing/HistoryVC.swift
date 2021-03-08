@@ -19,7 +19,7 @@ class HistoryVC: UIViewController {
 
     //MARK: - VARIABLE
     
-    var historyCustomer: [Records] = []
+    var arrHistoryCustomer: [Records] = []
     var onShowStatement: ((Bool)-> Void)?
     var historyOrder = HistoryOrder.date
     fileprivate var isDescending = true
@@ -74,6 +74,10 @@ class HistoryVC: UIViewController {
        
     }
   
+    @IBAction func txtSearchText(_ sender: UITextField) {
+        
+        getcustomerInvoiceAndPaymentHistory()
+    }
     
 }
 
@@ -148,7 +152,7 @@ extension HistoryVC {
     
     
     @objc fileprivate func onDownloadBtnTap(_ sender: UIButton) {
-        getInvoiceDownload(record: historyCustomer[sender.tag])
+        getInvoiceDownload(record: arrHistoryCustomer[sender.tag])
         
     }
 }
@@ -160,7 +164,7 @@ extension HistoryVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        historyCustomer.count
+        arrHistoryCustomer.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -173,7 +177,7 @@ extension HistoryVC: UITableViewDataSource {
 //        }
 //
         let cell: HistoryCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        let history = historyCustomer[indexPath.row]
+        let history = arrHistoryCustomer[indexPath.row]
         cell.HistoryCell(record: history)
         cell.btnDownload.tag = indexPath.row
         cell.btnDownload.addTarget(self, action: #selector(onDownloadBtnTap(_:)), for: .touchUpInside)
@@ -226,10 +230,10 @@ extension HistoryVC {
         NetworkManager.Billing.getCustomerInvoiceAndPaymentHistory(param: param, { (json) in
             let data = HistoryInvoice(json: json)
             if self.startPageIndex == 0 {
-                 self.historyCustomer.removeAll()
-                 self.historyCustomer.append(contentsOf: data.records)
+                 self.arrHistoryCustomer.removeAll()
+                 self.arrHistoryCustomer.append(contentsOf: data.records)
             } else {
-                 self.historyCustomer.append(contentsOf: data.records)
+                 self.arrHistoryCustomer.append(contentsOf: data.records)
             }
             
             if data.records.count > 0 {
