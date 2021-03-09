@@ -43,7 +43,7 @@ class DashboardVC: UIViewController {
         btnReorderDelivery.isHidden = true
         btnPendingDeliveries.isHidden = true
         stackViewBtn.isHidden = true
-        title = "My Dashboard"
+        title = "Home"
         setupNavigationBarBackBtn()
         getNextDeliveryDate()
         setupUI()

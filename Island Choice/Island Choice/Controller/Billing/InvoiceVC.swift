@@ -214,17 +214,15 @@ extension InvoiceVC {
             arrTotalAmount.removeAll()
             arrSelectedInvoice.removeAll()
             for (index, item) in arrInvoiceCustomer.enumerated() {
+                if item.amount >= 0.0 {
                 arrSelectedInvoice.append(index)
                 arrTotalAmount.append(item.amount)
                 let total = self.arrTotalAmount.reduce(0, +)
                 let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
                 self.lblTotalAmount.text = "$\(total) / \(payableTotalAmount)"
-            
-                
+                }
             }
-           
-       
-          
+
         } else {
                 
             arrTotalAmount.removeAll()
@@ -242,11 +240,9 @@ extension InvoiceVC {
     @IBAction func onPayInvoiceBtnTap(_ sender: UIButton) {
         
         var arrInvoice:[RecordsInvoice] = []
-        for i in 0..<arrSelectedInvoice.count {
+        for i in arrSelectedInvoice{
             arrInvoice.append(arrInvoiceCustomer[i])
-            
         }
-        
         let vc = PayInvoiceVC.instantiate(fromAppStoryboard: .Billing)
         vc.arrInvoicePay = arrInvoice
         navigationController?.pushViewController(vc, animated: true)
@@ -312,6 +308,12 @@ extension InvoiceVC: UITableViewDataSource {
 extension InvoiceVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        guard arrInvoiceCustomer[indexPath.row].amount >= 0.0 else{
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
         
         if arrSelectedInvoice.contains(indexPath.row) {
             guard let index: Int = arrSelectedInvoice.firstIndex(where: ({ $0 == indexPath.row })) else { return }

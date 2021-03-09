@@ -31,6 +31,11 @@ class LoginVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     
 }
 
@@ -195,6 +200,9 @@ extension LoginVC {
     }
     
     @IBAction func onCreateAccountBtnTap(_ sender: UIButton) {
+        
+        let vc = CreateAccountVC.instantiate(fromAppStoryboard: .Register)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

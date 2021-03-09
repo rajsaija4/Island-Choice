@@ -27,7 +27,7 @@ class DeliveriesVC: UIViewController {
         super.viewDidLoad()
         getCustomerAccount()
         setupUI()
-        title = "Deliveries"
+        title = "My Orders"
 
         btnNewOrder.layer.cornerRadius = 8
         setupNavigationBarBackBtn()

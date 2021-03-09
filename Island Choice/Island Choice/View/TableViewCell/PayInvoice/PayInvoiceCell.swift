@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PayInvoice: UITableViewCell {
+class PayInvoiceCell: UITableViewCell {
 
     @IBOutlet weak var txtAmountToPay: UITextField!
     @IBOutlet weak var lblAmount: UILabel!

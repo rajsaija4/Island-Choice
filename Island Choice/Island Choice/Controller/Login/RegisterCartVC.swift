@@ -1,0 +1,72 @@
+//
+//  RegisterCartVC.swift
+//  Island Choice
+//
+//  Created by GT-Raj on 09/03/21.
+//
+
+import UIKit
+
+class RegisterCartVC: UIViewController {
+
+    @IBOutlet weak var tblYourCartCell: UITableView! {
+        didSet {
+            tblYourCartCell.register(CartTblCell.self)
+        }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Confirm Your Order"
+        setupNavigationBarBackBtn()
+        // Do any additional setup after loading the view.
+    }
+    
+
+    @IBAction func onPressNextbtnTap(_ sender: UIButton) {
+        
+        let vc = RegisterAddressVC.instantiate(fromAppStoryboard: .Register)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+
+
+extension RegisterCartVC: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: CartTblCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        return cell
+    }
+    
+
+    
+    
+}
+
+
+
+extension RegisterCartVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
+}
+
+
