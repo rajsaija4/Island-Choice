@@ -50,6 +50,9 @@
 		9F418CD725F0A34300F444F8 /* DeliveryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F418CD625F0A34300F444F8 /* DeliveryInfo.swift */; };
 		9F418CDA25F0C3F800F444F8 /* StatementsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F418CD925F0C3F800F444F8 /* StatementsVC.swift */; };
 		9F50994925EA59E900CDCF96 /* ActivateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */; };
+		9F5257D525F8936D00B705C2 /* AditionInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */; };
+		9F5257D825F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */; };
+		9F5257DB25F89AD200B705C2 /* RegisterCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5257DA25F89AD200B705C2 /* RegisterCreateAccount.swift */; };
 		9F55F28125EE106500C1A73D /* AccountInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F28025EE106500C1A73D /* AccountInformation.swift */; };
 		9F55F30225EE5C3D00C1A73D /* HistoryInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F30125EE5C3D00C1A73D /* HistoryInvoice.swift */; };
 		9F70A85525E3E0BE00E1EEAF /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70A85325E3E0BE00E1EEAF /* HistoryCell.swift */; };
@@ -144,6 +147,9 @@
 		9F418CD625F0A34300F444F8 /* DeliveryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfo.swift; sourceTree = "<group>"; };
 		9F418CD925F0C3F800F444F8 /* StatementsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsVC.swift; sourceTree = "<group>"; };
 		9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateAccountVC.swift; sourceTree = "<group>"; };
+		9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AditionInformationVC.swift; sourceTree = "<group>"; };
+		9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumAndLargeScaleRegisterVC.swift; sourceTree = "<group>"; };
+		9F5257DA25F89AD200B705C2 /* RegisterCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCreateAccount.swift; sourceTree = "<group>"; };
 		9F55F28025EE106500C1A73D /* AccountInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformation.swift; sourceTree = "<group>"; };
 		9F55F30125EE5C3D00C1A73D /* HistoryInvoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInvoice.swift; sourceTree = "<group>"; };
 		9F70A85325E3E0BE00E1EEAF /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
@@ -527,6 +533,9 @@
 				9FAEF14725F7959800AF36E3 /* AccountInformationVC.swift */,
 				9FAEF15125F797AD00AF36E3 /* EcheckVC.swift */,
 				9FAEF15425F79D8B00AF36E3 /* RegisterCreditCardVC.swift */,
+				9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */,
+				9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */,
+				9F5257DA25F89AD200B705C2 /* RegisterCreateAccount.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -750,10 +759,12 @@
 				9F4079DC25DE454E00FCA1B2 /* String+Ext.swift in Sources */,
 				9FAEF13E25F78EC500AF36E3 /* RegisterAddressVC.swift in Sources */,
 				9F293ABA25DF9637008EC1DD /* AccountVC.swift in Sources */,
+				9F5257D525F8936D00B705C2 /* AditionInformationVC.swift in Sources */,
 				9FAEF13B25F7782500AF36E3 /* RegisterCartVC.swift in Sources */,
 				9F293AB425DF9609008EC1DD /* BillingVC.swift in Sources */,
 				9F74253825E517B1003C01F6 /* CreditCardVC.swift in Sources */,
 				9F9B774F25E67EB80016423F /* DeliveryOrderVC.swift in Sources */,
+				9F5257DB25F89AD200B705C2 /* RegisterCreateAccount.swift in Sources */,
 				9F418CDA25F0C3F800F444F8 /* StatementsVC.swift in Sources */,
 				9F4079DD25DE454E00FCA1B2 /* UIView+Inspectable.swift in Sources */,
 				9F097F1325E9249400CD0FA7 /* RemoveFavoriteVC.swift in Sources */,
@@ -766,6 +777,7 @@
 				9F9BDB2325EA393300676A83 /* FillterVC.swift in Sources */,
 				9FAEF14825F7959800AF36E3 /* AccountInformationVC.swift in Sources */,
 				9FAC6D8B25E7845F00A17C3E /* DeliveryCalendarVC.swift in Sources */,
+				9F5257D825F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift in Sources */,
 				9FB66E0C25E763DF00DB459D /* DeliveryNewOrderVC.swift in Sources */,
 				9FD5398A25E8F65800BF9EF0 /* CheckOutVC.swift in Sources */,
 				9F4079E925DE45F000FCA1B2 /* URLManager.swift in Sources */,

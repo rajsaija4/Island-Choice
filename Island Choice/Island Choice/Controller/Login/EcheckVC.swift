@@ -16,6 +16,12 @@ class EcheckVC: UIViewController {
     }
     
 
+    @IBAction func onPressContinuebtnTap(_ sender: Any) {
+        
+        let vc = AditionInformationVC.instantiate(fromAppStoryboard: .Register)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     /*
     // MARK: - Navigation
 

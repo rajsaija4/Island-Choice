@@ -1,18 +1,16 @@
 //
-//  LoginBillingInformationVC.swift
+//  AditionInformationVC.swift
 //  Island Choice
 //
-//  Created by GT-Raj on 09/03/21.
+//  Created by GT-Raj on 10/03/21.
 //
 
 import UIKit
 
-class LoginBillingInformationVC: UIViewController {
+class AditionInformationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Create Account"
-        setupNavigationBarBackBtn()
 
         // Do any additional setup after loading the view.
     }
@@ -20,10 +18,9 @@ class LoginBillingInformationVC: UIViewController {
 
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         
-        let vc = AccountInformationVC.instantiate(fromAppStoryboard: .Register)
+        let vc = RegisterCreateAccount.instantiate(fromAppStoryboard: .Register)
         
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
     /*
     // MARK: - Navigation

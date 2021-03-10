@@ -18,6 +18,11 @@ class CreateAccountVC: UIViewController {
     }
     
 
+    @IBAction func onPressBusinessRegisterbtnTap(_ sender: Any) {
+        let vc = MediumAndLargeScaleRegisterVC.instantiate(fromAppStoryboard: .Register)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     /*
     // MARK: - Navigation
 
