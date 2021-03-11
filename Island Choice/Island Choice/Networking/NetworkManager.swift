@@ -448,8 +448,113 @@ extension NetworkManager {
             }
         }
         
+        static func getStatement(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token, "customerId" : AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Billing.getStatement.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(JSON(parseJSON: resJson["Data"].stringValue))
+                    break
+                case .failure(let error):
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
+        
+        
+        static func getStatementPdf(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token, "customerId" : AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Billing.getStatementPdf.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                    break
+                case .failure(let error):
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
         
         
     }
 }
 
+extension NetworkManager {
+    
+    struct Order {
+        
+        static func getAllProduct(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token, "customerId" : AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Order.getAllProduct.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(JSON(parseJSON: resJson["Data"].stringValue))
+                    break
+                case .failure(let error):
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
+        
+    }
+    
+   
+    
+}

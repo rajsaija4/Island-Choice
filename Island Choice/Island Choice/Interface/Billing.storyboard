@@ -1111,6 +1111,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="321" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="txtSearchAction:" destination="rhi-Ai-SuZ" eventType="editingChanged" id="ecF-Kd-qXZ"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXz-FY-tR5">
                                         <rect key="frame" x="329" y="2" width="30" height="30"/>
@@ -1151,8 +1154,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6er-1l-HoB" customClass="UIControl">
                                                 <rect key="frame" x="32" y="0.0" width="343" height="40"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kN8-B2-kwk">
-                                                        <rect key="frame" x="145.5" y="8" width="52.5" height="24"/>
+                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kN8-B2-kwk">
+                                                        <rect key="frame" x="143.5" y="8" width="56.5" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRK-fw-4zF">
                                                                 <rect key="frame" x="0.0" y="4" width="32.5" height="16"/>
@@ -1160,11 +1163,11 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFc-SZ-o1T">
-                                                                <rect key="frame" x="32.5" y="2" width="20" height="20"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzD-gE-644">
+                                                                <rect key="frame" x="36.5" y="2" width="20" height="20"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="20" id="Dh7-hK-jLt"/>
-                                                                    <constraint firstAttribute="width" secondItem="LFc-SZ-o1T" secondAttribute="height" id="aLZ-WA-qTs"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="CeV-RK-3PS"/>
+                                                                    <constraint firstAttribute="width" secondItem="GzD-gE-644" secondAttribute="height" id="zXB-7y-oRn"/>
                                                                 </constraints>
                                                                 <state key="normal" image="img_arrow_down"/>
                                                                 <state key="selected" image="img_arrow_up"/>
@@ -1186,6 +1189,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="viewTouchUpInside:" destination="rhi-Ai-SuZ" eventType="touchUpInside" id="WqQ-b1-V2e"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -1259,7 +1265,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnDateSorting" destination="GzD-gE-644" id="zqp-wt-hF2"/>
                         <outlet property="btnSearchData" destination="sXz-FY-tR5" id="sUf-Sa-4Lh"/>
+                        <outlet property="lblPage" destination="sVk-jd-4pP" id="OPY-tM-MaC"/>
                         <outlet property="tblStatement" destination="9q1-Nd-ao7" id="TBg-LQ-RfW"/>
                         <outlet property="txtSearch" destination="RCp-Oj-qu8" id="wAp-F2-M5H"/>
                     </connections>

@@ -119,6 +119,7 @@ extension InvoiceVC {
            
             if self.startPageIndex == 0 {
                 self.arrTotalPayableAmount.removeAll()
+                self.arrInvoiceCustomer.removeAll()
                 //self.arrTotalAmount.removeAll()
                 //self.arrInvoiceCustomer.removeAll()
              
@@ -387,9 +388,7 @@ extension InvoiceVC {
         
         
         
-        guard let directoryURl = getFilePath() else {
-            showToast("Invoice save error")
-            return }
+        let directoryURl = URL(fileURLWithPath: NSTemporaryDirectory())
         
         let fileURL = directoryURl.appendingPathComponent("\(invoiceName).pdf")
         
@@ -401,8 +400,11 @@ extension InvoiceVC {
         
         do {
             try data.write(to: fileURL, options: .atomic)
-            showToast("Invoice downloaded successfully")
+           
             self.hideHUD()
+            let documentInteractionController = UIDocumentInteractionController.init(url: fileURL)
+                        documentInteractionController.delegate = self
+                        documentInteractionController.presentPreview(animated: true)
         } catch {
             self.hideHUD()
             showToast(error.localizedDescription)
@@ -412,3 +414,10 @@ extension InvoiceVC {
     
 }
 
+
+extension InvoiceVC: UIDocumentInteractionControllerDelegate {
+   
+   func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        return self.navigationController ?? self
+   }
+}

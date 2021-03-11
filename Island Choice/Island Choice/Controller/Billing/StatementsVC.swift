@@ -13,12 +13,16 @@ class StatementsVC: UIViewController {
     
     // MARK: - Variables
     
-    fileprivate var isDescending = true
+    fileprivate var isDescending = false
     fileprivate var startPageIndex = 0
     fileprivate var endPageIndex = 20
+    var arrHistoryStatements:[RecordsStatements] = []
+   
     
     // MARK: - Outlets
 
+    @IBOutlet weak var lblPage: UILabel!
+    @IBOutlet weak var btnDateSorting: UIButton!
     @IBOutlet weak var btnDate: UIButton!
     @IBOutlet weak var btnSearchData: UIButton!
     @IBOutlet weak var txtSearch: UITextField!
@@ -29,11 +33,13 @@ class StatementsVC: UIViewController {
             tblStatement.configRefreshHeader(container: self) {
                 self.startPageIndex = 0
                 self.endPageIndex = 20
+                self.getStatement()
                
             }
             tblStatement.configRefreshFooter(container: self) {
                 self.startPageIndex += 1
                 self.endPageIndex = 20
+                self.getStatement()
              
             }
         }
@@ -45,8 +51,33 @@ class StatementsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+
+    @IBAction func txtSearchAction(_ sender: Any) {
+        
+        getStatement()
+    }
+    
+    @IBAction func viewTouchUpInside(_ sender: UIControl) {
+        
+        if btnDateSorting.isSelected {
+            isDescending = false
+        }
+        else {
+            isDescending = true
+        }
+        
+        getStatement()
+        btnDateSorting.isSelected = !btnDateSorting.isSelected
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getStatement()
     }
     
     @IBAction func onSearchBtnTap(_ sender: UIButton) {
@@ -54,6 +85,7 @@ class StatementsVC: UIViewController {
         
         self.startPageIndex = 0
         self.endPageIndex = 20
+        getStatement()
         
     }
     
@@ -83,11 +115,13 @@ class StatementsVC: UIViewController {
 extension StatementsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return arrHistoryStatements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StatementCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        let statement = arrHistoryStatements[indexPath.row]
+        cell.StatementCell(record: statement)
         cell.btnDownload.tag = indexPath.row
         cell.btnDownload.addTarget(self, action: #selector(onDownloadBtnTap(_:)), for: .touchUpInside)
         return cell
@@ -117,7 +151,8 @@ extension StatementsVC: UITableViewDelegate {
 extension StatementsVC {
 
 @objc fileprivate func onDownloadBtnTap(_ sender: UIButton) {
-   
+    getInvoiceDownload(record: arrHistoryStatements[sender.tag])
+    
     
 }
 
@@ -130,20 +165,19 @@ extension StatementsVC {
 extension StatementsVC {
     
     
-    fileprivate func getInvoiceDownload(record: Records) {
+    fileprivate func getInvoiceDownload(record: RecordsStatements) {
         
        // let customerId = AppUserDefaults.value(forKey: .CustomerId)
        // let searchText = txtSearch.text
         
         let param = [
-            "invoiceKey": record.invoiceKey,
-            "invoiceDate": record.date// if n
+            "statementFileName": record.statementFileName
         ] as [String : Any]
         
         showHUD()
-        NetworkManager.Billing.getInvoice(param: param, { (jsonString) in
+        NetworkManager.Billing.getStatementPdf(param: param, { (jsonString) in
             
-            self.saveInvoice(invoiceName: "invoice_\(record.invoiceNumber)", invoiceData: jsonString)
+            self.saveInvoice(invoiceName: "invoice_\(record.statementFileName)", invoiceData: jsonString)
             
             self.hideHUD()
         }, { (error) in
@@ -172,9 +206,7 @@ fileprivate func saveInvoice(invoiceName: String, invoiceData: String) {
     
     
     
-    guard let directoryURl = getFilePath() else {
-        showToast("Invoice save error")
-        return }
+    let directoryURl = URL(fileURLWithPath: NSTemporaryDirectory())
     
     let fileURL = directoryURl.appendingPathComponent("\(invoiceName).pdf")
     
@@ -186,8 +218,10 @@ fileprivate func saveInvoice(invoiceName: String, invoiceData: String) {
     
     do {
         try data.write(to: fileURL, options: .atomic)
-        showToast("Invoice downloaded successfully")
         self.hideHUD()
+        let documentInteractionController = UIDocumentInteractionController.init(url: fileURL)
+        documentInteractionController.delegate = self
+        documentInteractionController.presentPreview(animated: true)
     } catch {
         self.hideHUD()
         showToast(error.localizedDescription)
@@ -196,3 +230,68 @@ fileprivate func saveInvoice(invoiceName: String, invoiceData: String) {
 
 
 }
+
+
+extension StatementsVC: UIDocumentInteractionControllerDelegate {
+   
+   func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        return self.navigationController ?? self
+   }
+}
+
+
+
+
+extension StatementsVC {
+    
+    
+   fileprivate func getStatement() {
+    
+    let searchText = txtSearch.text
+    lblPage.text = "\(startPageIndex) of \(endPageIndex)"
+    
+    let param = [
+        "paginationSettings":[
+                "Offset":startPageIndex, //Pagination: Where to start records. Default 0.
+                "OrderBy":"StartDate", //Field to order by Default "WebDisplayOrder".
+                "Take":endPageIndex, //Pagination: Limit # of returned records. Default 20.
+            "Descending":self.isDescending, //Order of sort. Default false = ascending.
+            "SearchText":searchText ?? "" //
+        ]
+    ] as [String : Any]
+    
+    showHUD()
+    NetworkManager.Billing.getStatement(param: param, { (json) in
+        let data = Statement(json: json)
+        print(json)
+        if self.startPageIndex == 0 {
+             self.arrHistoryStatements.removeAll()
+            self.arrHistoryStatements.append(contentsOf: data.records)
+        } else {
+            self.arrHistoryStatements.append(contentsOf: data.records)
+        }
+//
+        if data.records.count > 0 {
+            self.reloadData(state: .normal)
+        }
+        else {
+            self.reloadData(state: .noMoreData)
+        }
+        self.hideHUD()
+    }, { (error) in
+        self.reloadData(state: .noMoreData)
+        self.hideHUD()
+        self.showToast(error)
+    })
+}
+    fileprivate func reloadData(state: FooterRefresherState) {
+        self.tblStatement.switchRefreshHeader(to: .normal(.success, 0.0))
+        self.tblStatement.switchRefreshFooter(to: state)
+        self.tblStatement.reloadData()
+        
+    }
+        
+}
+    
+
+

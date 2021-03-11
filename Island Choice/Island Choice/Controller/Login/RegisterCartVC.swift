@@ -8,7 +8,24 @@
 import UIKit
 
 class RegisterCartVC: UIViewController {
-
+    
+    
+    
+    
+    
+    @IBOutlet weak var txtFirstDeliveryNote: UITextField!
+    @IBOutlet weak var txtRecurringDeliveryInstruction: UITextField!
+    
+    @IBOutlet weak var btnCouppon: UIButton!
+    @IBOutlet weak var txtCoupon: UITextField!
+    @IBOutlet weak var lblCoupon: UILabel!
+    @IBOutlet weak var lblAdditionalFees: UILabel!
+    @IBOutlet weak var lblActivationFeeAmount: UILabel!
+    @IBOutlet weak var lblActivationFees: UILabel!
+    @IBOutlet weak var lblDeliveryFeesAmount: UILabel!
+    @IBOutlet weak var lblDeliveryFees: UILabel!
+    @IBOutlet weak var lblSubTotalAmount: UILabel!
+    @IBOutlet weak var lblSubTotal: UILabel!
     @IBOutlet weak var tblYourCartCell: UITableView! {
         didSet {
             tblYourCartCell.register(CartTblCell.self)
@@ -37,7 +54,11 @@ class RegisterCartVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func onPressbtnApplyCouponTap(_ sender: Any) {
+        
+        
+    }
+    
 }
 
 

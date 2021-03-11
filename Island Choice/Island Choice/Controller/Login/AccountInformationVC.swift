@@ -15,6 +15,8 @@ class AccountInformationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBarBackBtn()
+        title = "Account Information"
         
         
        

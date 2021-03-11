@@ -8,9 +8,21 @@
 import UIKit
 
 class AditionInformationVC: UIViewController {
-
+    
+    @IBOutlet weak var btnAddContract: UIButton!
+ 
+    @IBOutlet weak var addContractView: UIView!
+    @IBOutlet weak var txtOpenTo: UITextField!
+    @IBOutlet weak var txtContractTitle: UITextField!
+    @IBOutlet weak var txtNameOfContract: UITextField!
+    @IBOutlet weak var txtContractType: UITextField!
+    @IBOutlet weak var txtNote: UITextView!
+    @IBOutlet weak var txtOpenForm: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Create Account"
+        setupNavigationBarBackBtn()
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +33,24 @@ class AditionInformationVC: UIViewController {
         let vc = RegisterCreateAccount.instantiate(fromAppStoryboard: .Register)
         
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onPressCheckPaperlessTap(_ sender: Any) {
+    }
+    @IBAction func onPressVarieadHoursbtnTap(_ sender: Any) {
+    }
+    
+    @IBAction func onPressAddContractbtnTap(_ sender: Any) {
+    
+        
+        addContractView.isHidden = false
+        btnAddContract.isHidden = true
+        
+    }
+    @IBAction func onPressAddRemovebtnTap(_ sender: Any) {
+        
+        addContractView.isHidden = true
+        btnAddContract.isHidden = false
     }
     /*
     // MARK: - Navigation

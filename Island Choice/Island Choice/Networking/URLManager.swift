@@ -28,6 +28,8 @@ struct URLManager {
         static let addCreditCardVault = basePath + "CreditCardVaultAdd"
         static let getIsAvailable = basePath + "IsAvailable"
         static let getInvoice = basePath + "GetInvoicePDF"
+        static let getStatement = basePath + "GetStatementsPaginated"
+        static let getStatementPdf = basePath + "GetStatementPdf"
         
     }
     
@@ -36,6 +38,10 @@ struct URLManager {
         static let updateCustomerDetails = basePath + "UpdateCustomer"
         static let updateCustomerPassword = basePath + "UpdateCustomerPassword"
         static let updateNextDeliveryDate = basePath + "GetNextDeliveryDate"
+    }
+    
+    struct Order {
+        static let getAllProduct = basePath + "GetProductListPaginated"
     }
     
 }

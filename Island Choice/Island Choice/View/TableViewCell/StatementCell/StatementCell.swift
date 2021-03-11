@@ -22,5 +22,15 @@ class StatementCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func StatementCell(record:RecordsStatements) {
+        
+        if let strDate = record.startDate.split(separator: "T").first, let endDate = record.endDate.split(separator: "T").first {
+            
+            lblDate.text = "\(strDate) to \(endDate)"
+                
+            
+        }
     
+        
+    }
 }

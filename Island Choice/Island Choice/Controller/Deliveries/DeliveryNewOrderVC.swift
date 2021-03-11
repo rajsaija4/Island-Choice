@@ -6,8 +6,16 @@
 //
 
 import UIKit
+import SwiftyJSON
+import PullToRefreshKit
 
 class DeliveryNewOrderVC: UIViewController {
+    
+    //MARK: - Variables
+    fileprivate var startPageIndex = 0
+    fileprivate var endPageIndex = 20
+    var arrAllProduct:[ProductRecords] = []
+    
 
     // MARK: - Outlets
     
@@ -15,6 +23,17 @@ class DeliveryNewOrderVC: UIViewController {
     @IBOutlet weak var collNewProduct: UICollectionView! {
         didSet {
             collNewProduct.registerCell(ProductCollCell.self)
+            collNewProduct.configRefreshHeader(container: self) {
+                self.startPageIndex = 0
+                self.endPageIndex = 20
+                self.getAllProduct()
+                
+            }
+            collNewProduct.configRefreshHeader(container: self) {
+                self.startPageIndex += 1
+                self.endPageIndex = 20
+                self.getAllProduct()
+            }
         }
     }
     
@@ -27,11 +46,17 @@ class DeliveryNewOrderVC: UIViewController {
         
         title = "Add Order"
         setupCartBtn()
+        getAllProduct()
         
         
 
         // Do any additional setup after loading the view.
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.viewWillAppear(animated)
+//        getAllProduct()
+//    }
     
     @IBAction func onPressFillterbtnTap(_ sender: UIButton) {
         
@@ -59,7 +84,7 @@ class DeliveryNewOrderVC: UIViewController {
 extension DeliveryNewOrderVC: UICollectionViewDataSource {
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return arrAllProduct.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -102,3 +127,64 @@ extension DeliveryNewOrderVC: UICollectionViewDelegate {
     
    
 }
+
+
+
+extension DeliveryNewOrderVC {
+    
+    
+   fileprivate func getAllProduct() {
+    
+  
+  
+    
+    let param = [
+        "paginationSettings":[
+                "Offset":1,
+                "Take":20,
+                "OrderBy":"WebDisplayOrder",
+                "Descending":false,
+                "SearchText":""
+            ],
+            "includeInactive":false,
+            "categories":[],
+            "deliveryId":10264100,
+            "webProspect":"",
+            "webProspectCatalogState":0
+        ]
+     as [String : Any]
+    
+    showHUD()
+    NetworkManager.Order.getAllProduct(param: param, { (json) in
+        let data = ProductList(json: json)
+        if self.startPageIndex == 0 {
+            self.arrAllProduct.removeAll()
+            self.arrAllProduct.append(contentsOf: data.records)
+       } else {
+            self.arrAllProduct.append(contentsOf: data.records)
+       }
+       
+       if data.records.count > 0 {
+           self.reloadData(state: .normal)
+       }
+       else {
+           self.reloadData(state: .noMoreData)
+       }
+       
+
+        self.hideHUD()
+    }, { (error) in
+      
+        self.hideHUD()
+        self.showToast(error)
+    })
+}
+    fileprivate func reloadData(state: FooterRefresherState) {
+        self.collNewProduct.switchRefreshHeader(to: .normal(.success, 0.0))
+        self.collNewProduct.switchRefreshFooter(to: state)
+        self.collNewProduct.reloadData()
+
+    }
+        
+}
+    

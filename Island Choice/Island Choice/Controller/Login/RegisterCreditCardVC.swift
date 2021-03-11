@@ -8,7 +8,13 @@
 import UIKit
 
 class RegisterCreditCardVC: UIViewController {
-
+    
+    @IBOutlet weak var txtCountry: UITextField!
+    
+    @IBOutlet weak var txtExpirationDate: UITextField!
+    @IBOutlet weak var txtVarifivationCode: UITextField!
+    @IBOutlet weak var txtCardNumber: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +27,16 @@ class RegisterCreditCardVC: UIViewController {
         let vc = AditionInformationVC.instantiate(fromAppStoryboard: .Register)
         
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
+    @IBAction func onPressbtnCheckTermTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+        
+        
     }
     /*
     // MARK: - Navigation

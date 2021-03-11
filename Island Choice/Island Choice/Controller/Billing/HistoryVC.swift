@@ -308,9 +308,7 @@ extension HistoryVC {
         
         
         
-        guard let directoryURl = getFilePath() else {
-            showToast("Invoice save error")
-            return }
+        let directoryURl = URL(fileURLWithPath: NSTemporaryDirectory())
         
         let fileURL = directoryURl.appendingPathComponent("\(invoiceName).pdf")
         
@@ -322,8 +320,10 @@ extension HistoryVC {
         
         do {
             try data.write(to: fileURL, options: .atomic)
-            showToast("Invoice downloaded successfully")
             self.hideHUD()
+            let documentInteractionController = UIDocumentInteractionController.init(url: fileURL)
+            documentInteractionController.delegate = self
+            documentInteractionController.presentPreview(animated: true)
         } catch {
             self.hideHUD()
             showToast(error.localizedDescription)
@@ -331,4 +331,12 @@ extension HistoryVC {
     }
     
     
+}
+
+
+extension HistoryVC: UIDocumentInteractionControllerDelegate {
+   
+   func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        return self.navigationController ?? self    
+   }
 }

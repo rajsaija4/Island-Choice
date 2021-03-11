@@ -8,6 +8,22 @@
 import UIKit
 
 class RegisterAddressVC: UIViewController {
+    
+    @IBOutlet weak var txtFirstName: UITextField!
+    
+    @IBOutlet weak var txtFax: UITextField!
+    @IBOutlet weak var txtMobileNo: UITextField!
+    @IBOutlet weak var txtContactPhone: UITextField!
+    @IBOutlet weak var txtEmailAddress: UITextField!
+    @IBOutlet weak var txtContactName: UITextField!
+    @IBOutlet weak var txtPostalCode: UITextField!
+    @IBOutlet weak var txtState: UITextField!
+    @IBOutlet weak var txtCity: UITextField!
+    @IBOutlet weak var txtAddress: UITextView!
+    @IBOutlet weak var txtLastName: UITextField!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +46,8 @@ class RegisterAddressVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    
     /*
     // MARK: - Navigation
 

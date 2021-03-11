@@ -11,7 +11,7 @@ class MediumAndLargeScaleRegisterVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Register Profile"
         // Do any additional setup after loading the view.
     }
     

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 /*
+
 extension UIView {
     
     var cornerRadius: CGFloat {
@@ -153,7 +154,6 @@ extension UITextField {
 
 */
 
-
  extension UIView {
  
  @IBInspectable var cornerRadius: CGFloat {
@@ -295,6 +295,7 @@ extension UITextField {
  }
  }
  }
+
 
 
 

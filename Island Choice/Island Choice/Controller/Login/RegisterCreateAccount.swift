@@ -11,6 +11,7 @@ class RegisterCreateAccount: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Create Profile"
 
         // Do any additional setup after loading the view.
     }

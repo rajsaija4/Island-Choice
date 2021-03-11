@@ -14,8 +14,8 @@ class HomeRegisterProductVC: UIViewController {
     
     
     @IBOutlet weak var btnNext: UIButton!
-    @IBOutlet weak var btnFilter: NSLayoutConstraint!
-    @IBOutlet weak var btnSearch: NSLayoutConstraint!
+    @IBOutlet weak var btnFilter: UIButton!
+    @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var txtSearch: UITextField!
     @IBOutlet weak var collRegisterAccountProductCell: UICollectionView! {
         didSet {
@@ -35,10 +35,18 @@ class HomeRegisterProductVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    @IBAction func onPressSearchTxtTap(_ sender: Any) {
+        
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
