@@ -9,8 +9,9 @@ import UIKit
 
 class RegisterAddressVC: UIViewController {
     
-    @IBOutlet weak var txtFirstName: UITextField!
+    //MARK: - Outlets
     
+    @IBOutlet weak var txtFirstName: UITextField!
     @IBOutlet weak var txtFax: UITextField!
     @IBOutlet weak var txtMobileNo: UITextField!
     @IBOutlet weak var txtContactPhone: UITextField!
@@ -23,7 +24,7 @@ class RegisterAddressVC: UIViewController {
     @IBOutlet weak var txtLastName: UITextField!
     
     
-    
+    //MARK: - Lifecycle()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +34,16 @@ class RegisterAddressVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    //MARK: - ActionMethods
+    
     @IBAction func onPressDiffrentAddressbtnTap(_ sender: Any) {
         
         let vc = LoginBillingInformationVC.instantiate(fromAppStoryboard: .Register)
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         let vc = AccountInformationVC.instantiate(fromAppStoryboard: .Register)
         

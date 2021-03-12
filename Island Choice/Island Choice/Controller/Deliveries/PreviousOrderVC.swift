@@ -9,6 +9,14 @@ import UIKit
 
 class PreviousOrderVC: UIViewController {
     
+    //MARK:  - Variables
+    var pickerToolbar: UIToolbar?
+    var datePicker = UIDatePicker()
+    
+
+    
+    
+    @IBOutlet weak var lblReorderForDelivery: UILabel!
     @IBOutlet weak var btnPlaceOrder: UIButton!
     // MARK: - Outlets
     @IBOutlet weak var txtPreviousOrderDate: UITextField!
@@ -27,8 +35,10 @@ class PreviousOrderVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Order to be Delivered"
+      
+      
+              
+        title = "Order Completed"
         setupCartBtn()
 
         // Do any additional setup after loading the view.
@@ -75,7 +85,12 @@ extension PreviousOrderVC {
     }
     
     @IBAction func btnCalander(_ sender: UIButton) {
+        datePicker.datePickerMode = .date
+        txtNextDelieveryDate.inputAccessoryView = pickerToolbar
+        txtNextDelieveryDate.inputView = datePicker
+        createUIToolBar()
     }
+        
 }
 
 
@@ -102,5 +117,47 @@ extension PreviousOrderVC: UICollectionViewDelegateFlowLayout {
 
 extension PreviousOrderVC: UICollectionViewDelegate {
     
+   
+}
+
+
+
+extension PreviousOrderVC {
+
+func createUIToolBar() {
+       
+       pickerToolbar = UIToolbar()
+       pickerToolbar?.autoresizingMask = .flexibleHeight
+       
+       //customize the toolbar
+       pickerToolbar?.barStyle = .default
+       pickerToolbar?.barTintColor = UIColor.black
+       pickerToolbar?.backgroundColor = UIColor.white
+       pickerToolbar?.isTranslucent = false
+       
+       //add buttons
+       let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action:
+           #selector(cancelBtnClicked(_:)))
+       cancelButton.tintColor = UIColor.white
+       let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+       let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action:
+           #selector(PreviousOrderVC.doneBtnClicked(_:)))
+       doneButton.tintColor = UIColor.white
+       
+       //add the items to the toolbar
+       pickerToolbar?.items = [cancelButton, flexSpace, doneButton]
+       
+   }
+   
+   @objc func cancelBtnClicked(_ button: UIBarButtonItem?) {
+       txtNextDelieveryDate.resignFirstResponder()
+   }
+   
+   @objc func doneBtnClicked(_ button: UIBarButtonItem?) {
+    txtNextDelieveryDate.resignFirstResponder()
+       let formatter = DateFormatter()
+       formatter.dateStyle = .short
+    txtNextDelieveryDate.text = formatter.string(from: datePicker.date)
+   }
    
 }

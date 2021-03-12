@@ -9,9 +9,18 @@ import UIKit
 import Parchment
 
 class AccountInformationVC: UIViewController {
+    
+    //MARK: - Variables
+    
+    var pagingViewController: PagingViewController!
+    
+    
+    //MARK: - Outlets
 
     @IBOutlet weak var contentView: UIView!
-    var pagingViewController: PagingViewController!
+
+    
+    //MARK: - Lifecycle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +47,7 @@ class AccountInformationVC: UIViewController {
 
 }
 
+//MARK: - Func SetupSubViewController()
 
 extension AccountInformationVC{
     

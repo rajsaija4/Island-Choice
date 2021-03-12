@@ -13,6 +13,8 @@ class LoginVC: UIViewController {
     
     //MARK: - VARIABLE
     
+    fileprivate var accountInformation: AccountInformation = AccountInformation.init(json: JSON.null)
+    
     //MARK: - OUTLET
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -26,7 +28,7 @@ class LoginVC: UIViewController {
         
         setupNavigationBarBackBtn()
 //        userLogin()
-        getCustomerAccount()
+       
         setupUI()
         
     }
@@ -87,8 +89,11 @@ extension LoginVC {
                 AppUserDefaults.save(value: password, forKey: .kPassword)
             }
             print(customerId)
+//            self.getCustomerAccount()
             self.hideHUD()
-            APPDEL?.setupMainTabBarController()
+
+            self.getAllDeliveryStop()
+           
         } _: { (error) in
             self.hideHUD()
             self.showToast(error)
@@ -108,6 +113,8 @@ extension LoginVC {
         showHUD()
         NetworkManager.Profile.getCustomerAccount(param: param, { (json) in
             print(json)
+            self.accountInformation = AccountInformation(json: json)
+            self.accountInformation.save()
             self.hideHUD()
         }, { (error) in
             self.hideHUD()
@@ -115,6 +122,32 @@ extension LoginVC {
         })
         
     }
+    
+    fileprivate func getAllDeliveryStop() {
+        let param = [
+            "addPrimary":true
+        ] as [String : Any]
+        
+        
+        showHUD()
+        NetworkManager.Order.getAllDeliveryStop(param: param, { (json) in
+            self.hideHUD()
+            guard let jsonRes = json.arrayValue.first else { return }
+            let data = OnstopDeliveryModel(json: jsonRes)
+            print(data.deliveryId)
+            print(jsonRes)
+            data.save()
+            self.accountInformation = AccountInformation(json: json)
+            self.accountInformation.save()
+           
+            APPDEL?.setupMainTabBarController()
+        }, { (error) in
+            self.hideHUD()
+            print(error)
+        })
+        
+    }
+    
 }
 
 

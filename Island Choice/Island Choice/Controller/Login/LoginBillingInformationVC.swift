@@ -9,8 +9,10 @@ import UIKit
 
 class LoginBillingInformationVC: UIViewController {
     
-    @IBOutlet weak var txtContactName: UIStackView!
     
+    //MARK: - Outlets
+    
+    @IBOutlet weak var txtContactName: UIStackView!
     @IBOutlet weak var txtMobileNumber: UIView!
     @IBOutlet weak var txtContactPhone: UITextField!
     @IBOutlet weak var txtEmailAddress: UITextField!
@@ -19,10 +21,11 @@ class LoginBillingInformationVC: UIViewController {
     @IBOutlet weak var txtCity: UITextField!
     @IBOutlet weak var txtAddress: UITextView!
     @IBOutlet weak var txtFirstName: UITextField!
-    
     @IBOutlet weak var txtLastName: UITextField!
     
 
+    //MARK: - Lifecycle()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Create Account"
@@ -32,6 +35,8 @@ class LoginBillingInformationVC: UIViewController {
     }
     
 
+    //MARK: - ActionMethods
+    
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         
         let vc = AccountInformationVC.instantiate(fromAppStoryboard: .Register)

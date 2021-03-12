@@ -19,6 +19,7 @@ class BillingInformationVC: UIViewController {
     fileprivate var accountInformation: AccountInformation = AccountInformation.init(json: JSON.null)
     
     //MARK: - OUTLET
+    @IBOutlet weak var lblHeaderName: UILabel!
     @IBOutlet weak var txtUser: UITextField!
     @IBOutlet weak var txtContact: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -104,10 +105,11 @@ extension BillingInformationVC {
                 print(json)
                
                 self.accountInformation = AccountInformation(json: json)
-                self.accountInformation.save()
+//                self.accountInformation.save()
                 
                 self.customerBillingInformation = BillingInformation(json: json)
             
+                self.lblHeaderName.text = self.customerBillingInformation.CustomerName
                 self.txtUser.text = self.customerBillingInformation.CustomerName
                 self.txtAddress.text = self.customerBillingInformation.Address
                 self.txtEmail.text = self.customerBillingInformation.EmailAddress

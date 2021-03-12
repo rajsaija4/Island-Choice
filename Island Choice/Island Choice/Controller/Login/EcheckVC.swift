@@ -9,11 +9,15 @@ import UIKit
 
 class EcheckVC: UIViewController {
     
-    
+    // MARK: - Outlets
+        
     @IBOutlet weak var txtAccountNumber: UITextField!
     @IBOutlet weak var txtRountingNumber: UITextField!
     @IBOutlet weak var txtNameAccount: UITextField!
     @IBOutlet weak var txtBankName: UITextField!
+    
+    
+    //MARK: - Lifecycle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,8 @@ class EcheckVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    //MARK: - ActionMethods
 
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         

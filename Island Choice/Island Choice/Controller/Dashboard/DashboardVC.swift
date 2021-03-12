@@ -6,8 +6,12 @@
 //
 
 import UIKit
-
+import Kingfisher
 class DashboardVC: UIViewController {
+    
+    //MARK: - Variables
+    
+    var arrAllProduct:[ProductRecords] = []
     
     // MARK: - Outlets
 
@@ -39,6 +43,7 @@ class DashboardVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        getAllProduct()
         btnNewDelivery.isHidden = true
         btnReorderDelivery.isHidden = true
         btnPendingDeliveries.isHidden = true
@@ -127,7 +132,7 @@ extension DashboardVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return arrAllProduct.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -143,11 +148,12 @@ extension DashboardVC: UICollectionViewDataSource {
         }
         
             let cell: PreviousOrderCollCell = collectionView.dequequReusableCell(for: indexPath)
+            let data = arrAllProduct[indexPath.row]
+            cell.setupProduct(product: data)
             return cell
       
     }
 }
-
 
 
 // MARK: - CollectionView DelegateFlowlayout
@@ -228,3 +234,49 @@ extension DashboardVC {
     
    
 }
+
+
+extension DashboardVC {
+    
+    
+   fileprivate func getAllProduct() {
+    
+    let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
+    
+    print(deliveryID)
+   
+    let param = [
+        "paginationSettings":[
+            "Offset":0,
+            "Take":0,
+                "OrderBy":"WebDisplayOrder",
+                "Descending":false,
+                "SearchText":""
+            ],
+            "internetOnly":1,
+            "includeInactive":false,
+            "categories":[],
+            "deliveryId":deliveryID,
+            "webProspect":"",
+            "webProspectCatalogState":0
+        ]
+     as [String : Any]
+    
+    showHUD()
+    NetworkManager.Order.getAllProduct(param: param, { (json) in
+        print(json)
+        let data = ProductList(json: json)
+        print(data)
+        self.arrAllProduct.append(contentsOf: data.records)
+        self.collAllProduct.reloadData()
+        self.hideHUD()
+    }, { (error) in
+      
+        self.hideHUD()
+        self.showToast(error)
+    })
+}
+  
+        
+}
+    

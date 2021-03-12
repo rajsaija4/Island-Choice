@@ -17,6 +17,7 @@ class DeliveryInformationVC: UIViewController {
     fileprivate var accountInformation: AccountInformation = AccountInformation.init(json: JSON.null)
     
     //MARK: - OUTLET
+    @IBOutlet weak var lblHeaderName: UILabel!
     @IBOutlet weak var txtUser: UITextField!
     @IBOutlet weak var txtContact: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -96,10 +97,10 @@ extension DeliveryInformationVC {
                 print(json)
                
                 self.accountInformation = AccountInformation(json: json)
-                self.accountInformation.save()
-                
+//                self.accountInformation.save()
+//
                 self.customerDeliveryInfo = BillingInformation(json: json)
-            
+                self.lblHeaderName.text = self.customerDeliveryInfo.CustomerName
                 self.txtUser.text = self.customerDeliveryInfo.CustomerName
                 self.txtAddress.text = self.customerDeliveryInfo.Address
                 self.txtEmail.text = self.customerDeliveryInfo.EmailAddress

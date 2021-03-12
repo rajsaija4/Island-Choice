@@ -9,8 +9,9 @@ import UIKit
 
 class AditionInformationVC: UIViewController {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var btnAddContract: UIButton!
- 
     @IBOutlet weak var addContractView: UIView!
     @IBOutlet weak var txtOpenTo: UITextField!
     @IBOutlet weak var txtContractTitle: UITextField!
@@ -18,6 +19,8 @@ class AditionInformationVC: UIViewController {
     @IBOutlet weak var txtContractType: UITextField!
     @IBOutlet weak var txtNote: UITextView!
     @IBOutlet weak var txtOpenForm: UITextField!
+    
+    //MARK: - Lifecycle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,8 @@ class AditionInformationVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+// MARK - ActionMethod
+    
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         
         let vc = RegisterCreateAccount.instantiate(fromAppStoryboard: .Register)

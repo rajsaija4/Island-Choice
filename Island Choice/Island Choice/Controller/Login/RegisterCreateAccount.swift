@@ -8,7 +8,16 @@
 import UIKit
 
 class RegisterCreateAccount: UIViewController {
+    
+    // MARK: - Outlets
 
+    @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtRetypePassword: UITextField!
+   
+    
+    //MARK: - Lifecycle()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Create Profile"
@@ -16,7 +25,32 @@ class RegisterCreateAccount: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    //MARK: - ActionMethods
+    
+    @IBAction func onPressCheckAgreemenrtbtnTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+    }
+    
+    @IBAction func onPressPasswordShowbtnTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+        
+    }
+    @IBAction func onPressRetypePasswordShowbtnTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+    }
+    
+    @IBAction func onPressSubmitbtnTap(_ sender: UIButton) {
+        
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -197,7 +197,7 @@
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Gdu-Lc-akU"/>
                                                                     </constraints>
                                                                     <attributedString key="attributedText">
-                                                                        <fragment content="*Due to packet plan charges and unused quantities the Prices and Total for this Order may be different at the at of delivery">
+                                                                        <fragment content="*Due to packet plan charges and unused quantities the Prices and Total for this Order may be different at the time of delivery">
                                                                             <attributes>
                                                                                 <color key="NSColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <font key="NSFont" metaFont="system" size="14"/>

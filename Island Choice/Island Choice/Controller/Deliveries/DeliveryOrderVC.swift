@@ -24,8 +24,9 @@ class DeliveryOrderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Deliveries Orders"
+        title = "Delivered Orders"
         setupCartBtn()
+        setupNavigationBarBackBtn()
 
         // Do any additional setup after loading the view.
     }

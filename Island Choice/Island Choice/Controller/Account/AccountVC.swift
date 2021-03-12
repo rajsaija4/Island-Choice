@@ -75,9 +75,9 @@ extension AccountVC: UITableViewDataSource {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = arrSectionTitle[section]
-        label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         headerView.addSubview(label)
-        label.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 20).isActive = true
+        label.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 16).isActive = true
         label.rightAnchor.constraint(equalTo: headerView.rightAnchor).isActive = true
         label.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
         label.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
@@ -92,6 +92,8 @@ extension AccountVC: UITableViewDataSource {
 extension AccountVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath.section {
             case 0:
@@ -143,11 +145,11 @@ extension AccountVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0
+        return 50.0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44.0
+        return 50.0
     }
 }
 

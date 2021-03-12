@@ -121,7 +121,7 @@ extension DeliveriesVC {
                 let accountInformation = BillingInformation(json: json)
                 self.txtAccountName.text = accountInformation.CustomerName
                 self.txtAccountNumber.text = accountInformation.CustomerId
-                self.txtAddress.text = accountInformation.Address
+                self.txtAddress.text = "\(accountInformation.Address),\(accountInformation.City),\(accountInformation.State),\(accountInformation.PostalCode)"
             
                 self.hideHUD()
             }, { (error) in

@@ -329,7 +329,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4xz-mH-AOG">
-                                <rect key="frame" x="20" y="20" width="335" height="140"/>
+                                <rect key="frame" x="20" y="20" width="335" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="egM-uK-eW6">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -388,19 +388,19 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XOH-I0-0Fa">
-                                        <rect key="frame" x="0.0" y="100" width="335" height="40"/>
+                                        <rect key="frame" x="0.0" y="100" width="335" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reorder For next Delivery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDb-Nd-iby">
-                                                <rect key="frame" x="0.0" y="3.5" width="157.5" height="33.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reorder For  next Delivery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDb-Nd-iby">
+                                                <rect key="frame" x="0.0" y="8.5" width="157.5" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zP-zv-pF8">
-                                                <rect key="frame" x="167.5" y="5" width="167.5" height="30"/>
+                                                <rect key="frame" x="167.5" y="0.0" width="167.5" height="50"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20 - 11 - 03" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9NW-4c-U0P">
-                                                        <rect key="frame" x="0.0" y="-2" width="167.5" height="34"/>
+                                                        <rect key="frame" x="0.0" y="8" width="167.5" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
@@ -410,14 +410,14 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-kX-8Sl">
-                                                        <rect key="frame" x="132.5" y="2.5" width="25" height="25"/>
+                                                        <rect key="frame" x="132.5" y="12.5" width="25" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="OPB-kX-8Sl" secondAttribute="height" id="4Ys-iC-gyU"/>
                                                             <constraint firstAttribute="width" constant="25" id="Rri-Xm-duY"/>
                                                         </constraints>
                                                         <state key="normal" image="calendar"/>
                                                         <connections>
-                                                            <action selector="btnCalander:" destination="37M-WQ-zJy" eventType="touchUpInside" id="xqf-6k-MpV"/>
+                                                            <action selector="btnCalander:" destination="37M-WQ-zJy" eventType="touchUpInside" id="8g6-ax-8q5"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -425,7 +425,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="167.5" id="9fV-ev-eir"/>
                                                     <constraint firstItem="OPB-kX-8Sl" firstAttribute="centerY" secondItem="9NW-4c-U0P" secondAttribute="centerY" id="EMb-C2-vGp"/>
-                                                    <constraint firstAttribute="height" constant="30" id="GEC-xB-Kf9"/>
                                                     <constraint firstAttribute="trailing" secondItem="OPB-kX-8Sl" secondAttribute="trailing" constant="10" id="V8Q-qK-I5C"/>
                                                     <constraint firstAttribute="trailing" secondItem="9NW-4c-U0P" secondAttribute="trailing" id="ZHy-UB-WXW"/>
                                                     <constraint firstItem="9NW-4c-U0P" firstAttribute="centerY" secondItem="4zP-zv-pF8" secondAttribute="centerY" id="wdv-Zx-v7W"/>
@@ -433,14 +432,14 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="2dT-Y6-Snm"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="WJq-mz-piS"/>
+                                </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dUS-U1-r9L">
-                                <rect key="frame" x="0.0" y="180" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="190" width="375" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="yxn-iG-MhD"/>
@@ -468,7 +467,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ig-Gm-JoI">
-                                <rect key="frame" x="239" y="500" width="120" height="46"/>
+                                <rect key="frame" x="239" y="510" width="120" height="46"/>
                                 <color key="backgroundColor" red="0.13324621319999999" green="0.50280207399999999" blue="0.75274711849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="6s5-OI-7xO"/>
@@ -502,9 +501,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnCalander" destination="OPB-kX-8Sl" id="Wi5-LB-mMB"/>
+                        <outlet property="btnCalander" destination="OPB-kX-8Sl" id="QT5-LB-qaG"/>
                         <outlet property="btnPlaceOrder" destination="3ig-Gm-JoI" id="scC-BS-4jP"/>
                         <outlet property="collPreviousOrder" destination="dUS-U1-r9L" id="1Gk-wg-9dm"/>
+                        <outlet property="lblReorderForDelivery" destination="tDb-Nd-iby" id="ZAx-M0-dHy"/>
                         <outlet property="txtDelieveryOrder" destination="jdd-f0-59h" id="9G6-aL-VrS"/>
                         <outlet property="txtNextDelieveryDate" destination="9NW-4c-U0P" id="sdy-lL-yHX"/>
                         <outlet property="txtPreviousOrderDate" destination="0PF-bP-zHc" id="aRF-pz-j66"/>
@@ -596,7 +596,7 @@
                                             <action selector="onPressCheckProductbtnTap:" destination="8vJ-TF-vQE" eventType="touchUpInside" id="Ggd-45-bjT"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tp6-Sr-uSF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tp6-Sr-uSF">
                                         <rect key="frame" x="46" y="0.0" width="289" height="26"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -611,8 +611,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-AQ-DPg">
                                 <rect key="frame" x="20" y="66" width="355" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clasiffication " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFm-4F-cDq">
-                                        <rect key="frame" x="0.0" y="9.5" width="118.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFm-4F-cDq">
+                                        <rect key="frame" x="0.0" y="9.5" width="117" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="2pT-es-XG3"/>
                                         </constraints>

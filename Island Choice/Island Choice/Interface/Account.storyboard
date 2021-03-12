@@ -305,6 +305,7 @@ MODESTO, CA, 95355</string>
                         <outlet property="btnCancel" destination="ZEM-dm-PRE" id="ZMU-aN-Y5Z"/>
                         <outlet property="btnEdit" destination="LvV-Na-eXr" id="Lg5-MG-LGX"/>
                         <outlet property="lblAccountNumber" destination="l48-Le-ZXw" id="GrW-cu-CWu"/>
+                        <outlet property="lblHeaderName" destination="dhe-xC-sEC" id="Pg0-Zp-kSa"/>
                         <outlet property="lblMajorAcc" destination="Pc2-l0-93z" id="958-Z1-Dym"/>
                         <outlet property="lblStatementPre" destination="1dC-V0-NLp" id="ynr-s4-jog"/>
                         <outlet property="lblUserName" destination="RWt-ba-dhR" id="tmm-4M-KM5"/>
@@ -546,6 +547,7 @@ MODESTO, CA, 95355</string>
                         <outlet property="btnCancel" destination="b12-wa-vSW" id="zmf-9I-m6X"/>
                         <outlet property="btnEdit" destination="d83-t0-G0u" id="M0v-SL-hqh"/>
                         <outlet property="lblDriverRoute" destination="sZK-E1-QMU" id="SSH-GJ-4kH"/>
+                        <outlet property="lblHeaderName" destination="Lsj-kM-U9f" id="smA-m7-P99"/>
                         <outlet property="lblNextDelivery" destination="rS5-RD-ydW" id="I1a-DD-zPf"/>
                         <outlet property="txtAddress" destination="wJQ-Z2-7xS" id="1UD-sU-WcJ"/>
                         <outlet property="txtContact" destination="hDL-J4-qtt" id="She-vh-7bG"/>

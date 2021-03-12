@@ -8,6 +8,8 @@
 import UIKit
 
 class CreateAccountVC: UIViewController {
+    
+    //MARK:- LifeCycle()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,9 @@ class CreateAccountVC: UIViewController {
     }
     
 
+    
+    //MARK: - ActionMethods
+    
     @IBAction func onPressBusinessRegisterbtnTap(_ sender: Any) {
         let vc = MediumAndLargeScaleRegisterVC.instantiate(fromAppStoryboard: .Register)
         

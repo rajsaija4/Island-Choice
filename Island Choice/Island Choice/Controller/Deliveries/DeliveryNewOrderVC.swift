@@ -12,6 +12,7 @@ import PullToRefreshKit
 class DeliveryNewOrderVC: UIViewController {
     
     //MARK: - Variables
+    
     fileprivate var startPageIndex = 0
     fileprivate var endPageIndex = 20
     var arrAllProduct:[ProductRecords] = []
@@ -29,7 +30,7 @@ class DeliveryNewOrderVC: UIViewController {
                 self.getAllProduct()
                 
             }
-            collNewProduct.configRefreshHeader(container: self) {
+            collNewProduct.configRefreshFooter(container: self) {
                 self.startPageIndex += 1
                 self.endPageIndex = 20
                 self.getAllProduct()
@@ -47,6 +48,7 @@ class DeliveryNewOrderVC: UIViewController {
         title = "Add Order"
         setupCartBtn()
         getAllProduct()
+        setupNavigationBarBackBtn()
         
         
 
@@ -89,6 +91,10 @@ extension DeliveryNewOrderVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:ProductCollCell = collectionView.dequequReusableCell(for: indexPath)
+        let data = arrAllProduct[indexPath.row]
+        cell.setupProduct(product: data)
+        
+        
         cell.btnFavourite.tag = indexPath.row
         cell.btnFavourite.addTarget(self, action: #selector(onPressFavouritebtnTap(_:)), for: .touchUpInside)
         return cell
@@ -135,20 +141,22 @@ extension DeliveryNewOrderVC {
     
    fileprivate func getAllProduct() {
     
-  
-  
+    let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
     
+    print(deliveryID)
+   
     let param = [
         "paginationSettings":[
-                "Offset":1,
-                "Take":20,
+            "Offset":self.startPageIndex,
+            "Take":self.endPageIndex,
                 "OrderBy":"WebDisplayOrder",
                 "Descending":false,
                 "SearchText":""
             ],
+            "internetOnly":1,
             "includeInactive":false,
             "categories":[],
-            "deliveryId":10264100,
+            "deliveryId":deliveryID,
             "webProspect":"",
             "webProspectCatalogState":0
         ]
@@ -156,6 +164,7 @@ extension DeliveryNewOrderVC {
     
     showHUD()
     NetworkManager.Order.getAllProduct(param: param, { (json) in
+        print(json)
         let data = ProductList(json: json)
         if self.startPageIndex == 0 {
             self.arrAllProduct.removeAll()

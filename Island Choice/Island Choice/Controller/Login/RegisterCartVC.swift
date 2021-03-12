@@ -9,13 +9,10 @@ import UIKit
 
 class RegisterCartVC: UIViewController {
     
-    
-    
-    
+    //MARK: - Outlets
     
     @IBOutlet weak var txtFirstDeliveryNote: UITextField!
     @IBOutlet weak var txtRecurringDeliveryInstruction: UITextField!
-    
     @IBOutlet weak var btnCouppon: UIButton!
     @IBOutlet weak var txtCoupon: UITextField!
     @IBOutlet weak var lblCoupon: UILabel!
@@ -31,6 +28,9 @@ class RegisterCartVC: UIViewController {
             tblYourCartCell.register(CartTblCell.self)
         }
     }
+    
+    //MARK: - Lifecycle()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Confirm Your Order"
@@ -39,6 +39,8 @@ class RegisterCartVC: UIViewController {
     }
     
 
+    //MARK: - ActionMethods
+    
     @IBAction func onPressNextbtnTap(_ sender: UIButton) {
         
         let vc = RegisterAddressVC.instantiate(fromAppStoryboard: .Register)
@@ -62,6 +64,7 @@ class RegisterCartVC: UIViewController {
 }
 
 
+    //MARK: - TableviewDatasource
 
 extension RegisterCartVC: UITableViewDataSource {
     
@@ -81,6 +84,7 @@ extension RegisterCartVC: UITableViewDataSource {
 }
 
 
+//MARK: - TableviewDelegate
 
 extension RegisterCartVC: UITableViewDelegate {
     

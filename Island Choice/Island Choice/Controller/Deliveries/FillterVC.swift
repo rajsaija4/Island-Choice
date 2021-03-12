@@ -18,7 +18,7 @@ class FillterVC: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Filter Product"
+        title = "Filter"
 
         // Do any additional setup after loading the view.
     }

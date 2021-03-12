@@ -9,11 +9,15 @@ import UIKit
 
 class RegisterCreditCardVC: UIViewController {
     
-    @IBOutlet weak var txtCountry: UITextField!
+    //MARK: - Outlets
     
+    @IBOutlet weak var txtCountry: UITextField!
     @IBOutlet weak var txtExpirationDate: UITextField!
     @IBOutlet weak var txtVarifivationCode: UITextField!
     @IBOutlet weak var txtCardNumber: UITextField!
+    
+    
+    //MARK: - Lifecycle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,8 @@ class RegisterCreditCardVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    //MARK: - ActionMethods
 
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         

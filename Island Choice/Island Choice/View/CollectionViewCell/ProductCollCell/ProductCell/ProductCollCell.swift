@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductCollCell: UICollectionViewCell {
     
@@ -27,6 +28,26 @@ class ProductCollCell: UICollectionViewCell {
         self.cornerRadius = 4
         // Initialization code
     }
+    
+    
+    func setupProduct(product:ProductRecords) {
+        lblProductName.text = product.productDescription
+        lblProductPrice.text = "$\(product.price[0])"
+        let product = product.code
+        guard product.count > 0  else {
+           return imgProduct.image = UIImage(named: "imgCamera")
+        }
+        if let imageUrl = URL(string: "https://islandchoiceguam.com//account//images//mw_synced_image_3_\(product).jpg") {
+            imgProduct.kf.indicatorType = .activity
+            imgProduct.kf.indicator?.startAnimatingView()
+            imgProduct.kf.setImage(with: imageUrl, placeholder: nil, options: nil, progressBlock: nil) { (_) in
+                self.imgProduct.kf.indicator?.stopAnimatingView()
+            }
+        }
+        
+    
+    }
+    
 
 }
 

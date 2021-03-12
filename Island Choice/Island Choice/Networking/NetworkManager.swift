@@ -514,12 +514,47 @@ extension NetworkManager {
         }
         
         
+        
+        
     }
 }
 
 extension NetworkManager {
     
     struct Order {
+        
+        static func getAllDeliveryStop(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token, "customerId" : AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Billing.getAllDeliveryStop.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(JSON(parseJSON: resJson["Data"].stringValue))
+                    break
+                case .failure(let error):
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
+        
         
         static func getAllProduct(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
             

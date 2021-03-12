@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class AddFavoriteProductVC: UIViewController {
     
     // MARK: - Outlets
@@ -22,7 +23,7 @@ class AddFavoriteProductVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Add Favorite Product"
+        title = "Favorites"
         
 
         // Do any additional setup after loading the view.

@@ -8,6 +8,8 @@
 import UIKit
 
 class ActivateAccountVC: UIViewController {
+    
+    //MARK: - Lifecycle()
 
     override func viewDidLoad() {
         super.viewDidLoad()

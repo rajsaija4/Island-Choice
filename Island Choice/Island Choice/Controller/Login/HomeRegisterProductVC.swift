@@ -22,6 +22,10 @@ class HomeRegisterProductVC: UIViewController {
             collRegisterAccountProductCell.registerCell(ProductCollCell.self)
         }
     }
+    
+    
+    //MARK: - Lifecycle()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Create Account"
@@ -30,6 +34,8 @@ class HomeRegisterProductVC: UIViewController {
     }
     
 
+    //MARK: - ActionMethods
+    
     @IBAction func onPressNextbtnTap(_ sender: Any) {
         let vc = RegisterCartVC.instantiate(fromAppStoryboard: .Register)
         self.navigationController?.pushViewController(vc, animated: true)
