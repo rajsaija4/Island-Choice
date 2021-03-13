@@ -102,7 +102,8 @@ extension DeliveryOrderVC {
     showHUD()
     NetworkManager.Order.GetOpenDeliveryOrders(param: param, { (json) in
         print(json)
-        let data = GetOpenDeliveryOrders(json: json)
+        guard let jsonRes = json.arrayValue.first else { return }
+        let data = GetOpenDeliveryOrders(json: jsonRes)
         print(data.ticketNumbe)
         self.arrGetOpenDeliveryOrders.append(data)
         self.tblDeliverieOrder.reloadData()

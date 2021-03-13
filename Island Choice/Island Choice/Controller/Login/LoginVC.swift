@@ -89,10 +89,10 @@ extension LoginVC {
                 AppUserDefaults.save(value: userName, forKey: .kUserId)
                 AppUserDefaults.save(value: password, forKey: .kPassword)
             }
+           // self.getCustomerAccount()
             print(customerId)
 //
             self.hideHUD()
-            // self.getCustomerAccount()
             self.getAllDeliveryStop()
            
         } _: { (error) in
@@ -116,6 +116,7 @@ extension LoginVC {
             print(json)
             self.accountInformation = AccountInformation(json: json)
             self.accountInformation.save()
+            APPDEL?.setupMainTabBarController()
             self.hideHUD()
         }, { (error) in
             self.hideHUD()
@@ -138,10 +139,9 @@ extension LoginVC {
             print(data.deliveryId)
             print(jsonRes)
             data.save()
-            self.accountInformation = AccountInformation(json: json)
-            self.accountInformation.save()
-           
-            APPDEL?.setupMainTabBarController()
+            
+            self.getCustomerAccount()
+            
         }, { (error) in
             self.hideHUD()
             print(error)
@@ -153,44 +153,7 @@ extension LoginVC {
 
 
 
-//extension LoginVC {
-//
-//    fileprivate func activateAccount() {
-//
-//        let param = [
-//
-//            "isWebSignUp":true
-//
-//        ] as [String:Any]
-//
-//        showHUD()
-//        NetworkManager.Login.checkAccount(param: param) { (JSON) in
-//            print(JSON)
-//            let statuscode = Int(JSON)
-//            if statuscode == -1 {
-//
-//                let vc = ActivateAccountVC.instantiate(fromAppStoryboard: .Login)
-//                self.navigationController?.pushViewController(vc, animated: true)
-//
-//            }
-//
-//            else  {
-//                let statuscode = Int(JSON)
-//                if statuscode == 0 {
-//                    self.showToast("Your Account already Activated")
-//            }
-//            }
-//            self.hideHUD()
-//
-//        } _: { (error) in
-//            self.hideHUD()
-//            print(error)
-//
-//        }
-//
-//    }
-//
-//}
+
     //MARK: - ACTION METHOD
 
 extension LoginVC {

@@ -117,7 +117,8 @@ extension AccountVC: UITableViewDelegate {
         case 1:
             switch  indexPath.row {
             case 1:
-                sendEmail()
+                //sendEmail()
+            makePhoneCall(phoneNumber: "6716378902")
             default:
                 break
             }
@@ -155,20 +156,34 @@ extension AccountVC: UITableViewDelegate {
 
 extension AccountVC {
     
-    func sendEmail() {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(["contact@islandchoiceguam.com"])
-            mail.setMessageBody("", isHTML: true)
-
-            present(mail, animated: true)
-        } else {
-            self.showToast("Device not configured to send emails, trying with share ...")
+    
+    func makePhoneCall(phoneNumber: String) {
+        if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+            let alert = UIAlertController(title: ("Call " + phoneNumber + "?"), message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+                UIApplication.shared.openURL(phoneURL as URL)
+              }))
+      
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    
+            self.present(alert, animated: true, completion: nil)
         }
     }
-
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true)
-    }
+    
+//    func sendEmail() {
+//        if MFMailComposeViewController.canSendMail() {
+//            let mail = MFMailComposeViewController()
+//            mail.mailComposeDelegate = self
+//            mail.setToRecipients(["contact@islandchoiceguam.com"])
+//            mail.setMessageBody("", isHTML: true)
+//
+//            present(mail, animated: true)
+//        } else {
+//            self.showToast("Device not configured to send emails, trying with share ...")
+//        }
+//    }
+//
+//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+//        controller.dismiss(animated: true)
+//    }
 }

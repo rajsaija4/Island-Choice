@@ -162,7 +162,8 @@ func createUIToolBar() {
    @objc func doneBtnClicked(_ button: UIBarButtonItem?) {
     txtNextDelieveryDate.resignFirstResponder()
        let formatter = DateFormatter()
-       formatter.dateStyle = .short
+    formatter.dateFormat = "yyyy-mm-dd"
+//    formatter.dateStyle = .short
     txtNextDelieveryDate.text = formatter.string(from: datePicker.date)
    }
    
