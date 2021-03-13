@@ -42,6 +42,8 @@ struct URLManager {
     
     struct Order {
         static let getAllProduct = basePath + "GetProductListPaginated"
+        static let GetOpenDeliveryOrders = basePath + "GetOpenDeliveryOrders"
+        static let GetDeliveryDays = basePath + "GetDeliveryDays"
     }
     
 }

@@ -9,6 +9,10 @@ import UIKit
 
 class DeliveryOrderVC: UIViewController {
     
+    //MARK: - Variables
+    
+    var arrGetOpenDeliveryOrders:[GetOpenDeliveryOrders] = []
+    
     // MARK: - Outlets
     
     @IBOutlet weak var tblDeliverieOrder: UITableView!{
@@ -23,7 +27,7 @@ class DeliveryOrderVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        OpenDeliveryOrders()
         title = "Delivered Orders"
         setupCartBtn()
         setupNavigationBarBackBtn()
@@ -53,11 +57,14 @@ extension DeliveryOrderVC: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return 5
+        return arrGetOpenDeliveryOrders.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:DeliveryOrderCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        let data = arrGetOpenDeliveryOrders[indexPath.row]
+        cell.setupDelivery(delivery: data)
+        
         return cell
 
 
@@ -72,4 +79,42 @@ extension DeliveryOrderVC: UITableViewDelegate {
     
 }
 
+
+
+extension DeliveryOrderVC {
+    
+    
+   fileprivate func OpenDeliveryOrders() {
+    
+    let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
+    print(deliveryID)
+  
+    
+    
+
+   
+    let param = [
+        
+        "deliveryId":deliveryID
+        ]
+     as [String : Any]
+    
+    showHUD()
+    NetworkManager.Order.GetOpenDeliveryOrders(param: param, { (json) in
+        print(json)
+        let data = GetOpenDeliveryOrders(json: json)
+        print(data.ticketNumbe)
+        self.arrGetOpenDeliveryOrders.append(data)
+        self.tblDeliverieOrder.reloadData()
+//
+        self.hideHUD()
+    }, { (error) in
+      
+        self.hideHUD()
+        self.showToast(error)
+    })
+}
+        
+}
+    
 

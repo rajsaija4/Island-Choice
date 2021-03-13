@@ -6,8 +6,16 @@
 //
 
 import UIKit
+import PullToRefreshKit
+import SwiftyJSON
 
 class HomeRegisterProductVC: UIViewController {
+    
+    //MARK: - Variables
+    
+    fileprivate var startPageIndex = 0
+    fileprivate var endPageIndex = 20
+    var arrAllProduct:[ProductRecords] = []
 
     
     //MARK: - Outlets
@@ -20,6 +28,17 @@ class HomeRegisterProductVC: UIViewController {
     @IBOutlet weak var collRegisterAccountProductCell: UICollectionView! {
         didSet {
             collRegisterAccountProductCell.registerCell(ProductCollCell.self)
+            collRegisterAccountProductCell.configRefreshHeader(container: self) {
+                self.startPageIndex = 0
+                self.endPageIndex = 20
+                self.getAllProduct()
+                
+            }
+            collRegisterAccountProductCell.configRefreshFooter(container: self) {
+                self.startPageIndex += 1
+                self.endPageIndex = 20
+                self.getAllProduct()
+            }
         }
     }
     
@@ -28,6 +47,7 @@ class HomeRegisterProductVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getAllProduct()
         title = "Create Account"
         setupNavigationBarBackBtn()
         // Do any additional setup after loading the view.
@@ -67,11 +87,14 @@ class HomeRegisterProductVC: UIViewController {
 extension HomeRegisterProductVC: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return arrAllProduct.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:ProductCollCell = collectionView.dequequReusableCell(for: indexPath)
+        let data = arrAllProduct[indexPath.row]
+        cell.btnFavourite.isHidden = true
+        cell.setupProduct(product: data)
         return cell
     }
     
@@ -103,4 +126,83 @@ extension HomeRegisterProductVC: UICollectionViewDelegateFlowLayout {
 
 extension HomeRegisterProductVC: UICollectionViewDelegate {
     
+}
+
+
+
+
+extension HomeRegisterProductVC {
+    
+    
+   fileprivate func getAllProduct() {
+    
+    let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
+    print(deliveryID)
+    let customerID = OnstopDeliveryModel.details.customerId
+    print(customerID)
+    
+    let postalCode = OnstopDeliveryModel.details.postalCode
+    print(postalCode)
+    
+    
+
+   
+    let param = [
+        "paginationSettings":[
+            "Offset":self.startPageIndex,
+            "Take":self.endPageIndex,
+                "OrderBy":"WebDisplayOrder",
+                "Descending":false,
+                "SearchText":""
+            ],
+            "internetOnly":1,
+            "includeInactive":false,
+            "categories":[],
+            "deliveryId": 0,
+            "webProspect":"",
+            "webProspectCatalogState":0,
+            "customerId":"",
+            "postalCode":"",
+            "employeeId":"",
+            "includeHandheld":false,
+            "webBanners":"",
+            "defaultProducts":false
+        ]
+     as [String : Any]
+    
+    showHUD()
+    NetworkManager.Order.getAllProduct(param: param, { (json) in
+        print(json)
+        let data = ProductList(json: json)
+        if self.startPageIndex == 0 {
+            self.arrAllProduct.removeAll()
+            self.arrAllProduct.append(contentsOf: data.records)
+//            self.collRegisterAccountProductCell.reloadData()
+       } else {
+            self.arrAllProduct.append(contentsOf: data.records)
+//            self.collRegisterAccountProductCell.reloadData()
+       }
+       
+       if data.records.count > 0 {
+           self.reloadData(state: .normal)
+       }
+       else {
+           self.reloadData(state: .noMoreData)
+       }
+       
+
+        self.hideHUD()
+    }, { (error) in
+      
+        self.hideHUD()
+        self.showToast(error)
+    })
+}
+    fileprivate func reloadData(state: FooterRefresherState) {
+        self.collRegisterAccountProductCell.switchRefreshHeader(to: .normal(.success, 0.0))
+        self.collRegisterAccountProductCell.switchRefreshFooter(to: state)
+        self.collRegisterAccountProductCell.reloadData()
+
+    }
+        
 }

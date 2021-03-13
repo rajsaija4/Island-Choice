@@ -75,3 +75,44 @@ extension Date {
         return dateFormatter.date(from: strDate) ?? self
     }
 }
+
+
+
+extension DeliveryCalendarVC {
+    
+    
+   fileprivate func OpenDeliveryOrders() {
+    
+    let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
+    print(deliveryID)
+  
+    
+    
+
+   
+    let param = [
+        
+       
+           "deliveryId":deliveryID,
+           "startDate":"2021-01-01",
+           "endDate":"2022-12-31",
+           "ignoreCache":true,
+           "descending":false
+      
+        ]
+     as [String : Any]
+    
+    showHUD()
+    NetworkManager.Order.GetOpenDeliveryOrders(param: param, { (json) in
+        print(json)
+       
+        self.hideHUD()
+    }, { (error) in
+      
+        self.hideHUD()
+        self.showToast(error)
+    })
+}
+        
+}
+    

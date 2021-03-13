@@ -13,6 +13,8 @@ class OnstopDeliveryModel: NSObject, NSCoding {
     
     
     var deliveryId = ""
+    var customerId = ""
+    var postalCode = ""
     var calendarId = ""
     var deliveryNote = ""
     var deliveryRoute = ""
@@ -26,6 +28,8 @@ class OnstopDeliveryModel: NSObject, NSCoding {
         
         super.init()
         deliveryId = json["DeliveryId"].stringValue
+        customerId = json["CustomerId"].stringValue
+        postalCode = json["PostalCode"].stringValue
         calendarId = json["CalendarId"].stringValue
         deliveryNote = json["DeliveryNote"].stringValue
         deliveryRoute = json["DeliveryRoute"].stringValue
@@ -41,6 +45,8 @@ class OnstopDeliveryModel: NSObject, NSCoding {
     func encode(with acoder: NSCoder) {
         
         acoder.encode(deliveryId, forKey: "deliveryId")
+        acoder.encode(customerId, forKey: "customerId")
+        acoder.encode(postalCode, forKey: "postalCode")
         acoder.encode(calendarId, forKey: "calendarId")
         acoder.encode(deliveryNote, forKey: "deliveryNote")
         acoder.encode(deliveryRoute, forKey: "deliveryRoute")
@@ -57,6 +63,8 @@ class OnstopDeliveryModel: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         deliveryId = aDecoder.decodeObject(forKey: "deliveryId") as! String
+        customerId = aDecoder.decodeObject(forKey: "customerId") as! String
+        postalCode = aDecoder.decodeObject(forKey: "postalCode") as! String
         calendarId = aDecoder.decodeObject(forKey: "calendarId") as! String
         deliveryNote = aDecoder.decodeObject(forKey: "deliveryNote") as! String
         deliveryRoute = aDecoder.decodeObject(forKey: "deliveryRoute") as! String

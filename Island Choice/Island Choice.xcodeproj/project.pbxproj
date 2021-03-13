@@ -95,6 +95,7 @@
 		9FC854E925DD523300AC0073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854E825DD523300AC0073 /* Assets.xcassets */; };
 		9FC854EC25DD523300AC0073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC854EA25DD523300AC0073 /* LaunchScreen.storyboard */; };
 		9FC9500325E6352000D50323 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9500225E6352000D50323 /* ChangePasswordVC.swift */; };
+		9FCD349E25FC9F8600E21FD6 /* GetOpenDeliveryOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD349D25FC9F8600E21FD6 /* GetOpenDeliveryOrders.swift */; };
 		9FD5398A25E8F65800BF9EF0 /* CheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD5398925E8F65800BF9EF0 /* CheckOutVC.swift */; };
 		9FD6016225DE7A910081D546 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6016125DE7A910081D546 /* LoginVC.swift */; };
 		9FDC1B0625E6903400C57FCE /* ProductCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1B0425E6903400C57FCE /* ProductCollCell.swift */; };
@@ -197,6 +198,7 @@
 		9FC854EB25DD523300AC0073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FC854ED25DD523300AC0073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC9500225E6352000D50323 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		9FCD349D25FC9F8600E21FD6 /* GetOpenDeliveryOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOpenDeliveryOrders.swift; sourceTree = "<group>"; };
 		9FD5398925E8F65800BF9EF0 /* CheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutVC.swift; sourceTree = "<group>"; };
 		9FD6016125DE7A910081D546 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		9FDC1B0425E6903400C57FCE /* ProductCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollCell.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				9F579E0125F9D9CB003716BE /* StatementModel.swift */,
 				9FF6AA5C25FA1AED00737E54 /* ProductList.swift */,
 				9F23B9F225FB485000B423F3 /* OnstopDeliveryModel.swift */,
+				9FCD349D25FC9F8600E21FD6 /* GetOpenDeliveryOrders.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -442,7 +445,6 @@
 			children = (
 				9F293AC225DF9744008EC1DD /* MainTabBarController.swift */,
 				9FD6016425DE7A990081D546 /* Login */,
-				9F293ABC25DF964F008EC1DD /* Dashboard */,
 				9F293ABE25DF9686008EC1DD /* Billing */,
 				9F293ABF25DF968E008EC1DD /* Deliveries */,
 				9F293AC025DF9697008EC1DD /* Account */,
@@ -544,6 +546,7 @@
 				9FAEF15425F79D8B00AF36E3 /* RegisterCreditCardVC.swift */,
 				9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */,
 				9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */,
+				9F293ABC25DF964F008EC1DD /* Dashboard */,
 				9F5257DA25F89AD200B705C2 /* RegisterCreateAccount.swift */,
 			);
 			path = Login;
@@ -773,6 +776,7 @@
 				9F5257D525F8936D00B705C2 /* AditionInformationVC.swift in Sources */,
 				9FAEF13B25F7782500AF36E3 /* RegisterCartVC.swift in Sources */,
 				9F293AB425DF9609008EC1DD /* BillingVC.swift in Sources */,
+				9FCD349E25FC9F8600E21FD6 /* GetOpenDeliveryOrders.swift in Sources */,
 				9F74253825E517B1003C01F6 /* CreditCardVC.swift in Sources */,
 				9F9B774F25E67EB80016423F /* DeliveryOrderVC.swift in Sources */,
 				9F5257DB25F89AD200B705C2 /* RegisterCreateAccount.swift in Sources */,

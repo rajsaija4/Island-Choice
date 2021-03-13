@@ -142,8 +142,15 @@ extension DeliveryNewOrderVC {
    fileprivate func getAllProduct() {
     
     let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
-    
     print(deliveryID)
+    let customerID = OnstopDeliveryModel.details.customerId
+    print(customerID)
+    
+    let postalCode = OnstopDeliveryModel.details.postalCode
+    print(postalCode)
+    
+    
+
    
     let param = [
         "paginationSettings":[
@@ -156,9 +163,15 @@ extension DeliveryNewOrderVC {
             "internetOnly":1,
             "includeInactive":false,
             "categories":[],
-            "deliveryId":deliveryID,
+            "deliveryId":deliveryID ?? 0,
             "webProspect":"",
-            "webProspectCatalogState":0
+            "webProspectCatalogState":0,
+            "customerId":customerID,
+            "postalCode":postalCode,
+            "employeeId":"",
+            "includeHandheld":false,
+            "webBanners":"",
+            "defaultProducts":false
         ]
      as [String : Any]
     

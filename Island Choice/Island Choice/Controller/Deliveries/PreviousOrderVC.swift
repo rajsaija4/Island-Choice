@@ -35,7 +35,16 @@ class PreviousOrderVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        createUIToolBar()
+        datePicker.datePickerMode = .date
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
+        txtNextDelieveryDate.inputAccessoryView = pickerToolbar
+        txtNextDelieveryDate.inputView = datePicker
+        
       
               
         title = "Order Completed"
@@ -85,10 +94,7 @@ extension PreviousOrderVC {
     }
     
     @IBAction func btnCalander(_ sender: UIButton) {
-        datePicker.datePickerMode = .date
-        txtNextDelieveryDate.inputAccessoryView = pickerToolbar
-        txtNextDelieveryDate.inputView = datePicker
-        createUIToolBar()
+    
     }
         
 }
@@ -131,18 +137,18 @@ func createUIToolBar() {
        
        //customize the toolbar
        pickerToolbar?.barStyle = .default
-       pickerToolbar?.barTintColor = UIColor.black
+       pickerToolbar?.barTintColor = UIColor.white
        pickerToolbar?.backgroundColor = UIColor.white
        pickerToolbar?.isTranslucent = false
        
        //add buttons
        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action:
-           #selector(cancelBtnClicked(_:)))
-       cancelButton.tintColor = UIColor.white
+       #selector(PreviousOrderVC.cancelBtnClicked(_:)))
+
        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action:
-           #selector(PreviousOrderVC.doneBtnClicked(_:)))
-       doneButton.tintColor = UIColor.white
+        #selector(PreviousOrderVC.doneBtnClicked(_:)))
+       
        
        //add the items to the toolbar
        pickerToolbar?.items = [cancelButton, flexSpace, doneButton]
@@ -150,7 +156,7 @@ func createUIToolBar() {
    }
    
    @objc func cancelBtnClicked(_ button: UIBarButtonItem?) {
-       txtNextDelieveryDate.resignFirstResponder()
+    txtNextDelieveryDate.resignFirstResponder()
    }
    
    @objc func doneBtnClicked(_ button: UIBarButtonItem?) {

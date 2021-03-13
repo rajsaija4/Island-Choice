@@ -121,7 +121,7 @@ class AccountInformation: NSObject, NSCoding {
         aCoder.encode(salesRep, forKey: "salesRep")
         aCoder.encode(phoneNumberExtension, forKey: "phoneNumberExtension")
         aCoder.encode(creditClass, forKey: "creditClass")
-        aCoder.encode(address2, forKey: "postalCode")
+        aCoder.encode(address2, forKey: "address2")
         aCoder.encode(accountStatus, forKey: "accountStatus")
         aCoder.encode(customerId, forKey: "customerId")
         aCoder.encode(preferredPayment, forKey: "preferredPayment")

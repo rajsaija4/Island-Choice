@@ -27,6 +27,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBarBackBtn()
+     
 //        userLogin()
        
         setupUI()
@@ -89,9 +90,9 @@ extension LoginVC {
                 AppUserDefaults.save(value: password, forKey: .kPassword)
             }
             print(customerId)
-//            self.getCustomerAccount()
+//
             self.hideHUD()
-
+            // self.getCustomerAccount()
             self.getAllDeliveryStop()
            
         } _: { (error) in
