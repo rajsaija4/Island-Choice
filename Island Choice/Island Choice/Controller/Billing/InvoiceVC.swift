@@ -246,6 +246,7 @@ extension InvoiceVC {
         }
         let vc = PayInvoiceVC.instantiate(fromAppStoryboard: .Billing)
         vc.arrInvoicePay = arrInvoice
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
         
     }

@@ -46,6 +46,7 @@ extension DeliveriesVC {
     @IBAction func onDelieveryOrderBtnTap(_ sender: UIButton) {
         
         let vc = DeliveryOrderVC.instantiate(fromAppStoryboard: .Deliveries)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
 
     }
@@ -54,6 +55,7 @@ extension DeliveriesVC {
   
         let alert = UIAlertController(title: "New Delivery", message: "Would you like to add your favourite products to the new delivery?", actionName: "Yes") { (_) in
             let vc = DeliveryNewOrderVC.instantiate(fromAppStoryboard: .Deliveries)
+            vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
@@ -63,12 +65,14 @@ extension DeliveriesVC {
     @IBAction func onPreviousOrderbtnTap(_ sender: UIButton) {
         
         let vc = PreviousOrderVC.instantiate(fromAppStoryboard: .Deliveries)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onDeliveryCalanderbtnTap(_ sender: UIButton) {
         
         let vc = DeliveryCalendarVC.instantiate(fromAppStoryboard: .Deliveries)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
         
     }

@@ -1905,7 +1905,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="onPressSearchTxtTap:" destination="wZh-NN-XvI" eventType="valueChanged" id="vOi-On-Zij"/>
+                                                    <action selector="onPressSearchTxtTap:" destination="wZh-NN-XvI" eventType="editingChanged" id="RDP-a8-UVb"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws5-2X-sjM">
@@ -1916,6 +1916,9 @@
                                                 </constraints>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="img_search"/>
+                                                <connections>
+                                                    <action selector="onPressSearchbtnTap:" destination="wZh-NN-XvI" eventType="touchUpInside" id="KL9-i3-6FR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAB-Ms-WJf">
                                                 <rect key="frame" x="325" y="11" width="34" height="34"/>
@@ -1924,6 +1927,9 @@
                                                     <constraint firstAttribute="height" constant="34" id="uD3-ZU-dnf"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="filter"/>
+                                                <connections>
+                                                    <action selector="onPressFilterbtnTap:" destination="wZh-NN-XvI" eventType="touchUpInside" id="UK2-e2-tnV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>

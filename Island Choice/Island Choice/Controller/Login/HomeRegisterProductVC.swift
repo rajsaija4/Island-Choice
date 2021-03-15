@@ -62,12 +62,25 @@ class HomeRegisterProductVC: UIViewController {
         
     }
     
-    @IBAction func onPressSearchTxtTap(_ sender: Any) {
+    @IBAction func onPressSearchTxtTap(_ sender: UITextField) {
+        
+        getAllProduct()
         
         
         
     }
     
+    @IBAction func onPressSearchbtnTap(_ sender: UIButton) {
+        
+        getAllProduct()
+    }
+    
+    
+    @IBAction func onPressFilterbtnTap(_ sender: UIButton) {
+        
+        let vc = FillterVC.instantiate(fromAppStoryboard: .Deliveries)
+        navigationController?.pushViewController(vc, animated: true)
+    }
     /*
     // MARK: - Navigation
 
@@ -94,10 +107,24 @@ extension HomeRegisterProductVC: UICollectionViewDataSource{
         let cell:ProductCollCell = collectionView.dequequReusableCell(for: indexPath)
         let data = arrAllProduct[indexPath.row]
         cell.btnFavourite.isHidden = true
+        cell.btnInfo.tag = indexPath.row
+        cell.btnInfo.addTarget(self, action: #selector(onPressInfobtnTap(_:)), for: .touchUpInside)
         cell.setupProduct(product: data)
         return cell
     }
     
+    
+    @objc func onPressInfobtnTap(_ sender:UIButton) {
+        
+        let vc = ProductInformationVC.instantiate(fromAppStoryboard: .Deliveries)
+        vc.productInfo = arrAllProduct[sender.tag]
+        vc.hidesBottomBarWhenPushed = true
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
+        
+        
+    }
     
 }
 
@@ -153,7 +180,7 @@ extension HomeRegisterProductVC {
             "Take":self.endPageIndex,
                 "OrderBy":"WebDisplayOrder",
                 "Descending":false,
-                "SearchText":""
+            "SearchText":txtSearch.text ?? ""
             ],
             "internetOnly":1,
             "includeInactive":false,

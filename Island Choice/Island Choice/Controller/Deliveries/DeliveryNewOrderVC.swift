@@ -94,10 +94,23 @@ extension DeliveryNewOrderVC: UICollectionViewDataSource {
         let data = arrAllProduct[indexPath.row]
         cell.setupProduct(product: data)
         
-        
+        cell.btnInfo.tag = indexPath.row
+        cell.btnInfo.addTarget(self, action: #selector(onPressInfobtnTap(_:)), for: .touchUpInside)
         cell.btnFavourite.tag = indexPath.row
         cell.btnFavourite.addTarget(self, action: #selector(onPressFavouritebtnTap(_:)), for: .touchUpInside)
         return cell
+    }
+    
+    
+    @objc func onPressInfobtnTap(_ sender:UIButton) {
+        
+        let vc = ProductInformationVC.instantiate(fromAppStoryboard: .Deliveries)
+        vc.productInfo = arrAllProduct[sender.tag]
+        vc.hidesBottomBarWhenPushed = true
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
+        
     }
     
     @objc func onPressFavouritebtnTap(_ sender: UIButton) {

@@ -46,6 +46,7 @@ struct URLManager {
         static let GetDeliveryDays = basePath + "GetDeliveryDays"
         static let GetHolidays = basePath + "GetHolidays"
         static let GetDisabledDates = basePath + "GetDisabledDates"
+        static let GetDefaultProducts = basePath + "GetDefaultProducts"
     }
     
 }

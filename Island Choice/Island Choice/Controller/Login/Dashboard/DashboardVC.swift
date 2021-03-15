@@ -7,11 +7,13 @@
 
 import UIKit
 import Kingfisher
+import SwiftyJSON
 class DashboardVC: UIViewController {
     
     //MARK: - Variables
     
     var arrAllProduct:[ProductRecords] = []
+    var arrFavProduct:[FavoriteProduct] = []
     
     // MARK: - Outlets
 
@@ -28,7 +30,7 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var btnReorderDelivery: UIButton!
     @IBOutlet weak var collFavoriteProduct: UICollectionView! {
         didSet {
-            collFavoriteProduct.registerCell(PreviousOrderCollCell.self)
+            collFavoriteProduct.registerCell(FavoriteOrderCollCell.self)
         }
     }
     @IBOutlet weak var collAllProduct: UICollectionView! {
@@ -131,8 +133,17 @@ extension DashboardVC {
 extension DashboardVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+        if collectionView == collAllProduct {
         return arrAllProduct.count
+        }
+        
+        else if collectionView == collFavoriteProduct{
+            return arrFavProduct.count
+            
+        }
+        else {
+            return 5
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -143,7 +154,9 @@ extension DashboardVC: UICollectionViewDataSource {
         }
         
         else if collectionView == collFavoriteProduct {
-            let cell: PreviousOrderCollCell = collectionView.dequequReusableCell(for: indexPath)
+            let cell: FavoriteOrderCollCell = collectionView.dequequReusableCell(for: indexPath)
+            let data = arrFavProduct[indexPath.row]
+            cell.setupFavorite(product: data)
             return cell
         }
         
@@ -260,7 +273,7 @@ extension DashboardVC {
             "internetOnly":1,
             "includeInactive":false,
             "categories":[],
-            "deliveryId":deliveryID,
+        "deliveryId":deliveryID ?? "",
             "webProspect":"",
             "webProspectCatalogState":0,
             "customerId":customerID,
@@ -279,6 +292,7 @@ extension DashboardVC {
         print(data)
         self.arrAllProduct.append(contentsOf: data.records)
         self.collAllProduct.reloadData()
+        self.getFavoriteProduct()
         self.hideHUD()
     }, { (error) in
       
@@ -287,6 +301,35 @@ extension DashboardVC {
     })
 }
   
+    
+    fileprivate func getFavoriteProduct() {
+     
+     let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
+    
+     let param = [
+        "deliveryId":deliveryID ?? "",
+           "webProductsOnly":true,
+           "forDeliveryOrder":true
+         ]
+      as [String : Any]
+     
+     showHUD()
+        NetworkManager.Order.GetDefaultProducts(param: param, { (json) in
+            for json in json.arrayValue {
+                let data = FavoriteProduct(json: json)
+                self.arrFavProduct.append(data)
+            }
+            self.collFavoriteProduct.reloadData()
+         print(json)
+        
+         self.hideHUD()
+     }, { (error) in
+       
+         self.hideHUD()
+         self.showToast(error)
+     })
+ }
+   
         
 }
     

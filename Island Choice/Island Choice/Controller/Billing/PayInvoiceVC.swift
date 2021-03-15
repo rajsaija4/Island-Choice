@@ -33,11 +33,23 @@ class PayInvoiceVC: UIViewController {
         super.viewDidLoad()
         title = "Pay Invoice"
         AddTotal()
-        
+        setupNavigationBarBackBtn()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onPressEcheckbtnTap(_ sender: UIButton) {
+        
+        let vc = EcheckVC.instantiate(fromAppStoryboard: .Register)
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func onPressNewcardbtnTap(_ sender: UIButton) {
+        let vc = RegisterCreditCardVC.instantiate(fromAppStoryboard: .Register)
+        navigationController?.pushViewController(vc, animated: true)
+    }
     /*
     // MARK: - Navigation
 

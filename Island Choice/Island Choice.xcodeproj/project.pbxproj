@@ -31,6 +31,9 @@
 		9F293B5025DFF302008EC1DD /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293B4F25DFF302008EC1DD /* InvoiceVC.swift */; };
 		9F293B5325DFF31B008EC1DD /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293B5225DFF31B008EC1DD /* HistoryVC.swift */; };
 		9F293B5625DFF396008EC1DD /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */; };
+		9F34E12425FF383700F5D85C /* FavoriteProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34E12325FF383700F5D85C /* FavoriteProduct.swift */; };
+		9F34E12825FF3CFD00F5D85C /* FavoriteOrderCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34E12625FF3CFD00F5D85C /* FavoriteOrderCollCell.swift */; };
+		9F34E12925FF3CFD00F5D85C /* FavoriteOrderCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F34E12725FF3CFD00F5D85C /* FavoriteOrderCollCell.xib */; };
 		9F4079D525DE454E00FCA1B2 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C625DE454C00FCA1B2 /* AppCell.swift */; };
 		9F4079D625DE454E00FCA1B2 /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C725DE454D00FCA1B2 /* AppUserDefaults.swift */; };
 		9F4079D725DE454E00FCA1B2 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4079C825DE454D00FCA1B2 /* AppFonts.swift */; };
@@ -50,6 +53,7 @@
 		9F4079EF25DE4ADE00FCA1B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */; };
 		9F418CD725F0A34300F444F8 /* DeliveryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F418CD625F0A34300F444F8 /* DeliveryInfo.swift */; };
 		9F418CDA25F0C3F800F444F8 /* StatementsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F418CD925F0C3F800F444F8 /* StatementsVC.swift */; };
+		9F45A25125FF22FF002F5507 /* ProductInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45A25025FF22FF002F5507 /* ProductInformationVC.swift */; };
 		9F50994925EA59E900CDCF96 /* ActivateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */; };
 		9F5257D525F8936D00B705C2 /* AditionInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */; };
 		9F5257D825F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */; };
@@ -133,6 +137,9 @@
 		9F293B4F25DFF302008EC1DD /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
 		9F293B5225DFF31B008EC1DD /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
+		9F34E12325FF383700F5D85C /* FavoriteProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProduct.swift; sourceTree = "<group>"; };
+		9F34E12625FF3CFD00F5D85C /* FavoriteOrderCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteOrderCollCell.swift; sourceTree = "<group>"; };
+		9F34E12725FF3CFD00F5D85C /* FavoriteOrderCollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteOrderCollCell.xib; sourceTree = "<group>"; };
 		9F4079C625DE454C00FCA1B2 /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		9F4079C725DE454D00FCA1B2 /* AppUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
 		9F4079C825DE454D00FCA1B2 /* AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
@@ -152,6 +159,7 @@
 		9F4079EE25DE4ADE00FCA1B2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9F418CD625F0A34300F444F8 /* DeliveryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfo.swift; sourceTree = "<group>"; };
 		9F418CD925F0C3F800F444F8 /* StatementsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsVC.swift; sourceTree = "<group>"; };
+		9F45A25025FF22FF002F5507 /* ProductInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationVC.swift; sourceTree = "<group>"; };
 		9F50994825EA59E900CDCF96 /* ActivateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateAccountVC.swift; sourceTree = "<group>"; };
 		9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AditionInformationVC.swift; sourceTree = "<group>"; };
 		9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumAndLargeScaleRegisterVC.swift; sourceTree = "<group>"; };
@@ -259,6 +267,7 @@
 				9F293AB025DF95F4008EC1DD /* DashboardVC.swift */,
 				9F097F0F25E91D6200CD0FA7 /* AddFavoriteProductVC.swift */,
 				9F097F1225E9249400CD0FA7 /* RemoveFavoriteVC.swift */,
+				9F5257DA25F89AD200B705C2 /* RegisterCreateAccount.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 				9FAC6D7A25E778E200A17C3E /* PreviousOrderVC.swift */,
 				9FAC6D8A25E7845F00A17C3E /* DeliveryCalendarVC.swift */,
 				9F9BDB2225EA393300676A83 /* FillterVC.swift */,
+				9F45A25025FF22FF002F5507 /* ProductInformationVC.swift */,
 			);
 			path = Deliveries;
 			sourceTree = "<group>";
@@ -299,6 +309,15 @@
 				9FC9500225E6352000D50323 /* ChangePasswordVC.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		9F34E12B25FF3D0200F5D85C /* FavoriteOrderCollCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F34E12625FF3CFD00F5D85C /* FavoriteOrderCollCell.swift */,
+				9F34E12725FF3CFD00F5D85C /* FavoriteOrderCollCell.xib */,
+			);
+			path = FavoriteOrderCollCell;
 			sourceTree = "<group>";
 		};
 		9F40798C25DE366300FCA1B2 /* Resources */ = {
@@ -385,6 +404,7 @@
 				9F23B9F225FB485000B423F3 /* OnstopDeliveryModel.swift */,
 				9FCD349D25FC9F8600E21FD6 /* GetOpenDeliveryOrders.swift */,
 				9F9D85C725FCE80C006FAC5F /* DeliveryDay.swift */,
+				9F34E12325FF383700F5D85C /* FavoriteProduct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -550,7 +570,6 @@
 				9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */,
 				9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */,
 				9F293ABC25DF964F008EC1DD /* Dashboard */,
-				9F5257DA25F89AD200B705C2 /* RegisterCreateAccount.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -577,6 +596,7 @@
 				9F6C277A25E7BF5C00957339 /* ProductCell */,
 				9F6C277B25E7BF7200957339 /* PreviousOrderCell */,
 				9F50993925EA25B700CDCF96 /* RemoveProductCollCell */,
+				9F34E12B25FF3D0200F5D85C /* FavoriteOrderCollCell */,
 			);
 			path = ProductCollCell;
 			sourceTree = "<group>";
@@ -692,6 +712,7 @@
 				9F9B775425E67F400016423F /* DeliveryOrderCell.xib in Resources */,
 				9F08BC6A25F632A000B6935E /* PayInvoiceCell.xib in Resources */,
 				9F7594FB25F74D1500768A28 /* Register.storyboard in Resources */,
+				9F34E12925FF3CFD00F5D85C /* FavoriteOrderCollCell.xib in Resources */,
 				9F70A85D25E3E1C400E1EEAF /* StatementCell.xib in Resources */,
 				9FE8C88225E7C5EF0014CB43 /* CartTblCell.xib in Resources */,
 				9FC854E725DD523100AC0073 /* Main.storyboard in Resources */,
@@ -751,6 +772,8 @@
 				9FAEF15525F79D8B00AF36E3 /* RegisterCreditCardVC.swift in Sources */,
 				9F293B5025DFF302008EC1DD /* InvoiceVC.swift in Sources */,
 				9F50994925EA59E900CDCF96 /* ActivateAccountVC.swift in Sources */,
+				9F45A25125FF22FF002F5507 /* ProductInformationVC.swift in Sources */,
+				9F34E12825FF3CFD00F5D85C /* FavoriteOrderCollCell.swift in Sources */,
 				9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */,
 				9F8A9A2D25F753F1003A10F1 /* HomeRegisterProductVC.swift in Sources */,
 				9F9BDB3025EA455B00676A83 /* FillterProductViewCell.swift in Sources */,
@@ -812,6 +835,7 @@
 				9F70A85C25E3E1C400E1EEAF /* StatementCell.swift in Sources */,
 				9F418CD725F0A34300F444F8 /* DeliveryInfo.swift in Sources */,
 				9F70A85525E3E0BE00E1EEAF /* HistoryCell.swift in Sources */,
+				9F34E12425FF383700F5D85C /* FavoriteProduct.swift in Sources */,
 				9FE8C88125E7C5EF0014CB43 /* CartTblCell.swift in Sources */,
 				9F9D85C825FCE80C006FAC5F /* DeliveryDay.swift in Sources */,
 				9F1AA17A25ED23EB0041134A /* BIllingInformation.swift in Sources */,

@@ -1,29 +1,34 @@
 //
-//  PreviousOrderVc.swift
+//  FavoriteOrderCollCell.swift
 //  Island Choice
 //
-//  Created by GT-Raj on 25/02/21.
+//  Created by GT-Raj on 15/03/21.
 //
 
 import UIKit
 import Kingfisher
+import SwiftyJSON
 
-class PreviousOrderCollCell: UICollectionViewCell {
-    
-    //MARK: - Outlets
-    
+class FavoriteOrderCollCell: UICollectionViewCell {
+
     @IBOutlet weak var imgProduct: UIImageView!
-    @IBOutlet weak var txtProductQuantity: UITextField!
-    
+    @IBOutlet weak var lblTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .white
         self.cornerRadius = 4
+
         // Initialization code
     }
-
-    func setupProduct(product:ProductRecords) {
-
+    
+    func setupFavorite(product:FavoriteProduct) {
+        
+        if let strTitle = product.webDescription.split(separator: "(").first {
+            
+            lblTitle.text = "\(strTitle)"
+                
+            
+        }
         let product = product.code
         if let imageUrl = URL(string: "https://islandchoiceguam.com//account//images//mw_synced_image_3_\(product).jpg") {
             imgProduct.kf.indicatorType = .activity
@@ -33,7 +38,5 @@ class PreviousOrderCollCell: UICollectionViewCell {
             }
         }
         
-    
     }
-  
 }

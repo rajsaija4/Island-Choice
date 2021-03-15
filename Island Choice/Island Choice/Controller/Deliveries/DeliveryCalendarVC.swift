@@ -13,6 +13,7 @@ class DeliveryCalendarVC: UIViewController {
     
     var arrDates:[String] = []
     var arrHoliday:[String] = []
+    var arrDisableDates:[String] = []
 //    fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
     
 //    fileprivate let datesWithCat = ["2015/05/05","2015/06/05","2015/07/05","2015/08/05","2015/09/05","2015/10/05","2015/11/05","2015/12/05","2016/01/06",
@@ -36,6 +37,7 @@ class DeliveryCalendarVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GetDeliveryDays()
 //        GetDeliveryDays()
         title = "Delivery Calendar"
         setupCartBtn()
@@ -48,27 +50,25 @@ class DeliveryCalendarVC: UIViewController {
 
 extension DeliveryCalendarVC: FSCalendarDataSource {
     
-    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
-        
-        if dateFormatter.string(from: date) == dateFormatter.string(from: Date()) {
-            return "Today"
-            //            print(dateFormatter.string(from: Date()))
-        }
-        return nil
-    }
-    //
-    
     func minimumDate(for calendar: FSCalendar) -> Date {
-        return Date().startDateOfYear().toDate
+        return Date().startDateOfYear()
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
-        return Date().endDateOfYear().toDate
+        return Date().endDateOfYear()
     }
-    //    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-    //        let day: Int! = self.gregorian.component(.day, from: date)
-    //        return [13,24].contains(day) ? UIImage(named: "img_phone") : nil
-    //    }
+    
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        if arrDates.contains(date.toDate) {
+            return UIImage(named: "img_truck")
+        }
+        
+        if arrHoliday.contains(date.toDate) {
+            return UIImage(named: "img_holiday")
+        }
+        
+        return nil
+    }
     
     
 }
@@ -77,33 +77,20 @@ extension DeliveryCalendarVC: FSCalendarDataSource {
 extension DeliveryCalendarVC: FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-            return (Date().startDateOfYear().toDate <= date.toDate && Date().endDateOfYear().toDate >= date.toDate)
-        }
-
+        return false
+    }
+    
 }
-
 
 
 extension DeliveryCalendarVC: FSCalendarDelegateAppearance {
     
-    
-    
-    
-}
-
-
-extension Date {
-    
-    var toDate: Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = .current
-        dateFormatter.dateFormat = "yyyy-mm-dd"
-        let strDate = dateFormatter.string(from: self)
-        return dateFormatter.date(from: strDate) ?? self
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        return arrDisableDates.contains(date.toDate) ? .lightGray : nil
     }
+    
+    
 }
-
-
 
 extension DeliveryCalendarVC {
     
@@ -111,17 +98,18 @@ extension DeliveryCalendarVC {
    fileprivate func GetDeliveryDays() {
     
     let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
-    print(deliveryID)
-     let param = [
+    let startDate = Date().startDateOfYear().toDate
+    let endDate = Date().endDateOfYear().toDate
+   
+    let param = [
         
-       
-           "deliveryId":deliveryID,
-           "startDate":"2021-01-01",
-           "endDate":"2022-12-31",
-           "ignoreCache":true,
-           "descending":false
-      
-        ]
+        "deliveryId":deliveryID ?? "",
+        "startDate":startDate,
+        "endDate":endDate,
+        "ignoreCache":true,
+        "descending":false
+        
+    ]
      as [String : Any]
     
     showHUD()
@@ -129,13 +117,15 @@ extension DeliveryCalendarVC {
         print(json)
         for json in json.arrayValue {
             let data = OnstopDeliveryModel(json: json)
-            self.arrDates.append(data.calendarDate)
+            if let newDate = data.calendarDate.split(separator: "T").first {
+                self.arrDates.append(String(newDate))
+            }
         }
        
 //        let data = DeliveryDay(json: json)
-       
-        self.hideHUD()
         self.GetHolidays()
+        self.hideHUD()
+       
     }, { (error) in
       
         self.hideHUD()
@@ -148,31 +138,83 @@ extension DeliveryCalendarVC {
     let branchId = AccountInformation.details.branch
     print(branchId)
     
+    let startDate = Date().startDateOfYear().toDate
+    let endDate = Date().endDateOfYear().toDate
+
+    
      let param = [
         
        
         "branchId":branchId,
-        "startDate":"2021-01-01",
-        "endDate":"2022-12-31"
+        "startDate":startDate,
+        "endDate":endDate
       
         ]
      as [String : Any]
     
     showHUD()
     NetworkManager.Order.GetHolidays(param: param, { (json) in
-        for json in json.arrayValue {
-            self.arrHoliday.append(json.stringValue)
+        for jsonDate in json.arrayValue {
+            if let newDate = jsonDate.stringValue.split(separator: "T").first {
+                self.arrHoliday.append(String(newDate))
+            }
             
         }
        
-      
+        self.GetDisabledDates()
         self.hideHUD()
+      
     }, { (error) in
       
         self.hideHUD()
         self.showToast(error)
     })
 }
+    
+    fileprivate func GetDisabledDates() {
+        
+        let branchId = AccountInformation.details.branch
+        
+        let startDate = Date().startDateOfYear().toDate
+        let endDate = Date().endDateOfYear().toDate
+     
+     
+      let param = [
+         
+        
+            "branchId":branchId,
+            "startDate":startDate,
+            "endDate":endDate
+       
+         ]
+      as [String : Any]
+     
+     showHUD()
+     NetworkManager.Order.GetDisabledDates(param: param, { (json) in
+         print(json)
+         for dateDisable in json.arrayValue {
+            
+            if let newDate = dateDisable.stringValue.split(separator: "T").first {
+                self.arrDisableDates.append(String(newDate))
+            }
+            
+           
+         }
+//        print(self.arrDisableDates)
+//        print(self.arrHoliday)
+//        print(self.arrDates)
+        
+ //        let data = DeliveryDay(json: json)
+        self.calendarView.reloadData()
+         self.hideHUD()
+     }, { (error) in
+       
+         self.hideHUD()
+         self.showToast(error)
+     })
+ }
+
+    
         
 }
     
@@ -198,5 +240,28 @@ extension Date {
         calender.locale = Locale(identifier: "en_US_POSIX")
         return calender.date(byAdding: DateComponents(year: 1, month: 0, day: -1), to: self.startDateOfYear()) ?? Date()
     }
+    
+    var toDate: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = .current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: self)
+    }
+    
+    func startDateOfMonth() -> String {
+            var calender = Calendar.current
+            calender.locale = Locale(identifier: "en_US_POSIX")
+            calender.timeZone = TimeZone(identifier: "UTC")!
+            let startDate =  calender.date(from: calender.dateComponents([.year, .month], from: calender.startOfDay(for: self))) ?? Date()
+            return startDate.toDate
+        }
+        
+        func yesterdayDate() -> String {
+            var calender = Calendar.current
+            calender.locale = Locale(identifier: "en_US_POSIX")
+            calender.timeZone = TimeZone(identifier: "UTC")!
+            let yesterdayDate =  calender.date(byAdding: DateComponents(year: 0, month: 0, day: -1), to: Date()) ?? Date()
+            return yesterdayDate.toDate
+        }
 }
 

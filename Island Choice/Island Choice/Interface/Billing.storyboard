@@ -1302,6 +1302,9 @@
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onPressEcheckbtnTap:" destination="Hg7-Ip-j8B" eventType="touchUpInside" id="6kB-Ei-fq8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2Z-MK-YIl">
                                         <rect key="frame" x="172.5" y="0.0" width="162.5" height="50"/>
@@ -1315,6 +1318,9 @@
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onPressNewcardbtnTap:" destination="Hg7-Ip-j8B" eventType="touchUpInside" id="Ybf-Xz-Nzw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
