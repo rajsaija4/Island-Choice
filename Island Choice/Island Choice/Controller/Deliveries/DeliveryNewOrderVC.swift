@@ -17,9 +17,10 @@ class DeliveryNewOrderVC: UIViewController {
     fileprivate var endPageIndex = 20
     var arrAllProduct:[ProductRecords] = []
     
-
+    
     // MARK: - Outlets
     
+    @IBOutlet weak var txtSearch: UITextField!
     @IBOutlet weak var btnFilter: UIButton!
     @IBOutlet weak var collNewProduct: UICollectionView! {
         didSet {
@@ -51,14 +52,25 @@ class DeliveryNewOrderVC: UIViewController {
         setupNavigationBarBackBtn()
         
         
-
+        
         // Do any additional setup after loading the view.
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.viewWillAppear(animated)
-//        getAllProduct()
-//    }
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        self.viewWillAppear(animated)
+    //        getAllProduct()
+    //    }
+    @IBAction func txtSearchAxn(_ sender: UITextField) {
+        
+        getAllProduct()
+        
+        
+        
+    }
+    @IBAction func onPressSearchbtnTap(_ sender: UIButton) {
+        
+        getAllProduct()
+    }
     
     @IBAction func onPressFillterbtnTap(_ sender: UIButton) {
         
@@ -68,15 +80,15 @@ class DeliveryNewOrderVC: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 // MARK: - ColletionView DataSource
@@ -84,7 +96,7 @@ class DeliveryNewOrderVC: UIViewController {
 
 
 extension DeliveryNewOrderVC: UICollectionViewDataSource {
-  
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrAllProduct.count
     }
@@ -95,10 +107,45 @@ extension DeliveryNewOrderVC: UICollectionViewDataSource {
         cell.setupProduct(product: data)
         
         cell.btnInfo.tag = indexPath.row
+        cell.btnAddToCart.tag = indexPath.row
+        cell.btnAddToCart.addTarget(self, action: #selector(OnpressCartbtnTap(_:)), for: .touchUpInside)
         cell.btnInfo.addTarget(self, action: #selector(onPressInfobtnTap(_:)), for: .touchUpInside)
         cell.btnFavourite.tag = indexPath.row
         cell.btnFavourite.addTarget(self, action: #selector(onPressFavouritebtnTap(_:)), for: .touchUpInside)
         return cell
+    }
+    
+    
+    @objc func OnpressCartbtnTap(_ sender:UIButton) {
+         let index = sender.tag
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let cell = collNewProduct.cellForItem(at: indexPath) as! ProductCollCell
+        let quantity = Int(cell.txtProductQuantity.text ?? "1")
+        let data = arrAllProduct[index]
+        let deliveryID = OnstopDeliveryModel.details.deliveryId
+        let postalCode = OnstopDeliveryModel.details.postalCode
+        
+        
+        
+        
+       
+        let param = [
+            
+              "deliveryId":deliveryID,
+              "postalCode":postalCode,
+              "webProspect":"",
+              "cartProducts":[
+                  [
+                    "Code":data.code,
+                      "Quantity":quantity,
+                      "ShoppingCartType":1
+                  ]
+              ]
+        ]
+        as [String : Any]
+        
+        GetCartPricing(param: param)
+    
     }
     
     
@@ -116,10 +163,83 @@ extension DeliveryNewOrderVC: UICollectionViewDataSource {
     @objc func onPressFavouritebtnTap(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
-    
+        
+        if sender.isSelected {
+            
+            let data = arrAllProduct[sender.tag]
+            let deliveryID = OnstopDeliveryModel.details.deliveryId
+            
+            let param = [
+                "deliveryId":deliveryID,
+                "products":[
+                    "Code":data.code,
+                    "Delete":false,
+                    "Description":data.productDescription,
+                    "FillUp":false,
+                    "Gratis":"",
+                    "Locked":false,
+                    "MinimumOrderQuantity":data.minimumOrderQuantity,
+                    "Modified":false,
+                    "ModifiedQuantity":0,
+                    "OriginalQuantity":0,
+                    "Price":30.6,
+                    "Quantity":0,
+                    "Taxable":false,
+                    "Url":"http://mangoweb.estorefrontars.com/images/mw_synced_image_3_\(data.code).jpg",
+                    "WebCouponCode":"",
+                    "WebCouponCustomerRequirements":0,
+                    "WebDescription":data.webDescription,
+                    "WebDescription2":data.webDescription2,
+                    "WebDescriptionLong":data.webDescriptionLong
+                ]
+            ]
+            as [String : Any]
+            
+            UpdateDefaultProducts(param: param)
+        }
+        
+        
+        else {
+            
+            let data = arrAllProduct[sender.tag]
+            let deliveryID = OnstopDeliveryModel.details.deliveryId
+            
+            let param = [
+                "deliveryId":deliveryID,
+                "products":[
+                    "Code":data.code,
+                    "Delete":true,
+                    "Description":data.productDescription,
+                    "FillUp":false,
+                    "Gratis":data.allowGratis,
+                    "Locked":false,
+                    "MinimumOrderQuantity":data.minimumOrderQuantity,
+                    "Modified":false,
+                    "ModifiedQuantity":0,
+                    "OriginalQuantity":0,
+                    "Price":30.6,
+                    "Quantity":0,
+                    "Taxable":false,
+                    "Url":"http://mangoweb.estorefrontars.com/images/mw_synced_image_3_\(data.code).jpg",
+                    "WebCouponCode":"",
+                    "WebCouponCustomerRequirements":0,
+                    "WebDescription":data.webDescription,
+                    "WebDescription2":data.webDescription2,
+                    "WebDescriptionLong":data.webDescriptionLong
+                ]
+            ]
+            as [String : Any]
+            
+            UpdateDefaultProducts(param: param)
+        }
+    }
     
 }
-}
+
+
+
+
+
 
 
 // MARK: - ColletionView DelegateFlowlayout
@@ -144,7 +264,7 @@ extension DeliveryNewOrderVC: UICollectionViewDelegateFlowLayout {
 
 extension DeliveryNewOrderVC: UICollectionViewDelegate {
     
-   
+    
 }
 
 
@@ -152,26 +272,26 @@ extension DeliveryNewOrderVC: UICollectionViewDelegate {
 extension DeliveryNewOrderVC {
     
     
-   fileprivate func getAllProduct() {
-    
-    let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
-    print(deliveryID)
-    let customerID = OnstopDeliveryModel.details.customerId
-    print(customerID)
-    
-    let postalCode = OnstopDeliveryModel.details.postalCode
-    print(postalCode)
-    
-    
-
-   
-    let param = [
-        "paginationSettings":[
-            "Offset":self.startPageIndex,
-            "Take":self.endPageIndex,
+    fileprivate func getAllProduct() {
+        
+        let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
+        print(deliveryID)
+        let customerID = OnstopDeliveryModel.details.customerId
+        print(customerID)
+        
+        let postalCode = OnstopDeliveryModel.details.postalCode
+        print(postalCode)
+        
+        
+        
+        
+        let param = [
+            "paginationSettings":[
+                "Offset":self.startPageIndex,
+                "Take":self.endPageIndex,
                 "OrderBy":"WebDisplayOrder",
                 "Descending":false,
-                "SearchText":""
+                "SearchText":txtSearch.text ?? ""
             ],
             "internetOnly":1,
             "includeInactive":false,
@@ -186,40 +306,71 @@ extension DeliveryNewOrderVC {
             "webBanners":"",
             "defaultProducts":false
         ]
-     as [String : Any]
-    
-    showHUD()
-    NetworkManager.Order.getAllProduct(param: param, { (json) in
-        print(json)
-        let data = ProductList(json: json)
-        if self.startPageIndex == 0 {
-            self.arrAllProduct.removeAll()
-            self.arrAllProduct.append(contentsOf: data.records)
-       } else {
-            self.arrAllProduct.append(contentsOf: data.records)
-       }
-       
-       if data.records.count > 0 {
-           self.reloadData(state: .normal)
-       }
-       else {
-           self.reloadData(state: .noMoreData)
-       }
-       
-
-        self.hideHUD()
-    }, { (error) in
-      
-        self.hideHUD()
-        self.showToast(error)
-    })
-}
+        as [String : Any]
+        
+        showHUD()
+        NetworkManager.Order.getAllProduct(param: param, { (json) in
+            print(json)
+            let data = ProductList(json: json)
+            if self.startPageIndex == 0 {
+                self.arrAllProduct.removeAll()
+                self.arrAllProduct.append(contentsOf: data.records)
+            } else {
+                self.arrAllProduct.append(contentsOf: data.records)
+            }
+            
+            if data.records.count > 0 {
+                self.reloadData(state: .normal)
+            }
+            else {
+                self.reloadData(state: .noMoreData)
+            }
+            
+            
+            self.hideHUD()
+        }, { (error) in
+            
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
     fileprivate func reloadData(state: FooterRefresherState) {
         self.collNewProduct.switchRefreshHeader(to: .normal(.success, 0.0))
         self.collNewProduct.switchRefreshFooter(to: state)
         self.collNewProduct.reloadData()
-
-    }
         
-}
+    }
     
+    
+    fileprivate func UpdateDefaultProducts(param: [String: Any]) {
+      showHUD()
+        NetworkManager.Profile.UpdateDefaultProducts(param: param, { (json) in
+            print(json)
+            self.hideHUD()
+        }, { (error) in
+            
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
+    
+    
+    
+    
+    fileprivate func GetCartPricing(param: [String:Any]) {
+        
+       
+        
+        showHUD()
+        NetworkManager.Profile.GetCartPricing(param: param, { (json) in
+            print(json)
+            self.hideHUD()
+        }, { (error) in
+            
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
+    
+}
+

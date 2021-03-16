@@ -113,6 +113,7 @@
             <connections>
                 <outlet property="TxtProductQuantity" destination="V6x-SG-ERa" id="4ed-ef-QpT"/>
                 <outlet property="imgProduct" destination="uVS-sW-8NI" id="OMy-D0-GMo"/>
+                <outlet property="lblPrductCost" destination="j93-DA-xtI" id="wMR-Ik-HrO"/>
                 <outlet property="lblProductName" destination="JAv-p3-pyy" id="095-wN-RFa"/>
                 <outlet property="lblProductPrice" destination="cfj-y1-dKu" id="Ovs-lw-UHk"/>
                 <outlet property="lblProductTax" destination="G0f-hD-pyI" id="PBL-z3-oAc"/>

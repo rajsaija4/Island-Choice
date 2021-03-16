@@ -25,7 +25,7 @@ class InvoiceVC: UIViewController, UITextFieldDelegate{
    
     
   
-    fileprivate var isDescending = true
+    fileprivate var isDescending = false
     fileprivate var startPageIndex = 0
     fileprivate var endPageIndex = 20
 
@@ -124,8 +124,29 @@ extension InvoiceVC {
                 //self.arrInvoiceCustomer.removeAll()
              
                 self.arrInvoiceCustomer.append(contentsOf: data.records)
+                
                 for data in amount {
                     self.arrTotalPayableAmount.append(data.amount)
+                }
+                
+                if self.btnSelectAll.isSelected {
+                    self.arrTotalAmount.removeAll()
+                    self.arrSelectedInvoice.removeAll()
+                    for (index, item) in self.arrInvoiceCustomer.enumerated() {
+                        if item.amount >= 0.0 {
+                            self.arrSelectedInvoice.append(index)
+                            self.arrTotalAmount.append(item.amount)
+                            let total = self.arrTotalAmount.reduce(0, +)
+                            let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
+                            self.lblTotalAmount.text = "$\(total) / \(payableTotalAmount)"
+                        }
+                    }
+                }
+                
+                else {
+                    let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
+                    
+                    self.lblTotalAmount.text = "$0.00 / \(payableTotalAmount)"
                 }
                
             } else {
@@ -133,6 +154,28 @@ extension InvoiceVC {
                 for data in amount {
                     self.arrTotalPayableAmount.append(data.amount)
                 }
+                
+                if self.btnSelectAll.isSelected {
+                    self.arrTotalAmount.removeAll()
+                    self.arrSelectedInvoice.removeAll()
+                    for (index, item) in self.arrInvoiceCustomer.enumerated() {
+                        if item.amount >= 0.0 {
+                            self.arrSelectedInvoice.append(index)
+                            self.arrTotalAmount.append(item.amount)
+                        let total = self.arrTotalAmount.reduce(0, +)
+                        let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
+                        self.lblTotalAmount.text = "$\(total) / \(payableTotalAmount)"
+                        }
+                }
+                }
+                
+                else {
+                    let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
+                    
+                    self.lblTotalAmount.text = "$0.00 / \(payableTotalAmount)"
+                }
+                
+                
     
             }
          
@@ -142,9 +185,7 @@ extension InvoiceVC {
             else {
                 self.reloadData(state: .noMoreData)
             }
-            let payableTotalAmount = self.arrTotalPayableAmount.reduce(0, +)
-            
-            self.lblTotalAmount.text = "$0.00 / \(payableTotalAmount)"
+         
            
             
             self.hideHUD()
@@ -268,6 +309,7 @@ extension InvoiceVC {
         getInvoiceDownload(record: arrInvoiceCustomer[sender.tag])
         
     }
+ 
     
 }
 

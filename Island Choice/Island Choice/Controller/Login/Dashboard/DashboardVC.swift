@@ -35,7 +35,7 @@ class DashboardVC: UIViewController {
     }
     @IBOutlet weak var collAllProduct: UICollectionView! {
         didSet {
-            collAllProduct.registerCell(PreviousOrderCollCell.self)
+            collAllProduct.registerCell(ProductCollCell.self)
         }
     }
     @IBOutlet weak var collFeaturedProduct: UICollectionView! {
@@ -45,24 +45,39 @@ class DashboardVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAllProduct()
+      
         btnNewDelivery.isHidden = true
         btnReorderDelivery.isHidden = true
         btnPendingDeliveries.isHidden = true
         stackViewBtn.isHidden = true
         title = "Home"
         setupNavigationBarBackBtn()
-        getNextDeliveryDate()
+       
         setupUI()
        
     }
     
     
-    
-    @IBAction func onPressSearchbtnTap(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAllProduct()
+        getNextDeliveryDate()
     }
     
     
+    
+    @IBAction func onPressSearchbtnTap(_ sender: Any) {
+        
+        getAllProduct()
+        
+    }
+    
+    
+    @IBAction func txtSearchAxn(_ sender: Any) {
+        
+        
+        getAllProduct()
+    }
     
     
     @IBAction func onPressFavouriteProductbtnPress(_ sender: UIButton) {
@@ -160,7 +175,7 @@ extension DashboardVC: UICollectionViewDataSource {
             return cell
         }
         
-            let cell: PreviousOrderCollCell = collectionView.dequequReusableCell(for: indexPath)
+            let cell: ProductCollCell = collectionView.dequequReusableCell(for: indexPath)
             let data = arrAllProduct[indexPath.row]
             cell.setupProduct(product: data)
             return cell
@@ -268,7 +283,7 @@ extension DashboardVC {
             "Take":0,
                 "OrderBy":"WebDisplayOrder",
                 "Descending":false,
-                "SearchText":""
+            "SearchText":txtSearch.text ?? ""
             ],
             "internetOnly":1,
             "includeInactive":false,
@@ -290,6 +305,7 @@ extension DashboardVC {
         print(json)
         let data = ProductList(json: json)
         print(data)
+        self.arrAllProduct.removeAll()
         self.arrAllProduct.append(contentsOf: data.records)
         self.collAllProduct.reloadData()
         self.getFavoriteProduct()
@@ -315,9 +331,10 @@ extension DashboardVC {
      
      showHUD()
         NetworkManager.Order.GetDefaultProducts(param: param, { (json) in
+            self.arrFavProduct.removeAll()
             for json in json.arrayValue {
                 let data = FavoriteProduct(json: json)
-                self.arrFavProduct.append(data)
+                    self.arrFavProduct.append(data)
             }
             self.collFavoriteProduct.reloadData()
          print(json)

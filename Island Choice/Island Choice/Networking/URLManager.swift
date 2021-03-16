@@ -38,6 +38,8 @@ struct URLManager {
         static let updateCustomerDetails = basePath + "UpdateCustomer"
         static let updateCustomerPassword = basePath + "UpdateCustomerPassword"
         static let updateNextDeliveryDate = basePath + "GetNextDeliveryDate"
+        static let UpdateDefaultProducts = basePath + "UpdateDefaultProducts"
+        static let GetCartPricing = basePath + "GetCartPricing"
     }
     
     struct Order {
@@ -47,6 +49,7 @@ struct URLManager {
         static let GetHolidays = basePath + "GetHolidays"
         static let GetDisabledDates = basePath + "GetDisabledDates"
         static let GetDefaultProducts = basePath + "GetDefaultProducts"
+        static let GetOrder = basePath + "GetOrder"
     }
     
 }

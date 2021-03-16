@@ -13,10 +13,11 @@ class PreviousOrderVC: UIViewController {
     var pickerToolbar: UIToolbar?
     var datePicker = UIDatePicker()
     var orderPicker = UIPickerView()
-    var ticketPicker = UIPickerView()
+  
     
     
     var arrDeliveryInformation:[OnstopDeliveryModel] = []
+    var arrGetOrderInfo:[PreviousProducts] = []
     var arrOrderDate:[String] = []
     var arrTicketNo:[String] = []
     
@@ -44,8 +45,7 @@ class PreviousOrderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         GetDeliveryDays()
-        ticketPicker.delegate = self
-        ticketPicker.dataSource = self
+   
         
         datePicker.datePickerMode = .date
         if #available(iOS 13.4, *) {
@@ -63,13 +63,14 @@ class PreviousOrderVC: UIViewController {
         
         orderPicker.delegate = self
         orderPicker.dataSource = self
+     
         createUIToolBar(tag: 1)
         txtPreviousOrderDate.inputView = orderPicker
         txtPreviousOrderDate.inputAccessoryView = pickerToolbar
         
-        createUIToolBar(tag: 2)
-        txtDelieveryOrder.inputView = ticketPicker
-        txtDelieveryOrder.inputAccessoryView = pickerToolbar
+       
+     
+       
        
         
       
@@ -81,6 +82,13 @@ class PreviousOrderVC: UIViewController {
     }
     
 
+    @IBAction func actionPreviousDate(_ sender: UITextField) {
+        
+        
+       
+        
+        
+    }
     
   
     
@@ -103,11 +111,13 @@ class PreviousOrderVC: UIViewController {
 extension PreviousOrderVC: UICollectionViewDataSource {
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return arrGetOrderInfo.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:PreviousOrderCollCell = collectionView.dequequReusableCell(for: indexPath)
+        let data = arrGetOrderInfo[indexPath.row]
+        cell.setupPreviousProduct(product: data)
         return cell
     }
     
@@ -159,7 +169,7 @@ extension PreviousOrderVC: UICollectionViewDelegate {
 
 extension PreviousOrderVC {
 
-    func createUIToolBar(tag: Int) {
+    func createUIToolBar(tag:Int) {
        
        pickerToolbar = UIToolbar()
        pickerToolbar?.autoresizingMask = .flexibleHeight
@@ -188,7 +198,6 @@ extension PreviousOrderVC {
    @objc func cancelBtnClicked(_ button: UIBarButtonItem?) {
     txtNextDelieveryDate.resignFirstResponder()
     txtPreviousOrderDate.resignFirstResponder()
-    txtDelieveryOrder.resignFirstResponder()
    }
    
    @objc func doneBtnClicked(_ button: UIBarButtonItem?) {
@@ -199,18 +208,14 @@ extension PreviousOrderVC {
         formatter.dateFormat = "yyyy-MM-dd"
         txtNextDelieveryDate.resignFirstResponder()
         txtNextDelieveryDate.text = formatter.string(from: datePicker.date)
-    } else if button?.tag == 1 {
+    } else {
         txtPreviousOrderDate.resignFirstResponder()
         txtPreviousOrderDate.text = arrOrderDate[orderPicker.selectedRow(inComponent: 0)]
-    } else {
-        txtDelieveryOrder.resignFirstResponder()
-        txtDelieveryOrder.text = arrTicketNo[ticketPicker.selectedRow(inComponent: 0)]
+        txtDelieveryOrder.text = arrDeliveryInformation[orderPicker.selectedRow(inComponent: 0)].ticketNumber
     }
     
+    GetOrder()
     
-    
-   
-  
    }
    
 }
@@ -220,16 +225,16 @@ extension PreviousOrderVC {
 extension PreviousOrderVC {
     
     fileprivate func GetDeliveryDays() {
-        let yesterday = Date().yesterdayDate()
-        let startDateMonth = Date().startDateOfMonth()
+        let endDate = Date().endDateOfYear().toDate
+        let startDate = Date().startDateOfYear().toDate
      let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
      print(deliveryID)
       let param = [
          
         
             "deliveryId":deliveryID,
-            "startDate":startDateMonth,
-            "endDate":yesterday,
+            "startDate":startDate,
+            "endDate":endDate,
             "ignoreCache":true,
             "descending":true
        
@@ -239,11 +244,15 @@ extension PreviousOrderVC {
      showHUD()
      NetworkManager.Order.GetDeliveryDays(param: param, { (json) in
          print(json)
-         for data in json.arrayValue {
+        for data in json.arrayValue {
             let newData = OnstopDeliveryModel(json: data)
-            self.arrDeliveryInformation.append(newData)
+            if newData.ticketNumber.count > 0 {
+                self.arrDeliveryInformation.append(newData)
+            }
+          
             
-         }
+            
+        }
         
         for subdata in self.arrDeliveryInformation {
             if let PreviousDate = subdata.calendarDate.split(separator: "T").first {
@@ -259,10 +268,17 @@ extension PreviousOrderVC {
            
         }
         
-     
+        
+        let defaultPreviousDate = self.arrDeliveryInformation[0].calendarDate
+        if let pDate = defaultPreviousDate.split(separator: "T").first {
+            self.txtPreviousOrderDate.text = "\(pDate)"
+        }
+        
+        self.txtDelieveryOrder.text = self.arrDeliveryInformation[0].ticketNumber
 //        self.txtPreviousOrderDate.text = self.arrOrderDate[0]
     
 //        self.txtDelieveryOrder.text = deliveryInformation.ticketNumber
+        self.GetOrder()
          self.hideHUD()
         
      }, { (error) in
@@ -283,13 +299,11 @@ extension PreviousOrderVC: UIPickerViewDelegate {
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if pickerView == orderPicker{
+      
         txtPreviousOrderDate.text = arrOrderDate[row]
-        }
+    
         
-        else {
-            txtDelieveryOrder.text = arrTicketNo[row]
-        }
+      
     }
     
     
@@ -305,36 +319,64 @@ extension PreviousOrderVC: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        if pickerView == ticketPicker {
-            return arrTicketNo.count
-        }
-        
-        else {
+      
             return arrOrderDate.count
-        }
+        
        
     }
 
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        if pickerView == orderPicker {
+      
             
             return arrOrderDate[row]
-        }
+       
         
-        else {
-            
-            return arrTicketNo[row]
-        }
+       
     }
 
-    
-    
-    
-   
-    
-    
-    
+  
 }
 
+
+
+extension PreviousOrderVC {
+    
+    fileprivate func GetOrder() {
+        
+        let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
+        let ticketNo = Int(txtDelieveryOrder.text ?? "")
+    
+     
+      let param = [
+         
+        
+        "ticketNumber":ticketNo ?? "",
+        "deliveryId":deliveryID ?? "",
+        "onlyOpenOrders":false
+       
+         ]
+      as [String : Any]
+     
+     showHUD()
+     NetworkManager.Order.GetOrder(param: param, { (json) in
+        print(json)
+        guard let jsonRes = json.arrayValue.first else { return }
+        self.arrGetOrderInfo.removeAll()
+        for product in jsonRes["Products"].arrayValue {
+            self.arrGetOrderInfo.append(PreviousProducts(json: product))
+        }
+        
+      
+        self.collPreviousOrder.reloadData()
+            self.hideHUD()
+       
+     }, { (error) in
+       
+         self.hideHUD()
+         self.showToast(error)
+     })
+ }
+    
+}
 

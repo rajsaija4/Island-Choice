@@ -1920,7 +1920,7 @@
                                                     <action selector="onPressSearchbtnTap:" destination="wZh-NN-XvI" eventType="touchUpInside" id="KL9-i3-6FR"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAB-Ms-WJf">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAB-Ms-WJf">
                                                 <rect key="frame" x="325" y="11" width="34" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WAB-Ms-WJf" secondAttribute="height" id="SfI-NC-acT"/>

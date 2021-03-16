@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CartTblCell: UITableViewCell {
 
     @IBOutlet weak var lblProductTax: UILabel!
     @IBOutlet weak var TxtProductQuantity: UITextField!
     @IBOutlet weak var imgProduct: UIImageView!
+    @IBOutlet weak var lblPrductCost: UILabel!
     @IBOutlet weak var lblProductName: UILabel!
     @IBOutlet weak var lblProductPrice: UILabel!
     override func awakeFromNib() {
@@ -23,6 +25,24 @@ class CartTblCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+   func setupCart(data:CartModel) {
+    lblPrductCost.text = "\(data.cost)"
+    lblProductTax.text = data.tax
+    lblProductName.text = data.title
+    lblProductPrice.text = "\(data.price)"
+    TxtProductQuantity.text = "\(data.quantity)"
+    let product = data.productImageCode
+    if let imageUrl = URL(string: "https://islandchoiceguam.com//account//images//mw_synced_image_3_\(product).jpg") {
+        imgProduct.kf.indicatorType = .activity
+        imgProduct.kf.indicator?.startAnimatingView()
+        imgProduct.kf.setImage(with: imageUrl, placeholder: UIImage(named: "imgCamera"), options: nil, progressBlock: nil) { (_) in
+            self.imgProduct.kf.indicator?.stopAnimatingView()
+        }
+    }
+        
+        
     }
     
 }

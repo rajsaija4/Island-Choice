@@ -81,6 +81,8 @@ extension AddFavoriteProductVC: UICollectionViewDataSource {
     @objc func onPressFavouritebtnTap(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
+        
+        
     
     
 }

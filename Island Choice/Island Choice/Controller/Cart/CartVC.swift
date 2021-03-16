@@ -9,6 +9,12 @@ import UIKit
 
 class CartVC: UIViewController {
     
+    //MARK: - Variables
+    
+    var arrCartProduct:[CartModel] = []
+    
+    
+    
     //MARK: - Outlets
     
     @IBOutlet var viewBottom: UIView!
@@ -55,11 +61,14 @@ extension CartVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return arrCartProduct.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CartTblCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        let data = arrCartProduct[indexPath.row]
+        cell.setupCart(data: data)
+        
         return cell
     }
     
@@ -73,7 +82,7 @@ extension CartVC: UITableViewDataSource {
 extension CartVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 140
     }
     
 }

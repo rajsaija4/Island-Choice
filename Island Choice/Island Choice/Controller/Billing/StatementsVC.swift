@@ -63,10 +63,10 @@ class StatementsVC: UIViewController {
     @IBAction func viewTouchUpInside(_ sender: UIControl) {
         
         if btnDateSorting.isSelected {
-            isDescending = false
+            isDescending = true
         }
         else {
-            isDescending = true
+            isDescending = false
         }
         
         getStatement()

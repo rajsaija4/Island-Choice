@@ -21,6 +21,8 @@ class EcheckVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "E-check"
+        setupNavigationBarBackBtn()
 
         // Do any additional setup after loading the view.
     }

@@ -264,7 +264,7 @@
                                                                     <constraint firstAttribute="height" constant="50" id="gpH-9W-qQL"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                                <state key="normal" title="Create Account">
+                                                                <state key="normal" title="Sign up">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>

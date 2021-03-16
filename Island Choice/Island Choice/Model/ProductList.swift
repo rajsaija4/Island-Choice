@@ -69,7 +69,7 @@ class ProductRecords: NSObject {
     var quantityOnHand = 0
     var depositProduct = ""
     var defaultPrice = 0
-    var price:[Int] = []
+    var price:[Double] = []
     var quantityDecimalsOverride = false
     var depositType = ""
     var redemptionProductCode4 = ""
@@ -141,7 +141,7 @@ class ProductRecords: NSObject {
         depositProduct = json["DepositProduct"].stringValue
         defaultPrice = json["DefaultPrice"].intValue
         for money in json["Price"].arrayValue {
-            price.append(money.intValue)
+            price.append(money.doubleValue)
         }
         quantityDecimalsOverride = json["QuantityDecimalsOverride"].boolValue
         depositType = json["DepositType"].stringValue

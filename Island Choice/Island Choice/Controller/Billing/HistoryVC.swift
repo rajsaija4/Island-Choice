@@ -22,7 +22,7 @@ class HistoryVC: UIViewController {
     var arrHistoryCustomer: [Records] = []
     var onShowStatement: ((Bool)-> Void)?
     var historyOrder = HistoryOrder.date
-    fileprivate var isDescending = true
+    fileprivate var isDescending = false
     fileprivate var startPageIndex = 0
     fileprivate var endPageIndex = 20
     
@@ -88,7 +88,7 @@ extension HistoryVC {
     
     fileprivate func setupUI() {
         
-        arrSortBtn[0].isSelected = true
+        
         
         if isShowStatement {
             viewAmountControl.isHidden = true

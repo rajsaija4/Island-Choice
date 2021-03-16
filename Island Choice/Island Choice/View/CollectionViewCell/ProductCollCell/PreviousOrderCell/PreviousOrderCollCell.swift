@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SwiftyJSON
 
 class PreviousOrderCollCell: UICollectionViewCell {
     
@@ -23,7 +24,7 @@ class PreviousOrderCollCell: UICollectionViewCell {
     }
 
     func setupProduct(product:ProductRecords) {
-
+        txtProductQuantity.text = "\(product.minimumOrderQuantity)"
         let product = product.code
         if let imageUrl = URL(string: "https://islandchoiceguam.com//account//images//mw_synced_image_3_\(product).jpg") {
             imgProduct.kf.indicatorType = .activity
@@ -34,6 +35,18 @@ class PreviousOrderCollCell: UICollectionViewCell {
         }
         
     
+    }
+    func setupPreviousProduct(product:PreviousProducts) {
+        txtProductQuantity.text = "\(product.quantity)"
+        let product = product.code
+        if let imageUrl = URL(string: "https://islandchoiceguam.com//account//images//mw_synced_image_3_\(product).jpg") {
+            imgProduct.kf.indicatorType = .activity
+            imgProduct.kf.indicator?.startAnimatingView()
+            imgProduct.kf.setImage(with: imageUrl, placeholder: UIImage(named: "imgCamera"), options: nil, progressBlock: nil) { (_) in
+                self.imgProduct.kf.indicator?.stopAnimatingView()
+            }
+        }
+
     }
   
 }

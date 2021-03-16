@@ -47,7 +47,7 @@ class PayInvoiceVC: UIViewController {
     
     
     @IBAction func onPressNewcardbtnTap(_ sender: UIButton) {
-        let vc = RegisterCreditCardVC.instantiate(fromAppStoryboard: .Register)
+        let vc = CreditCardVC.instantiate(fromAppStoryboard: .Billing)
         navigationController?.pushViewController(vc, animated: true)
     }
     /*
