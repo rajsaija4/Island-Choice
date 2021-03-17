@@ -1348,6 +1348,7 @@
                     <connections>
                         <outlet property="addContractView" destination="tTb-Sa-3Mh" id="yqU-XT-Ghs"/>
                         <outlet property="btnAddContract" destination="CKl-yA-tsO" id="wYr-4q-u5B"/>
+                        <outlet property="btnAddContractView" destination="Ydt-UA-mRI" id="urL-Bq-4Gh"/>
                         <outlet property="txtContractTitle" destination="sI0-vS-ML8" id="bWj-Qs-De5"/>
                         <outlet property="txtContractType" destination="UAU-du-xMi" id="VjP-lo-kUL"/>
                         <outlet property="txtNameOfContract" destination="uAu-qo-idr" id="eqa-3Z-ink"/>

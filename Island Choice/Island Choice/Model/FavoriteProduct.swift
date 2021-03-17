@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-class FavoriteProduct: NSCoder {
+class FavoriteProduct: NSObject {
     var favDescription = ""
     var taxable = false
     var webCouponCustomerRequirements = 0

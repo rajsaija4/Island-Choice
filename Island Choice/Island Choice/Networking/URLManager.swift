@@ -10,12 +10,13 @@ import Foundation
 struct URLManager {
     
     static let basePath = "http://islchoi.mango247.cloud:3306/ARSDataAPI/"
+    static let webBasePath = "https://islandchoiceguam.com/account/api/"
     
     struct Auth {
         static let login = basePath + "AuthenticateUser"
         static let checkAccount = basePath + "CheckAccount"
         static let getCustomerAccount = basePath + "GetCustomerAccounts"
-        static let getForgotPassword = basePath + "app-forgot-password"
+        static let getForgotPassword = webBasePath + "app-forgot-password"
     }
     
     struct Billing {
@@ -50,6 +51,8 @@ struct URLManager {
         static let GetDisabledDates = basePath + "GetDisabledDates"
         static let GetDefaultProducts = basePath + "GetDefaultProducts"
         static let GetOrder = basePath + "GetOrder"
+        static let GetProductInCart = webBasePath + "app_cart/put"
+        static let GetCartDetails = webBasePath + "app_cart/get?"
     }
     
 }

@@ -11,7 +11,8 @@ import SwiftyJSON
 class DashboardVC: UIViewController {
     
     //MARK: - Variables
-    
+    var arrCartData:[GetCartModel] = []
+    var arrCartPriceData:[GetProductPriceModel] = []
     var arrAllProduct:[ProductRecords] = []
     var arrFavProduct:[FavoriteProduct] = []
     
@@ -178,8 +179,114 @@ extension DashboardVC: UICollectionViewDataSource {
             let cell: ProductCollCell = collectionView.dequequReusableCell(for: indexPath)
             let data = arrAllProduct[indexPath.row]
             cell.setupProduct(product: data)
+            cell.btnInfo.tag = indexPath.row
+            cell.btnInfo.addTarget(self, action: #selector(onPressInfobtnTap(_:)), for: .touchUpInside)
+        cell.txtProductQuantity.addTarget(self, action: #selector(txtQuantityAction(_:)), for: .editingChanged)
+        cell.txtProductQuantity.tag = indexPath.row
+        cell.btnAddToCart.tag = indexPath.row
+        cell.btnAddToCart.addTarget(self, action: #selector(OnpressCartbtnTap(_:)), for: .touchUpInside)
+        cell.btnFavourite.tag = indexPath.row
+        cell.btnFavourite.addTarget(self, action: #selector(onPressFavouritebtnTap(_:)), for: .touchUpInside)
             return cell
+        
       
+    }
+    
+    @objc func onPressFavouritebtnTap(_ sender: UIButton) {
+        
+         sender.isSelected = !sender.isSelected
+        
+    }
+    
+    
+    
+    
+    @objc func OnpressCartbtnTap(_ sender:UIButton) {
+        
+        let index = sender.tag
+        let productDetails = arrAllProduct[index]
+        let productCode = productDetails.code
+        let productType = productDetails.depositType
+        
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let cell = collAllProduct.cellForItem(at: indexPath) as! ProductCollCell
+        let quantity = Int(cell.txtProductQuantity.text ?? "1") ?? 0
+        
+        if let existCart = GetCartModel.arrCartProduct.filter{( $0.code.contains(productCode) )}.first {
+            existCart.quantity = quantity
+            if let arrayIndex: Int = GetCartModel.arrCartProduct.firstIndex(where: {( $0.code == existCart.code )}) {
+                GetCartModel.arrCartProduct.remove(at: arrayIndex)
+                GetCartModel.arrCartProduct.append(existCart)
+            }
+        } else {
+            GetCartModel.arrCartProduct.append(GetCartModel(type: 1, code: productCode, quantity: quantity))
+        }
+        
+        
+    
+
+       
+        let deliveryID = OnstopDeliveryModel.details.deliveryId
+        let postalCode = OnstopDeliveryModel.details.postalCode
+
+
+        var arrNewCartProduct: [[String: Any]] = [[:]]
+        for newProduct in GetCartModel.arrCartProduct {
+            let newCart = [
+                "Code":newProduct.code,
+                "Quantity":newProduct.quantity,
+                "ShoppingCartType":newProduct.type
+            ] as [String : Any]
+            arrNewCartProduct.append(newCart)
+        }
+
+
+        let param = [
+
+              "deliveryId":deliveryID,
+              "postalCode":postalCode,
+              "webProspect":"",
+              "cartProducts":arrNewCartProduct
+        ]
+        as [String : Any]
+
+        GetCartPricing(param: param, product: productDetails)
+    
+    }
+    
+    
+    
+    
+    
+    @objc func txtQuantityAction(_ sender:UITextField) {
+        let index = sender.tag
+        let indexpath = IndexPath(item: index, section: 0)
+        let cell = collAllProduct.cellForItem(at: indexpath) as! ProductCollCell
+        
+        if sender.text == "0" {
+            showToast("Please Insert valid Quantity")
+        }
+        
+        else if sender.text?.count ?? 0 > 0 {
+            cell.btnAddToCart.isEnabled = true
+        
+        }
+        
+        else {
+            
+            cell.btnAddToCart.isEnabled = false
+        }
+    }
+    
+    @objc func onPressInfobtnTap(_ sender:UIButton) {
+        
+        let vc = ProductInformationVC.instantiate(fromAppStoryboard: .Deliveries)
+        vc.productInfo = arrAllProduct[sender.tag]
+        vc.hidesBottomBarWhenPushed = true
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
+        
     }
 }
 
@@ -347,6 +454,66 @@ extension DashboardVC {
      })
  }
    
+    
+    
+    
+    fileprivate func GetCartPricing(param: [String:Any], product:ProductRecords) {
+        
+       
+        
+        showHUD()
+        NetworkManager.Profile.GetCartPricing(param: param, { (json) in
+            self.arrCartPriceData.removeAll()
+            for data in json.arrayValue {
+                self.arrCartPriceData.append(GetProductPriceModel(json: data))
+            }
+            print(self.arrCartPriceData)
+            
+            guard let newProduct = self.arrCartPriceData.filter({ $0.code == product.code }).first else { return }
+            
+            let param = [
+                "customerId":AccountInformation.details.customerId,
+                "code":newProduct.code,
+                "depositCode":"",
+                "depositPrice":"",
+                "description":product.productDescription,
+                "employeeModified":"",
+                "fillUp":false,
+                "gratisReason":"",
+                "longDescription":product.webDescriptionLong,
+                "price":newProduct.pricing.original,
+                "quantity":newProduct.quantity,
+                "type":1,
+                "url":"https://islandchoiceguam.com//account//images//mw_synced_image_3_\(newProduct.code).jpg"
+                
+            ]
+            as [String : Any]
+            
+            self.GetProductInCart(param: param)
+            //self.hideHUD()
+            
+        }, { (error) in
+            
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
+    
+    
+    fileprivate func GetProductInCart(param: [String:Any]) {
+        
+        
+        //showHUD()
+        NetworkManager.Profile.GetProductInCart(param: param, { (json) in
+            print(json)
+            self.hideHUD()
+            GetCartModel.GetCartDetails()
+        }, { (error) in
+            
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
         
 }
     

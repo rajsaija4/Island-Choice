@@ -11,6 +11,7 @@ class AditionInformationVC: UIViewController {
     
     //MARK: - Outlets
     
+    @IBOutlet weak var btnAddContractView: UIView!
     @IBOutlet weak var btnAddContract: UIButton!
     @IBOutlet weak var addContractView: UIView!
     @IBOutlet weak var txtOpenTo: UITextField!
@@ -48,13 +49,13 @@ class AditionInformationVC: UIViewController {
     
         
         addContractView.isHidden = false
-        btnAddContract.isHidden = true
+        btnAddContractView.isHidden = true
         
     }
     @IBAction func onPressAddRemovebtnTap(_ sender: Any) {
         
         addContractView.isHidden = true
-        btnAddContract.isHidden = false
+        btnAddContractView.isHidden = false
     }
     /*
     // MARK: - Navigation

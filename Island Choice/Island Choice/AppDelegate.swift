@@ -51,6 +51,9 @@ extension AppDelegate {
     }
     
     func setupMainTabBarController() {
+        
+        GetCartModel.GetCartDetails()
+        
         let tabBarVC = MainTabBarController.instantiate(fromAppStoryboard: .Main)
         
         let dashboardVC = DashboardVC.instantiate(fromAppStoryboard: .Dashboard)

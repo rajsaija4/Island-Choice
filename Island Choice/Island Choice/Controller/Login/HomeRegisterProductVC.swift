@@ -109,12 +109,49 @@ extension HomeRegisterProductVC: UICollectionViewDataSource{
         cell.btnFavourite.isHidden = true
         cell.btnInfo.tag = indexPath.row
         cell.btnInfo.addTarget(self, action: #selector(onPressInfobtnTap(_:)), for: .touchUpInside)
+        cell.btnAddToCart.tag = indexPath.row
+        cell.btnAddToCart.addTarget(self, action: #selector(onPressCartbtnTap(_:)), for: .touchUpInside)
         cell.setupProduct(product: data)
+        cell.txtProductQuantity.tag = indexPath.row
+        cell.txtProductQuantity.addTarget(self, action: #selector(txtQuantityAction(_:)), for: .editingChanged)
         return cell
     }
     
     
-    @objc func onPressInfobtnTap(_ sender:UIButton) {
+    
+    @objc func txtQuantityAction(_ sender:UITextField) {
+        let index = sender.tag
+        let indexpath = IndexPath(item: index, section: 0)
+        let cell = collRegisterAccountProductCell.cellForItem(at: indexpath) as! ProductCollCell
+        
+        if sender.text == "0" {
+            showToast("Please Insert valid Quantity")
+        }
+        
+        else if sender.text?.count ?? 0 > 0 {
+            cell.btnAddToCart.isEnabled = true
+        
+        }
+        
+        else {
+            
+            cell.btnAddToCart.isEnabled = false
+        }
+    }
+    
+    
+    
+    
+    @objc func onPressCartbtnTap(_ sender: UIButton) {
+        
+        APPDEL?.setupLogin()
+        
+    }
+    
+    
+    
+    
+    @objc func onPressInfobtnTap(_ sender: UIButton) {
         
         let vc = ProductInformationVC.instantiate(fromAppStoryboard: .Deliveries)
         vc.productInfo = arrAllProduct[sender.tag]

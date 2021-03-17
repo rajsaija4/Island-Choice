@@ -26,6 +26,8 @@ class ProductCollCell: UICollectionViewCell {
         super.awakeFromNib()
         self.backgroundColor = .white
         self.cornerRadius = 4
+        txtProductQuantity.keyboardType = .numberPad
+        btnAddToCart.isEnabled = false
         // Initialization code
     }
     

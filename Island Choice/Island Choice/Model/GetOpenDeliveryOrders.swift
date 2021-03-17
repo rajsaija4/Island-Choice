@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-class GetOpenDeliveryOrders: NSCoder {
+class GetOpenDeliveryOrders: NSObject {
     var deliveryId = ""
     var deliveryDate = ""
     var previousCalendarType = 0
