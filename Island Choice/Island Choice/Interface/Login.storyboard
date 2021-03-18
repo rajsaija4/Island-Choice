@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -216,6 +217,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="onGuestLoginBtnTap:" destination="EHn-IR-QMP" eventType="touchUpInside" id="Hky-nV-YoD"/>
+                                                            <action selector="onPressGuestUsersbtnTap:" destination="EHn-IR-QMP" eventType="touchUpInside" id="zyf-5R-ZE8"/>
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rot-nX-B1a">
@@ -374,7 +376,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Account Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e71-3m-ypX">
                                                                 <rect key="frame" x="8" y="8" width="287" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="8"/>
@@ -419,7 +421,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Zip Code..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u3G-E4-5Oq">
                                                                 <rect key="frame" x="8" y="8" width="287" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -556,7 +558,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzt-0E-xVQ">
                                                         <rect key="frame" x="8" y="8" width="319" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="8"/>
@@ -590,7 +592,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mnb-Ac-g2e">
                                                         <rect key="frame" x="8" y="8" width="319" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="8"/>
@@ -804,15 +806,131 @@
             </objects>
             <point key="canvasLocation" x="2144.927536231884" y="155.35714285714286"/>
         </scene>
+        <!--Guest User ProductVC-->
+        <scene sceneID="UWD-rn-xb5">
+            <objects>
+                <viewController storyboardIdentifier="GuestUserProductVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5En-Vc-HEr" customClass="GuestUserProductVC" customModule="Island_Choice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1gF-55-Ujg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q0j-0R-tS1">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ozv-s4-RDF">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yBz-6Y-OFb">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2pJ-Pz-jcR">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5En-Vc-HEr" id="GUQ-6x-PPy"/>
+                                    <outlet property="delegate" destination="5En-Vc-HEr" id="vZc-PY-HfH"/>
+                                </connections>
+                            </collectionView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeM-jU-3XL">
+                                <rect key="frame" x="315" y="607" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Afq-r4-yWP"/>
+                                    <constraint firstAttribute="width" secondItem="zeM-jU-3XL" secondAttribute="height" id="FI6-Dx-s6A"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="filter"/>
+                                <connections>
+                                    <action selector="onPressFilterbtnTap:" destination="5En-Vc-HEr" eventType="touchUpInside" id="O4L-WK-yXT"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6EP-dU-R7M">
+                                <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UnS-Dz-c6M">
+                                        <rect key="frame" x="20" y="8" width="302" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="txtSearchAction:" destination="5En-Vc-HEr" eventType="editingChanged" id="8j6-gB-pH5"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebu-l3-Ddi">
+                                        <rect key="frame" x="330" y="12.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ebu-l3-Ddi" secondAttribute="height" id="IUH-JE-Zkt"/>
+                                            <constraint firstAttribute="height" constant="25" id="fcu-op-fHt"/>
+                                        </constraints>
+                                        <state key="normal" image="img_search"/>
+                                        <connections>
+                                            <action selector="onPressSearchbtnTap:" destination="5En-Vc-HEr" eventType="touchUpInside" id="Eax-lI-Ykr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstItem="ebu-l3-Ddi" firstAttribute="centerY" secondItem="UnS-Dz-c6M" secondAttribute="centerY" id="326-pe-CGs"/>
+                                    <constraint firstItem="UnS-Dz-c6M" firstAttribute="top" secondItem="6EP-dU-R7M" secondAttribute="top" constant="8" id="D90-zh-aFc"/>
+                                    <constraint firstItem="ebu-l3-Ddi" firstAttribute="leading" secondItem="UnS-Dz-c6M" secondAttribute="trailing" constant="8" id="Emr-D8-G7c"/>
+                                    <constraint firstAttribute="bottom" secondItem="UnS-Dz-c6M" secondAttribute="bottom" constant="8" id="Foc-1X-oGR"/>
+                                    <constraint firstAttribute="trailing" secondItem="ebu-l3-Ddi" secondAttribute="trailing" constant="20" id="J1f-eF-yyY"/>
+                                    <constraint firstAttribute="height" constant="50" id="fso-7k-vrq"/>
+                                    <constraint firstItem="UnS-Dz-c6M" firstAttribute="leading" secondItem="6EP-dU-R7M" secondAttribute="leading" constant="20" id="zRp-Pm-3P0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e8e-Uz-dFw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6EP-dU-R7M" firstAttribute="top" secondItem="e8e-Uz-dFw" secondAttribute="top" constant="10" id="2qb-kG-hp9"/>
+                            <constraint firstItem="e8e-Uz-dFw" firstAttribute="bottom" secondItem="zeM-jU-3XL" secondAttribute="bottom" constant="20" id="Eoh-A1-dRG"/>
+                            <constraint firstItem="6EP-dU-R7M" firstAttribute="leading" secondItem="e8e-Uz-dFw" secondAttribute="leading" id="OWN-I6-u9s"/>
+                            <constraint firstItem="q0j-0R-tS1" firstAttribute="top" secondItem="6EP-dU-R7M" secondAttribute="bottom" id="X01-Z7-fF4"/>
+                            <constraint firstItem="e8e-Uz-dFw" firstAttribute="trailing" secondItem="zeM-jU-3XL" secondAttribute="trailing" constant="20" id="Xdo-TY-NfW"/>
+                            <constraint firstItem="q0j-0R-tS1" firstAttribute="leading" secondItem="e8e-Uz-dFw" secondAttribute="leading" id="c3X-Qa-CET"/>
+                            <constraint firstItem="e8e-Uz-dFw" firstAttribute="trailing" secondItem="6EP-dU-R7M" secondAttribute="trailing" id="jcV-qF-QA6"/>
+                            <constraint firstItem="e8e-Uz-dFw" firstAttribute="trailing" secondItem="q0j-0R-tS1" secondAttribute="trailing" id="jhD-Of-sBp"/>
+                            <constraint firstItem="e8e-Uz-dFw" firstAttribute="bottom" secondItem="q0j-0R-tS1" secondAttribute="bottom" id="zZV-dQ-A95"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnFilter" destination="zeM-jU-3XL" id="RqL-tE-26u"/>
+                        <outlet property="collProduCell" destination="q0j-0R-tS1" id="1PY-ku-ESz"/>
+                        <outlet property="txtSearchBar" destination="UnS-Dz-c6M" id="Upr-Oz-F9X"/>
+                        <outlet property="txtSearchbtn" destination="ebu-l3-Ddi" id="X3f-WF-Fif"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uuX-iQ-ekd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="116"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="filter" width="33" height="33"/>
         <image name="img_check" width="128" height="128"/>
         <image name="img_logo" width="1024" height="655"/>
         <image name="img_passwordhide" width="33" height="33"/>
+        <image name="img_search" width="33" height="33"/>
         <image name="img_uncheck" width="128" height="128"/>
         <image name="img_visible" width="33" height="33"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

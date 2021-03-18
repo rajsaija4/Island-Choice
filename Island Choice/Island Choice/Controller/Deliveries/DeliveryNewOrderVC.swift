@@ -148,6 +148,8 @@ extension DeliveryNewOrderVC: UICollectionViewDataSource {
         let productDetails = arrAllProduct[index]
         let productCode = productDetails.code
         let productType = productDetails.depositType
+        let productDescription = productDetails.productDescription
+        let productprice = productDetails.price[0]
         
         let indexPath = IndexPath(row: sender.tag, section: 0)
         let cell = collNewProduct.cellForItem(at: indexPath) as! ProductCollCell
@@ -161,7 +163,7 @@ extension DeliveryNewOrderVC: UICollectionViewDataSource {
                 GetCartModel.arrCartProduct.append(existCart)
             }
         } else {
-            GetCartModel.arrCartProduct.append(GetCartModel(type: 1, code: productCode, quantity: quantity))
+            GetCartModel.arrCartProduct.append(GetCartModel(type: 1, code: productCode, quantity: quantity, productDescription: productDescription, price: Double(Int(productprice))))
         }
         
         
@@ -427,7 +429,7 @@ extension DeliveryNewOrderVC {
                 "description":product.productDescription,
                 "employeeModified":"",
                 "fillUp":false,
-                "gratisReason":"",
+                "gratisReason":product.allowGratis,
                 "longDescription":product.webDescriptionLong,
                 "price":newProduct.pricing.original,
                 "quantity":newProduct.quantity,
@@ -454,6 +456,7 @@ extension DeliveryNewOrderVC {
         //showHUD()
         NetworkManager.Profile.GetProductInCart(param: param, { (json) in
             print(json)
+            self.showToast("Product Add to Cart")
             self.hideHUD()
             GetCartModel.GetCartDetails()
         }, { (error) in

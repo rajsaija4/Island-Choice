@@ -31,6 +31,8 @@
 		9F293B5025DFF302008EC1DD /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293B4F25DFF302008EC1DD /* InvoiceVC.swift */; };
 		9F293B5325DFF31B008EC1DD /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293B5225DFF31B008EC1DD /* HistoryVC.swift */; };
 		9F293B5625DFF396008EC1DD /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */; };
+		9F332239260315530067833A /* GuestUserProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F332238260315530067833A /* GuestUserProductVC.swift */; };
+		9F33223E260331280067833A /* GetCartSalesTaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33223D260331280067833A /* GetCartSalesTaxModel.swift */; };
 		9F34E12425FF383700F5D85C /* FavoriteProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34E12325FF383700F5D85C /* FavoriteProduct.swift */; };
 		9F34E12825FF3CFD00F5D85C /* FavoriteOrderCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F34E12625FF3CFD00F5D85C /* FavoriteOrderCollCell.swift */; };
 		9F34E12925FF3CFD00F5D85C /* FavoriteOrderCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F34E12725FF3CFD00F5D85C /* FavoriteOrderCollCell.xib */; };
@@ -141,6 +143,8 @@
 		9F293B4F25DFF302008EC1DD /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
 		9F293B5225DFF31B008EC1DD /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		9F293B5525DFF396008EC1DD /* PaymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
+		9F332238260315530067833A /* GuestUserProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestUserProductVC.swift; sourceTree = "<group>"; };
+		9F33223D260331280067833A /* GetCartSalesTaxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCartSalesTaxModel.swift; sourceTree = "<group>"; };
 		9F34E12325FF383700F5D85C /* FavoriteProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProduct.swift; sourceTree = "<group>"; };
 		9F34E12625FF3CFD00F5D85C /* FavoriteOrderCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteOrderCollCell.swift; sourceTree = "<group>"; };
 		9F34E12725FF3CFD00F5D85C /* FavoriteOrderCollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteOrderCollCell.xib; sourceTree = "<group>"; };
@@ -417,6 +421,7 @@
 				9FAF12FD2600B079004F9B19 /* CartModel.swift */,
 				9FE8CC152601DEE10039AD37 /* GetCartModel.swift */,
 				9FDE91D22602119800AD3278 /* GetProductPriceModel.swift */,
+				9F33223D260331280067833A /* GetCartSalesTaxModel.swift */,
 				9F735E6225DE33CD000EBD72 /* View */,
 			);
 			path = Model;
@@ -573,15 +578,16 @@
 				9F7594E125F748BF00768A28 /* CreateAccountVC.swift */,
 				9F80767025DEA3EF006E6311 /* ForgotPasswordVC.swift */,
 				9F8A9A2C25F753F1003A10F1 /* HomeRegisterProductVC.swift */,
-				9FAEF13A25F7782500AF36E3 /* RegisterCartVC.swift */,
 				9FAEF13D25F78EC500AF36E3 /* RegisterAddressVC.swift */,
+				9FAEF13A25F7782500AF36E3 /* RegisterCartVC.swift */,
 				9FAEF14425F7948E00AF36E3 /* LoginBillingInformationVC.swift */,
 				9FAEF14725F7959800AF36E3 /* AccountInformationVC.swift */,
 				9FAEF15125F797AD00AF36E3 /* EcheckVC.swift */,
+				9F293ABC25DF964F008EC1DD /* Dashboard */,
 				9FAEF15425F79D8B00AF36E3 /* RegisterCreditCardVC.swift */,
 				9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */,
 				9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */,
-				9F293ABC25DF964F008EC1DD /* Dashboard */,
+				9F332238260315530067833A /* GuestUserProductVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -797,8 +803,10 @@
 				9F293B5625DFF396008EC1DD /* PaymentMethodVC.swift in Sources */,
 				9F4079DE25DE454E00FCA1B2 /* Alert+Extension.swift in Sources */,
 				9F08BC6525F62DD600B6935E /* PayInvoiceVC.swift in Sources */,
+				9F332239260315530067833A /* GuestUserProductVC.swift in Sources */,
 				9FD6016225DE7A910081D546 /* LoginVC.swift in Sources */,
 				9FAEF14525F7948E00AF36E3 /* LoginBillingInformationVC.swift in Sources */,
+				9F33223E260331280067833A /* GetCartSalesTaxModel.swift in Sources */,
 				9F097F2025E926DC00CD0FA7 /* RemoveFavProductCell.swift in Sources */,
 				9F097F1025E91D6200CD0FA7 /* AddFavoriteProductVC.swift in Sources */,
 				9F4079EA25DE45F000FCA1B2 /* NetworkCaller.swift in Sources */,

@@ -207,6 +207,24 @@
                                                                     </attributedString>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wne-JJ-BrZ">
+                                                                    <rect key="frame" x="0.0" y="123" width="394" height="50"/>
+                                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="a0N-Pf-bue"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Update Cart">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="onPressbtnUpdateCartPress:" destination="TXV-Ep-Kts" eventType="touchUpInside" id="Zs7-q2-DHg"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8L-6K-0hZ">
                                                                     <rect key="frame" x="0.0" y="127" width="394" height="50"/>
                                                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -247,6 +265,9 @@
                                                                             <color key="value" systemColor="systemRedColor"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="onPressClearbtnTap:" destination="TXV-Ep-Kts" eventType="touchUpInside" id="p1O-9D-sPf"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -299,6 +320,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCheckout" destination="B8L-6K-0hZ" id="7cW-b1-HVm"/>
+                        <outlet property="btnUpdateCart" destination="wne-JJ-BrZ" id="i4w-mX-ngJ"/>
+                        <outlet property="lblDeliveryFees" destination="FvX-al-NTf" id="Obn-9R-3td"/>
+                        <outlet property="lblEstimatedTaxes" destination="lh3-Us-lmf" id="49w-Gc-Iht"/>
+                        <outlet property="lblGrandTotal" destination="qL4-7P-gOd" id="EvK-xO-V4j"/>
+                        <outlet property="lblSubTotal" destination="uns-IE-LPW" id="1zt-Rm-a88"/>
                         <outlet property="tblCart" destination="nHM-tF-pbz" id="8lC-Hb-nwB"/>
                         <outlet property="viewBottom" destination="4TH-nm-HJM" id="6Bc-cP-FjY"/>
                     </connections>

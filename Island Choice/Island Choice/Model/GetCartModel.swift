@@ -15,6 +15,8 @@ class GetCartModel: NSObject {
     var type = 0
     var code = ""
     var quantity = 0
+    var productDescription = ""
+    var price = 0.0
     
     static var arrCartProduct: [GetCartModel] = []
  
@@ -25,12 +27,17 @@ class GetCartModel: NSObject {
         type = json["Type"].intValue
         code = json["Code"].stringValue
         quantity = json["Quantity"].intValue
+        productDescription = json["Description"].stringValue
+        price = json["Price"].doubleValue
+        
     }
     
-    init(type: Int, code: String, quantity: Int) {
+    init(type: Int, code: String, quantity: Int, productDescription: String, price:Double) {
         self.type = type
         self.code = code
         self.quantity = quantity
+        self.productDescription = productDescription
+        self.price = price
     }
     
     static func GetCartDetails() {

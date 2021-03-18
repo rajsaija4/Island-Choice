@@ -207,6 +207,8 @@ extension DashboardVC: UICollectionViewDataSource {
         let productDetails = arrAllProduct[index]
         let productCode = productDetails.code
         let productType = productDetails.depositType
+        let productDescription = productDetails.productDescription
+        let productprice = productDetails.price[0]
         
         let indexPath = IndexPath(row: sender.tag, section: 0)
         let cell = collAllProduct.cellForItem(at: indexPath) as! ProductCollCell
@@ -219,7 +221,7 @@ extension DashboardVC: UICollectionViewDataSource {
                 GetCartModel.arrCartProduct.append(existCart)
             }
         } else {
-            GetCartModel.arrCartProduct.append(GetCartModel(type: 1, code: productCode, quantity: quantity))
+            GetCartModel.arrCartProduct.append(GetCartModel(type: 1, code: productCode, quantity: quantity, productDescription: productDescription, price: Double(Int(productprice))))
         }
         
         
@@ -507,6 +509,7 @@ extension DashboardVC {
         NetworkManager.Profile.GetProductInCart(param: param, { (json) in
             print(json)
             self.hideHUD()
+            self.showToast("Product All to Cart")
             GetCartModel.GetCartDetails()
         }, { (error) in
             

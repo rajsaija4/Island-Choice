@@ -925,6 +925,174 @@ extension NetworkManager {
         
     }
     
-   
     
+    struct  Cart {
+        
+        static func GetCartSalesTax(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Cart.GetCartSalesTax.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(JSON(parseJSON: resJson["Data"].stringValue))
+                    break
+                case .failure(let error):
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
+       
+        
+        
+        static func clearCartDetails(_ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            
+            let newURL = URLManager.Cart.ClearCartDetails + "customerId=\(AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue)"
+            
+            guard let encodedURL = newURL.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(resJson)
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    break
+                }
+            }
+        }
+        
+        
+        
+        static func GetCartWebCouponAmount(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Cart.GetCartWebCouponAmount.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(JSON(parseJSON: resJson["Data"].stringValue))
+                    break
+                case .failure(let error):
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
+       
+        
+        
+        static func CompleteOrder(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Cart.CompleteOrder.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(JSON(parseJSON: resJson["Data"].stringValue))
+                    break
+                case .failure(let error):
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
+        
+        
+        
+        
+        static func GetCartMinimumOrderQuantities(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Cart.GetCartMinimumOrderQuantities.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(JSON(parseJSON: resJson["Data"].stringValue))
+                    break
+                case .failure(let error):
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
+    }
 }

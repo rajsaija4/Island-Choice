@@ -11,6 +11,7 @@ struct URLManager {
     
     static let basePath = "http://islchoi.mango247.cloud:3306/ARSDataAPI/"
     static let webBasePath = "https://islandchoiceguam.com/account/api/"
+   
     
     struct Auth {
         static let login = basePath + "AuthenticateUser"
@@ -53,6 +54,16 @@ struct URLManager {
         static let GetOrder = basePath + "GetOrder"
         static let GetProductInCart = webBasePath + "app_cart/put"
         static let GetCartDetails = webBasePath + "app_cart/get?"
+    }
+    
+    
+    struct Cart {
+        static let GetCartSalesTax = basePath + "GetCartSalesTax"
+        static let ClearCartDetails = webBasePath + "app_cart/clear?"
+        static let GetCartWebCouponAmount = basePath + "GetCartWebCouponAmount"
+        static let CompleteOrder = basePath + "CompleteOrder"
+        static let GetCartMinimumOrderQuantities = basePath + "GetCartMinimumOrderQuantities"
+        
     }
     
 }

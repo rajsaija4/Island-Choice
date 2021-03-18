@@ -39,6 +39,12 @@ class LoginVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    @IBAction func onPressGuestUsersbtnTap(_ sender: UIButton) {
+        
+        let vc = GuestUserProductVC.instantiate(fromAppStoryboard: .Login)
+        navigationController?.pushViewController(vc, animated: true)
+
+    }
     
 }
 
