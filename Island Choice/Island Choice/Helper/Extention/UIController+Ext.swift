@@ -37,6 +37,16 @@ extension UIViewController {
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func setUpguestCartbtn() {
+        let btn = UIBarButtonItem(image: UIImage(named: "img_cart"), style: .plain, target: self, action: #selector(setUpguestCartbtn(_:)))
+        navigationItem.rightBarButtonItem = btn
+    }
+    
+    @objc fileprivate func setUpguestCartbtn(_ sender: UIButton) {
+        let vc = CartVC.instantiate(fromAppStoryboard: .Cart)
+        APPDEL?.setupLogin()
+    }
 }
 
 

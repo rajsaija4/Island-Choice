@@ -209,6 +209,7 @@ extension DashboardVC: UICollectionViewDataSource {
         let productType = productDetails.depositType
         let productDescription = productDetails.productDescription
         let productprice = productDetails.price[0]
+        let gratisReason = productDetails.allowGratis
         
         let indexPath = IndexPath(row: sender.tag, section: 0)
         let cell = collAllProduct.cellForItem(at: indexPath) as! ProductCollCell
@@ -221,7 +222,7 @@ extension DashboardVC: UICollectionViewDataSource {
                 GetCartModel.arrCartProduct.append(existCart)
             }
         } else {
-            GetCartModel.arrCartProduct.append(GetCartModel(type: 1, code: productCode, quantity: quantity, productDescription: productDescription, price: Double(Int(productprice))))
+            GetCartModel.arrCartProduct.append(GetCartModel(type: 1, code: productCode, quantity: quantity, productDescription: productDescription, price: Double(Int(productprice)), gratisReason: gratisReason))
         }
         
         
@@ -262,6 +263,7 @@ extension DashboardVC: UICollectionViewDataSource {
     
     @objc func txtQuantityAction(_ sender:UITextField) {
         let index = sender.tag
+        let data = arrAllProduct[index]
         let indexpath = IndexPath(item: index, section: 0)
         let cell = collAllProduct.cellForItem(at: indexpath) as! ProductCollCell
         
@@ -270,8 +272,11 @@ extension DashboardVC: UICollectionViewDataSource {
         }
         
         else if sender.text?.count ?? 0 > 0 {
+            let quantity = Int(sender.text ?? "0") ?? 1
+            if  quantity >= data.minimumOrderQuantity {
             cell.btnAddToCart.isEnabled = true
-        
+            }
+   
         }
         
         else {

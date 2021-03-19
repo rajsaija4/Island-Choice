@@ -571,6 +571,9 @@
                         <outlet property="btnCalander" destination="OPB-kX-8Sl" id="QT5-LB-qaG"/>
                         <outlet property="btnPlaceOrder" destination="3ig-Gm-JoI" id="scC-BS-4jP"/>
                         <outlet property="collPreviousOrder" destination="dUS-U1-r9L" id="1Gk-wg-9dm"/>
+                        <outlet property="lblDeliveryOrder" destination="qCs-BF-E5f" id="PhC-J3-Jup"/>
+                        <outlet property="lblNextDeliveryDate" destination="tDb-Nd-iby" id="LhU-0V-mMz"/>
+                        <outlet property="lblPreviousOrderDate" destination="4i6-bK-le6" id="GGe-tx-QVW"/>
                         <outlet property="lblReorderForDelivery" destination="tDb-Nd-iby" id="ZAx-M0-dHy"/>
                         <outlet property="txtDelieveryOrder" destination="jdd-f0-59h" id="9G6-aL-VrS"/>
                         <outlet property="txtNextDelieveryDate" destination="Lzx-ni-JGt" id="IKD-Pj-Dbx"/>

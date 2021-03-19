@@ -25,6 +25,9 @@ class PreviousOrderVC: UIViewController {
 
     
     
+    @IBOutlet weak var lblNextDeliveryDate: UILabel!
+    @IBOutlet weak var lblDeliveryOrder: UILabel!
+    @IBOutlet weak var lblPreviousOrderDate: UILabel!
     @IBOutlet weak var lblReorderForDelivery: UILabel!
     @IBOutlet weak var btnPlaceOrder: UIButton!
     // MARK: - Outlets
@@ -249,7 +252,33 @@ extension PreviousOrderVC {
             if newData.ticketNumber.count > 0 {
                 self.arrDeliveryInformation.append(newData)
             }
-          
+            if self.arrDeliveryInformation.count > 0 {
+                self.collPreviousOrder.isHidden = false
+                self.txtPreviousOrderDate.isHidden = false
+                self.txtNextDelieveryDate.isHidden = false
+                self.txtDelieveryOrder.isHidden = false
+                self.btnCalander.isHidden = false
+                self.btnPlaceOrder.isHidden = false
+                self.lblDeliveryOrder.isHidden = false
+                self.lblNextDeliveryDate.isHidden = false
+                self.lblPreviousOrderDate.isHidden = false
+                self.lblReorderForDelivery.isHidden = false
+            }
+            
+            else {
+                
+                self.collPreviousOrder.isHidden = true
+                self.txtPreviousOrderDate.isHidden = true
+                self.txtNextDelieveryDate.isHidden = true
+                self.txtDelieveryOrder.isHidden = true
+                self.btnCalander.isHidden = true
+                self.btnPlaceOrder.isHidden = true
+                self.lblDeliveryOrder.isHidden = true
+                self.lblNextDeliveryDate.isHidden = true
+                self.lblPreviousOrderDate.isHidden = true
+                self.lblReorderForDelivery.isHidden = true
+                
+            }
             
             
         }
@@ -268,13 +297,14 @@ extension PreviousOrderVC {
            
         }
         
-        
+        if self.arrDeliveryInformation.count > 0 {
         let defaultPreviousDate = self.arrDeliveryInformation[0].calendarDate
         if let pDate = defaultPreviousDate.split(separator: "T").first {
             self.txtPreviousOrderDate.text = "\(pDate)"
+            self.txtDelieveryOrder.text = self.arrDeliveryInformation[0].ticketNumber
+        }
         }
         
-        self.txtDelieveryOrder.text = self.arrDeliveryInformation[0].ticketNumber
 //        self.txtPreviousOrderDate.text = self.arrOrderDate[0]
     
 //        self.txtDelieveryOrder.text = deliveryInformation.ticketNumber

@@ -68,7 +68,7 @@ class CartVC: UIViewController {
     }
     @IBAction func onPressbtnUpdateCartPress(_ sender: Any) {
         GetCartPrice()
-      updateCartDetails()
+        updateCartDetails()
         btnUpdateCart.isHidden = true
         
         
@@ -162,6 +162,7 @@ extension CartVC {
         
         
         var arrNewCartProduct: [[String: Any]] = [[:]]
+        arrNewCartProduct.removeAll()
         for newProduct in GetCartModel.arrCartProduct {
             let newCart = [
                 "Code":newProduct.code,
@@ -218,6 +219,7 @@ extension CartVC {
         
         
         var arrNewCartProduct: [[String: Any]] = [[:]]
+        arrNewCartProduct.removeAll()
         for newProduct in arrCartPriceData {
             let newCart = [
                 "Code":newProduct.code,
@@ -359,7 +361,96 @@ extension CartVC {
       
         
     }
-   
+    
+    
+    fileprivate func CompleteOrder() {
+        
+        var arrCartProduct: [[String: Any]] = [[:]]
+        arrCartProduct.removeAll()
+        for newProduct in GetCartModel.arrCartProduct {
+            let newCart = [
+                "Code":newProduct.code,
+                "Quantity":newProduct.quantity,
+                "ShoppingCartType":newProduct.type,
+                "Recurring":"",
+                "FillUp":"",
+                "GratisReason":newProduct.gratisReason
+                
+            ] as [String : Any]
+            arrCartProduct.append(newCart)
+        }
+        
+        
+            let param = [
+                "createOrderData":[
+                      "DeliveryId":"10123700",
+                      "DeliveryDate":"",
+                      "DeliveryNote":"",
+                      "Products":arrCartProduct,
+                      "Equipment":"",
+                      "CalendarId":"",
+                      "SkipDeliveryDay":true,
+                      "EmployeeId":"",
+                      "SpokeWith":"",
+                      "Exact":"0",
+                      "ExactDate":"",
+                      "ExactTime":"",
+                      "HighPriority":true,
+                      "Route":"",
+                      "EncodedSignatureData":"",
+                      "SignaturePrint":"",
+                      "EmployeeInitials":""
+                  ],
+                  "createOrderWebOptions":[
+                      "CustomerStatus":3,
+                      "SendEmail":1,
+                      "DeliveryFee":1,
+                      "AddDeliveryFeeToDefaultProducts":1,
+                      "WebCouponCode":"",
+                      "WebSettings":""
+                  ],
+                  "paymentMethodPackage":[
+                      "PaymentMethod":1,
+                      "FirstName":"",
+                      "LastName":"",
+                      "CardNumber":"",
+                      "CardExpiration":"",
+                      "CardCVV":"",
+                      "Address":"",
+                      "City":"",
+                      "State":"",
+                      "PostalCode":"",
+                      "Country":"",
+                      "Email":"",
+                      "VaultId":"",
+                      "VaultPayId":"",
+                      "BankAccount":"",
+                      "UseExistingBankAccount":"",
+                      "InvoiceNumber":"MW07031810123700",
+                      "TestMode":""
+                  ]
+                
+            ]
+            as [String : Any]
+            showHUD()
+            NetworkManager.Cart.CompleteOrder(param: param, { (json) in
+                self.arrCartPriceData.removeAll()
+                for data in json.arrayValue {
+                    self.arrCartPriceData.append(GetProductPriceModel(json: data))
+                }
+                self.GetCartSalesTax()
+            
+               
+                //self.hideHUD()
+                
+            }, { (error) in
+                
+                self.hideHUD()
+                self.showToast(error)
+            })
+
+        
+    }
 }
 
 

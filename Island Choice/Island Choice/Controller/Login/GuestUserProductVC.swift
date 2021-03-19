@@ -42,7 +42,7 @@ class GuestUserProductVC: UIViewController {
         navigationController?.isNavigationBarHidden = false
         setupNavigationBarBackBtn()
         getAllProduct()
-        setupCartBtn()
+        setUpguestCartbtn() 
 
         // Do any additional setup after loading the view.
     }

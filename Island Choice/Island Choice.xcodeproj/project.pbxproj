@@ -486,6 +486,7 @@
 			children = (
 				9F293AC225DF9744008EC1DD /* MainTabBarController.swift */,
 				9FD6016425DE7A990081D546 /* Login */,
+				9F293ABC25DF964F008EC1DD /* Dashboard */,
 				9F293ABE25DF9686008EC1DD /* Billing */,
 				9F293ABF25DF968E008EC1DD /* Deliveries */,
 				9F293AC025DF9697008EC1DD /* Account */,
@@ -583,11 +584,10 @@
 				9FAEF14425F7948E00AF36E3 /* LoginBillingInformationVC.swift */,
 				9FAEF14725F7959800AF36E3 /* AccountInformationVC.swift */,
 				9FAEF15125F797AD00AF36E3 /* EcheckVC.swift */,
-				9F293ABC25DF964F008EC1DD /* Dashboard */,
+				9F332238260315530067833A /* GuestUserProductVC.swift */,
 				9FAEF15425F79D8B00AF36E3 /* RegisterCreditCardVC.swift */,
 				9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */,
 				9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */,
-				9F332238260315530067833A /* GuestUserProductVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
