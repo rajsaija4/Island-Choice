@@ -177,16 +177,6 @@ extension GuestUserProductVC {
     
     
    fileprivate func getAllProduct() {
-    
-    let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
-    print(deliveryID)
-    let customerID = OnstopDeliveryModel.details.customerId
-    print(customerID)
-    
-    let postalCode = OnstopDeliveryModel.details.postalCode
-    print(postalCode)
-    
-    
 
    
     let param = [

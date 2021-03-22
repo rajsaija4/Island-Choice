@@ -137,6 +137,12 @@ extension DeliveryNewOrderVC: UICollectionViewDataSource {
             if  quantity >= data.minimumOrderQuantity {
             cell.btnAddToCart.isEnabled = true
             }
+            
+            else {
+                
+                let tost = "you have to add Minumum \(data.minimumOrderQuantity) Quantity"
+                showToast(tost)
+            }
         
         }
         
@@ -163,7 +169,7 @@ extension DeliveryNewOrderVC: UICollectionViewDataSource {
         
         if let existCart = GetCartModel.arrCartProduct.filter {( $0.code.contains(productCode) )}.first {
             existCart.quantity = quantity
-            if let arrayIndex: Int = GetCartModel.arrCartProduct.firstIndex(where: {( $0.code == existCart.code )}) {
+            if let arrayIndex: Int =                 GetCartModel.arrCartProduct.firstIndex(where: {( $0.code == existCart.code )}) {
                 GetCartModel.arrCartProduct.remove(at: arrayIndex)
                 GetCartModel.arrCartProduct.append(existCart)
             }

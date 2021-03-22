@@ -53,6 +53,8 @@ extension AppDelegate {
     func setupMainTabBarController() {
         
         GetCartModel.GetCartDetails()
+        GetCustomerGuestCartDetails.GetGuestCartDetails()
+        print(GetCustomerGuestCartDetails.GetGuestCartDetails())
         
         let tabBarVC = MainTabBarController.instantiate(fromAppStoryboard: .Main)
         

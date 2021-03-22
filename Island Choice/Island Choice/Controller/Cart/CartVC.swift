@@ -63,6 +63,7 @@ class CartVC: UIViewController {
         }
         else {
        let vc = CheckOutVC.instantiate(fromAppStoryboard: .Cart)
+            vc.arrProductTaxDetails = arrTaxDetails
         navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -129,8 +130,8 @@ extension CartVC: UITableViewDataSource {
         if let existCart = GetCartModel.arrCartProduct.filter {( $0.code.contains(arrTaxDetails[sender.tag].productCode) )}.first {
             existCart.quantity = quentityInt
             if let arrayIndex: Int = GetCartModel.arrCartProduct.firstIndex(where: {( $0.code == existCart.code )}) {
-                GetCartModel.arrCartProduct.remove(at: arrayIndex)
-                GetCartModel.arrCartProduct.append(existCart)
+                                GetCartModel.arrCartProduct.remove(at: arrayIndex)
+                                GetCartModel.arrCartProduct.append(existCart)
             }
         }
         
@@ -243,9 +244,12 @@ extension CartVC {
         
         NetworkManager.Cart.GetCartSalesTax(param: param, { (json) in
             let data = GetCartSalesTaxModel(json: json)
+            let cartData = data.cartProductSalesTaxDetails
+            if cartData.count > 0 {
             self.arrTaxDetails.removeAll()
             self.arrTaxDetails.append(contentsOf: data.cartProductSalesTaxDetails)
             self.tblCart.reloadData()
+            }
             self.hideHUD()
         }, { (error) in
             

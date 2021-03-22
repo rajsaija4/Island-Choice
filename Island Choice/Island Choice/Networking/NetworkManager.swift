@@ -406,7 +406,36 @@ extension NetworkManager {
                 }
             }
         }
-        
+    
+        static func GetGuestCartDetails(_ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            
+            let newURL = URLManager.Order.GetCartDetails + "customerId="
+            
+            guard let encodedURL = newURL.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(resJson)
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    break
+                }
+            }
+        }
         
         
     }
@@ -1095,4 +1124,49 @@ extension NetworkManager {
             }
         }
     }
+}
+
+
+extension NetworkManager {
+    
+    struct SignUp {
+        
+        static func SendContactUsEmail(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.SignUp.SendContactUsEmail.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
+                        fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        return
+                    }
+                    
+                    success(JSON(parseJSON: resJson["Data"].stringValue))
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    break
+                }
+            }
+        }
+        
+        
+    }
+    
+   
+    
+    
 }

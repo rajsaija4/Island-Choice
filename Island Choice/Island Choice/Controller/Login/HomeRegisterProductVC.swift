@@ -12,7 +12,8 @@ import SwiftyJSON
 class HomeRegisterProductVC: UIViewController {
     
     //MARK: - Variables
-    
+    var arrCartData:[GetCustomerGuestCartDetails] = []
+    var arrCartPriceData:[GetProductPriceModel] = []
     fileprivate var startPageIndex = 0
     fileprivate var endPageIndex = 20
     var arrAllProduct:[ProductRecords] = []
@@ -50,11 +51,25 @@ class HomeRegisterProductVC: UIViewController {
         getAllProduct()
         title = "Create Account"
         setupNavigationBarBackBtn()
+        setUpguestCartbtn1()
+    
         // Do any additional setup after loading the view.
     }
     
 
     //MARK: - ActionMethods
+    
+    func setUpguestCartbtn1() {
+        let btn = UIBarButtonItem(image: UIImage(named: "img_cart"), style: .plain, target: self, action: #selector(setUpguestCartbtn1(_:)))
+        navigationItem.rightBarButtonItem = btn
+    }
+    
+    @objc fileprivate func setUpguestCartbtn1(_ sender: UIButton) {
+        return
+        let vc = RegisterCartVC.instantiate(fromAppStoryboard: .Register)
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBAction func onPressNextbtnTap(_ sender: Any) {
         let vc = RegisterCartVC.instantiate(fromAppStoryboard: .Register)
@@ -121,6 +136,7 @@ extension HomeRegisterProductVC: UICollectionViewDataSource{
     
     @objc func txtQuantityAction(_ sender:UITextField) {
         let index = sender.tag
+        let data = arrAllProduct[index]
         let indexpath = IndexPath(item: index, section: 0)
         let cell = collRegisterAccountProductCell.cellForItem(at: indexpath) as! ProductCollCell
         
@@ -129,7 +145,16 @@ extension HomeRegisterProductVC: UICollectionViewDataSource{
         }
         
         else if sender.text?.count ?? 0 > 0 {
+            let quantity = Int(sender.text ?? "0") ?? 1
+            if  quantity >= data.minimumOrderQuantity {
             cell.btnAddToCart.isEnabled = true
+            }
+            
+            else {
+                
+                let tost = "you have to add Minumum \(data.minimumOrderQuantity) Quantity"
+                showToast(tost)
+            }
         
         }
         
@@ -144,7 +169,61 @@ extension HomeRegisterProductVC: UICollectionViewDataSource{
     
     @objc func onPressCartbtnTap(_ sender: UIButton) {
         
-        APPDEL?.setupLogin()
+        let index = sender.tag
+        let productDetails = arrAllProduct[index]
+        let productCode = productDetails.code
+        let productType = productDetails.depositType
+        let productDescription = productDetails.productDescription
+        let productprice = productDetails.price[0]
+        let gratisReason = productDetails.allowGratis
+        
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let cell = collRegisterAccountProductCell.cellForItem(at: indexPath) as! ProductCollCell
+        let quantity = Int(cell.txtProductQuantity.text ?? "1") ?? 0
+        
+        
+        if let existCart = GetCustomerGuestCartDetails.arrCartProduct.filter {( $0.code.contains(productCode) )}.first {
+            existCart.quantity = quantity
+            if let arrayIndex: Int = GetCustomerGuestCartDetails.arrCartProduct.firstIndex(where: {( $0.code == existCart.code )}) {
+                GetCustomerGuestCartDetails.arrCartProduct.remove(at: arrayIndex)
+                GetCustomerGuestCartDetails.arrCartProduct.append(existCart)
+            }
+        } else {
+            GetCustomerGuestCartDetails.arrCartProduct.append(GetCustomerGuestCartDetails(type: 1, code: productCode, quantity: quantity, productDescription: productDescription, price: Double(Int(productprice)), gratisReason: gratisReason))
+        }
+        
+        
+    
+
+       
+        let deliveryID = ""
+        let postalCode = ""
+
+
+        var arrNewCartProduct: [[String: Any]] = [[:]]
+        for newProduct in GetCustomerGuestCartDetails.arrCartProduct {
+            let newCart = [
+                "Code":newProduct.code,
+                "Quantity":newProduct.quantity,
+                "ShoppingCartType":newProduct.type
+            ] as [String : Any]
+            arrNewCartProduct.append(newCart)
+        }
+
+
+        let param = [
+
+              "deliveryId":deliveryID,
+              "postalCode":postalCode,
+              "webProspect":"",
+              "cartProducts":arrNewCartProduct
+        ]
+        as [String : Any]
+
+        GetCartPricing(param: param, product: productDetails)
+    
+        
+//        APPDEL?.setupLogin()
         
     }
     
@@ -200,17 +279,6 @@ extension HomeRegisterProductVC {
     
    fileprivate func getAllProduct() {
     
-    let deliveryID = Int(OnstopDeliveryModel.details.deliveryId)
-    print(deliveryID)
-    let customerID = OnstopDeliveryModel.details.customerId
-    print(customerID)
-    
-    let postalCode = OnstopDeliveryModel.details.postalCode
-    print(postalCode)
-    
-    
-
-   
     let param = [
         "paginationSettings":[
             "Offset":self.startPageIndex,
@@ -253,8 +321,6 @@ extension HomeRegisterProductVC {
        else {
            self.reloadData(state: .noMoreData)
        }
-       
-
         self.hideHUD()
     }, { (error) in
       
@@ -269,4 +335,69 @@ extension HomeRegisterProductVC {
 
     }
         
+}
+
+
+extension HomeRegisterProductVC {
+    
+    
+    
+    
+    fileprivate func GetCartPricing(param: [String:Any], product:ProductRecords) {
+            showHUD()
+        NetworkManager.Profile.GetCartPricing(param: param, { (json) in
+            self.arrCartPriceData.removeAll()
+            for data in json.arrayValue {
+                self.arrCartPriceData.append(GetProductPriceModel(json: data))
+            }
+            print(self.arrCartPriceData)
+            
+            guard let newProduct = self.arrCartPriceData.filter({ $0.code == product.code }).first else { return }
+            
+            let param = [
+                "customerId":"",
+                "code":newProduct.code,
+                "depositCode":"",
+                "depositPrice":"",
+                "description":product.productDescription,
+                "employeeModified":"",
+                "fillUp":false,
+                "gratisReason":product.allowGratis,
+                "longDescription":product.webDescriptionLong,
+                "price":newProduct.pricing.original,
+                "quantity":newProduct.quantity,
+                "type":1,
+                "url":"https://islandchoiceguam.com//account//images//mw_synced_image_3_\(newProduct.code).jpg"
+                
+            ]
+            as [String : Any]
+            
+            self.GetProductInCart(param: param)
+            //self.hideHUD()
+            
+        }, { (error) in
+            
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
+    
+    
+    fileprivate func GetProductInCart(param: [String:Any]) {
+        
+        
+        //showHUD()
+        NetworkManager.Profile.GetProductInCart(param: param, { (json) in
+            print(json)
+            self.showToast("Product Add to Cart")
+            
+            self.hideHUD()
+            GetCustomerGuestCartDetails.GetGuestCartDetails()
+        }, { (error) in
+            
+            self.hideHUD()
+            self.showToast(error)
+        })
+    }
+   
 }

@@ -9,8 +9,18 @@ import UIKit
 
 class CheckOutVC: UIViewController {
     
+    //MARK: - Varables
+    
+    var arrProductRegister:[GetCartModel] = []
+    var arrProductTaxDetails:[CartProductSalesTaxDetails] = []
+    var arrGetCartData = GetCartModel.arrCartProduct
+    var totalPrice = 0
+    var totaltax = 0
+    
     //MARK: - Outlets
     
+    @IBOutlet weak var lblEsimatedTax: UILabel!
+    @IBOutlet weak var lblGrandTotal: UILabel!
     @IBOutlet weak var txtDeliveryDate: UITextField!
     @IBOutlet weak var btnDeliveryCalander: UIButton!
     @IBOutlet weak var txtApplyCoupen: UITextField!
@@ -32,7 +42,9 @@ class CheckOutVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Total()
         title = "Checkout"
+        
         // Do any additional setup after loading the view.
     }
     
@@ -68,11 +80,14 @@ extension CheckOutVC {
 
 extension CheckOutVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return arrProductTaxDetails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: checkoutTblCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        let data = arrProductTaxDetails[indexPath.row]
+        cell.setupCell(data: data)
+        
         return cell
     }
     
@@ -87,3 +102,28 @@ extension CheckOutVC: UITableViewDataSource {
 extension CheckOutVC: UITableViewDelegate {
     
 }
+
+extension CheckOutVC {
+    
+    func Total() {
+        var arrtotal:[Double] = []
+        var arrTax:[Double] = []
+    for product in arrGetCartData {
+        arrtotal.append(product.price * Double(product.quantity))
+        }
+        for tax in arrProductTaxDetails {
+            arrTax.append(Double(tax.taxAmount))
+        }
+        
+        let totalPrice = arrtotal.reduce(0, +)
+        print(totalPrice)
+        let totalTax = arrTax.reduce(0, +)
+        let payableAmount = totalPrice + totalTax
+        let payAmount = String(format: "%.2f", payableAmount)
+        lblGrandTotal.text = "\(payAmount)"
+        lblEsimatedTax.text = "\(totaltax)"
+        
+    }
+}
+
+

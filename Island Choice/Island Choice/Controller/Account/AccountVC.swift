@@ -116,6 +116,13 @@ extension AccountVC: UITableViewDelegate {
                 
         case 1:
             switch  indexPath.row {
+            case 0:
+                guard let url = URL(string: "https://islandchoiceguam.com/") else {
+                    return
+                }
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
             case 1:
                 //sendEmail()
             makePhoneCall(phoneNumber: "6716378902")
@@ -125,6 +132,21 @@ extension AccountVC: UITableViewDelegate {
                 
         case 2:
             switch indexPath.row {
+            case 0:
+                guard let url = URL(string: "https://islandchoiceguam.com/") else {
+                    return
+                }
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            case 1:
+                guard let url = URL(string: "https://islandchoiceguam.com/") else {
+                    return
+                }
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+                
             case 2:
                 guard let url = URL(string: "https://itunes.apple.com/us/app/myapp/id\(APPID)?ls=1&mt=8") else {
                     return

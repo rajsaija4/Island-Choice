@@ -66,4 +66,9 @@ struct URLManager {
         
     }
     
+    
+    struct SignUp {
+        static let SendContactUsEmail = basePath + "SendContactUsEmail"
+    }
+    
 }

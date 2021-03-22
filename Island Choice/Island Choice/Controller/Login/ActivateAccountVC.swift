@@ -31,7 +31,15 @@ class ActivateAccountVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func onPressPasswordVisiblebtnTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+    }
+    
+    @IBAction func onPressRetypePasswordbtnTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+    }
 }
 
 extension ActivateAccountVC {

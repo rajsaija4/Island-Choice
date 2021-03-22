@@ -111,13 +111,13 @@
                                                             <rect key="frame" x="0.0" y="122" width="394" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Fee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJQ-9G-GaE">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="272.5" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="267.5" height="40"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvX-al-NTf">
-                                                                    <rect key="frame" x="272.5" y="0.0" width="121.5" height="40"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvX-al-NTf">
+                                                                    <rect key="frame" x="267.5" y="0.0" width="126.5" height="40"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -491,13 +491,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iyX-zq-BX1">
                                                                     <rect key="frame" x="350" y="0.0" width="56" height="64"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aie-vC-TGw">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aie-vC-TGw">
                                                                             <rect key="frame" x="0.0" y="0.0" width="56" height="21.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.90" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPS-jj-Aev">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPS-jj-Aev">
                                                                             <rect key="frame" x="0.0" y="21.5" width="56" height="21"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                             <nil key="textColor"/>
@@ -812,6 +812,8 @@
                         <outlet property="btnApplyCoupen" destination="cec-aV-LHy" id="myc-bd-C15"/>
                         <outlet property="btnDeliveryCalander" destination="quf-Cq-nBY" id="c5h-jC-fst"/>
                         <outlet property="btnPlaceOrder" destination="19c-sf-bk9" id="Nbq-Zk-apW"/>
+                        <outlet property="lblEsimatedTax" destination="iPS-jj-Aev" id="T6r-Zy-UBG"/>
+                        <outlet property="lblGrandTotal" destination="Tkc-tc-cwb" id="g4s-5F-Z9W"/>
                         <outlet property="tblCheckOut" destination="Lbd-xj-2Gh" id="C4x-9G-2k7"/>
                         <outlet property="txtApplyCoupen" destination="9do-Kw-MZJ" id="10i-pm-Ln0"/>
                         <outlet property="txtContactNumber" destination="zR1-mI-fYM" id="C41-La-lNO"/>

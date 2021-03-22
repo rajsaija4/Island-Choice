@@ -715,6 +715,9 @@
                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="img_passwordhide"/>
                                                         <state key="selected" image="img_visible"/>
+                                                        <connections>
+                                                            <action selector="onPressPasswordVisiblebtnTap:" destination="ull-Ws-yeH" eventType="touchUpInside" id="lcK-Kf-iwV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -750,6 +753,9 @@
                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="img_passwordhide"/>
                                                         <state key="selected" image="img_visible"/>
+                                                        <connections>
+                                                            <action selector="onPressRetypePasswordbtnTap:" destination="ull-Ws-yeH" eventType="touchUpInside" id="nuw-f4-I0z"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

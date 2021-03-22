@@ -39,20 +39,25 @@ class EcheckVC: UIViewController {
     
     
     
-    @IBAction func onPressCheckingbtnTap(_ sender: Any) {
+    @IBAction func onPressCheckingbtnTap(_ sender: UIButton) {
         
+        sender.isSelected = !sender.isSelected
     }
     
-    @IBAction func onPressBusinessCheckbtnTap(_ sender: Any) {
+    @IBAction func onPressBusinessCheckbtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
     
-    @IBAction func onPressSavingbtnTap(_ sender: Any) {
+    @IBAction func onPressSavingbtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
     
-    @IBAction func onPressCheckOnebtnTap(_ sender: Any) {
+    @IBAction func onPressCheckOnebtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
     
-    @IBAction func onPressTwocheckbtnTap(_ sender: Any) {
+    @IBAction func onPressTwocheckbtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         
     }
     /*

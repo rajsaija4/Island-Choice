@@ -40,12 +40,15 @@ class AditionInformationVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func onPressCheckPaperlessTap(_ sender: Any) {
+    @IBAction func onPressCheckPaperlessTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
     }
-    @IBAction func onPressVarieadHoursbtnTap(_ sender: Any) {
+    @IBAction func onPressVarieadHoursbtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
     
-    @IBAction func onPressAddContractbtnTap(_ sender: Any) {
+    @IBAction func onPressAddContractbtnTap(_ sender: UIButton) {
     
         
         addContractView.isHidden = false

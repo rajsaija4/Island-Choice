@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XJV-pO-qfe">
                                 <rect key="frame" x="0.0" y="0.0" width="502" height="127"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2*40 Lb Cylinder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqZ-A1-RbJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2*40 Lb Cylinder" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqZ-A1-RbJ">
                                         <rect key="frame" x="0.0" y="0.0" width="160.5" height="127"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -62,6 +62,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblProductName" destination="NqZ-A1-RbJ" id="b2H-sg-oeg"/>
+                <outlet property="lblProductPrice" destination="xWz-IE-7DD" id="MlX-1C-r5b"/>
+                <outlet property="lblProductTax" destination="NW1-a9-YRf" id="Axh-bd-TW5"/>
+            </connections>
             <point key="canvasLocation" x="223.18840579710147" y="93.415178571428569"/>
         </tableViewCell>
     </objects>

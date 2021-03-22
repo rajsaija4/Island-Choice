@@ -1,16 +1,9 @@
-//
-//  GetCartModel.swift
-//  Island Choice
-//
-//  Created by GT-Raj on 17/03/21.
-//
-
 import Foundation
 import SwiftyJSON
 
 
 
-class GetCartModel: NSObject {
+class GetCustomerGuestCartDetails: NSObject {
     
     var type = 0
     var code = ""
@@ -19,7 +12,7 @@ class GetCartModel: NSObject {
     var price = 0.0
     var gratisReason = false
     
-    static var arrCartProduct: [GetCartModel] = []
+    static var arrCartProduct: [GetCustomerGuestCartDetails] = []
  
     
     init(json:JSON) {
@@ -43,13 +36,13 @@ class GetCartModel: NSObject {
         self.gratisReason = gratisReason
     }
     
-    static func GetCartDetails() {
+    static func GetGuestCartDetails() {
         
-        NetworkManager.Profile.GetCartDetails({ (json) in
+        NetworkManager.Profile.GetGuestCartDetails({ (json) in
             print(json)
             self.arrCartProduct.removeAll()
             for data in json["data"].arrayValue {
-                self.arrCartProduct.append(GetCartModel(json: data))
+                self.arrCartProduct.append(GetCustomerGuestCartDetails(json: data))
             }
         }, { (error) in
             

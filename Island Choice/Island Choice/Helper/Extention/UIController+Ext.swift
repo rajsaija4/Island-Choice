@@ -32,6 +32,7 @@ extension UIViewController {
         navigationItem.rightBarButtonItem = btn
     }
     
+    
     @objc fileprivate func onCartBtnTap(_ sender: UIButton) {
         let vc = CartVC.instantiate(fromAppStoryboard: .Cart)
         vc.hidesBottomBarWhenPushed = true
@@ -44,8 +45,9 @@ extension UIViewController {
     }
     
     @objc fileprivate func setUpguestCartbtn(_ sender: UIButton) {
-        let vc = CartVC.instantiate(fromAppStoryboard: .Cart)
-        APPDEL?.setupLogin()
+        let vc = RegisterCartVC.instantiate(fromAppStoryboard: .Register)
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -94,8 +94,11 @@ extension ChangePasswordVC {
             NetworkManager.Profile.updateCustomerPassword(param: param, { (json) in
                 print(json)
                // print(self.customerBillingInformation.Username)
-               
+                self.txtVerifyPassword.text?.removeAll()
+                self.txtNewPassword.text?.removeAll()
+                self.txtCurrentPassword.text?.removeAll()
                 self.hideHUD()
+                self.showToast("Password Change successful")
             }, { (error) in
                 self.hideHUD()
                 self.showToast(error)
