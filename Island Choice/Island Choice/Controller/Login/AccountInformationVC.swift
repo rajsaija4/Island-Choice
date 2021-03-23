@@ -7,13 +7,14 @@
 
 import UIKit
 import Parchment
+import SwiftyJSON
 
 class AccountInformationVC: UIViewController {
     
     //MARK: - Variables
     
     var pagingViewController: PagingViewController!
-    
+    var guestOrderModal: RegisterNewCustomerWithOrderModel = RegisterNewCustomerWithOrderModel(json: JSON.null)
     
     //MARK: - Outlets
 
@@ -57,8 +58,10 @@ extension AccountInformationVC{
         
         let CreditCard = RegisterCreditCardVC.instantiate(fromAppStoryboard: .Register)
         CreditCard.title = "CREDIT CARD"
+        CreditCard.guestOrderModal = guestOrderModal
         let Echeck = EcheckVC.instantiate(fromAppStoryboard: .Register)
         Echeck.title = "E-CHECK"
+        Echeck.guestOrderModal = guestOrderModal
 //        historyVC.onShowStatement = { isShowStatement in
 //            historyVC.title = isShowStatement ? "STATEMENTS" : "HISTORY"
 //

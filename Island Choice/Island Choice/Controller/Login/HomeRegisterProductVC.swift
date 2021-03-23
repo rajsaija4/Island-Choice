@@ -387,7 +387,7 @@ extension HomeRegisterProductVC {
         
         
         //showHUD()
-        NetworkManager.Profile.GetProductInCart(param: param, { (json) in
+        NetworkManager.SignUp.GetGuestProductinCart(param: param, { (json) in
             print(json)
             self.showToast("Product Add to Cart")
             

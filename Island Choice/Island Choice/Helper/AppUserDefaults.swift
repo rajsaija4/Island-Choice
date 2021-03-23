@@ -17,6 +17,7 @@ enum AppUserDefaults {
         case kUserId
         case kPassword
         case kRemember
+        case kGuestUserToken
        
     }
 }

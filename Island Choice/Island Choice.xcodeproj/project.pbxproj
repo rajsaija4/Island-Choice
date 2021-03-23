@@ -117,6 +117,7 @@
 		9FE8C88825E7CAB10014CB43 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8C88725E7CAB10014CB43 /* CartVC.swift */; };
 		9FF5244F260085F000078284 /* PreviousOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5244E260085F000078284 /* PreviousOrder.swift */; };
 		9FF6AA5D25FA1AED00737E54 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6AA5C25FA1AED00737E54 /* ProductList.swift */; };
+		9FFD71342609BD4C007F0847 /* RegisterNewCustomerWithOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD71332609BD4C007F0847 /* RegisterNewCustomerWithOrderModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -232,6 +233,7 @@
 		9FE8C88725E7CAB10014CB43 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		9FF5244E260085F000078284 /* PreviousOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrder.swift; sourceTree = "<group>"; };
 		9FF6AA5C25FA1AED00737E54 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		9FFD71332609BD4C007F0847 /* RegisterNewCustomerWithOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewCustomerWithOrderModel.swift; sourceTree = "<group>"; };
 		C1991056B92BA73B112C58B5 /* Pods-Island Choice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Island Choice.debug.xcconfig"; path = "Target Support Files/Pods-Island Choice/Pods-Island Choice.debug.xcconfig"; sourceTree = "<group>"; };
 		C2EC53273B927B988EC14C8A /* Pods_Island_Choice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Island_Choice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -425,6 +427,7 @@
 				9F33223D260331280067833A /* GetCartSalesTaxModel.swift */,
 				9F6AC04B2608939A007D418F /* GetCustomerGuestCartDetails.swift */,
 				9F26E2582608996A00A97793 /* GetCartModel.swift */,
+				9FFD71332609BD4C007F0847 /* RegisterNewCustomerWithOrderModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				9F45A25125FF22FF002F5507 /* ProductInformationVC.swift in Sources */,
 				9F34E12825FF3CFD00F5D85C /* FavoriteOrderCollCell.swift in Sources */,
 				9F4079EB25DE45F000FCA1B2 /* NetworkManager.swift in Sources */,
+				9FFD71342609BD4C007F0847 /* RegisterNewCustomerWithOrderModel.swift in Sources */,
 				9F8A9A2D25F753F1003A10F1 /* HomeRegisterProductVC.swift in Sources */,
 				9F9BDB3025EA455B00676A83 /* FillterProductViewCell.swift in Sources */,
 				9F4079D925DE454E00FCA1B2 /* AppStoryboard.swift in Sources */,

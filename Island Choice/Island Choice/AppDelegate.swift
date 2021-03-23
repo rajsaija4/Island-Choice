@@ -40,6 +40,7 @@ extension AppDelegate {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().barTintColor = COLOR.App
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+       
     }
     
     func setupLogin() {

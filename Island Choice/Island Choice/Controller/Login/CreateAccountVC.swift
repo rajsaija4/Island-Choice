@@ -13,6 +13,8 @@ class CreateAccountVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AppUserDefaults.save(value: NSUUID().uuidString, forKey: .kGuestUserToken)
         navigationController?.isNavigationBarHidden = false
         title = "Create Account"
         setupNavigationBarBackBtn()

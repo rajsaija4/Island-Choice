@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class LoginBillingInformationVC: UIViewController {
     
+   var guestOrderModal: RegisterNewCustomerWithOrderModel = RegisterNewCustomerWithOrderModel(json: JSON.null)
     
     //MARK: - Outlets
     
-    @IBOutlet weak var txtContactName: UIStackView!
-    @IBOutlet weak var txtMobileNumber: UIView!
+    @IBOutlet weak var txtContactName: UITextField!
+    @IBOutlet weak var txtMobileNo: UITextField!
     @IBOutlet weak var txtContactPhone: UITextField!
     @IBOutlet weak var txtEmailAddress: UITextField!
     @IBOutlet weak var txtPostalCode: UITextField!
@@ -39,8 +41,98 @@ class LoginBillingInformationVC: UIViewController {
     
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         
-        let vc = AccountInformationVC.instantiate(fromAppStoryboard: .Register)
+        let vc1 = AccountInformationVC.instantiate(fromAppStoryboard: .Register)
+        self.navigationController?.pushViewController(vc1, animated: true)
+        return
         
+        
+        guard let firstName = txtFirstName.text, firstName.count > 0  else {
+            showToast("Please \(txtFirstName.placeholder ?? "") ")
+            return
+        }
+        
+        guard let lastName = txtLastName.text, lastName.count > 0  else {
+            showToast("Please \(txtLastName.placeholder ?? "") ")
+            return
+        }
+        
+        guard let address = txtAddress.text, address.count > 0  else {
+            showToast("Please Enter Address ")
+            return
+        }
+    
+        
+        guard let city = txtCity.text, city.count > 0  else {
+            showToast("Please \(txtCity.placeholder ?? "") ")
+            return
+        }
+        
+        guard let state = txtState.text, state.count > 0  else {
+            showToast("Please \(txtState.placeholder ?? "") ")
+            return
+        }
+        
+        guard let postalcode = txtPostalCode.text, postalcode.count > 0  else {
+            showToast("Please \(txtPostalCode.placeholder ?? "") ")
+            return
+        }
+        
+        
+        guard let email = txtEmailAddress.text, email.count > 0  else {
+            showToast("Please \(txtEmailAddress.placeholder ?? "") ")
+            return
+        }
+        
+        guard let contactPhone = txtContactPhone.text, contactPhone.count > 0  else {
+            showToast("Please \(txtContactPhone.placeholder ?? "") ")
+            return
+        }
+        
+       let mobileno = txtMobileNo.text
+        
+        guard let contactName = txtContactName.text, contactName.count > 0  else {
+            showToast("Please \(txtContactName.placeholder ?? "") ")
+            return
+        }
+
+        let deliveryData = ["deliveryData":[
+            "AddressLine1":guestOrderModal.deliveryData.addressLine1,
+            "AddressLine2":guestOrderModal.deliveryData.addressLine2,
+            "City":guestOrderModal.deliveryData.city,
+            "CompanyName":guestOrderModal.deliveryData.companyName,
+            "ContactName":guestOrderModal.deliveryData.contactName,
+            "ContactPhone":guestOrderModal.deliveryData.contactPhone,
+            "CustomerPriceLevel":guestOrderModal.deliveryData.customerPriceLevel,
+            "CustomerTypeCode":guestOrderModal.deliveryData.customerTypeCode,
+            "Email":guestOrderModal.deliveryData.email,
+            "Fax":guestOrderModal.deliveryData.fax,
+            "MobilePhone":guestOrderModal.deliveryData.mobilePhone
+        ],
+        "Phone":guestOrderModal.phone,
+        "PostalCode":guestOrderModal.postalCode,
+        "State":guestOrderModal.state,
+        "prospectCode":"AUTO",
+        "billingData":[
+            "AddressLine1":address,
+            "AddressLine2":"",
+            "City":city,
+            "CompanyName":"\(firstName) \(lastName)",
+            "ContactName":contactName,
+            "ContactPhone":contactPhone,
+            "CustomerPriceLevel":"0",
+            "CustomerTypeCode":"R",
+            "Email":email,
+            "Fax":"",
+            "MobilePhone":mobileno
+        ]
+        ]as [String : Any]
+        
+        let json = JSON(deliveryData)
+        
+        
+        
+        let vc = AccountInformationVC.instantiate(fromAppStoryboard: .Register)
+        vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

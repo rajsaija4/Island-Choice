@@ -38,7 +38,7 @@ class GetCustomerGuestCartDetails: NSObject {
     
     static func GetGuestCartDetails() {
         
-        NetworkManager.Profile.GetGuestCartDetails({ (json) in
+        NetworkManager.SignUp.GetGuestCartDetails({ (json) in
             print(json)
             self.arrCartProduct.removeAll()
             for data in json["data"].arrayValue {

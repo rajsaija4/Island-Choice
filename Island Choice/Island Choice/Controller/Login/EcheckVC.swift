@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class EcheckVC: UIViewController {
+    
+    var guestOrderModal: RegisterNewCustomerWithOrderModel = RegisterNewCustomerWithOrderModel(json: JSON.null)
     
     // MARK: - Outlets
         
