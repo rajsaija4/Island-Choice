@@ -10,6 +10,8 @@ import SwiftyJSON
 
 class RegisterAddressVC: UIViewController {
     
+    var guestOrderModal: RegisterNewCustomerWithOrderModel = RegisterNewCustomerWithOrderModel(json: JSON.null)
+    
     //MARK: - Outlets
    
     @IBOutlet weak var txtFirstName: UITextField!
@@ -40,82 +42,20 @@ class RegisterAddressVC: UIViewController {
     
     @IBAction func onPressDiffrentAddressbtnTap(_ sender: Any) {
         
-        let vc1 = LoginBillingInformationVC.instantiate(fromAppStoryboard: .Register)
+        
+        onNextBtnTap(isContinue: false)
        
-       self.navigationController?.pushViewController(vc1, animated: true)
-        return
-        
-        guard let firstName = txtFirstName.text, firstName.count > 0  else {
-            showToast("Please \(txtFirstName.placeholder ?? "") ")
-            return
-        }
-        
-        guard let lastName = txtLastName.text, lastName.count > 0  else {
-            showToast("Please \(txtLastName.placeholder ?? "") ")
-            return
-        }
-        
-        guard let address = txtAddress.text, address.count > 0  else {
-            showToast("Please Enter Address ")
-            return
-        }
-        
-         let contactPhone = txtContactPhone.text
-        
-         let contactName = txtContactName.text
-        
-        guard let city = txtCity.text, city.count > 0  else {
-            showToast("Please \(txtCity.placeholder ?? "") ")
-            return
-        }
-        
-        guard let state = txtState.text, state.count > 0  else {
-            showToast("Please \(txtState.placeholder ?? "") ")
-            return
-        }
-        
-        guard let postal = txtPostalCode.text, postal.count > 0  else {
-            showToast("Please \(txtPostalCode.placeholder ?? "") ")
-            return
-        }
-        
-        guard let email = txtEmailAddress.text, email.count > 0  else {
-            showToast("Please \(txtEmailAddress.placeholder ?? "") ")
-            return
-        }
-        
-         let mobileno = txtMobileNo.text
-        
-         let fax = txtFax.text
-        
-        
-        
-        let deliveryData = ["deliveryData":[
-            "AddressLine1":address,
-                "AddressLine2":"",
-                "City":city,
-                "CompanyName":"\(firstName) \(lastName)",
-                "ContactName":contactName,
-                "ContactPhone":contactPhone,
-                "CustomerPriceLevel":"0",
-                "CustomerTypeCode":"R",
-                "Email":email,
-                "Fax":fax,
-                "MobilePhone":mobileno
-        ],
-        "Phone":contactPhone,
-        "PostalCode":postal,
-        "State":state
-        ] as [String : Any]
-        
-        let json = JSON(deliveryData)
-        let vc = LoginBillingInformationVC.instantiate(fromAppStoryboard: .Register)
-        vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         
+        onNextBtnTap(isContinue: true)
+        
+        
+    }
+    
+    fileprivate func onNextBtnTap(isContinue: Bool) {
+        
         guard let firstName = txtFirstName.text, firstName.count > 0  else {
             showToast("Please \(txtFirstName.placeholder ?? "") ")
             return
@@ -166,24 +106,53 @@ class RegisterAddressVC: UIViewController {
                 "AddressLine2":"",
                 "City":city,
                 "CompanyName":"\(firstName) \(lastName)",
-                "ContactName":contactName,
-                "ContactPhone":contactPhone,
+                "ContactName":contactName ?? "",
+                "ContactPhone":contactPhone ?? "",
                 "CustomerPriceLevel":"0",
                 "CustomerTypeCode":"R",
                 "Email":email,
-                "Fax":fax,
-                "MobilePhone":mobileno
+                "Fax":fax ?? "",
+                "MobilePhone":mobileno ?? ""
         ],
-        "Phone":contactPhone,
-        "PostalCode":postal,
-        "State":state
+        "billingData":[
+            "AddressLine1":guestOrderModal.billingData.addressLine1,
+            "AddressLine2":guestOrderModal.billingData.addressLine2,
+            "City":guestOrderModal.billingData.city,
+            "CompanyName":guestOrderModal.billingData.companyName,
+            "ContactName":guestOrderModal.billingData.contactName,
+            "ContactPhone":guestOrderModal.billingData.contactPhone,
+            "CustomerPriceLevel":guestOrderModal.billingData.customerPriceLevel,
+            "CustomerTypeCode":guestOrderModal.billingData.customerTypeCode,
+            "Email":guestOrderModal.billingData.email,
+            "Fax":guestOrderModal.billingData.fax,
+            "MobilePhone":guestOrderModal.billingData.mobilePhone,
+            "OpenHours": [],
+            "MobilePhone":guestOrderModal.billingData.mobilePhone,
+            "Paperless":false,
+            "Password":"",
+            "Phone":contactPhone ?? "",
+            "PostalCode":postal,
+            "RecurringNote":guestOrderModal.billingData.recurringNote,
+            "ReferenceNumber":"",
+            "StartReason":"",
+            "State":state,
+            "Username":"",
+            "WorkPhone":""
+        ],
+          "orderData":guestOrderModal.orderData
         ] as [String : Any]
         
         let json = JSON(deliveryData)
-        let vc = AccountInformationVC.instantiate(fromAppStoryboard: .Register)
-        vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
-        self.navigationController?.pushViewController(vc, animated: true)
         
+        if isContinue {
+            let vc = AccountInformationVC.instantiate(fromAppStoryboard: .Register)
+            vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = LoginBillingInformationVC.instantiate(fromAppStoryboard: .Register)
+            vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     

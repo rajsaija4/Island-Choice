@@ -11,6 +11,7 @@ import SwiftyJSON
 class AditionInformationVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var arrPicker = ["Bidding Contract Type","Non Bid Contract Type","Price Quotation", "Purchase Order"]
+    var paperless = false
 
     
     var guestOrderModal: RegisterNewCustomerWithOrderModel = RegisterNewCustomerWithOrderModel(json: JSON.null)
@@ -61,14 +62,131 @@ class AditionInformationVC: UIViewController, UIPickerViewDelegate, UIPickerView
 // MARK - ActionMethod
     
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
+       
+        
+        var arrData: [[String: Any]] = [[:]]
+        arrData.removeAll()
+        if stackWeekCalander.isHidden {
+            let data = [
+            "Closed":false,
+            "DayCode":"",
+                "FromTime":txtSingleOpenform ?? "",
+                "ToTime":txtSingleOpento ?? ""
+            ] as [String: Any]
+            arrData.append(data)
+        } else {
+            for i in 0..<txtOpenFrm.count {
+                
+                let fromTime = btnCheckBox[i].isSelected ? "" : (txtOpenFrm[i].text ?? "")
+                let toTime = btnCheckBox[i].isSelected ? "" : (txtOpento[i].text ?? "")
+                
+                let data = [
+                "Closed":btnCheckBox[i].isSelected,
+                "DayCode":i,
+                "FromTime":fromTime,
+                "ToTime":toTime
+                ] as [String : Any]
+                
+                arrData.append(data)
+            }
+        }
+        
+        
+        
+        let deliveryData = [
+            "deliveryData":[
+                "AddressLine1":guestOrderModal.deliveryData.addressLine1,
+                "AddressLine2":guestOrderModal.deliveryData.addressLine2,
+                "City":guestOrderModal.deliveryData.city,
+                "CompanyName":guestOrderModal.deliveryData.companyName,
+                "ContactName":guestOrderModal.deliveryData.contactName,
+                "ContactPhone":guestOrderModal.deliveryData.contactPhone,
+                "CustomerPriceLevel":guestOrderModal.deliveryData.customerPriceLevel,
+                "CustomerTypeCode":guestOrderModal.deliveryData.customerTypeCode,
+                "Email":guestOrderModal.deliveryData.email,
+                "Fax":guestOrderModal.deliveryData.fax,
+                "MobilePhone":guestOrderModal.deliveryData.mobilePhone
+            ],
+            "orderData":guestOrderModal.orderData,
+            "Paperless":paperless,
+            "prospectCode":guestOrderModal.prospectCode,
+            "ReferenceNumber":"",
+            "eCheckData":[
+                "BankAccountName":guestOrderModal.eCheckData.bankaccountName,
+                "BankAccountNumber":guestOrderModal.eCheckData.bankAccountNumber,
+                "BankAccountType":guestOrderModal.eCheckData.bankAccountType,
+                "BankName":guestOrderModal.eCheckData.bankName,
+                "BankRoutingNumber":guestOrderModal.eCheckData.bankRountingNumber
+                
+            ],
+            "billingData":[
+                "AddressLine1":guestOrderModal.billingData.addressLine1,
+                "AddressLine2":guestOrderModal.billingData.addressLine2,
+                "City":guestOrderModal.billingData.city,
+                "CompanyName":guestOrderModal.billingData.companyName,
+                "ContactName":guestOrderModal.billingData.contactName,
+                "ContactPhone":guestOrderModal.billingData.contactPhone,
+                "CustomerPriceLevel":guestOrderModal.billingData.customerPriceLevel,
+                "CustomerTypeCode":guestOrderModal.billingData.customerTypeCode,
+                "Email":guestOrderModal.billingData.email,
+                "Fax":guestOrderModal.billingData.fax,
+                "MobilePhone":guestOrderModal.billingData.mobilePhone,
+                "OpenHours": arrData,
+                "MobilePhone":guestOrderModal.billingData.mobilePhone,
+                "Paperless":false,
+                "Password":"",
+                "Phone":guestOrderModal.billingData.phone,
+                "PostalCode":guestOrderModal.billingData.postalCode,
+                "RecurringNote":guestOrderModal.billingData.recurringNote,
+                "ReferenceNumber":"",
+                "StartReason":"",
+                "State":guestOrderModal.billingData.state,
+                "Username":"",
+                "WorkPhone":""
+            ],
+            "contractData":[
+                "ContractType":txtContractType.text ?? "",
+                "EmailContracts":false,
+                "EmailDocumentsTo":[],
+                "PersonName":txtNameOfContract.text ?? "",
+                "PersonTitle":txtContractTitle.text ?? "",
+                "SignatureEncodedData":"",
+                "SignaturePrint":""
+            ],
+            "creditCardData":[
+                "AddressLine1":guestOrderModal.creditCardData.addressLine1,
+                "AddressLine2":guestOrderModal.creditCardData.addressLine2,
+                "CardNumber":guestOrderModal.creditCardData.cardNumber,
+                "City":guestOrderModal.creditCardData.city,
+                "Country":guestOrderModal.creditCardData.country,
+                "Cvc":guestOrderModal.creditCardData.cvc,
+                "Email":guestOrderModal.creditCardData.email,
+                "ExpiryMonth":guestOrderModal.creditCardData.expiryMonth,
+                "ExpiryYear":guestOrderModal.creditCardData.expiryYear,
+                "FirstName":guestOrderModal.creditCardData.firstName,
+                "LastName":guestOrderModal.creditCardData.lastName,
+                "PostalCode":guestOrderModal.creditCardData.postalCode,
+                "SignatureEncodedData":guestOrderModal.creditCardData.signatureEncodedData,
+                "SignaturePrint":guestOrderModal.creditCardData.signaturePrint,
+                "State":guestOrderModal.creditCardData.state
+            ]
+        ] as [String : Any]
+        
+        let json = JSON(deliveryData)
         
         let vc = RegisterCreateAccount.instantiate(fromAppStoryboard: .Register)
-        
+        vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onPressCheckPaperlessTap(_ sender: UIButton) {
+        if sender.isSelected {
+            paperless = true
+        }
         
+        else {
+            paperless = false
+        }
         sender.isSelected = !sender.isSelected
     }
     @IBAction func onPressVarieadHoursbtnTap(_ sender: UIButton) {

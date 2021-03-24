@@ -632,6 +632,9 @@
                                                             <state key="normal">
                                                                 <imageReference key="image" image="arrow.right.circle.fill" catalog="system" symbolScale="large"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="btnOnpressApplycoupn:" destination="ICv-Hu-0fB" eventType="touchUpInside" id="8EJ-wn-0of"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

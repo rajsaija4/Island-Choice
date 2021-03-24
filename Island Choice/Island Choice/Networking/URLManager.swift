@@ -72,6 +72,8 @@ struct URLManager {
     
     struct SignUp {
         static let SendContactUsEmail = basePath + "SendContactUsEmail"
+        static let IsUsernameAvailable = basePath + "IsUsernameAvailable"
+        static let CreateProspectCustomerWithOrder = basePath + "CreateProspectCustomerWithOrder"
     }
     
 }

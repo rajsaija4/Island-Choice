@@ -14,6 +14,7 @@ class CheckOutVC: UIViewController {
     var arrProductRegister:[GetCartModel] = []
     var arrProductTaxDetails:[CartProductSalesTaxDetails] = []
     var arrGetCartData = GetCartModel.arrCartProduct
+    var arrCartPriceData:[GetProductPriceModel] = []
     var totalPrice = 0
     var totaltax = 0
     
@@ -48,7 +49,13 @@ class CheckOutVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-  
+    @IBAction func btnOnpressApplycoupn(_ sender: UIButton) {
+        
+        GetCartWebCouponAmount()
+        
+    }
+    
+    
   
     /*
     // MARK: - Navigation
@@ -127,3 +134,50 @@ extension CheckOutVC {
 }
 
 
+extension CheckOutVC {
+    
+    fileprivate func GetCartWebCouponAmount() {
+        let deliveryID = OnstopDeliveryModel.details.deliveryId
+        print(deliveryID)
+       let postalCode = OnstopDeliveryModel.details.postalCode
+        let type = AccountInformation.details.ctype
+        var arrProduct: [[String: Any]] = [[:]]
+            arrProduct.removeAll()
+        for product in arrCartPriceData {
+            let newCart = [
+                "Code":product.code,
+                "Pricing":[
+                    "Current":product.pricing.current,
+                    "Original":product.pricing.original
+                ],
+                "Quantity":product.quantity,
+                "ShoppingCartType":product.shoppingCarttype
+            ] as [String : Any]
+            arrProduct.append(newCart)
+        }
+        
+        
+      let param = [
+        "couponCode":txtApplyCoupen.text ?? "",
+           "cartProducts":arrProduct,
+            "customerStatus":3,
+            "customerType":type,
+            "postalCode":postalCode,
+            "deliveryId":deliveryID
+                
+            ]
+            as [String : Any]
+            showHUD()
+            NetworkManager.Cart.GetCartWebCouponAmount(param: param, { (json) in
+                print(json)
+                self.hideHUD()
+            }, { (error) in
+                
+                self.hideHUD()
+                self.showToast(error)
+            })
+
+        
+    }
+    
+}

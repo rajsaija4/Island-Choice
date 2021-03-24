@@ -41,10 +41,7 @@ class LoginBillingInformationVC: UIViewController {
     
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         
-        let vc1 = AccountInformationVC.instantiate(fromAppStoryboard: .Register)
-        self.navigationController?.pushViewController(vc1, animated: true)
-        return
-        
+      
         
         guard let firstName = txtFirstName.text, firstName.count > 0  else {
             showToast("Please \(txtFirstName.placeholder ?? "") ")
@@ -108,9 +105,7 @@ class LoginBillingInformationVC: UIViewController {
             "Fax":guestOrderModal.deliveryData.fax,
             "MobilePhone":guestOrderModal.deliveryData.mobilePhone
         ],
-        "Phone":guestOrderModal.phone,
-        "PostalCode":guestOrderModal.postalCode,
-        "State":guestOrderModal.state,
+        "orderData":guestOrderModal.orderData,
         "prospectCode":"AUTO",
         "billingData":[
             "AddressLine1":address,
@@ -123,9 +118,22 @@ class LoginBillingInformationVC: UIViewController {
             "CustomerTypeCode":"R",
             "Email":email,
             "Fax":"",
-            "MobilePhone":mobileno
+            "MobilePhone":mobileno ?? "",
+            "OpenHours": [],
+            "MobilePhone":guestOrderModal.billingData.mobilePhone,
+            "Paperless":false,
+            "Password":"",
+            "Phone":contactPhone,
+            "PostalCode":postalcode,
+            "RecurringNote":guestOrderModal.billingData.recurringNote,
+            "ReferenceNumber":"",
+            "StartReason":"",
+            "State":state,
+            "Username":"",
+            "WorkPhone":""
+            
         ]
-        ]as [String : Any]
+        ] as [String : Any]
         
         let json = JSON(deliveryData)
         

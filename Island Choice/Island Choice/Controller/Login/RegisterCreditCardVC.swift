@@ -35,9 +35,7 @@ class RegisterCreditCardVC: UIViewController {
 
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
         
-        let vc1 = AditionInformationVC.instantiate(fromAppStoryboard: .Register)
-        self.navigationController?.pushViewController(vc1, animated: true)
-        return
+       
         
         guard let country = txtCountry.text, country.count > 0  else {
             showToast("Please \(txtCountry.placeholder ?? "") ")
@@ -77,9 +75,8 @@ class RegisterCreditCardVC: UIViewController {
             "Fax":guestOrderModal.deliveryData.fax,
             "MobilePhone":guestOrderModal.deliveryData.mobilePhone
         ],
-        "Phone":guestOrderModal.phone,
-        "PostalCode":guestOrderModal.postalCode,
-        "State":guestOrderModal.state,
+        "orderData":guestOrderModal.orderData,
+        "eCheckData":[],
         "prospectCode":guestOrderModal.prospectCode,
         "billingData":[
             "AddressLine1":guestOrderModal.billingData.addressLine1,
@@ -92,7 +89,18 @@ class RegisterCreditCardVC: UIViewController {
             "CustomerTypeCode":guestOrderModal.billingData.customerTypeCode,
             "Email":guestOrderModal.billingData.email,
             "Fax":guestOrderModal.billingData.fax,
-            "MobilePhone":guestOrderModal.billingData.mobilePhone
+            "OpenHours":[:],
+            "MobilePhone":guestOrderModal.billingData.mobilePhone,
+            "Paperless":false,
+            "Password":"",
+            "Phone":guestOrderModal.billingData.phone,
+            "PostalCode":guestOrderModal.billingData.postalCode,
+            "RecurringNote":guestOrderModal.billingData.recurringNote,
+            "ReferenceNumber":"",
+            "StartReason":"",
+            "State":guestOrderModal.billingData.state,
+            "Username":"",
+            "WorkPhone":""
         ],
         "creditCardData":[
             "AddressLine1":guestOrderModal.deliveryData.addressLine1,
@@ -106,10 +114,10 @@ class RegisterCreditCardVC: UIViewController {
                 "ExpiryYear":expirationYear,
             "FirstName":guestOrderModal.deliveryData.companyName,
                 "LastName":guestOrderModal.deliveryData.companyName,
-            "PostalCode":guestOrderModal.postalCode,
+       
                 "SignatureEncodedData":"",
                 "SignaturePrint":"",
-            "State":guestOrderModal.state
+           
             ]
         ]as [String : Any]
         

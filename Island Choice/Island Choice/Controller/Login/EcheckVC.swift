@@ -11,9 +11,13 @@ import SwiftyJSON
 class EcheckVC: UIViewController {
     
     var guestOrderModal: RegisterNewCustomerWithOrderModel = RegisterNewCustomerWithOrderModel(json: JSON.null)
+    var accountTypeNumber = ""
     
     // MARK: - Outlets
         
+    @IBOutlet weak var btnSavingAccount: UIButton!
+    @IBOutlet weak var btnBusinesscheck: UIButton!
+    @IBOutlet weak var btnChecking: UIButton!
     @IBOutlet weak var txtAccountNumber: UITextField!
     @IBOutlet weak var txtRountingNumber: UITextField!
     @IBOutlet weak var txtNameAccount: UITextField!
@@ -34,24 +38,119 @@ class EcheckVC: UIViewController {
     //MARK: - ActionMethods
 
     @IBAction func onPressContinuebtnTap(_ sender: Any) {
+        guard let accountNumber = txtAccountNumber.text, accountNumber.count > 0  else {
+            showToast("Please \(txtAccountNumber.placeholder ?? "") ")
+            return
+        }
+        guard let rountingNumber = txtRountingNumber.text, rountingNumber.count > 0  else {
+            showToast("Please \(txtRountingNumber.placeholder ?? "") ")
+            return
+        }
+        guard let nameAccount = txtNameAccount.text, nameAccount.count > 0  else {
+            showToast("Please \(txtNameAccount.placeholder ?? "") ")
+            return
+        }
+        guard let bankName = txtBankName.text, bankName.count > 0  else {
+            showToast("Please \(txtBankName.placeholder ?? "") ")
+            return
+        }
+        
+        guard accountTypeNumber != nil  else {
+           showToast("please Select Account Type")
+            return
+        }
+        
+        let deliveryData = ["deliveryData":[
+            "AddressLine1":guestOrderModal.deliveryData.addressLine1,
+            "AddressLine2":guestOrderModal.deliveryData.addressLine2,
+            "City":guestOrderModal.deliveryData.city,
+            "CompanyName":guestOrderModal.deliveryData.companyName,
+            "ContactName":guestOrderModal.deliveryData.contactName,
+            "ContactPhone":guestOrderModal.deliveryData.contactPhone,
+            "CustomerPriceLevel":guestOrderModal.deliveryData.customerPriceLevel,
+            "CustomerTypeCode":guestOrderModal.deliveryData.customerTypeCode,
+            "Email":guestOrderModal.deliveryData.email,
+            "Fax":guestOrderModal.deliveryData.fax,
+            "MobilePhone":guestOrderModal.deliveryData.mobilePhone
+        ],
+      
+        "orderData":guestOrderModal.orderData,
+        "eCheckData":[
+            "BankAccountName":nameAccount,
+            "BankAccountNumber":accountNumber,
+            "BankAccountType":accountTypeNumber,
+            "BankName":bankName,
+            "BankRoutingNumber":rountingNumber
+           ],
+        
+        "prospectCode":guestOrderModal.prospectCode,
+        "billingData":[
+            "AddressLine1":guestOrderModal.billingData.addressLine1,
+            "AddressLine2":guestOrderModal.billingData.addressLine2,
+            "City":guestOrderModal.billingData.city,
+            "CompanyName":guestOrderModal.billingData.companyName,
+            "ContactName":guestOrderModal.billingData.contactName,
+            "ContactPhone":guestOrderModal.billingData.contactPhone,
+            "CustomerPriceLevel":guestOrderModal.billingData.customerPriceLevel,
+            "CustomerTypeCode":guestOrderModal.billingData.customerTypeCode,
+            "Email":guestOrderModal.billingData.email,
+            "Fax":guestOrderModal.billingData.fax,
+            "MobilePhone":guestOrderModal.billingData.mobilePhone,
+            "OpenHours": [],
+            "MobilePhone":guestOrderModal.billingData.mobilePhone,
+            "Paperless":false,
+            "Password":"",
+            "Phone":guestOrderModal.billingData.phone,
+            "PostalCode":guestOrderModal.billingData.postalCode,
+            "RecurringNote":guestOrderModal.billingData.recurringNote,
+            "ReferenceNumber":"",
+            "StartReason":"",
+            "State":guestOrderModal.billingData.state,
+            "Username":"",
+            "WorkPhone":""
+        ],
+        "creditCardData":[]
+        ]as [String : Any]
+        
+        let json = JSON(deliveryData)
         
         let vc = AditionInformationVC.instantiate(fromAppStoryboard: .Register)
-        
+        vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
     
     @IBAction func onPressCheckingbtnTap(_ sender: UIButton) {
+        if sender.isSelected {
+            btnBusinesscheck.isSelected = false
+            btnSavingAccount.isSelected = false
+            accountTypeNumber = "0"
+            }
         
         sender.isSelected = !sender.isSelected
+        
     }
     
     @IBAction func onPressBusinessCheckbtnTap(_ sender: UIButton) {
+        if sender.isSelected {
+            btnChecking.isSelected = false
+            btnSavingAccount.isSelected = false
+            accountTypeNumber = "1"
+            }
+       
         sender.isSelected = !sender.isSelected
     }
     
     @IBAction func onPressSavingbtnTap(_ sender: UIButton) {
+        if sender.isSelected {
+            btnBusinesscheck.isSelected = false
+            btnChecking.isSelected = false
+            accountTypeNumber = "2"
+            }
+        else {
+            
+        }
         sender.isSelected = !sender.isSelected
     }
     

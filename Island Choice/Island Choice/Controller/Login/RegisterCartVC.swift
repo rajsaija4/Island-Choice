@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class RegisterCartVC: UIViewController {
     
@@ -15,6 +16,7 @@ class RegisterCartVC: UIViewController {
     var arrCartPriceData:[GetProductPriceModel] = []
     var arrTaxDetails:[CartProductSalesTaxDetails] = []
     var arrGetCartData = GetCustomerGuestCartDetails.arrCartProduct
+    var arrAllProduct:[ProductRecords] = []
 
     
     //MARK: - Outlets
@@ -62,10 +64,131 @@ class RegisterCartVC: UIViewController {
     //MARK: - ActionMethods
     
     @IBAction func onPressNextbtnTap(_ sender: UIButton) {
-        
-        let vc = RegisterAddressVC.instantiate(fromAppStoryboard: .Register)
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+        let alert = UIAlertController(title: "Alert", message: "Would you like to repeat all product in evry delivery", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "yes", style: .default, handler: { (_) in
+            
+            var arrcartData = GetCustomerGuestCartDetails.arrCartProduct
+            var arrDefaultProduct:[[String:Any]] = [[:]]
+            for data in self.arrAllProduct {
+                for cartdata in arrcartData {
+                    if cartdata.code == data.code {
+                        let newCart = [
+                            "Code":cartdata.code,
+                            "CurrentPrice":cartdata.price,
+                            "Description":data.description,
+                            "OriginalValidFrom":"",
+                            "OriginalValidTo":"",
+                            "Quantity":cartdata.quantity,
+                            "Type":6,
+                            "Url":"https://islandchoiceguam.com/account/images/mw_synced_image_3_\(cartdata.code).jpg",
+                            "ValidFrom":"",
+                            "ValidTo":""
+                        ] as [String : Any]
+                        arrDefaultProduct.append(newCart)
+                    }
+                }
+                
+            }
+            
+            
+            var arrCart:[[String:Any]] = [[:]]
+                arrCart.removeAll()
+            for data in arrcartData {
+              let cart = [
+                    
+                "Code":data.code,
+                "FillUp":false,
+                "GratisReason":"",
+                "Price":data.price,
+                "Quantity":data.quantity
+                
+                ] as [String:Any]
+                arrCart.append(cart)
+            }
+            
+            let deliveryData = ["orderData": [
+                    "CouponCode":self.txtCoupon.text ?? "",
+                    "DefaultProducts":arrDefaultProduct,
+                    "DeliveryDate":"",
+                    "DeliveryNotes":"",
+                    "EquipmentInstalls":[],
+                    "EquipmentTypes":[],
+                    "Location":"",
+                    "TimeWindow":"",
+                    "Products":arrCart],
+                               
+            ] as [String : Any]
+            
+            let json = JSON(deliveryData)
+            
+            let vc = RegisterAddressVC.instantiate(fromAppStoryboard: .Register)
+            vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }))
+    
+        alert.addAction(UIAlertAction(title: "cacel", style: .default, handler: { (_) in
+            
+            var arrcartData = GetCustomerGuestCartDetails.arrCartProduct
+          var arrCart:[[String:Any]] = [[:]]
+                arrCart.removeAll()
+            for data in arrcartData {
+              let cart = [
+                    
+                "Code":data.code,
+                "FillUp":false,
+                "GratisReason":"",
+                "Price":data.price,
+                "Quantity":data.quantity
+                
+                ] as [String:Any]
+                arrCart.append(cart)
+            }
+            
+            let deliveryData = ["orderData": [
+                    "CouponCode":self.txtCoupon.text ?? "",
+                    "DefaultProducts":[],
+                    "DeliveryDate":"",
+                    "DeliveryNotes":"",
+                    "EquipmentInstalls":[],
+                    "EquipmentTypes":[],
+                    "Location":"",
+                    "TimeWindow":"",
+                    "Products":arrCart],
+                                "billingData":[
+                                    "AddressLine1":"",
+                                    "AddressLine2":"",
+                                    "City":"",
+                                    "CompanyName":"",
+                                    "ContactName":"",
+                                    "ContactPhone":"",
+                                    "CustomerPriceLevel":"",
+                                    "CustomerTypeCode":"",
+                                    "email":"",
+                                    "Fax":"",
+                                    "MobilePhone":"",
+                                    "OpenHours":[:],
+                                    "Paperless":false,
+                                    "Password":"",
+                                    "Phone":"",
+                                    "PostalCode":"",
+                                    "RecurringNote":self.txtRecurringDeliveryInstruction.text ?? "",
+                                    "ReferenceNumber":"",
+                                    "StartReason":"",
+                                    "State":"",
+                                    "Username":"",
+                                    "WorkPhone":""
+                                ]
+            ] as [String : Any]
+            
+            let json = JSON(deliveryData)
+            
+            let vc = RegisterAddressVC.instantiate(fromAppStoryboard: .Register)
+            vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
@@ -78,7 +201,7 @@ class RegisterCartVC: UIViewController {
     */
     @IBAction func onPressbtnApplyCouponTap(_ sender: Any) {
         
-        
+        GetCartWebCouponAmount()
     }
     
 }
@@ -345,3 +468,49 @@ fileprivate func updateCartDetails() {
 
 }
 
+extension RegisterCartVC {
+    
+    fileprivate func GetCartWebCouponAmount() {
+        let deliveryID = ""
+       let postalCode = ""
+        let type = ""
+        var arrProduct: [[String: Any]] = [[:]]
+            arrProduct.removeAll()
+        for product in arrCartPriceData {
+            let newCart = [
+                "Code":product.code,
+                "Pricing":[
+                    "Current":product.pricing.current,
+                    "Original":product.pricing.original
+                ],
+                "Quantity":product.quantity,
+                "ShoppingCartType":product.shoppingCarttype
+            ] as [String : Any]
+            arrProduct.append(newCart)
+        }
+        
+        
+      let param = [
+        "couponCode":txtCoupon.text ?? "",
+           "cartProducts":arrProduct,
+            "customerStatus":3,
+            "customerType":type,
+            "postalCode":postalCode,
+            "deliveryId":deliveryID
+                
+            ]
+            as [String : Any]
+            showHUD()
+            NetworkManager.Cart.GetCartWebCouponAmount(param: param, { (json) in
+                print(json)
+                self.hideHUD()
+            }, { (error) in
+                
+                self.hideHUD()
+                self.showToast(error)
+            })
+
+        
+    }
+    
+}

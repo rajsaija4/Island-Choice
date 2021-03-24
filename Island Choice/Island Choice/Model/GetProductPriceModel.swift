@@ -13,12 +13,14 @@ class GetProductPriceModel: NSObject {
     var code = ""
     var quantity = 0
     var pricing:Pricing!
+    var shoppingCarttype = 0
     
     init(json:JSON){
         super.init()
         code = json["Code"].stringValue
         quantity = json["Quantity"].intValue
         pricing = Pricing(json: json)
+        shoppingCarttype = json["ShoppingCartType"].intValue
         
     }
     

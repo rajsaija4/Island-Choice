@@ -63,6 +63,7 @@ class CartVC: UIViewController {
         }
         else {
        let vc = CheckOutVC.instantiate(fromAppStoryboard: .Cart)
+            vc.arrCartPriceData = arrCartPriceData
             vc.arrProductTaxDetails = arrTaxDetails
         navigationController?.pushViewController(vc, animated: true)
         }

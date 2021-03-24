@@ -73,6 +73,7 @@ class HomeRegisterProductVC: UIViewController {
     
     @IBAction func onPressNextbtnTap(_ sender: Any) {
         let vc = RegisterCartVC.instantiate(fromAppStoryboard: .Register)
+        vc.arrAllProduct = arrAllProduct
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
