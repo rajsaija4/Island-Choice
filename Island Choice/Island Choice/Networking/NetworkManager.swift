@@ -1054,9 +1054,8 @@ extension NetworkManager {
                 }
             }
         }
-       
         
-        
+         
         static func CompleteOrder(param: Parameters, _ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
             
             var params = param

@@ -40,8 +40,29 @@ class CreateAccountVC: UIViewController {
     }
     */
     @IBAction func onPressHomebtnTap(_ sender: UIButton) {
+        getClearGuestCart()
         let vc = HomeRegisterProductVC.instantiate(fromAppStoryboard: .Register)
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+}
+
+extension CreateAccountVC {
+    
+    
+   fileprivate func getClearGuestCart() {
+    
+
+    
+    showHUD()
+    NetworkManager.SignUp.GetGuestCartClear({ (json) in
+        print(json)
+        self.hideHUD()
+    }, { (error) in
+      
+        self.hideHUD()
+        self.showToast(error)
+    })
+}
     
 }

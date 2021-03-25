@@ -139,16 +139,8 @@ extension RegisterCreateAccount {
             "Fax":guestOrderModal.deliveryData.fax,
             "MobilePhone":guestOrderModal.deliveryData.mobilePhone
         ],
-       
-        "Password":txtPassword.text ?? "",
         "orderData":guestOrderModal.orderData,
-       
-        "StartReason":"",
-        "Username":txtUsername.text ?? "",
-      
-        "prospectCode":guestOrderModal.prospectCode,
-        "WorkPhone":"",
-        "ReferenceNumber":"",
+        "prospectCode":"AUTO",
         "eCheckData":[
             "BankAccountName":guestOrderModal.eCheckData.bankaccountName,
             "BankAccountNumber":guestOrderModal.eCheckData.bankAccountNumber,
@@ -170,7 +162,6 @@ extension RegisterCreateAccount {
             "Fax":guestOrderModal.billingData.fax,
             "MobilePhone":guestOrderModal.billingData.mobilePhone,
             "OpenHours": guestOrderModal.billingData.openHours,
-            "MobilePhone":guestOrderModal.billingData.mobilePhone,
             "Paperless":false,
             "Password":txtPassword.text ?? "",
             "Phone":guestOrderModal.billingData.phone,

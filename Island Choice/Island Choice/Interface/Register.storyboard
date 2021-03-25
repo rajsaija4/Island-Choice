@@ -829,7 +829,7 @@
                                 <rect key="frame" x="10" y="60" width="375" height="1850"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBO-jS-ubd">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="925"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="1135"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Y9-tT-blX">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
@@ -849,7 +849,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NOU-mJ-YOH">
-                                                <rect key="frame" x="10" y="80" width="335" height="835"/>
+                                                <rect key="frame" x="10" y="80" width="335" height="1045"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f3y-AL-Gxn">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
@@ -1011,8 +1011,8 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xUh-mi-zj1">
-                                                        <rect key="frame" x="0.0" y="195.5" width="335" height="200"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xUh-mi-zj1">
+                                                        <rect key="frame" x="0.0" y="200.5" width="335" height="200"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F5j-5Q-wU8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
@@ -1592,7 +1592,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5QP-QH-7Ll">
-                                                        <rect key="frame" x="0.0" y="200.5" width="335" height="193"/>
+                                                        <rect key="frame" x="0.0" y="410.5" width="335" height="193"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOY-xZ-cpD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
@@ -1682,7 +1682,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTb-Sa-3Mh">
-                                                        <rect key="frame" x="0.0" y="403.5" width="335" height="431.5"/>
+                                                        <rect key="frame" x="0.0" y="613.5" width="335" height="431.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HGK-SZ-dDk">
                                                                 <rect key="frame" x="10" y="10" width="315" height="411.5"/>
@@ -3546,7 +3546,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL ADDRESS" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NA8-Ih-Nbz">
                                                                         <rect key="frame" x="8" y="8" width="299" height="34"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3666,7 +3666,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="FAX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQ3-58-Xal">
                                                                         <rect key="frame" x="8" y="8" width="299" height="34"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

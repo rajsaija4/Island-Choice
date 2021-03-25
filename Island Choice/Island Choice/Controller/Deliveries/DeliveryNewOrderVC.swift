@@ -140,7 +140,7 @@ extension DeliveryNewOrderVC: UICollectionViewDataSource {
             
             else {
                 
-                let tost = "you have to add Minumum \(data.minimumOrderQuantity) Quantity"
+                let tost = "Minimum Quantity is  \(data.minimumOrderQuantity)"
                 showToast(tost)
             }
         
@@ -467,7 +467,7 @@ extension DeliveryNewOrderVC {
         //showHUD()
         NetworkManager.Profile.GetProductInCart(param: param, { (json) in
             print(json)
-            self.showToast("Product Add to Cart")
+            self.showToast("Product Added to cart")
             self.hideHUD()
             GetCartModel.GetCartDetails()
         }, { (error) in

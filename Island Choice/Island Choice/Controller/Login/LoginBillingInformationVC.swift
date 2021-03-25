@@ -120,7 +120,6 @@ class LoginBillingInformationVC: UIViewController {
             "Fax":"",
             "MobilePhone":mobileno ?? "",
             "OpenHours": [],
-            "MobilePhone":guestOrderModal.billingData.mobilePhone,
             "Paperless":false,
             "Password":"",
             "Phone":contactPhone,

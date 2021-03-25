@@ -279,7 +279,7 @@ extension DashboardVC: UICollectionViewDataSource {
             
                 else {
                     
-                    let tost = "you have to add Minumum \(data.minimumOrderQuantity) Quantity"
+                    let tost = "Minimum Quantity is  \(data.minimumOrderQuantity)"
                     showToast(tost)
                 }
             
@@ -521,7 +521,7 @@ extension DashboardVC {
         NetworkManager.Profile.GetProductInCart(param: param, { (json) in
             print(json)
             self.hideHUD()
-            self.showToast("Product All to Cart")
+            self.showToast("Product Added to cart")
             GetCartModel.GetCartDetails()
         }, { (error) in
             

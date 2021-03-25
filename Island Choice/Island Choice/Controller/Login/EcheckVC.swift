@@ -96,8 +96,7 @@ class EcheckVC: UIViewController {
             "Email":guestOrderModal.billingData.email,
             "Fax":guestOrderModal.billingData.fax,
             "MobilePhone":guestOrderModal.billingData.mobilePhone,
-            "OpenHours": [],
-            "MobilePhone":guestOrderModal.billingData.mobilePhone,
+            "OpenHours": [:],
             "Paperless":false,
             "Password":"",
             "Phone":guestOrderModal.billingData.phone,
@@ -122,36 +121,38 @@ class EcheckVC: UIViewController {
     
     
     @IBAction func onPressCheckingbtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         if sender.isSelected {
             btnBusinesscheck.isSelected = false
             btnSavingAccount.isSelected = false
             accountTypeNumber = "0"
             }
         
-        sender.isSelected = !sender.isSelected
+    
+        
+        
         
     }
     
     @IBAction func onPressBusinessCheckbtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         if sender.isSelected {
             btnChecking.isSelected = false
             btnSavingAccount.isSelected = false
             accountTypeNumber = "1"
             }
        
-        sender.isSelected = !sender.isSelected
+        
     }
     
     @IBAction func onPressSavingbtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         if sender.isSelected {
             btnBusinesscheck.isSelected = false
             btnChecking.isSelected = false
             accountTypeNumber = "2"
             }
-        else {
-            
-        }
-        sender.isSelected = !sender.isSelected
+       
     }
     
     @IBAction func onPressCheckOnebtnTap(_ sender: UIButton) {

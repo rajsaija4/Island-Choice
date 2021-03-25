@@ -61,7 +61,21 @@ class AditionInformationVC: UIViewController, UIPickerViewDelegate, UIPickerView
     
 // MARK - ActionMethod
     
-    @IBAction func onPressContinuebtnTap(_ sender: Any) {
+    @IBAction func onPressContinuebtnTap(_ sender: UIButton) {
+        if txtSingleOpenform.text?.count ?? 0 > 0  && txtSingleOpento.text?.count ?? 0 == 0 {
+            
+            showToast("please enter value in Open To")
+            return
+            
+        }
+        if txtSingleOpento.text?.count ?? 0 > 0  && txtSingleOpenform.text?.count ?? 0 == 0 {
+            
+            showToast("please enter value in Open From")
+            return
+            
+        }
+        
+        
        
         
         var arrData: [[String: Any]] = [[:]]
@@ -70,8 +84,8 @@ class AditionInformationVC: UIViewController, UIPickerViewDelegate, UIPickerView
             let data = [
             "Closed":false,
             "DayCode":"",
-                "FromTime":txtSingleOpenform ?? "",
-                "ToTime":txtSingleOpento ?? ""
+                "FromTime":txtSingleOpenform.text ?? "",
+                "ToTime":txtSingleOpento.text ?? ""
             ] as [String: Any]
             arrData.append(data)
         } else {
@@ -108,9 +122,7 @@ class AditionInformationVC: UIViewController, UIPickerViewDelegate, UIPickerView
                 "MobilePhone":guestOrderModal.deliveryData.mobilePhone
             ],
             "orderData":guestOrderModal.orderData,
-            "Paperless":paperless,
             "prospectCode":guestOrderModal.prospectCode,
-            "ReferenceNumber":"",
             "eCheckData":[
                 "BankAccountName":guestOrderModal.eCheckData.bankaccountName,
                 "BankAccountNumber":guestOrderModal.eCheckData.bankAccountNumber,
@@ -132,7 +144,6 @@ class AditionInformationVC: UIViewController, UIPickerViewDelegate, UIPickerView
                 "Fax":guestOrderModal.billingData.fax,
                 "MobilePhone":guestOrderModal.billingData.mobilePhone,
                 "OpenHours": arrData,
-                "MobilePhone":guestOrderModal.billingData.mobilePhone,
                 "Paperless":false,
                 "Password":"",
                 "Phone":guestOrderModal.billingData.phone,

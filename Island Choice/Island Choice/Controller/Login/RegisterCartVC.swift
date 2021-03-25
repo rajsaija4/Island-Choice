@@ -75,7 +75,7 @@ class RegisterCartVC: UIViewController {
                         let newCart = [
                             "Code":cartdata.code,
                             "CurrentPrice":cartdata.price,
-                            "Description":data.description,
+                            "Description":data.productDescription,
                             "OriginalValidFrom":"",
                             "OriginalValidTo":"",
                             "Quantity":cartdata.quantity,
@@ -493,8 +493,8 @@ extension RegisterCartVC {
       let param = [
         "couponCode":txtCoupon.text ?? "",
            "cartProducts":arrProduct,
-            "customerStatus":3,
-            "customerType":type,
+            "customerStatus":2,
+            "customerType":"R",
             "postalCode":postalCode,
             "deliveryId":deliveryID
                 
