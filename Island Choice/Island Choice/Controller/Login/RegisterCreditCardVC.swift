@@ -128,6 +128,10 @@ class RegisterCreditCardVC: UIViewController {
         if btnCheckTerms.isSelected {
         self.navigationController?.pushViewController(vc, animated: true)
         }
+        
+        else {
+            showToast("please agree terms and condition")
+        }
     
     }
     

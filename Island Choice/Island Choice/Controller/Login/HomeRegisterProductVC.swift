@@ -74,6 +74,11 @@ class HomeRegisterProductVC: UIViewController {
     @IBAction func onPressNextbtnTap(_ sender: Any) {
         let vc = RegisterCartVC.instantiate(fromAppStoryboard: .Register)
         vc.arrAllProduct = arrAllProduct
+        guard GetCustomerGuestCartDetails.arrCartProduct.count > 0 else {
+           showToast("Please Add Product in cart")
+            return
+        }
+        
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
@@ -390,7 +395,7 @@ extension HomeRegisterProductVC {
         //showHUD()
         NetworkManager.SignUp.GetGuestProductinCart(param: param, { (json) in
             print(json)
-            self.showToast("Product Add to Cart")
+            self.showToast("Product Added to cart")
             
             self.hideHUD()
             GetCustomerGuestCartDetails.GetGuestCartDetails()

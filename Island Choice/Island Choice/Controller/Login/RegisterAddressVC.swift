@@ -8,9 +8,11 @@
 import UIKit
 import SwiftyJSON
 
-class RegisterAddressVC: UIViewController {
+class RegisterAddressVC: UIViewController, UITextViewDelegate {
     
     var guestOrderModal: RegisterNewCustomerWithOrderModel = RegisterNewCustomerWithOrderModel(json: JSON.null)
+    
+    
     
     //MARK: - Outlets
    
@@ -40,7 +42,24 @@ class RegisterAddressVC: UIViewController {
     
     //MARK: - ActionMethods
     
-    @IBAction func onPressDiffrentAddressbtnTap(_ sender: Any) {
+    
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "ADDRESS" {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.count == 0 {
+            textView.text = "ADDRESS"
+            textView.textColor = UIColor.gray.withAlphaComponent(0.5)
+        }
+    }
+    
+  
+    @IBAction func onPressDiffrentAddressbtnTap(_ sender: UITextView) {
         
         
         onNextBtnTap(isContinue: false)
@@ -61,6 +80,7 @@ class RegisterAddressVC: UIViewController {
             return
         }
         
+        
         guard let lastName = txtLastName.text, lastName.count > 0  else {
             showToast("Please \(txtLastName.placeholder ?? "") ")
             return
@@ -72,6 +92,10 @@ class RegisterAddressVC: UIViewController {
         }
         
          let contactPhone = txtContactPhone.text
+            if contactPhone?.count ?? 0 > 10{
+                showToast("Please Enter Valid Contact Number")
+            }
+        
         
          let contactName = txtContactName.text
         
@@ -85,19 +109,40 @@ class RegisterAddressVC: UIViewController {
             return
         }
         
-        guard let postal = txtPostalCode.text, postal.count > 0  else {
+        guard let postal = txtPostalCode.text, postal.count > 0, postal.count < 11  else {
             showToast("Please \(txtPostalCode.placeholder ?? "") ")
             return
         }
+        
+        
+        
         
         guard let email = txtEmailAddress.text, email.count > 0  else {
             showToast("Please \(txtEmailAddress.placeholder ?? "") ")
             return
         }
         
-         let mobileno = txtMobileNo.text
         
-         let fax = txtFax.text
+        guard email.isValidEmail else {
+            showToast("Please Enter valid email")
+            return
+        }
+        
+        if let mobileno = txtMobileNo.text {
+            if mobileno.count > 10 {
+                showToast("Please Enter Valid Mobile Number")
+                return
+            }
+        }
+        
+        
+    
+        
+        if let fax = txtFax.text {
+            if fax.count > 10 {
+            showToast("Please Enter Valid Contact Number")
+        }
+        }
         
         
         
@@ -111,8 +156,8 @@ class RegisterAddressVC: UIViewController {
                 "CustomerPriceLevel":"0",
                 "CustomerTypeCode":"R",
                 "Email":email,
-                "Fax":fax ?? "",
-                "MobilePhone":mobileno ?? ""
+            "Fax":txtFax.text ?? "",
+            "MobilePhone":txtMobileNo.text ?? ""
         ],
         "billingData":[
             "AddressLine1":guestOrderModal.billingData.addressLine1,
@@ -166,3 +211,6 @@ class RegisterAddressVC: UIViewController {
     */
 
 }
+
+
+

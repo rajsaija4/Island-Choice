@@ -15,6 +15,8 @@ class EcheckVC: UIViewController {
     
     // MARK: - Outlets
         
+    @IBOutlet weak var btnSecondCondition: UIButton!
+    @IBOutlet weak var btnfirstconditon: UIButton!
     @IBOutlet weak var btnSavingAccount: UIButton!
     @IBOutlet weak var btnBusinesscheck: UIButton!
     @IBOutlet weak var btnChecking: UIButton!
@@ -28,6 +30,7 @@ class EcheckVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnChecking.isSelected = true
         title = "E-check"
         setupNavigationBarBackBtn()
 
@@ -115,7 +118,17 @@ class EcheckVC: UIViewController {
         
         let vc = AditionInformationVC.instantiate(fromAppStoryboard: .Register)
         vc.guestOrderModal = RegisterNewCustomerWithOrderModel(json: json)
+        if btnChecking.isSelected || btnBusinesscheck.isSelected || btnSavingAccount.isSelected {
+        if btnfirstconditon.isSelected && btnSecondCondition.isSelected {
         self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            showToast("Please select terms and condition")
+        }
+            
+        }else {
+            showToast("Please select account type")
+        }
     }
     
     

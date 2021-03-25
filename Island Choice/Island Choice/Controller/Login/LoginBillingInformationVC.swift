@@ -8,7 +8,7 @@
 import UIKit
 import SwiftyJSON
 
-class LoginBillingInformationVC: UIViewController {
+class LoginBillingInformationVC: UIViewController, UITextViewDelegate {
     
    var guestOrderModal: RegisterNewCustomerWithOrderModel = RegisterNewCustomerWithOrderModel(json: JSON.null)
     
@@ -36,6 +36,21 @@ class LoginBillingInformationVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "ADDRESS" {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.count == 0 {
+            textView.text = "ADDRESS"
+            textView.textColor = UIColor.gray.withAlphaComponent(0.5)
+        }
+    }
+
 
     //MARK: - ActionMethods
     
@@ -69,7 +84,7 @@ class LoginBillingInformationVC: UIViewController {
             return
         }
         
-        guard let postalcode = txtPostalCode.text, postalcode.count > 0  else {
+        guard let postalcode = txtPostalCode.text, postalcode.count > 0, postalcode.count < 11  else {
             showToast("Please \(txtPostalCode.placeholder ?? "") ")
             return
         }
@@ -80,12 +95,23 @@ class LoginBillingInformationVC: UIViewController {
             return
         }
         
-        guard let contactPhone = txtContactPhone.text, contactPhone.count > 0  else {
-            showToast("Please \(txtContactPhone.placeholder ?? "") ")
+        guard email.isValidEmail else {
+            showToast("Please Enter valid email")
             return
         }
         
-       let mobileno = txtMobileNo.text
+        guard let contactPhone = txtContactPhone.text, contactPhone.count > 0, contactPhone.count < 11  else {
+            showToast("Please enter valid \(txtContactPhone.placeholder ?? "") ")
+            return
+        }
+        
+        
+        if let mobileno = txtMobileNo.text {
+            if mobileno.count > 10 {
+                showToast("Please Enter Valid Mobile Number")
+                return
+            }
+        }
         
         guard let contactName = txtContactName.text, contactName.count > 0  else {
             showToast("Please \(txtContactName.placeholder ?? "") ")
@@ -118,7 +144,7 @@ class LoginBillingInformationVC: UIViewController {
             "CustomerTypeCode":"R",
             "Email":email,
             "Fax":"",
-            "MobilePhone":mobileno ?? "",
+            "MobilePhone":txtMobileNo.text ?? "",
             "OpenHours": [],
             "Paperless":false,
             "Password":"",

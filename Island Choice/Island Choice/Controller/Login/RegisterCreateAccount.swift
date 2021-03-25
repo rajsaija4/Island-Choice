@@ -14,6 +14,7 @@ class RegisterCreateAccount: UIViewController {
     
     // MARK: - Outlets
 
+    @IBOutlet weak var btnAgreement: UIButton!
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtRetypePassword: UITextField!
@@ -45,15 +46,32 @@ class RegisterCreateAccount: UIViewController {
     @IBAction func onPressPasswordShowbtnTap(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            txtPassword.isSecureTextEntry = false
+        }
+        else {
+            txtPassword.isSecureTextEntry = true
+        }
+        
         
         
     }
     @IBAction func onPressRetypePasswordShowbtnTap(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            txtRetypePassword.isSecureTextEntry = false
+        }
+        else {
+            txtRetypePassword.isSecureTextEntry = true
+        }
     }
     
     @IBAction func onPressSubmitbtnTap(_ sender: UIButton) {
+        guard btnAgreement.isSelected else {
+            showToast("plase select terms and conditions")
+            return
+        }
             IsUsernameAvailable()
         
         

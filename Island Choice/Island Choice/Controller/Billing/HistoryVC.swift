@@ -22,7 +22,7 @@ class HistoryVC: UIViewController {
     var arrHistoryCustomer: [Records] = []
     var onShowStatement: ((Bool)-> Void)?
     var historyOrder = HistoryOrder.date
-    fileprivate var isDescending = false
+    fileprivate var isDescending = true
     fileprivate var startPageIndex = 0
     fileprivate var endPageIndex = 20
     

@@ -29,6 +29,8 @@ class AditionInformationVC: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var txtSingleOpenform: UITextField!
    
+    @IBOutlet weak var lblstackopenfromto: UIStackView!
+    @IBOutlet weak var stackOpenfromto: UIStackView!
     @IBOutlet weak var stackWeekCalander: UIStackView!
     @IBOutlet weak var txtSingleOpento: UITextField!
     @IBOutlet var btnCheckBox: [UIButton]!
@@ -75,7 +77,24 @@ class AditionInformationVC: UIViewController, UIPickerViewDelegate, UIPickerView
             
         }
         
-        
+        if !stackWeekCalander.isHidden {
+            for i in 0..<txtOpenFrm.count {
+                if !btnCheckBox[i].isSelected {
+                    if txtOpenFrm[i].text?.count ?? 0 > 0  && txtOpento[i].text?.count ?? 0 == 0 {
+                        
+                        showToast("please enter value in Open To")
+                        return
+                        
+                    }
+                    if txtOpento[i].text?.count ?? 0 > 0  && txtOpenFrm[i].text?.count ?? 0 == 0 {
+                        
+                        showToast("please enter value in Open From")
+                        return
+                        
+                    }
+                }
+            }
+        }
        
         
         var arrData: [[String: Any]] = [[:]]
@@ -204,10 +223,14 @@ class AditionInformationVC: UIViewController, UIPickerViewDelegate, UIPickerView
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             stackWeekCalander.isHidden = false
+            stackOpenfromto.isHidden = true
+            lblstackopenfromto.isHidden = true
         }
         
         else {
             stackWeekCalander.isHidden = true
+            stackOpenfromto.isHidden = false
+            lblstackopenfromto.isHidden = false
         }
         
     }

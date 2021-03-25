@@ -283,7 +283,6 @@
 				9F293AB025DF95F4008EC1DD /* DashboardVC.swift */,
 				9F097F0F25E91D6200CD0FA7 /* AddFavoriteProductVC.swift */,
 				9F097F1225E9249400CD0FA7 /* RemoveFavoriteVC.swift */,
-				9F5257DA25F89AD200B705C2 /* RegisterCreateAccount.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -594,6 +593,7 @@
 				9FAEF15425F79D8B00AF36E3 /* RegisterCreditCardVC.swift */,
 				9F5257D425F8936D00B705C2 /* AditionInformationVC.swift */,
 				9F5257D725F89A9400B705C2 /* MediumAndLargeScaleRegisterVC.swift */,
+				9F5257DA25F89AD200B705C2 /* RegisterCreateAccount.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
