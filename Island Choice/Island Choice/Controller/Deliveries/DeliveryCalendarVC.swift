@@ -23,6 +23,9 @@ class DeliveryCalendarVC: UIViewController {
     
     // MARK: - Outlets
 
+    @IBOutlet weak var btnEmail: UIButton!
+    @IBOutlet weak var btnImportPdf: UIButton!
+    @IBOutlet weak var btnViewpdf: UIButton!
     @IBOutlet weak var calendarView: FSCalendar!
     
     lazy var dateFormatter: DateFormatter = {
@@ -44,7 +47,58 @@ class DeliveryCalendarVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func onPressEmailbtnTap(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Email Yearly Calendar", message: "Enter Your Email", preferredStyle: .alert)
+            alert.addTextField { (textField) in
+            textField.placeholder = "Email"
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            guard let email = alert?.textFields?[0].text, email.count > 0  else {
+                self.showToast("Please \(alert?.textFields?[0].placeholder ?? "") ")
+                return
+            }
+            guard email.isValidEmail else {
+                self.showToast("Please Enter valid email")
+                return
+            }
+            
+            self.emailYearlyCalender(email: email)
+           
+        }))
 
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    @IBAction func onPressViewPdfbtnTap(_ sender: UIButton) {
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year], from: date)
+        let year = components.year
+        
+        let deliveryId = OnstopDeliveryModel.details.deliveryId
+        let branch = AccountInformation.details.branch
+        
+        guard let url = URL(string: "https://islandchoiceguam.com/account/api/app-get-yearly-calendar/\(deliveryId)/\(year!)/\(branch)") else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+    }
+    
+    @IBAction func onPressImportCalendarbtnTap(_ sender: UIButton) {
+        
+        guard let url = URL(string: "https://islandchoiceguam.com/account/api/app-get-yearly-ics/10123700/2021") else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+    }
 }
 
 
@@ -265,3 +319,41 @@ extension Date {
         }
 }
 
+extension DeliveryCalendarVC {
+    
+   
+    
+    fileprivate func emailYearlyCalender(email:String) {
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year], from: date)
+        let year = components.year
+        
+        let deliveryId = OnstopDeliveryModel.details.deliveryId
+        let branch = AccountInformation.details.branch
+        
+       
+      let param = [
+        "deliveryId":deliveryId,
+        "branch":branch,
+        "year":String(year ?? 0),
+        "email":email
+         ]
+      as [String : Any]
+     
+     showHUD()
+     NetworkManager.Order.emailCalenderDate(param: param, { (json) in
+         print(json)
+        self.showToast("Send to your Email")
+         self.hideHUD()
+     }, { (error) in
+       
+         self.hideHUD()
+         self.showToast(error)
+     })
+ }
+
+    
+    
+}

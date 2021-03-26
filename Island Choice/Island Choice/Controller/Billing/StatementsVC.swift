@@ -13,7 +13,7 @@ class StatementsVC: UIViewController {
     
     // MARK: - Variables
     
-    fileprivate var isDescending = false
+    fileprivate var isDescending = true
     fileprivate var startPageIndex = 0
     fileprivate var endPageIndex = 20
     var arrHistoryStatements:[RecordsStatements] = []
@@ -63,10 +63,10 @@ class StatementsVC: UIViewController {
     @IBAction func viewTouchUpInside(_ sender: UIControl) {
         
         if btnDateSorting.isSelected {
-            isDescending = true
+            isDescending = false
         }
         else {
-            isDescending = false
+            isDescending = true
         }
         
         getStatement()
@@ -278,6 +278,9 @@ extension StatementsVC {
             self.reloadData(state: .noMoreData)
         }
         self.hideHUD()
+        if self.arrHistoryStatements.count < 1 {
+            self.showToast("Data not Available")
+        }
     }, { (error) in
         self.reloadData(state: .noMoreData)
         self.hideHUD()

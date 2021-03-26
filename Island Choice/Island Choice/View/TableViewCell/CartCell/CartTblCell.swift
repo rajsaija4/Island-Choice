@@ -52,7 +52,7 @@ class CartTblCell: UITableViewCell {
     lblProductName.text = "\(ProductName)"
     lblProductPrice.text = "Price: $\(finalProductPrice)"
     TxtProductQuantity.text = "\(productQuentity)"
-        lblProductTax.text = "Tax:\(tax)"
+        lblProductTax.text = "Tax:$\(tax)"
         lblPrductCost.text = "cost: $\(decimalplacevalue)"
     if let imageUrl = URL(string: "https://islandchoiceguam.com//account//images//mw_synced_image_3_\(code).jpg") {
         imgProduct.kf.indicatorType = .activity
@@ -86,7 +86,7 @@ class CartTblCell: UITableViewCell {
     lblProductName.text = "\(ProductName)"
     lblProductPrice.text = "Price: $\(finalProductPrice)"
     TxtProductQuantity.text = "\(productQuentity)"
-        lblProductTax.text = "Tax:\(tax)"
+        lblProductTax.text = "Tax:$\(tax)"
         lblPrductCost.text = "cost: $\(decimalplacevalue)"
     if let imageUrl = URL(string: "https://islandchoiceguam.com//account//images//mw_synced_image_3_\(code).jpg") {
         imgProduct.kf.indicatorType = .activity

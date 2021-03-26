@@ -64,8 +64,8 @@ class RegisterCartVC: UIViewController {
     //MARK: - ActionMethods
     
     @IBAction func onPressNextbtnTap(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Alert", message: "Would you like to repeat all product in evry delivery", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "yes", style: .default, handler: { (_) in
+        let alert = UIAlertController(title: "Alert", message: "Would you like us to bring these products every delivery?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
             
             var arrcartData = GetCustomerGuestCartDetails.arrCartProduct
             var arrDefaultProduct:[[String:Any]] = [[:]]
@@ -127,7 +127,7 @@ class RegisterCartVC: UIViewController {
             
         }))
     
-        alert.addAction(UIAlertAction(title: "cacel", style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
             
             var arrcartData = GetCustomerGuestCartDetails.arrCartProduct
           var arrCart:[[String:Any]] = [[:]]
@@ -459,9 +459,9 @@ fileprivate func updateCartDetails() {
     let givablePrice = arrayPrices.reduce(0, +)
     let givableTax = arrayTotalTax.reduce(0, +)
     let totalPayableAmountwithTax = givablePrice + givableTax
-    lblSubTotalAmount.text = String(format: "%.2f",totalPayableAmountwithTax)
-    lblProductTaxes.text = String(format: "%2f", givableTax)
-    lblOrderTotal.text = String(format: "%2f", totalPayableAmountwithTax)
+    lblSubTotalAmount.text = "$\(String(format: "%.2f",totalPayableAmountwithTax))"
+    lblProductTaxes.text = "$\(String(format: "%.2f", givableTax))"
+    lblOrderTotal.text = "$\(String(format: "%.2f", totalPayableAmountwithTax))"
   
     }
 

@@ -252,6 +252,9 @@ extension CartVC {
             self.tblCart.reloadData()
             }
             self.hideHUD()
+            if self.arrTaxDetails.count < 1{
+                self.showToast("No Product In Cart")
+            }
         }, { (error) in
             
             self.hideHUD()
@@ -265,7 +268,17 @@ extension CartVC {
         NetworkManager.Cart.clearCartDetails({ (json) in
             print(json)
             GetCartModel.arrCartProduct.removeAll()
+//            self.arrTaxDetails.removeAll()
+//            self.tblCart.reloadData()
+//            self.GetCartPrice()
+//            self.lblSubTotal.text = "$00.00)"
+//            self.lblGrandTotal.text = "$00.00"
+//            self.lblEstimatedTaxes.text = "$00.00"
+            self.arrCartPriceData.removeAll()
+            self.arrCartProduct.removeAll()
+            self.arrTaxDetails.removeAll()
             self.GetCartPrice()
+            self.updateCartDetails()
         }, { (error) in
             
             print(error)
@@ -360,9 +373,9 @@ extension CartVC {
         let givablePrice = arrayPrices.reduce(0, +)
         let givableTax = arrayTotalTax.reduce(0, +)
         let totalPayableAmountwithTax = givablePrice + givableTax
-        lblSubTotal.text = String(format: "%.2f",givablePrice)
-        lblGrandTotal.text = String(format: "%.2f",totalPayableAmountwithTax)
-        lblEstimatedTaxes.text = String(format: "%2f", givableTax)
+        lblSubTotal.text = "$\(String(format: "%.2f",givablePrice))"
+        lblGrandTotal.text = "$\(String(format: "%.2f",totalPayableAmountwithTax))"
+        lblEstimatedTaxes.text = "$\(String(format: "%.2f", givableTax))"
       
         
     }

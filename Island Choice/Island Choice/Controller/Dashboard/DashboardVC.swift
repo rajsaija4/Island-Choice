@@ -429,8 +429,12 @@ extension DashboardVC {
         self.arrAllProduct.removeAll()
         self.arrAllProduct.append(contentsOf: data.records)
         self.collAllProduct.reloadData()
+        
         self.getFavoriteProduct()
         self.hideHUD()
+        if self.arrAllProduct.count < 1 {
+            self.showToast("No Product Available")
+        }
     }, { (error) in
       
         self.hideHUD()
@@ -458,9 +462,13 @@ extension DashboardVC {
                     self.arrFavProduct.append(data)
             }
             self.collFavoriteProduct.reloadData()
+            
          print(json)
         
          self.hideHUD()
+            if self.arrFavProduct.count < 1 {
+                self.showToast("No Product Available")
+            }
      }, { (error) in
        
          self.hideHUD()

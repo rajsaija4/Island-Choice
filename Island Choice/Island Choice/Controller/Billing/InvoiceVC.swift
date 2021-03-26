@@ -25,7 +25,7 @@ class InvoiceVC: UIViewController, UITextFieldDelegate{
    
     
   
-    fileprivate var isDescending = false
+    fileprivate var isDescending = true
     fileprivate var startPageIndex = 0
     fileprivate var endPageIndex = 20
 
@@ -187,7 +187,9 @@ extension InvoiceVC {
             }
          
            
-            
+            if self.arrInvoiceCustomer.count < 1 {
+                self.showToast("Data not Available")
+            }
             self.hideHUD()
         }, { (error) in
             self.reloadData(state: .noMoreData)
@@ -222,7 +224,7 @@ extension InvoiceVC {
         for (i, btn) in arrSortBtn.enumerated() {
             if sender.tag == i {
                 btn.isSelected = !btn.isSelected
-                self.isDescending = btn.isSelected
+                self.isDescending = !btn.isSelected
                 if i == 0 {
                     self.invoiceOrder = .date
                 }

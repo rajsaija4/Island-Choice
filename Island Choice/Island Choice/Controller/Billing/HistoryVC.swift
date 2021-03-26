@@ -114,7 +114,7 @@ extension HistoryVC {
         for (i, btn) in arrSortBtn.enumerated() {
             if sender.tag == i {
                 btn.isSelected = !btn.isSelected
-                self.isDescending = btn.isSelected
+                self.isDescending = !btn.isSelected
                 if i == 0 {
                     self.historyOrder = .date
                 }
@@ -243,6 +243,9 @@ extension HistoryVC {
                 self.reloadData(state: .noMoreData)
             }
             self.hideHUD()
+            if self.arrHistoryCustomer.count < 1 {
+                self.showToast("Data not Available")
+            }
         }, { (error) in
             self.reloadData(state: .noMoreData)
             self.hideHUD()
