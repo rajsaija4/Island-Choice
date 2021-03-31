@@ -68,9 +68,10 @@ extension NetworkManager {
         static func checkAccount(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
             
             var params = param
-            params.merge(["token":token, "customerId" : AppUserDefaults.value(forKey: .CustomerId, fallBackValue: "").stringValue]) { (new, old) -> Any in
+            params.merge(["token":token]) { (new, old) -> Any in
                 return new
             }
+            
             
             guard let encodedURL = URLManager.Auth.checkAccount.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
                 fail("URL Encodign Issue")

@@ -11,6 +11,12 @@ class ActivateAccountVC: UIViewController {
     
     //MARK: - Lifecycle()
 
+    @IBOutlet weak var txtAccountNo: UITextField!
+    @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtZipcode: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtRetypepassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +26,7 @@ class ActivateAccountVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+  
     
 
     /*
@@ -34,11 +41,26 @@ class ActivateAccountVC: UIViewController {
     @IBAction func onPressPasswordVisiblebtnTap(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            txtPassword.isSecureTextEntry = false
+        }
+        
+        else {
+            txtPassword.isSecureTextEntry = true
+        }
     }
     
     @IBAction func onPressRetypePasswordbtnTap(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            txtRetypepassword.isSecureTextEntry = false
+        }
+        
+        else {
+            txtRetypepassword.isSecureTextEntry = true
+        }
+        
     }
 }
 

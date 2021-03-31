@@ -56,7 +56,7 @@ struct URLManager {
         static let GetCartDetails = webBasePath + "app_cart/get?"
         static let GetGuestProductinCart = webBasePath + "guest_cart/put"
         static let GetGuestCartDetails = webBasePath + "guest_cart/get?"
-        static let GetGuestCartClear = webBasePath + "guest_cart/clear"
+        static let GetGuestCartClear = webBasePath + "guest_cart/clear?"
         static let emailCalender = webBasePath + "app-email-yearly-calendar"
     }
     

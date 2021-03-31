@@ -14,11 +14,16 @@ class CreateAccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AppUserDefaults.save(value: NSUUID().uuidString, forKey: .kGuestUserToken)
         navigationController?.isNavigationBarHidden = false
         title = "Create Account"
         setupNavigationBarBackBtn()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        AppUserDefaults.save(value: NSUUID().uuidString, forKey: .kGuestUserToken)
+        GetCustomerGuestCartDetails.arrCartProduct.removeAll()
     }
     
 
@@ -41,23 +46,21 @@ class CreateAccountVC: UIViewController {
     */
     @IBAction func onPressHomebtnTap(_ sender: UIButton) {
         getClearGuestCart()
-        let vc = HomeRegisterProductVC.instantiate(fromAppStoryboard: .Register)
-        navigationController?.pushViewController(vc, animated: true)
+       
     }
     
 }
 
 extension CreateAccountVC {
-    
-    
-   fileprivate func getClearGuestCart() {
-    
-
-    
-    showHUD()
+    fileprivate func getClearGuestCart() {
+       showHUD()
     NetworkManager.SignUp.GetGuestCartClear({ (json) in
         print(json)
         self.hideHUD()
+        let vc = HomeRegisterProductVC.instantiate(fromAppStoryboard: .Register)
+        self.navigationController?.pushViewController(vc, animated: true)
+       
+      
     }, { (error) in
       
         self.hideHUD()
