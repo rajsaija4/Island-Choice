@@ -30,8 +30,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "506"
-            endingLineNumber = "506"
+            startingLineNumber = "593"
+            endingLineNumber = "593"
             landmarkName = "addCreditCardVault(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "495"
-            endingLineNumber = "495"
+            startingLineNumber = "578"
+            endingLineNumber = "578"
             landmarkName = "addCreditCardVault(param:_:_:)"
             landmarkType = "7">
             <Locations>
@@ -94,8 +94,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "498"
-            endingLineNumber = "498"
+            startingLineNumber = "581"
+            endingLineNumber = "581"
             landmarkName = "addCreditCardVault(param:_:_:)"
             landmarkType = "7">
             <Locations>
@@ -142,8 +142,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
+            startingLineNumber = "595"
+            endingLineNumber = "595"
             landmarkName = "addCreditCardVault(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "getCustomerAccount(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "getCustomerAccount(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "Island Choice/Controller/Login/LoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "onRememberMeBtnTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -455,38 +455,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C621CD42-F938-4CFD-AF81-7992E12AA510"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Island Choice/Controller/Login/LoginVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "getAllDeliveryStop()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1AFF896E-4FEC-4220-A4A3-261F97E84658"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Island Choice/Controller/Login/LoginVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "getAllDeliveryStop()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0E826A5E-26D4-4B7D-8A8C-759527122179"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -577,22 +545,6 @@
             startingLineNumber = "107"
             endingLineNumber = "107"
             landmarkName = "OpenDeliveryOrders()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B1921318-C11A-46A8-9FB6-7555FDD00FE8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Island Choice/Controller/Login/LoginVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "getCustomerAccount()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -830,8 +782,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
             landmarkName = "UpdateDefaultProducts(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -846,8 +798,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
             landmarkName = "UpdateDefaultProducts(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1022,8 +974,8 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "changeInQuentityAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1038,13 +990,13 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "changeInQuentityAction(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6FD28AD5-E31D-4B5B-B0FF-3FC1CD4564DB - 3f1c1b0b5220b6a8"
+                  uuid = "6FD28AD5-E31D-4B5B-B0FF-3FC1CD4564DB - 3f1c1b0b5220b689"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1054,12 +1006,12 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Controller/Cart/CartVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
                   offsetFromSymbolStart = "6519">
                </Location>
                <Location
-                  uuid = "6FD28AD5-E31D-4B5B-B0FF-3FC1CD4564DB - 110c3b339b27ee95"
+                  uuid = "6FD28AD5-E31D-4B5B-B0FF-3FC1CD4564DB - 110c3b339b27eeb4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1069,8 +1021,8 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Controller/Cart/CartVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
                   offsetFromSymbolStart = "49">
                </Location>
             </Locations>
@@ -1102,8 +1054,8 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "GetCartPrice()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1166,8 +1118,8 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "GetCartSalesTax()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1182,8 +1134,8 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "GetCartSalesTax()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1198,8 +1150,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1020"
-            endingLineNumber = "1020"
+            startingLineNumber = "1167"
+            endingLineNumber = "1167"
             landmarkName = "GetCartSalesTax(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1214,8 +1166,8 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "GetCartPricing(param:product:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1230,8 +1182,8 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "GetCartPrice()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1358,8 +1310,8 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1502,8 +1454,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1346"
-            endingLineNumber = "1346"
+            startingLineNumber = "1517"
+            endingLineNumber = "1517"
             landmarkName = "CreateProspectCustomerWithOrder(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1518,8 +1470,8 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1086"
-            endingLineNumber = "1086"
+            startingLineNumber = "1241"
+            endingLineNumber = "1241"
             landmarkName = "GetCartWebCouponAmount(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1582,13 +1534,13 @@
             filePath = "Island Choice/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1342"
-            endingLineNumber = "1342"
+            startingLineNumber = "1513"
+            endingLineNumber = "1513"
             landmarkName = "CreateProspectCustomerWithOrder(param:_:_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0DAE4BEA-22AC-4C67-8CBD-E08CBFF4E670 - 36fcacdfb43d808c"
+                  uuid = "0DAE4BEA-22AC-4C67-8CBD-E08CBFF4E670 - 36fcacdfb43dea83"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1598,12 +1550,12 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1342"
-                  endingLineNumber = "1342"
+                  startingLineNumber = "1513"
+                  endingLineNumber = "1513"
                   offsetFromSymbolStart = "805">
                </Location>
                <Location
-                  uuid = "0DAE4BEA-22AC-4C67-8CBD-E08CBFF4E670 - 4e07025f73ed3774"
+                  uuid = "0DAE4BEA-22AC-4C67-8CBD-E08CBFF4E670 - 4e07025f73ed5d7f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1613,8 +1565,8 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1344"
-                  endingLineNumber = "1344"
+                  startingLineNumber = "1515"
+                  endingLineNumber = "1515"
                   offsetFromSymbolStart = "286">
                </Location>
             </Locations>
@@ -1630,8 +1582,8 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "clearCartDetails()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1790,8 +1742,8 @@
             filePath = "Island Choice/Controller/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "clearCartDetails()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1838,9 +1790,457 @@
             filePath = "Island Choice/Controller/Login/CreateAccountVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "getClearGuestCart()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CDA31014-C0A8-49B0-A566-E879EE9A875B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1431"
+            endingLineNumber = "1431"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6459382B-A62A-43C7-903C-413FAEE1C93F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1436"
+            endingLineNumber = "1436"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1DCAFBD4-9D58-41E3-AA02-DC40A0FFB5A5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1434"
+            endingLineNumber = "1434"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "708FAFAD-BA70-49F4-B8D5-F1D35A553F6B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1441"
+            endingLineNumber = "1441"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "708FAFAD-BA70-49F4-B8D5-F1D35A553F6B - 150f59d9b39f1bf6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Island_Choice.NetworkManager.SignUp.GetGuestCartClear((SwiftyJSON.JSON) -&gt; (), (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1441"
+                  endingLineNumber = "1441"
+                  offsetFromSymbolStart = "1203">
+               </Location>
+               <Location
+                  uuid = "708FAFAD-BA70-49F4-B8D5-F1D35A553F6B - 92bd4cff86ad6065"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static Island_Choice.NetworkManager.SignUp.GetGuestCartClear((SwiftyJSON.JSON) -&gt; (), (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1443"
+                  endingLineNumber = "1443"
+                  offsetFromSymbolStart = "286">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF965907-1C2C-4FDA-B28A-348DF5337DEA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1443"
+            endingLineNumber = "1443"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "374936BD-29C0-4592-84A2-4274D819D764"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1444"
+            endingLineNumber = "1444"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "374936BD-29C0-4592-84A2-4274D819D764 - 92bd4cff86ad604a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static Island_Choice.NetworkManager.SignUp.GetGuestCartClear((SwiftyJSON.JSON) -&gt; (), (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1444"
+                  endingLineNumber = "1444"
+                  offsetFromSymbolStart = "351">
+               </Location>
+               <Location
+                  uuid = "374936BD-29C0-4592-84A2-4274D819D764 - 92bd4cff86ad604a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static Island_Choice.NetworkManager.SignUp.GetGuestCartClear((SwiftyJSON.JSON) -&gt; (), (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1444"
+                  endingLineNumber = "1444"
+                  offsetFromSymbolStart = "389">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1FB30DA-A0D2-452B-893D-CBDFAF5C9C84"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1445"
+            endingLineNumber = "1445"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99BF9894-46A6-46C7-A351-A17C3608BDB1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1447"
+            endingLineNumber = "1447"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3947C76-5CDF-4A60-898C-251946FCCBAC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1448"
+            endingLineNumber = "1448"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA901DA1-A887-4C4A-93F6-7D6CDECE2AB5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1449"
+            endingLineNumber = "1449"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "314B7D98-24B8-410B-9023-543E347C6669"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1452"
+            endingLineNumber = "1452"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A98CBA14-E66B-4B48-A526-50644985EC6C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1453"
+            endingLineNumber = "1453"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B47C3723-81B9-4EEA-97EC-30224428BAD8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1454"
+            endingLineNumber = "1454"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52661C6E-13CA-43EC-887A-F0012904E4E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1455"
+            endingLineNumber = "1455"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DAECA3F-CCD5-457F-A221-96A658154EF9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1456"
+            endingLineNumber = "1456"
+            landmarkName = "GetGuestCartClear(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF806C00-7C77-4A95-A23C-4627D91F9F35"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Login/LoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "onSignInBtnTap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1C426F07-152A-436A-86B0-EAA59329ED67"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Cart/CartVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "clearCartDetails()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1C426F07-152A-436A-86B0-EAA59329ED67 - 2d7f65eca4b3ef96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Island_Choice.CartVC.(clearCartDetails in _E27BB9994930C0A8E0ED5170DAAAB4AB)() -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Controller/Cart/CartVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "1C426F07-152A-436A-86B0-EAA59329ED67 - f721c668f6af3fb1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in Island_Choice.CartVC.(clearCartDetails in _E27BB9994930C0A8E0ED5170DAAAB4AB)() -&gt; ()"
+                  moduleName = "Island Choice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Island%20Choice/Island%20Choice/Island%20Choice/Island%20Choice/Controller/Cart/CartVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A565B14-7F57-489B-B6A5-EE986A82727D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Cart/CartVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "clearCartDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA90234B-EF33-41D0-A084-479662B9624C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Cart/CartVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "clearCartDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "527830F7-CB6A-4AFA-B886-53759890AB91"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Cart/CartVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "clearCartDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55943B2A-C78F-464E-91B5-EBEA81DA7FC2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Cart/CartVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
+            landmarkName = "clearCartDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FAFAF96D-C221-4B82-96E9-6AFF594C31C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Island Choice/Controller/Cart/CartVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
+            landmarkName = "clearCartDetails()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

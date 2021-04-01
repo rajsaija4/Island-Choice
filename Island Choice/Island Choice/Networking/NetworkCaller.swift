@@ -109,4 +109,8 @@ extension JSON {
     var message: String {
         return self["data"]["msg"].stringValue
     }
+    
+    var isTokenExpire: Bool {
+        return self["Code"].intValue == -99
+    }
 }

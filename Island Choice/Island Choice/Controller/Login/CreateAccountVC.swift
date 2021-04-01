@@ -57,6 +57,7 @@ extension CreateAccountVC {
     NetworkManager.SignUp.GetGuestCartClear({ (json) in
         print(json)
         self.hideHUD()
+        GetCustomerGuestCartDetails.arrCartProduct.removeAll()
         let vc = HomeRegisterProductVC.instantiate(fromAppStoryboard: .Register)
         self.navigationController?.pushViewController(vc, animated: true)
        

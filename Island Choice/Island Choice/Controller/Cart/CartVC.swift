@@ -79,6 +79,7 @@ class CartVC: UIViewController {
     @IBAction func onPressClearbtnTap(_ sender: UIButton) {
         
         clearCartDetails()
+        
     }
     
     /*
@@ -279,6 +280,7 @@ extension CartVC {
             self.arrTaxDetails.removeAll()
             self.GetCartPrice()
             self.updateCartDetails()
+            self.tblCart.reloadData()
         }, { (error) in
             
             print(error)

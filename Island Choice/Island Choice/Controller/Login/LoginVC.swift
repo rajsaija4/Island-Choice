@@ -102,8 +102,49 @@ extension LoginVC {
             self.getAllDeliveryStop()
            
         } _: { (error) in
+           
+            
+            if error == "invalid token" {
+                self.userLoginInit()
+                return
+            }
+            
             self.hideHUD()
             self.showToast(error)
+        }
+
+        
+        
+    }
+    
+    
+    fileprivate func userLoginInit() {
+        guard let userName = txtUserName.text, userName.count > 0 else {
+            showToast("Please \(txtUserName.placeholder ?? "") ")
+            return
+        }
+
+        guard let password = txtPassword.text, password.count > 0 else {
+            showToast("Please \(txtPassword.placeholder ?? "") ")
+            return
+        }
+
+        let param = [
+            "login":[
+                "Password":userName,
+                "Username":password
+            ],
+            "employeeLogin":false
+        ] as [String : Any]
+
+        NetworkManager.Login.loginInit(param: param) { (customerId) in
+            
+            self.hideHUD()
+            self.userLogin()
+           
+        } _: { (error) in
+            
+            self.userLoginInit()
         }
 
         

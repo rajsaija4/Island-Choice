@@ -48,6 +48,47 @@ extension NetworkManager {
                     let resJson = JSON(value)
                     
                     guard resJson.isSuccess else {
+                        if resJson["Code"].intValue == -99 {
+                            fail("invalid token")
+                        } else {
+                            fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
+                        }
+                        
+                        return
+                    }
+                    
+                    print(resJson)
+                    if let customerId = resJson["Data"].string?.replacingOccurrences(of: "\"", with: "") {
+                        success(customerId)
+                    }
+                    break
+                case .failure(let error):
+                    print(error)
+                    fail(error.localizedDescription)
+                    break
+                }
+            }
+        }
+        
+        static func loginInit(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            var params = param
+            params.merge(["token":token]) { (new, old) -> Any in
+                return new
+            }
+            
+            guard let encodedURL = URLManager.Auth.loginInit.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+                fail("URL Encodign Issue")
+                return
+            }
+            
+            AF.request(encodedURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let resJson = JSON(value)
+                    
+                    guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
                     }
@@ -83,6 +124,12 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
+                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
@@ -163,7 +210,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -197,7 +248,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -229,7 +284,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -261,7 +320,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -295,7 +358,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -328,7 +395,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -361,7 +432,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -393,7 +468,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -465,7 +544,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -497,7 +580,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -529,7 +616,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -564,7 +655,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -597,7 +692,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -629,7 +728,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -662,7 +765,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -704,7 +811,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -737,7 +848,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -770,7 +885,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -803,7 +922,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -836,7 +959,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -870,7 +997,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -904,7 +1035,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -937,7 +1072,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -970,7 +1109,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -1008,7 +1151,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -1040,7 +1187,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -1074,7 +1225,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -1107,7 +1262,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -1142,7 +1301,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -1181,7 +1344,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -1310,7 +1477,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
@@ -1344,7 +1515,11 @@ extension NetworkManager {
                 switch response.result {
                 case .success(let value):
                     let resJson = JSON(value)
-                    
+                    if resJson.isTokenExpire {
+                        AppUserDefaults.removeValue(forKey: .CustomerId)
+                        APPDEL?.setupLogin()
+                        return
+                    }
                     guard resJson.isSuccess else {
                         fail(resJson["Data"].stringValue.replacingOccurrences(of: "\"", with: ""))
                         return
