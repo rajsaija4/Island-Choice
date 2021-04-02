@@ -19,6 +19,7 @@ class GetCartModel: NSObject {
     var price = 0.0
     var gratisReason = false
     
+  
     static var arrCartProduct: [GetCartModel] = []
  
     
@@ -49,8 +50,13 @@ class GetCartModel: NSObject {
             print(json)
             self.arrCartProduct.removeAll()
             for data in json["data"].arrayValue {
-                self.arrCartProduct.append(GetCartModel(json: data))
+                let data =  GetCartModel(json: data)
+                if data.type == 1 {
+                arrCartProduct.append(data)
+                    print(arrCartProduct.count)
+                }
             }
+            
         }, { (error) in
             
             print(error)

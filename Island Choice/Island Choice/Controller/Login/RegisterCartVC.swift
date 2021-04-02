@@ -222,8 +222,20 @@ extension RegisterCartVC: UITableViewDataSource {
         cell.setupGuestCart(taxData: taxdata)
         cell.TxtProductQuantity.addTarget(self, action: #selector(changeInQuentityAction(_:)), for: .editingChanged)
         cell.TxtProductQuantity.tag = indexPath.row
+        cell.btnRemoveProduct.tag = indexPath.row
+        cell.btnRemoveProduct.addTarget(self, action: #selector(onPressRemoveProduct(_:)), for: .touchUpInside)
         return cell
     }
+    
+    @objc func onPressRemoveProduct(_ sender: UIButton) {
+        let index = sender.tag
+        removeProductFromCart(index: index, quantity: 0)
+        updateCartDetails()
+        
+        
+    }
+    
+    
     
     @objc func changeInQuentityAction(_ sender: UITextField) {
         print(sender.text)
@@ -241,6 +253,7 @@ extension RegisterCartVC: UITableViewDataSource {
         cell.lblPrductCost.text = "cost: $\(convertedPriceWithtax)"
         
         let quentityInt = Int(sender.text ?? "0") ?? 0
+        var isUpdate = quentityInt == 0 ? false : true
         
         if let existCart = GetCustomerGuestCartDetails.arrCartProduct.filter {( $0.code.contains(arrTaxDetails[sender.tag].productCode) )}.first {
             existCart.quantity = quentityInt
@@ -422,6 +435,39 @@ fileprivate func GetCartPricing(param: [String:Any], product:ProductRecords) {
         self.showToast(error)
     })
 }
+    
+    fileprivate func removeProductFromCart(index:Int, quantity: Int, isUpdate: Bool = false) {
+        
+       let newProduct = arrCartPriceData[index]
+        let product = GetCustomerGuestCartDetails.arrCartProduct[index]
+        if isUpdate {
+            
+        } else {
+            arrTaxDetails.remove(at: index)
+            GetCustomerGuestCartDetails.arrCartProduct.remove(at: index)
+        }
+        self.tblYourCartCell.reloadData()
+        let param = [
+            "customerId":AccountInformation.details.customerId,
+            "code":newProduct.code,
+            "depositCode":"",
+            "depositPrice":"",
+            "description":product.productDescription,
+            "employeeModified":"",
+            "fillUp":false,
+            "gratisReason":product.gratisReason,
+            "longDescription":product.productDescription,
+            "price":newProduct.pricing.original,
+            "quantity":quantity,
+            "type":1,
+            "url":"https://islandchoiceguam.com//account//images//mw_synced_image_3_\(newProduct.code).jpg"
+            
+        ]
+        as [String : Any]
+        
+        self.GetProductInCart(param: param)
+    }
+    
 
 
 fileprivate func GetProductInCart(param: [String:Any]) {

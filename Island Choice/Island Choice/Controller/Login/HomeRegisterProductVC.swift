@@ -332,11 +332,33 @@ extension HomeRegisterProductVC {
             self.showToast("Product not Available")
         }
     }, { (error) in
+        if error == "invalid token" {
+            self.userLoginInit()
+            return
+        }
       
         self.hideHUD()
         self.showToast(error)
     })
 }
+    fileprivate func userLoginInit() {
+        let param = [:] as [String : Any]
+
+        NetworkManager.Login.loginInit(param: param) { (customerId) in
+            
+            self.hideHUD()
+            self.getAllProduct()
+           
+        } _: { (error) in
+            
+            self.userLoginInit()
+        }
+
+        
+        
+    }
+    
+    
     fileprivate func reloadData(state: FooterRefresherState) {
         self.collRegisterAccountProductCell.switchRefreshHeader(to: .normal(.success, 0.0))
         self.collRegisterAccountProductCell.switchRefreshFooter(to: state)

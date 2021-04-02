@@ -14,6 +14,7 @@ class CartTblCell: UITableViewCell {
     var cartProductDetails = GetCartModel.arrCartProduct
     var cartGuestProductDetails = GetCustomerGuestCartDetails.arrCartProduct
 
+    @IBOutlet weak var btnRemoveProduct: UIButton!
     @IBOutlet weak var lblProductTax: UILabel!
     @IBOutlet weak var TxtProductQuantity: UITextField!
     @IBOutlet weak var imgProduct: UIImageView!

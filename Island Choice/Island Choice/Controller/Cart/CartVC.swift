@@ -57,41 +57,23 @@ class CartVC: UIViewController {
     }
     
     @IBAction func onPressCheckoutbtnTap(_ sender: Any) {
-        if btnUpdateCart.isHidden == false {
-            
-            showToast("please Press Update Cart Buttton First")
-        }
-        else {
        let vc = CheckOutVC.instantiate(fromAppStoryboard: .Cart)
             vc.arrCartPriceData = arrCartPriceData
             vc.arrProductTaxDetails = arrTaxDetails
         navigationController?.pushViewController(vc, animated: true)
-        }
+        
     }
     @IBAction func onPressbtnUpdateCartPress(_ sender: Any) {
         GetCartPrice()
         updateCartDetails()
         btnUpdateCart.isHidden = true
-        
-        
-    
     }
+    
     @IBAction func onPressClearbtnTap(_ sender: UIButton) {
         
         clearCartDetails()
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
@@ -107,14 +89,29 @@ extension CartVC: UITableViewDataSource {
         let cell: CartTblCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let taxdata = arrTaxDetails[indexPath.row]
         cell.setupCart(taxData: taxdata)
-        cell.TxtProductQuantity.addTarget(self, action: #selector(changeInQuentityAction(_:)), for: .editingChanged)
+        cell.TxtProductQuantity.addTarget(self, action: #selector(changeInQuentityAction(_:)), for: .editingDidEnd)
         cell.TxtProductQuantity.tag = indexPath.row
+        cell.btnRemoveProduct.tag = indexPath.row
+        cell.btnRemoveProduct.addTarget(self, action: #selector(onPressRemoveBtnTap(_:)), for: .touchUpInside)
         return cell
     }
     
+    @objc func onPressRemoveBtnTap(_ sender:UIButton) {
+        let index = sender.tag
+        removeProductFromCart(index: index, quantity: 0)
+        updateCartDetails()
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
     @objc func changeInQuentityAction(_ sender: UITextField) {
         print(sender.text)
-        btnUpdateCart.isHidden = false
         btnCheckout.setTitle("Update And Checkout ▶︎", for: .normal)
         let index = sender.tag
         let indexPath = IndexPath(item: index, section: 0)
@@ -128,12 +125,15 @@ extension CartVC: UITableViewDataSource {
         cell.lblPrductCost.text = "cost: $\(convertedPriceWithtax)"
         
         let quentityInt = Int(sender.text ?? "0") ?? 0
+        var isUpdate = quentityInt == 0 ? false : true
         
         if let existCart = GetCartModel.arrCartProduct.filter {( $0.code.contains(arrTaxDetails[sender.tag].productCode) )}.first {
             existCart.quantity = quentityInt
             if let arrayIndex: Int = GetCartModel.arrCartProduct.firstIndex(where: {( $0.code == existCart.code )}) {
                                 GetCartModel.arrCartProduct.remove(at: arrayIndex)
                                 GetCartModel.arrCartProduct.append(existCart)
+//                GetCartPrice()
+                removeProductFromCart(index: index, quantity: quentityInt, isUpdate: isUpdate)
             }
         }
         
@@ -156,7 +156,7 @@ extension CartVC: UITableViewDelegate {
 extension CartVC {
     
     fileprivate func GetCartPrice() {
-        
+        print(GetCartModel.arrCartProduct.count)
         let deliveryID = OnstopDeliveryModel.details.deliveryId
         print(deliveryID)
        let postalCode = OnstopDeliveryModel.details.postalCode
@@ -173,6 +173,7 @@ extension CartVC {
                 "ShoppingCartType":newProduct.type
             ] as [String : Any]
             arrNewCartProduct.append(newCart)
+            print(arrNewCartProduct)
         }
 
 
@@ -189,6 +190,7 @@ extension CartVC {
         
         showHUD()
         NetworkManager.Profile.GetCartPricing(param: param, { (json) in
+            print(param)
             self.arrCartPriceData.removeAll()
             for data in json.arrayValue {
                 self.arrCartPriceData.append(GetProductPriceModel(json: data))
@@ -234,6 +236,7 @@ extension CartVC {
                 "ShoppingCartType":1
             ] as [String : Any]
             arrNewCartProduct.append(newCart)
+            print(arrNewCartProduct)
         }
         
         let param = [
@@ -247,11 +250,9 @@ extension CartVC {
         NetworkManager.Cart.GetCartSalesTax(param: param, { (json) in
             let data = GetCartSalesTaxModel(json: json)
             let cartData = data.cartProductSalesTaxDetails
-            if cartData.count > 0 {
             self.arrTaxDetails.removeAll()
             self.arrTaxDetails.append(contentsOf: data.cartProductSalesTaxDetails)
             self.tblCart.reloadData()
-            }
             self.hideHUD()
             if self.arrTaxDetails.count < 1{
                 self.showToast("No Product In Cart")
@@ -295,46 +296,36 @@ extension CartVC {
 extension CartVC {
     
     
-    fileprivate func GetCartPricing(param: [String:Any], product:ProductRecords) {
+    fileprivate func removeProductFromCart(index:Int, quantity: Int, isUpdate: Bool = false) {
         
-       
+       let newProduct = arrCartPriceData[index]
+        let product = GetCartModel.arrCartProduct[index]
+        if isUpdate {
+            
+        } else {
+            arrTaxDetails.remove(at: index)
+            GetCartModel.arrCartProduct.remove(at: index)
+        }
+        self.tblCart.reloadData()
+        let param = [
+            "customerId":AccountInformation.details.customerId,
+            "code":newProduct.code,
+            "depositCode":"",
+            "depositPrice":"",
+            "description":product.productDescription,
+            "employeeModified":"",
+            "fillUp":false,
+            "gratisReason":product.gratisReason,
+            "longDescription":product.productDescription,
+            "price":newProduct.pricing.original,
+            "quantity":quantity,
+            "type":1,
+            "url":"https://islandchoiceguam.com//account//images//mw_synced_image_3_\(newProduct.code).jpg"
+            
+        ]
+        as [String : Any]
         
-        showHUD()
-        NetworkManager.Profile.GetCartPricing(param: param, { (json) in
-            self.arrCartPriceData.removeAll()
-            for data in json.arrayValue {
-                self.arrCartPriceData.append(GetProductPriceModel(json: data))
-            }
-            print(self.arrCartPriceData)
-            
-            guard let newProduct = self.arrCartPriceData.filter({ $0.code == product.code }).first else { return }
-            
-            let param = [
-                "customerId":AccountInformation.details.customerId,
-                "code":newProduct.code,
-                "depositCode":"",
-                "depositPrice":"",
-                "description":product.productDescription,
-                "employeeModified":"",
-                "fillUp":false,
-                "gratisReason":product.allowGratis,
-                "longDescription":product.webDescriptionLong,
-                "price":newProduct.pricing.original,
-                "quantity":newProduct.quantity,
-                "type":1,
-                "url":"https://islandchoiceguam.com//account//images//mw_synced_image_3_\(newProduct.code).jpg"
-                
-            ]
-            as [String : Any]
-            
-            self.GetProductInCart(param: param)
-            //self.hideHUD()
-            
-        }, { (error) in
-            
-            self.hideHUD()
-            self.showToast(error)
-        })
+        self.GetProductInCart(param: param)
     }
     
     
@@ -344,8 +335,8 @@ extension CartVC {
         //showHUD()
         NetworkManager.Profile.GetProductInCart(param: param, { (json) in
             print(json)
-            self.showToast("Product Add to Cart")
             self.hideHUD()
+            self.GetCartPrice()
             GetCartModel.GetCartDetails()
         }, { (error) in
             

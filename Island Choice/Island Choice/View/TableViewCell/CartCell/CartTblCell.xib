@@ -112,6 +112,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="TxtProductQuantity" destination="V6x-SG-ERa" id="4ed-ef-QpT"/>
+                <outlet property="btnRemoveProduct" destination="Bv9-H2-0Ge" id="ixR-xF-F1z"/>
                 <outlet property="imgProduct" destination="uVS-sW-8NI" id="OMy-D0-GMo"/>
                 <outlet property="lblPrductCost" destination="j93-DA-xtI" id="wMR-Ik-HrO"/>
                 <outlet property="lblProductName" destination="JAv-p3-pyy" id="095-wN-RFa"/>

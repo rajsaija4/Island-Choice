@@ -133,11 +133,31 @@ extension RegisterCreateAccount {
                 }
                 self.hideHUD()
             }, { (error) in
-                
+                if error == "invalid token" {
+                    self.userLoginInit()
+                    return
+                }
                 self.hideHUD()
                 self.showToast(error)
             })
 
+        
+    }
+    
+    fileprivate func userLoginInit() {
+        let param = [:] as [String : Any]
+
+        NetworkManager.Login.loginInit(param: param) { (customerId) in
+            
+            self.hideHUD()
+            self.IsUsernameAvailable()
+           
+        } _: { (error) in
+            
+            self.userLoginInit()
+        }
+
+        
         
     }
     
@@ -227,12 +247,28 @@ extension RegisterCreateAccount {
           
             self.hideHUD()
         }, { (error) in
-            
+            if error == "invalid token" {
+                self.userLoginInitSignUp()
+                return
+            }
             self.hideHUD()
             self.showToast(error)
             print(error)
+            
         })
 
     }
-    
+    fileprivate func userLoginInitSignUp() {
+        let param = [:] as [String : Any]
+
+        NetworkManager.Login.loginInit(param: param) { (customerId) in
+            
+            self.hideHUD()
+            self.IsUsernameAvailable()
+           
+        } _: { (error) in
+            
+            self.registerUserModel()
+        }
+}
 }
