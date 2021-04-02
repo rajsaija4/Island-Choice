@@ -133,35 +133,35 @@ extension RegisterCreateAccount {
                 }
                 self.hideHUD()
             }, { (error) in
-                if error == "invalid token" {
-                    self.userLoginInit()
-                    return
-                }
+//                if error == "invalid token" {
+//                    self.userLoginInit()
+//                    return
+//                }
                 self.hideHUD()
-                self.showToast(error)
+                self.showToast("Invalid token")
             })
 
         
     }
     
-    fileprivate func userLoginInit() {
-        let param = [:] as [String : Any]
-
-        NetworkManager.Login.loginInit(param: param) { (customerId) in
-            
-            self.hideHUD()
-            self.IsUsernameAvailable()
-           
-        } _: { (error) in
-            
-            self.userLoginInit()
-        }
-
-        
-        
-    }
-    
-    
+//    fileprivate func userLoginInit() {
+//        let param = [:] as [String : Any]
+//
+//        NetworkManager.Login.loginInit(param: param) { (customerId) in
+//
+//            self.hideHUD()
+//            self.IsUsernameAvailable()
+//
+//        } _: { (error) in
+//
+//            self.userLoginInit()
+//        }
+//
+//
+//
+//    }
+//
+//
     func registerUserModel() {
         
         let param = ["deliveryData":[
@@ -247,28 +247,28 @@ extension RegisterCreateAccount {
           
             self.hideHUD()
         }, { (error) in
-            if error == "invalid token" {
-                self.userLoginInitSignUp()
-                return
-            }
+//            if error == "invalid token" {
+//                self.userLoginInitSignUp()
+//                return
+//            }
             self.hideHUD()
-            self.showToast(error)
+            self.showToast("Invalid Token")
             print(error)
             
         })
 
     }
-    fileprivate func userLoginInitSignUp() {
-        let param = [:] as [String : Any]
-
-        NetworkManager.Login.loginInit(param: param) { (customerId) in
-            
-            self.hideHUD()
-            self.IsUsernameAvailable()
-           
-        } _: { (error) in
-            
-            self.registerUserModel()
-        }
-}
+//    fileprivate func userLoginInitSignUp() {
+//        let param = [:] as [String : Any]
+//
+//        NetworkManager.Login.loginInit(param: param) { (customerId) in
+//            
+//            self.hideHUD()
+//            self.IsUsernameAvailable()
+//           
+//        } _: { (error) in
+//            
+//            self.registerUserModel()
+//        }
+//}
 }
